@@ -322,28 +322,39 @@ function ApplyPageContent() {
   const validateStep = () => {
     const newErrors: Record<string, string> = {};
     
-    if (currentStep === 1) {
-      if (!formData.program) newErrors.program = 'Please select a program';
-      if (!formData.location) newErrors.location = 'Please select a location';
-      if (!formData.startDate) newErrors.startDate = 'Please select a preferred start date';
-    }
-    
-    else if (currentStep === 2) {
-      if (!formData.childFirstName) newErrors.childFirstName = 'First name is required';
-      if (!formData.childLastName) newErrors.childLastName = 'Last name is required';
-      if (!formData.childDateOfBirth) newErrors.childDateOfBirth = 'Date of birth is required';
-      if (!formData.childGender) newErrors.childGender = 'Please select a gender';
-    }
-    
-    else if (currentStep === 3) {
-      if (!formData.parentFirstName) newErrors.parentFirstName = 'First name is required';
-      if (!formData.parentLastName) newErrors.parentLastName = 'Last name is required';
-      if (!formData.parentEmail) newErrors.parentEmail = 'Email is required';
-      if (!formData.parentPhone) newErrors.parentPhone = 'Phone number is required';
-    }
-    
-    else if (currentStep === 5) {
-      if (!formData.agreeTerms) newErrors.agreeTerms = 'You must agree to the terms and conditions';
+    switch (currentStep) {
+      // Step-1  ─ Program Selection
+      case 1:
+        if (!formData.program) newErrors.program = 'Please select a program';
+        break;
+
+      // Step-2  ─ Location Selection
+      case 2:
+        if (!formData.location) newErrors.location = 'Please select a location';
+        break;
+
+      // Step-3  ─ Preferred Start Date
+      case 3:
+        if (!formData.startDate) newErrors.startDate = 'Please select a preferred start date';
+        break;
+
+      // Step-4  ─ Parent + Child information
+      case 4:
+        if (!formData.childFirstName) newErrors.childFirstName = 'First name is required';
+        if (!formData.childLastName) newErrors.childLastName = 'Last name is required';
+        if (!formData.childDateOfBirth) newErrors.childDateOfBirth = 'Date of birth is required';
+        if (!formData.parentFirstName) newErrors.parentFirstName = 'First name is required';
+        if (!formData.parentLastName) newErrors.parentLastName = 'Last name is required';
+        if (!formData.parentEmail) newErrors.parentEmail = 'Email is required';
+        break;
+
+      // Step-5  ─ Confirmation
+      case 5:
+        if (!formData.agreeTerms) newErrors.agreeTerms = 'You must agree to the terms and conditions';
+        break;
+
+      default:
+        break;
     }
     
     setErrors(newErrors);

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Baloo_2 } from "next/font/google";
+import Navigation from "@/components/Navigation"; // actual navigation component
 import "./globals.css";
 
 const geistSans = Geist({
@@ -58,15 +59,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${balooDisplay.variable} antialiased`}
       >
-        {/* Navigation Placeholder */}
-        <nav className="w-full bg-white/70 backdrop-blur-md sticky top-0 z-30 shadow-sm">
-          {/* TODO: Replace with real navigation */}
-          <div className="container mx-auto px-4 py-3 text-sm text-gray-600">
-            Navigation
-          </div>
-        </nav>
+        {/* Site Navigation */}
+        <Navigation />
 
-        {children}
+        {/* Main content with padding to offset fixed nav height */}
+        <div className="pt-20">{children}</div>
 
         {/* Floating WhatsApp Button */}
         <a

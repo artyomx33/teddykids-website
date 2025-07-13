@@ -1,5 +1,9 @@
+'use client';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback } from 'react';
 
+// Supported language codes
 export type Language = 'en' | 'nl';
 
 export const translations = {
@@ -359,24 +363,29 @@ export const translations = {
   }
 };
 
+/**
+ * Hook that returns a translation helper `t`.
+ *
+ * Usage:
+ * const { t } = useTranslation('en');
+ * t('hero.title') -> "From Baby Steps to Global Citizens"
+ */
 export const useTranslation = (language: Language = 'en') => {
   const t = useCallback(
-    (key: string) => {
-      // Split the key by dots to access nested properties
+    (key: string): string => {
       const keys = key.split('.');
       let value: any = translations[language];
-      
-      // Navigate through the nested properties
+
       for (const k of keys) {
-        if (value && value[k]) {
+        if (value && typeof value === 'object' && k in value) {
           value = value[k];
         } else {
-          // If key doesn't exist, return the key itself
+          // Return the key itself if translation is missing
           return key;
         }
       }
-      
-      return value;
+
+      return typeof value === 'string' ? value : key;
     },
     [language]
   );

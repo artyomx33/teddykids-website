@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Hero from '@/components/sections/Hero';
 import Pillars from '@/components/sections/Pillars';
 import SocialProof from '@/components/sections/SocialProof';
+import Programs from '@/components/sections/Programs';
 
 export const metadata: Metadata = {
   title: 'Teddy Kids | From Baby Steps to Global Citizens',
@@ -45,6 +46,12 @@ export default function Home() {
       
       {/* Social Proof and Reviews */}
       <SocialProof />
+      
+      {/* Program Overview */}
+      <Programs />
+
+      {/* Locations Preview - to be implemented */}
+      {/* <LocationsPreview /> */}
       
       {/* WhatsApp floating button - will be added in layout.tsx */}
     </main>

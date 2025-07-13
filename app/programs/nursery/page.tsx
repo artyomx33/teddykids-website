@@ -6,11 +6,11 @@ import { getLocationsByProgram } from '@/lib/locations';
 
 export const metadata: Metadata = {
   title: 'Nursery Program | Teddy Kids',
-  description: 'Our Nursery program provides a safe, nurturing bilingual environment for children from 3 months to 2.5 years, focusing on early development through play.',
+  description: 'Your child\'s first world outside your arms should feel just as safe. Our nursery is soft, bilingual, and built for baby-level wonder.',
   keywords: 'teddy kids nursery, infant care leiden, baby daycare, bilingual nursery, toddler program, early childhood',
   openGraph: {
     title: 'Nursery Program | Teddy Kids',
-    description: 'Our Nursery program provides a safe, nurturing bilingual environment for children from 3 months to 2.5 years, focusing on early development through play.',
+    description: 'Your child\'s first world outside your arms should feel just as safe. Our nursery is soft, bilingual, and built for baby-level wonder.',
     url: 'https://www.teddykids.nl/programs/nursery',
     siteName: 'Teddy Kids',
     images: [
@@ -101,6 +101,36 @@ const LocationCard = ({ name, address, imageSrc }) => {
   );
 };
 
+// Overview item component
+const OverviewItem = ({ icon, label, value }) => {
+  return (
+    <div className="flex items-start p-3 border-b border-gray-100 last:border-b-0">
+      <div className="text-2xl mr-3 flex-shrink-0">{icon}</div>
+      <div>
+        <h4 className="font-medium text-gray-900">{label}</h4>
+        <p className="text-gray-600">{value}</p>
+      </div>
+    </div>
+  );
+};
+
+// Gallery item component
+const GalleryItem = ({ src, caption }) => {
+  return (
+    <div className="rounded-lg overflow-hidden">
+      <div className="relative h-48 w-full">
+        <Image
+          src={src}
+          alt={caption}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <p className="text-sm text-gray-700 mt-2 italic">{caption}</p>
+    </div>
+  );
+};
+
 export default function NurseryPage() {
   // Get locations that offer the nursery program
   const nurseryLocations = getLocationsByProgram('nursery');
@@ -117,9 +147,11 @@ export default function NurseryPage() {
                   <span className="text-4xl mr-3">🍼</span>
                   <h1 className="text-4xl md:text-5xl font-display font-bold">Nursery</h1>
                 </div>
-                <p className="text-xl italic text-gray-700 mb-6">"Safe, soft beginnings"</p>
+                <p className="text-xl italic text-gray-700 mb-6">
+                  "Your child's first world outside your arms should feel just as safe."
+                </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  Our Nursery program provides a warm, nurturing environment where our youngest explorers begin their journey of discovery. With a focus on sensory experiences, language development, and social connections, we create a foundation for lifelong learning.
+                  Our nursery is soft, bilingual, and built for baby-level wonder. We hold, sing, rock, read, and smile in two languages.
                 </p>
                 <div className="bg-white p-4 rounded-lg inline-block mb-6">
                   <span className="font-medium">Ages:</span> 3 months - 2.5 years
@@ -157,180 +189,186 @@ export default function NurseryPage() {
         </div>
       </section>
 
-      {/* Program Overview */}
+      {/* Age & Overview */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">Program Overview</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Age & Overview</h2>
             <div className="bg-white p-8 rounded-xl shadow-sm">
-              <p className="text-lg mb-6">
-                Our Nursery program is designed to provide a secure, loving environment where infants and toddlers can explore, grow, and develop at their own pace. We understand that the first years of life are crucial for brain development, which is why our program focuses on:
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Nurturing relationships with consistent caregivers</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Bilingual environment with natural language exposure</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Sensory-rich activities that stimulate development</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Age-appropriate play spaces for exploration</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Personalized care routines that respect each child's needs</span>
-                </li>
-              </ul>
-              <p className="text-lg">
-                Our approach balances structured activities with plenty of free play time, allowing children to develop their curiosity, creativity, and confidence in a safe, supportive setting.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <OverviewItem 
+                  icon="🍼" 
+                  label="Age Range" 
+                  value="3 months – 2.5 years"
+                />
+                <OverviewItem 
+                  icon="🕒" 
+                  label="Hours" 
+                  value="Mon–Fri, 07:30–18:30"
+                />
+                <OverviewItem 
+                  icon="🥗" 
+                  label="Meals" 
+                  value="All meals and snacks included"
+                />
+                <OverviewItem 
+                  icon="👥" 
+                  label="Staff Ratio" 
+                  value="1:3 (under 1), 1:4 (over 1)"
+                />
+                <OverviewItem 
+                  icon="🧍‍♀️" 
+                  label="Care Model" 
+                  value="Primary caregiver assignment for attachment bonding"
+                />
+                <OverviewItem 
+                  icon="📍" 
+                  label="Available At" 
+                  value="RBW, RB3/5, ZML"
+                />
+                <OverviewItem 
+                  icon="📱" 
+                  label="Daily Updates" 
+                  value="Via TeddyConnect app"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Daily Schedule */}
+      {/* What Makes Our Nursery Special */}
       <section className="py-16 bg-brand-yellow bg-opacity-10">
         <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">What Makes Our Nursery Special</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <FeatureItem 
+                icon="💬"
+                title="Bilingual from the Beginning"
+                description="Children are spoken to in Dutch and English from day one. They soak it up effortlessly."
+              />
+              <FeatureItem 
+                icon="🎨"
+                title="Play-Based Learning"
+                description="Even the tiniest learners explore the world through textures, sounds, and gentle stimulation."
+              />
+              <FeatureItem 
+                icon="💛"
+                title="Attachment First"
+                description="Consistency, warmth, and emotional safety form the foundation of every child's experience."
+              />
+              <FeatureItem 
+                icon="👂"
+                title="Soft Spaces"
+                description="Every corner is designed with texture, sound, and smell in mind—safe materials, low light, and calming soundscapes."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Parent Quote */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-gray-700 text-center">
+              "We couldn't believe how fast Ella started speaking both Dutch and English. And she's only one!"
+              <footer className="text-right text-base font-medium text-gray-600 mt-4">– Mila, TK RBW Parent</footer>
+            </blockquote>
+            <div className="text-center mt-4">
+              <Button
+                variant="secondary"
+                size="sm"
+                className="flex items-center gap-2 mx-auto"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                Play Voice Snippet
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="py-16 bg-brand-mint bg-opacity-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Gallery</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <GalleryItem 
+                src="/images/programs/nursery-play.jpg"
+                caption="Circle time in two languages"
+              />
+              <GalleryItem 
+                src="/images/programs/nursery-sleep.jpg"
+                caption="Snuggle + Story corner"
+              />
+              <GalleryItem 
+                src="/images/programs/nursery-circle.jpg"
+                caption="Outdoor discovery with our caregivers"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Daily Rhythm */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">A Day in Our Nursery</h2>
-            <p className="text-center text-gray-700 mb-8">
-              While we adapt to each child's individual rhythm, here's a glimpse of our daily flow:
-            </p>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Daily Rhythm</h2>
             
             <div className="bg-white rounded-xl shadow-sm p-6">
               <ScheduleItem 
-                time="7:30 - 9:00"
-                activity="Arrival & Welcome"
-                description="Warm greetings, gentle transitions, and free play as children arrive."
+                time="07:30–09:00"
+                activity="Arrival hugs"
+                description="Quiet corners, and familiar songs."
               />
               <ScheduleItem 
-                time="9:00 - 9:30"
-                activity="Morning Circle"
-                description="Songs, stories, and simple greetings in both English and Dutch."
+                time="09:00–10:00"
+                activity="Singing & bilingual circle time"
+                description="Gentle songs and simple stories in both languages."
               />
               <ScheduleItem 
-                time="9:30 - 10:15"
-                activity="Sensory Exploration"
-                description="Age-appropriate activities focusing on touch, sound, sight, and movement."
+                time="10:00–11:00"
+                activity="Outdoor strolls or garden play"
+                description="Fresh air and natural exploration with attentive caregivers."
               />
               <ScheduleItem 
-                time="10:15 - 10:45"
-                activity="Snack Time"
-                description="Healthy snacks with social interaction and language development."
+                time="11:00–11:30"
+                activity="Fresh lunch prepared in-house"
+                description="Nutritious meals with social connections and language development."
               />
               <ScheduleItem 
-                time="10:45 - 11:30"
-                activity="Outdoor Discovery"
-                description="Fresh air, nature exploration, and gross motor development in our secure outdoor spaces."
+                time="12:00–14:00"
+                activity="Nap time"
+                description="Dim lights, soft white noise, cozy blankets from home."
               />
               <ScheduleItem 
-                time="11:30 - 12:30"
-                activity="Lunch & Social Time"
-                description="Nutritious meals with conversation and developing independence."
+                time="14:00–15:30"
+                activity="Sensory play & cuddles"
+                description="Textures, sounds, and one-on-one attention."
               />
               <ScheduleItem 
-                time="12:30 - 14:30"
-                activity="Rest Time"
-                description="Naps and quiet time tailored to each child's needs."
+                time="15:30–17:00"
+                activity="Free play & story time"
+                description="Exploration and stories in two languages."
               />
               <ScheduleItem 
-                time="14:30 - 15:15"
-                activity="Gentle Awakening & Snack"
-                description="Gradual transition from rest with quiet activities and healthy snacks."
-              />
-              <ScheduleItem 
-                time="15:15 - 16:30"
-                activity="Creative Play"
-                description="Art, music, movement, and imaginative activities."
-              />
-              <ScheduleItem 
-                time="16:30 - 18:30"
-                activity="Evening Wind-Down"
-                description="Flexible play options, individual attention, and peaceful departures."
+                time="17:00–18:30"
+                activity="Pick-up & one-on-one snuggles"
+                description="Gentle transitions and warm goodbyes."
               />
             </div>
             
             <p className="text-center text-gray-600 mt-6 text-sm">
               *Schedule is flexible and adapted to children's needs, especially for infants who follow their own feeding and sleeping patterns.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes Our Nursery Special */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">What Makes Our Nursery Special</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <FeatureItem 
-                icon="🌍"
-                title="Bilingual Environment"
-                description="Natural exposure to both English and Dutch through songs, stories, and daily interactions."
-              />
-              <FeatureItem 
-                icon="👋"
-                title="Primary Caregiver System"
-                description="Each child has a dedicated caregiver who builds a deep understanding of their needs and preferences."
-              />
-              <FeatureItem 
-                icon="🧠"
-                title="Brain-Building Focus"
-                description="Activities designed to support cognitive development during this crucial period of rapid brain growth."
-              />
-              <FeatureItem 
-                icon="🧸"
-                title="Cozy, Home-Like Spaces"
-                description="Thoughtfully designed environments that feel safe, warm, and inviting for our youngest learners."
-              />
-              <FeatureItem 
-                icon="🌱"
-                title="Nature Connection"
-                description="Regular outdoor experiences and natural materials to develop sensory awareness and environmental appreciation."
-              />
-              <FeatureItem 
-                icon="👨‍👩‍👧‍👦"
-                title="Family Partnership"
-                description="Close communication with parents through daily updates, regular meetings, and shared milestone celebrations."
-              />
-            </div>
-            
-            <div className="bg-brand-mint bg-opacity-20 p-6 rounded-xl">
-              <h3 className="text-xl font-medium mb-4 text-center">Our Approach to Transitions</h3>
-              <p className="text-gray-700 mb-4">
-                We understand that starting nursery is a significant step for both children and parents. Our gentle settling-in process includes:
-              </p>
-              <ul className="space-y-2 mb-4">
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Pre-start visits where you and your child can explore together</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Gradual build-up of time spent at nursery</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Welcome package with photos of caregivers and spaces</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Detailed intake discussions about your child's routines and preferences</span>
-                </li>
-              </ul>
-              <p className="text-gray-700">
-                This thoughtful approach helps ensure a smooth, positive start to your child's Teddy Kids journey.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -353,48 +391,14 @@ export default function NurseryPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">What Parents Say</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Testimonial 
-                quote="The nursery team has been incredible with our daughter. They've created such a nurturing environment that she's excited to go every day. The bilingual approach is already showing results - she's using words in both languages!"
-                author="Emma & James"
-                location="Parents of Lily, 18 months"
-                imageSrc="/images/testimonials/parent1.jpg"
-              />
-              <Testimonial 
-                quote="As first-time parents, we were nervous about childcare, but the Teddy Kids nursery team made the transition so smooth. The primary caregiver system meant our son bonded quickly, and the daily updates help us feel connected to his experiences."
-                author="David P."
-                location="Father of Noah, 14 months"
-                imageSrc="/images/testimonials/parent2.jpg"
-              />
-              <Testimonial 
-                quote="The attention to detail in the nursery program is impressive. From the thoughtfully designed spaces to the personalized care routines, everything is created with the children's wellbeing in mind. Our twins have thrived here."
-                author="Sophia K."
-                location="Mother of twins, 2 years"
-                imageSrc="/images/testimonials/parent3.jpg"
-              />
-              <Testimonial 
-                quote="As international parents, finding a bilingual nursery was important to us. The way Teddy Kids integrates both languages naturally throughout the day has been perfect for our daughter, and the cultural diversity is wonderful."
-                author="Miguel & Ling"
-                location="Parents of Mia, 20 months"
-                imageSrc="/images/testimonials/parent4.jpg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-brand-pink bg-opacity-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">Ready to Give Your Child the Best Start?</h2>
+          <h2 className="text-3xl font-display font-bold mb-6">
+            Let's make the first goodbye feel beautiful.
+          </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Schedule a tour to see our nursery in action and learn how we can support your child's earliest development journey.
+            We know what this moment feels like. Let's walk through it together—with care, clarity, and calm.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -402,16 +406,19 @@ export default function NurseryPage() {
               href="/contact"
               size="lg"
             >
-              Book a Tour
+              Meet the Nursery Team
             </Button>
             <Button 
               variant="outline"
               href="/apply?program=nursery"
               size="lg"
             >
-              Apply Now
+              Book a Personal Tour
             </Button>
           </div>
+          <p className="text-sm text-gray-600 mt-4">
+            Prefer to chat first? <a href="https://wa.me/31612345678" className="text-brand-pink hover:underline">WhatsApp us here</a>.
+          </p>
         </div>
       </section>
     </main>

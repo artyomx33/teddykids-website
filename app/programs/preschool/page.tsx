@@ -5,12 +5,12 @@ import Button from '@/components/Button';
 import { getLocationsByProgram } from '@/lib/locations';
 
 export const metadata: Metadata = {
-  title: 'Preschool Program | Teddy Kids',
-  description: 'Our Preschool program nurtures children aged 2.5-4 years through play-based learning, social development, and bilingual education, preparing them for school success.',
-  keywords: 'teddy kids preschool, play-based learning, bilingual preschool, school readiness, early childhood education, leiden preschool',
+  title: 'Teddy Learners Program | Teddy Kids',
+  description: 'Teddy Learners is where growing minds, wild imaginations, and little hearts get gently guided into their next big step with bilingual education.',
+  keywords: 'teddy learners, teddy kids preschool, play-based learning, bilingual preschool, school readiness, early childhood education, leiden preschool',
   openGraph: {
-    title: 'Preschool Program | Teddy Kids',
-    description: 'Our Preschool program nurtures children aged 2.5-4 years through play-based learning, social development, and bilingual education, preparing them for school success.',
+    title: 'Teddy Learners Program | Teddy Kids',
+    description: 'Teddy Learners is where growing minds, wild imaginations, and little hearts get gently guided into their next big step with bilingual education.',
     url: 'https://www.teddykids.nl/programs/preschool',
     siteName: 'Teddy Kids',
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: '/images/programs/preschool-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Teddy Kids Preschool Program - Where play meets purpose',
+        alt: 'Teddy Kids Teddy Learners Program - Bilingual education for ages 2-4',
       },
     ],
     locale: 'en_US',
@@ -101,6 +101,45 @@ const LocationCard = ({ name, address, imageSrc }) => {
   );
 };
 
+// Overview item component
+const OverviewItem = ({ icon, label, value }) => {
+  return (
+    <div className="flex items-start p-3 border-b border-gray-100 last:border-b-0">
+      <div className="text-2xl mr-3 flex-shrink-0">{icon}</div>
+      <div>
+        <h4 className="font-medium text-gray-900">{label}</h4>
+        <p className="text-gray-600">{value}</p>
+      </div>
+    </div>
+  );
+};
+
+// Kid quote component
+const KidQuote = ({ quote }) => {
+  return (
+    <div className="bg-white p-4 rounded-xl shadow-sm">
+      <p className="text-lg italic text-gray-700 font-handwriting">{quote}</p>
+    </div>
+  );
+};
+
+// Gallery item component
+const GalleryItem = ({ src, caption }) => {
+  return (
+    <div className="rounded-lg overflow-hidden">
+      <div className="relative h-48 w-full">
+        <Image
+          src={src}
+          alt={caption}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <p className="text-sm text-gray-700 mt-2 italic">{caption}</p>
+    </div>
+  );
+};
+
 export default function PreschoolPage() {
   // Get locations that offer the preschool program
   const preschoolLocations = getLocationsByProgram('preschool');
@@ -115,14 +154,16 @@ export default function PreschoolPage() {
               <div className="md:w-1/2">
                 <div className="flex items-center mb-4">
                   <span className="text-4xl mr-3">🎨</span>
-                  <h1 className="text-4xl md:text-5xl font-display font-bold">Preschool</h1>
+                  <h1 className="text-4xl md:text-5xl font-display font-bold">Teddy Learners</h1>
                 </div>
-                <p className="text-xl italic text-gray-700 mb-6">"Where play meets purpose"</p>
+                <p className="text-xl italic text-gray-700 mb-6">
+                  "They're not babies anymore. But they still need magic, hugs, and someone to explain the word 'why' in two languages."
+                </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  Our Preschool program creates a joyful, engaging environment where children develop social skills, language fluency, and a love of learning through purposeful play. We prepare children for future academic success while honoring the magic of childhood.
+                  Teddy Learners is where growing minds, wild imaginations, and little hearts get gently guided into their next big step.
                 </p>
                 <div className="bg-white p-4 rounded-lg inline-block mb-6">
-                  <span className="font-medium">Ages:</span> 2.5 - 4 years
+                  <span className="font-medium">Ages:</span> 2 - 4 years
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button 
@@ -140,12 +181,24 @@ export default function PreschoolPage() {
                     Apply Now
                   </Button>
                 </div>
+                <div className="mt-4">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="flex items-center gap-2"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                    Play Audio
+                  </Button>
+                </div>
               </div>
               <div className="md:w-1/2">
                 <div className="relative h-80 w-full rounded-xl overflow-hidden">
                   <Image
                     src="/images/programs/preschool-hero.jpg"
-                    alt="Teddy Kids Preschool Program"
+                    alt="Teddy Kids Teddy Learners Program"
                     fill
                     className="object-cover"
                     priority
@@ -157,202 +210,200 @@ export default function PreschoolPage() {
         </div>
       </section>
 
-      {/* Program Overview */}
+      {/* Age & Overview */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">Program Overview</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Age & Overview</h2>
             <div className="bg-white p-8 rounded-xl shadow-sm">
-              <p className="text-lg mb-6">
-                Our Preschool program builds on children's natural curiosity and energy, creating meaningful learning experiences through play. As children become more independent and socially aware, we provide opportunities to:
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Develop fluency in both English and Dutch through daily immersion</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Build social skills through collaborative activities and guided interactions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Explore early literacy, numeracy, and scientific concepts through hands-on experiences</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Express creativity through art, music, movement, and imaginative play</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Develop self-regulation and independence in preparation for school</span>
-                </li>
-              </ul>
-              <p className="text-lg">
-                Our approach balances child-led exploration with teacher-guided activities, creating a foundation for lifelong learning while ensuring children experience the joy and wonder of early childhood.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <OverviewItem 
+                  icon="🎂" 
+                  label="Age Range" 
+                  value="2–4 years"
+                />
+                <OverviewItem 
+                  icon="🕒" 
+                  label="Hours" 
+                  value="Mon–Fri, 07:30–18:30"
+                />
+                <OverviewItem 
+                  icon="🥗" 
+                  label="Meals" 
+                  value="All meals included"
+                />
+                <OverviewItem 
+                  icon="📍" 
+                  label="Available At" 
+                  value="RB3/5, LRZ, ZML"
+                />
+                <OverviewItem 
+                  icon="👥" 
+                  label="Mentor Model" 
+                  value="Primary caregiver tracking emotional/social growth"
+                />
+                <OverviewItem 
+                  icon="📲" 
+                  label="Extras" 
+                  value="Weekly bilingual journals, TeddyConnect updates"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Daily Schedule */}
-      <section className="py-16 bg-brand-mint bg-opacity-10">
+      {/* Teddy Powers */}
+      <section className="py-16 bg-brand-yellow bg-opacity-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Teddy Powers (That Stick for Life)</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <FeatureItem 
+                icon="🗣️"
+                title="Bilingual Play Everyday"
+                description="We don't 'teach' two languages—we live them. Songs, stories, play… all come in Dutch and English."
+              />
+              <FeatureItem 
+                icon="🧠"
+                title="Teducation™ at Work"
+                description="Your child's mind is wired for pattern-making, problem-solving, and play. We call it Teddyfication when their spark lights up!"
+              />
+              <FeatureItem 
+                icon="💛"
+                title="Feelings Made Friendly"
+                description="Meltdowns. Hugs. Solving arguments with blocks. We help children name emotions, hold space, and still make it to circle time."
+              />
+              <FeatureItem 
+                icon="🔧"
+                title="Skills That Stick"
+                description="Counting, sorting, dressing themselves… life-ready milestones emerge through everyday magic."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Inside a Teddy Day */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">A Day in Our Preschool</h2>
-            <p className="text-center text-gray-700 mb-8">
-              Our preschool day provides a balanced rhythm of active learning, social interaction, and quiet reflection:
-            </p>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Inside a Teddy Day (According to the Kids)</h2>
             
-            <div className="bg-white rounded-xl shadow-sm p-6">
-              <ScheduleItem 
-                time="7:30 - 9:00"
-                activity="Welcome & Free Play"
-                activity="Welcome & Free Play"
-                description="Warm greetings and choice-based activities as children arrive and settle in."
-              />
-              <ScheduleItem 
-                time="9:00 - 9:30"
-                activity="Morning Circle"
-                description="Songs, stories, calendar time, and daily plan discussions in both English and Dutch."
-              />
-              <ScheduleItem 
-                time="9:30 - 10:30"
-                activity="Learning Centers"
-                description="Child-directed exploration in themed centers (art, building, literacy, science, dramatic play)."
-              />
-              <ScheduleItem 
-                time="10:30 - 11:00"
-                activity="Snack & Social Time"
-                description="Healthy snacks with conversation practice and developing table manners."
-              />
-              <ScheduleItem 
-                time="11:00 - 12:00"
-                activity="Outdoor Exploration"
-                description="Physical activity, nature exploration, and social play in our outdoor learning spaces."
-              />
-              <ScheduleItem 
-                time="12:00 - 12:45"
-                activity="Lunch Time"
-                description="Family-style meals promoting independence, conversation, and healthy eating habits."
-              />
-              <ScheduleItem 
-                time="12:45 - 14:30"
-                activity="Rest & Quiet Activities"
-                description="Nap time for those who need it, quiet activities for others (books, puzzles, drawing)."
-              />
-              <ScheduleItem 
-                time="14:30 - 15:15"
-                activity="Small Group Learning"
-                description="Teacher-guided activities focusing on specific skills (early literacy, math concepts, science)."
-              />
-              <ScheduleItem 
-                time="15:15 - 15:45"
-                activity="Afternoon Snack"
-                description="Healthy refreshments and social interaction."
-              />
-              <ScheduleItem 
-                time="15:45 - 16:45"
-                activity="Creative Expression"
-                description="Art, music, movement, and project work based on current themes."
-              />
-              <ScheduleItem 
-                time="16:45 - 18:30"
-                activity="Free Play & Departure"
-                description="Choice-based activities, outdoor time (weather permitting), and peaceful goodbyes."
-              />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <KidQuote quote="We made soup. It was purple. Nobody ate it, but we learned about colors." />
+              <KidQuote quote="Apie got stuck in the fort. We used teamwork (and a broom) to rescue him." />
+              <KidQuote quote="We learned how to pop balloons without crying. It was loud and brave." />
             </div>
-            
-            <p className="text-center text-gray-600 mt-6 text-sm">
-              *Schedule includes regular transitions between English and Dutch throughout the day, with flexibility to follow children's interests and needs.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* What Makes Our Preschool Special */}
+      {/* Parent Quote */}
+      <section className="py-16 bg-brand-mint bg-opacity-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-gray-700 text-center">
+              "I walked in and my son was explaining what 'boos' means in English. He's three. I actually teared up."
+              <footer className="text-right text-base font-medium text-gray-600 mt-4">– Samira, TK Parent, ZML</footer>
+            </blockquote>
+            <div className="text-center mt-4">
+              <Button
+                variant="secondary"
+                size="sm"
+                className="flex items-center gap-2 mx-auto"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                Play Voice Snippet
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">What Makes Our Preschool Special</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Gallery</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <FeatureItem 
-                icon="🗣️"
-                title="True Bilingual Immersion"
-                description="Natural exposure to both English and Dutch through our unique language rotation system with native-speaking teachers."
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <GalleryItem 
+                src="/images/programs/teddy-learners-1.jpg"
+                caption="Outdoor treasure hunts in two languages"
               />
-              <FeatureItem 
-                icon="🧩"
-                title="Project-Based Learning"
-                description="Extended investigations of topics that matter to children, building deeper understanding and critical thinking skills."
+              <GalleryItem 
+                src="/images/programs/teddy-learners-2.jpg"
+                caption="This book is upside down but the story's still magical"
               />
-              <FeatureItem 
-                icon="👥"
-                title="Social-Emotional Focus"
-                description="Intentional teaching of friendship skills, emotional regulation, and conflict resolution through our Heart-Wise curriculum."
-              />
-              <FeatureItem 
-                icon="📚"
-                title="Pre-Academic Foundations"
-                description="Playful introduction to literacy, numeracy, and scientific thinking that prepares children for school success."
-              />
-              <FeatureItem 
-                icon="🌳"
-                title="Nature Connection"
-                description="Regular outdoor learning, nature-based materials, and environmental awareness woven throughout our program."
-              />
-              <FeatureItem 
-                icon="🔄"
-                title="Seamless Transitions"
-                description="Thoughtful preparation for primary school, including partnerships with local schools and transition support."
+              <GalleryItem 
+                src="/images/programs/teddy-learners-3.jpg"
+                caption="Teddy Learners = 12 squealing scientists and a bucket of paint"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Daily Rhythm */}
+      <section className="py-16 bg-brand-purple bg-opacity-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">Daily Rhythm</h2>
             
-            <div className="bg-brand-yellow bg-opacity-20 p-6 rounded-xl">
-              <h3 className="text-xl font-medium mb-4 text-center">Our Approach to School Readiness</h3>
-              <p className="text-gray-700 mb-4">
-                We believe that school readiness involves much more than academic skills. Our comprehensive approach prepares children by developing:
-              </p>
-              <ul className="space-y-2 mb-4">
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Self-regulation and the ability to focus on tasks</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Confidence in speaking and listening in group settings</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Problem-solving skills and resilience when facing challenges</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Independence in self-care routines</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Curiosity and enthusiasm for learning</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-brand-pink mr-2">●</span>
-                  <span>Foundational literacy and numeracy concepts</span>
-                </li>
-              </ul>
-              <p className="text-gray-700">
-                Children who graduate from our preschool program enter primary school as confident, capable learners with the social and academic skills needed for success.
-              </p>
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <ScheduleItem 
+                time="07:30–09:00"
+                activity="Arrival, dress-up, open-ended play"
+                description="Warm welcomes and child-led exploration to start the day."
+              />
+              <ScheduleItem 
+                time="09:00–10:00"
+                activity="Circle time (Dutch & English stories)"
+                description="Community building with songs, stories, and sharing in both languages."
+              />
+              <ScheduleItem 
+                time="10:00–11:00"
+                activity="Outdoor science or project play"
+                description="Hands-on discovery and exploration in our natural spaces."
+              />
+              <ScheduleItem 
+                time="11:30–12:00"
+                activity="Lunch + toddler debates"
+                description="Nutritious meals with lively conversations and emerging opinions."
+              />
+              <ScheduleItem 
+                time="12:00–13:30"
+                activity="Nap time / quiet sensory play"
+                description="Rest for those who need it, gentle activities for others."
+              />
+              <ScheduleItem 
+                time="13:30–15:00"
+                activity="Group work or big questions"
+                description="Exploring important topics like 'Why is the moon round?' and other philosophical wonders."
+              />
+              <ScheduleItem 
+                time="15:00–16:30"
+                activity="Music, dance, movement games"
+                description="Creative expression and joyful movement to engage body and mind."
+              />
+              <ScheduleItem 
+                time="16:30–18:30"
+                activity="Pick-up hugs and emotional debriefs"
+                description="Reflections on the day and warm goodbyes."
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Locations */}
-      <section className="py-16 bg-brand-purple bg-opacity-10">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-display font-bold mb-8 text-center">Locations Offering Preschool Program</h2>
+          <h2 className="text-3xl font-display font-bold mb-8 text-center">Locations Offering Teddy Learners</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {preschoolLocations.map((location, index) => (
@@ -367,48 +418,15 @@ export default function PreschoolPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">What Parents Say</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Testimonial 
-                quote="The preschool program has given our son such confidence. He's speaking both Dutch and English, making friends, and coming home excited about what he's learning. The teachers really understand how to make learning fun and meaningful."
-                author="Sophia K."
-                location="Mother of Oliver, 3.5 years"
-                imageSrc="/images/testimonials/parent5.jpg"
-              />
-              <Testimonial 
-                quote="We've been amazed at how our daughter has developed at Teddy Kids. The project-based approach has sparked her curiosity, and she's constantly telling us about her discoveries. The bilingual environment has been a huge bonus."
-                author="Thomas & Julie"
-                location="Parents of Emma, 4 years"
-                imageSrc="/images/testimonials/parent6.jpg"
-              />
-              <Testimonial 
-                quote="As an international family, we wanted a preschool that would honor our multicultural background. Teddy Kids has exceeded our expectations. Our son is thriving in the bilingual environment and has made friends from all over the world."
-                author="Raj & Anna"
-                location="Parents of Arjun, 3 years"
-                imageSrc="/images/testimonials/parent7.jpg"
-              />
-              <Testimonial 
-                quote="The transition from the nursery to preschool program was seamless. The teachers really focus on the whole child - not just academics but emotional and social skills too. Our daughter is so well prepared for primary school now."
-                author="Laura B."
-                location="Mother of Zoe, 4 years"
-                imageSrc="/images/testimonials/parent8.jpg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-brand-yellow bg-opacity-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">Ready to Watch Your Child Flourish?</h2>
+          <h2 className="text-3xl font-display font-bold mb-6">
+            Still figuring out if your child is ready?
+          </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Schedule a tour to see our preschool program in action and discover how we can nurture your child's development during these formative years.
+            So is every parent. That's why we're here—no pressure. Just answers, smiles, and
+            options.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -416,14 +434,14 @@ export default function PreschoolPage() {
               href="/contact"
               size="lg"
             >
-              Book a Tour
+              Talk to a Teddicated Human
             </Button>
             <Button 
               variant="outline"
               href="/apply?program=preschool"
               size="lg"
             >
-              Apply Now
+              Book a No-Stress Visit
             </Button>
           </div>
         </div>

@@ -1,0 +1,883 @@
+'use client';
+import Image from 'next/image';
+import { useState } from 'react';
+import Button from '@/components/Button';
+import { useSearchParams } from 'next/navigation';
+
+// Progress step component
+const ProgressStep = ({ number, title, description, icon, isActive, isCompleted }) => {
+  return (
+    <div className="flex flex-col items-center">
+      <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+        isActive ? 'bg-brand-pink text-white' : 
+        isCompleted ? 'bg-green-500 text-white' : 
+        'bg-gray-200 text-gray-500'
+      }`}>
+        {isCompleted ? (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        ) : (
+          icon ? <span className="text-lg">{icon}</span> : <span>{number}</span>
+        )}
+      </div>
+      <span className={`text-sm mt-2 ${isActive ? 'font-medium' : 'text-gray-500'}`}>{title}</span>
+      {description && isActive && (
+        <span className="text-xs text-gray-500 text-center mt-1 max-w-[120px]">{description}</span>
+      )}
+    </div>
+  );
+};
+
+// Program card component
+const ProgramCard = ({ title, icon, ages, selected, onClick }) => {
+  return (
+    <div 
+      className={`bg-white p-6 rounded-xl shadow-sm cursor-pointer transition-all duration-300 ${
+        selected ? 'ring-2 ring-brand-pink shadow-md' : 'hover:shadow-md'
+      }`}
+      onClick={onClick}
+    >
+      <div className="flex items-center mb-4">
+        <span className="text-3xl mr-3">{icon}</span>
+        <h3 className="text-xl font-display font-semibold">{title}</h3>
+      </div>
+      <p className="text-gray-600 mb-4">Ages: {ages}</p>
+      <div className={`w-6 h-6 rounded-full border ${
+        selected ? 'bg-brand-pink border-brand-pink' : 'border-gray-300'
+      } flex items-center justify-center ml-auto`}>
+        {selected && (
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// Location card component
+const LocationCard = ({ name, address, icon, selected, onClick }) => {
+  return (
+    <div 
+      className={`bg-white p-6 rounded-xl shadow-sm cursor-pointer transition-all duration-300 ${
+        selected ? 'ring-2 ring-brand-pink shadow-md' : 'hover:shadow-md'
+      }`}
+      onClick={onClick}
+    >
+      <div className="flex justify-between items-start mb-4">
+        <div>
+          <div className="flex items-center">
+            {icon && <span className="text-2xl mr-2">{icon}</span>}
+            <h3 className="text-xl font-display font-semibold">{name}</h3>
+          </div>
+          <p className="text-gray-600">{address}</p>
+        </div>
+        <div className={`w-6 h-6 rounded-full border ${
+          selected ? 'bg-brand-pink border-brand-pink' : 'border-gray-300'
+        } flex items-center justify-center`}>
+          {selected && (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Form input component
+const FormInput = ({ label, type = 'text', id, value, onChange, required = false, placeholder = '', error = '' }) => {
+  return (
+    <div className="mb-4">
+      <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <input
+        type={type}
+        id={id}
+        name={id}
+        value={value}
+        onChange={onChange}
+        required={required}
+        placeholder={placeholder}
+        className={`w-full px-4 py-3 rounded-lg border ${
+          error ? 'border-red-500' : 'border-gray-300'
+        } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
+      />
+      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+    </div>
+  );
+};
+
+// Form select component
+const FormSelect = ({ label, id, options, value, onChange, required = false, error = '' }) => {
+  return (
+    <div className="mb-4">
+      <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <select
+        id={id}
+        name={id}
+        value={value}
+        onChange={onChange}
+        required={required}
+        className={`w-full px-4 py-3 rounded-lg border ${
+          error ? 'border-red-500' : 'border-gray-300'
+        } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
+      >
+        <option value="">Select an option</option>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+    </div>
+  );
+};
+
+// Form textarea component
+const FormTextarea = ({ label, id, value, onChange, required = false, placeholder = '', error = '' }) => {
+  return (
+    <div className="mb-4">
+      <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      <textarea
+        id={id}
+        name={id}
+        value={value}
+        onChange={onChange}
+        required={required}
+        placeholder={placeholder}
+        rows={4}
+        className={`w-full px-4 py-3 rounded-lg border ${
+          error ? 'border-red-500' : 'border-gray-300'
+        } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
+      />
+      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+    </div>
+  );
+};
+
+// Audio player button component
+const AudioButton = ({ label = "Play" }) => {
+  return (
+    <button className="flex items-center gap-2 text-sm text-brand-pink hover:text-brand-purple transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      {label}
+    </button>
+  );
+};
+
+// Apply Page Component
+export default function ApplyPage() {
+  const searchParams = useSearchParams();
+  
+  // Get initial program from URL if available
+  const initialProgram = searchParams.get('program') || '';
+  const initialLocation = searchParams.get('location') || '';
+  
+  // Form state
+  const [currentStep, setCurrentStep] = useState(1);
+  const [formData, setFormData] = useState({
+    // Step 1: Program Selection
+    program: initialProgram,
+    location: initialLocation,
+    startDate: '',
+    
+    // Step 2: Child Information
+    childFirstName: '',
+    childLastName: '',
+    childDateOfBirth: '',
+    childGender: '',
+    childNationality: '',
+    childLanguages: '',
+    
+    // Step 3: Parent/Guardian Information
+    parentFirstName: '',
+    parentLastName: '',
+    parentEmail: '',
+    parentPhone: '',
+    parentAddress: '',
+    parentCity: '',
+    parentPostalCode: '',
+    parentCountry: '',
+    
+    // Step 4: Additional Information
+    previousChildcare: '',
+    dietaryRestrictions: '',
+    medicalInformation: '',
+    additionalComments: '',
+    
+    // Step 5: Preferences
+    tourRequested: false,
+    readyToApply: true,
+    whatsappPreferred: false,
+    agreeTerms: false
+  });
+  
+  // Form errors
+  const [errors, setErrors] = useState({});
+  
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+    
+    // Clear error when field is updated
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+  
+  // Handle program selection
+  const handleProgramSelect = (program) => {
+    setFormData(prev => ({
+      ...prev,
+      program
+    }));
+  };
+  
+  // Handle location selection
+  const handleLocationSelect = (location) => {
+    setFormData(prev => ({
+      ...prev,
+      location
+    }));
+  };
+  
+  // Validate current step
+  const validateStep = () => {
+    const newErrors = {};
+    
+    if (currentStep === 1) {
+      if (!formData.program) newErrors.program = 'Please select a program';
+      if (!formData.location) newErrors.location = 'Please select a location';
+      if (!formData.startDate) newErrors.startDate = 'Please select a preferred start date';
+    }
+    
+    else if (currentStep === 2) {
+      if (!formData.childFirstName) newErrors.childFirstName = 'First name is required';
+      if (!formData.childLastName) newErrors.childLastName = 'Last name is required';
+      if (!formData.childDateOfBirth) newErrors.childDateOfBirth = 'Date of birth is required';
+      if (!formData.childGender) newErrors.childGender = 'Please select a gender';
+    }
+    
+    else if (currentStep === 3) {
+      if (!formData.parentFirstName) newErrors.parentFirstName = 'First name is required';
+      if (!formData.parentLastName) newErrors.parentLastName = 'Last name is required';
+      if (!formData.parentEmail) newErrors.parentEmail = 'Email is required';
+      if (!formData.parentPhone) newErrors.parentPhone = 'Phone number is required';
+    }
+    
+    else if (currentStep === 5) {
+      if (!formData.agreeTerms) newErrors.agreeTerms = 'You must agree to the terms and conditions';
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  
+  // Handle next step
+  const handleNextStep = () => {
+    if (validateStep()) {
+      setCurrentStep(prev => prev + 1);
+      window.scrollTo(0, 0);
+    }
+  };
+  
+  // Handle previous step
+  const handlePrevStep = () => {
+    setCurrentStep(prev => prev - 1);
+    window.scrollTo(0, 0);
+  };
+  
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (validateStep()) {
+      // Here you would typically send the form data to your backend
+      console.log('Form submitted:', formData);
+      
+      // For now, just go to the success step
+      setCurrentStep(6);
+      window.scrollTo(0, 0);
+    }
+  };
+  
+  // Programs data
+  const programs = [
+    {
+      id: 'nursery',
+      title: 'Nursery',
+      icon: '🍼',
+      ages: '3 months - 2.5 years'
+    },
+    {
+      id: 'preschool',
+      title: 'Teddy Learners',
+      icon: '🎨',
+      ages: '2 - 4 years'
+    },
+    {
+      id: 'afterschool',
+      title: 'Teddy BSO Explorers',
+      icon: '🧩',
+      ages: '4 - 12 years'
+    }
+  ];
+  
+  // Locations data
+  const locations = [
+    {
+      id: 'rbw',
+      name: 'RBW',
+      icon: '🏡',
+      address: 'Rijnsburgerweg 35, Leiden'
+    },
+    {
+      id: 'rb35',
+      name: 'RB3/5',
+      icon: '🏡',
+      address: 'Rijnsburgerweg 3 & 5, Leiden'
+    },
+    {
+      id: 'lrz',
+      name: 'LRZ',
+      icon: '🏡',
+      address: 'Lorentzkade 15a, Leiden'
+    },
+    {
+      id: 'zml',
+      name: 'ZML',
+      icon: '🏡',
+      address: 'Zeemanlaan 22a, Leiden'
+    }
+  ];
+  
+  // Gender options
+  const genderOptions = [
+    { value: 'male', label: 'Male' },
+    { value: 'female', label: 'Female' },
+    { value: 'other', label: 'Other' },
+    { value: 'prefer_not_to_say', label: 'Prefer not to say' }
+  ];
+  
+  // Process steps with descriptions
+  const processSteps = [
+    {
+      number: 1,
+      title: "Complete Application",
+      description: "Just 3 minutes of clicking & dreaming.",
+      icon: "1️⃣"
+    },
+    {
+      number: 2,
+      title: "Application Review",
+      description: "Our team reads every word. Real humans.",
+      icon: "2️⃣"
+    },
+    {
+      number: 3,
+      title: "Tour & Interview",
+      description: "Come meet us, touch the toys, feel the vibe.",
+      icon: "3️⃣"
+    },
+    {
+      number: 4,
+      title: "Enrollment Confirmation",
+      description: "Paperwork made simple. Clarity first.",
+      icon: "4️⃣"
+    },
+    {
+      number: 5,
+      title: "Welcome to Teddy Kids",
+      description: "We help with the first day, the nerves, and the celebration.",
+      icon: "5️⃣"
+    }
+  ];
+  
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="py-20 bg-brand-yellow bg-opacity-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Your journey with Teddy Kids begins here.</h1>
+            <p className="text-xl text-gray-700 mb-8">
+              We've made the first step simple, warm, and stress-free—just like everything else we do.
+            </p>
+            
+            <div className="inline-block">
+              <div className="bg-white p-4 rounded-xl shadow-sm flex items-center gap-3">
+                <AudioButton label="Hear from a parent who just applied" />
+              </div>
+              <p className="text-sm text-gray-600 mt-2 italic">
+                "It was honestly easier than I thought. They called me the next day. It felt human."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Application Form */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            {/* Progress Steps */}
+            <div className="mb-12">
+              <div className="hidden md:flex justify-between items-center">
+                <ProgressStep 
+                  number={1} 
+                  title="Program Selection" 
+                  icon="🧸"
+                  description="Where would your child feel most at home?"
+                  isActive={currentStep === 1} 
+                  isCompleted={currentStep > 1}
+                />
+                <div className="flex-1 h-1 bg-gray-200 mx-2">
+                  <div 
+                    className="h-full bg-brand-pink transition-all duration-300" 
+                    style={{ width: `${currentStep > 1 ? '100%' : '0%'}` }}
+                  ></div>
+                </div>
+                <ProgressStep 
+                  number={2} 
+                  title="Location" 
+                  icon="📍"
+                  description="Preferred location"
+                  isActive={currentStep === 2} 
+                  isCompleted={currentStep > 2}
+                />
+                <div className="flex-1 h-1 bg-gray-200 mx-2">
+                  <div 
+                    className="h-full bg-brand-pink transition-all duration-300" 
+                    style={{ width: `${currentStep > 2 ? '100%' : '0%'}` }}
+                  ></div>
+                </div>
+                <ProgressStep 
+                  number={3} 
+                  title="Start Date" 
+                  icon="📅"
+                  description="When would you like to start?"
+                  isActive={currentStep === 3} 
+                  isCompleted={currentStep > 3}
+                />
+                <div className="flex-1 h-1 bg-gray-200 mx-2">
+                  <div 
+                    className="h-full bg-brand-pink transition-all duration-300" 
+                    style={{ width: `${currentStep > 3 ? '100%' : '0%'}` }}
+                  ></div>
+                </div>
+                <ProgressStep 
+                  number={4} 
+                  title="Your Details" 
+                  icon="👪"
+                  description="Parent + Child Info"
+                  isActive={currentStep === 4} 
+                  isCompleted={currentStep > 4}
+                />
+                <div className="flex-1 h-1 bg-gray-200 mx-2">
+                  <div 
+                    className="h-full bg-brand-pink transition-all duration-300" 
+                    style={{ width: `${currentStep > 4 ? '100%' : '0%'}` }}
+                  ></div>
+                </div>
+                <ProgressStep 
+                  number={5} 
+                  title="Confirm" 
+                  icon="✨"
+                  description="Almost there!"
+                  isActive={currentStep === 5} 
+                  isCompleted={currentStep > 5}
+                />
+              </div>
+              
+              {/* Mobile Progress Indicator */}
+              <div className="md:hidden text-center">
+                <p className="text-lg font-medium mb-2">
+                  Step {currentStep} of 5: {
+                    currentStep === 1 ? 'Program Selection' :
+                    currentStep === 2 ? 'Location' :
+                    currentStep === 3 ? 'Start Date' :
+                    currentStep === 4 ? 'Your Details' :
+                    currentStep === 5 ? 'Confirm' : ''
+                  }
+                </p>
+                <div className="h-2 bg-gray-200 rounded-full">
+                  <div 
+                    className="h-full bg-brand-pink rounded-full transition-all duration-300" 
+                    style={{ width: `${(currentStep / 5) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Form Container */}
+            <div className="bg-white p-8 rounded-xl shadow-md">
+              <form onSubmit={handleSubmit}>
+                {/* Step 1: Program Selection */}
+                {currentStep === 1 && (
+                  <div>
+                    <h2 className="text-2xl font-display font-bold mb-6">Where would your child feel most at home?</h2>
+                    
+                    {errors.program && (
+                      <p className="mb-4 text-sm text-red-600 bg-red-50 p-3 rounded-lg">
+                        {errors.program}
+                      </p>
+                    )}
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                      {programs.map((program) => (
+                        <ProgramCard 
+                          key={program.id}
+                          title={program.title}
+                          icon={program.icon}
+                          ages={program.ages}
+                          selected={formData.program === program.id}
+                          onClick={() => handleProgramSelect(program.id)}
+                        />
+                      ))}
+                    </div>
+                    
+                    <div className="text-center text-sm text-gray-600 mb-8 p-3 bg-gray-50 rounded-lg">
+                      Looking for international primary school? Visit <a href="https://www.tisaschool.nl" className="text-brand-mint hover:underline">TISA ➝</a>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Step 2: Location Selection */}
+                {currentStep === 2 && (
+                  <div>
+                    <h2 className="text-2xl font-display font-bold mb-6">Preferred Location</h2>
+                    
+                    {errors.location && (
+                      <p className="mb-4 text-sm text-red-600 bg-red-50 p-3 rounded-lg">
+                        {errors.location}
+                      </p>
+                    )}
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                      {locations.map((location) => (
+                        <LocationCard 
+                          key={location.id}
+                          name={location.name}
+                          address={location.address}
+                          icon={location.icon}
+                          selected={formData.location === location.id}
+                          onClick={() => handleLocationSelect(location.id)}
+                        />
+                      ))}
+                    </div>
+                    
+                    <p className="text-center text-gray-600 italic">
+                      We'll try to match your preference—but will always offer the best fit.
+                    </p>
+                  </div>
+                )}
+                
+                {/* Step 3: Preferred Start Date */}
+                {currentStep === 3 && (
+                  <div>
+                    <h2 className="text-2xl font-display font-bold mb-6">When would you like your child to start?</h2>
+                    
+                    <FormInput 
+                      label="Preferred Start Date"
+                      type="date"
+                      id="startDate"
+                      value={formData.startDate}
+                      onChange={handleChange}
+                      required={true}
+                      error={errors.startDate}
+                    />
+                    
+                    <p className="text-center text-gray-600 italic mt-4">
+                      We know plans change. Just give us your best guess.
+                    </p>
+                  </div>
+                )}
+                
+                {/* Step 4: Parent + Child Info */}
+                {currentStep === 4 && (
+                  <div>
+                    <h2 className="text-2xl font-display font-bold mb-6">Parent + Child Information</h2>
+                    
+                    <div className="bg-brand-pink bg-opacity-5 p-4 rounded-lg mb-6">
+                      <h3 className="text-lg font-medium mb-2">Parent/Guardian Details</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <FormInput 
+                          label="Parent Name"
+                          id="parentFirstName"
+                          value={formData.parentFirstName}
+                          onChange={handleChange}
+                          required={true}
+                          error={errors.parentFirstName}
+                          placeholder="Your full name"
+                        />
+                        
+                        <FormInput 
+                          label="Email"
+                          type="email"
+                          id="parentEmail"
+                          value={formData.parentEmail}
+                          onChange={handleChange}
+                          required={true}
+                          error={errors.parentEmail}
+                        />
+                      </div>
+                      
+                      <FormInput 
+                        label="Phone (optional)"
+                        id="parentPhone"
+                        value={formData.parentPhone}
+                        onChange={handleChange}
+                        error={errors.parentPhone}
+                      />
+                    </div>
+                    
+                    <div className="bg-brand-yellow bg-opacity-5 p-4 rounded-lg mb-6">
+                      <h3 className="text-lg font-medium mb-2">Child Details</h3>
+                      <FormInput 
+                        label="Child's First Name"
+                        id="childFirstName"
+                        value={formData.childFirstName}
+                        onChange={handleChange}
+                        required={true}
+                        error={errors.childFirstName}
+                      />
+                      
+                      <FormInput 
+                        label="Child's Age or Date of Birth"
+                        type="date"
+                        id="childDateOfBirth"
+                        value={formData.childDateOfBirth}
+                        onChange={handleChange}
+                        required={true}
+                        error={errors.childDateOfBirth}
+                      />
+                    </div>
+                    
+                    <FormTextarea 
+                      label="Optional Message"
+                      id="additionalComments"
+                      value={formData.additionalComments}
+                      onChange={handleChange}
+                      placeholder="Anything else you'd like us to know?"
+                      error={errors.additionalComments}
+                    />
+                    
+                    <div className="mt-6 space-y-3">
+                      <div className="flex items-start">
+                        <div className="flex items-center h-5">
+                          <input
+                            id="tourRequested"
+                            name="tourRequested"
+                            type="checkbox"
+                            checked={formData.tourRequested}
+                            onChange={handleChange}
+                            className="focus:ring-brand-pink h-4 w-4 text-brand-pink border-gray-300 rounded"
+                          />
+                        </div>
+                        <div className="ml-3 text-sm">
+                          <label htmlFor="tourRequested" className="font-medium text-gray-700">
+                            I'd like to book a tour
+                          </label>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="flex items-center h-5">
+                          <input
+                            id="readyToApply"
+                            name="readyToApply"
+                            type="checkbox"
+                            checked={formData.readyToApply}
+                            onChange={handleChange}
+                            className="focus:ring-brand-pink h-4 w-4 text-brand-pink border-gray-300 rounded"
+                          />
+                        </div>
+                        <div className="ml-3 text-sm">
+                          <label htmlFor="readyToApply" className="font-medium text-gray-700">
+                            I'm ready to apply now
+                          </label>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start">
+                        <div className="flex items-center h-5">
+                          <input
+                            id="whatsappPreferred"
+                            name="whatsappPreferred"
+                            type="checkbox"
+                            checked={formData.whatsappPreferred}
+                            onChange={handleChange}
+                            className="focus:ring-brand-pink h-4 w-4 text-brand-pink border-gray-300 rounded"
+                          />
+                        </div>
+                        <div className="ml-3 text-sm">
+                          <label htmlFor="whatsappPreferred" className="font-medium text-gray-700">
+                            Please WhatsApp me instead
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Step 5: Application Process Timeline */}
+                {currentStep === 5 && (
+                  <div>
+                    <h2 className="text-2xl font-display font-bold mb-6">Application Process Timeline</h2>
+                    
+                    <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
+                      <ol className="space-y-6">
+                        {processSteps.map((step, index) => (
+                          <li key={index} className="flex">
+                            <span className="bg-brand-pink text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                              {step.icon}
+                            </span>
+                            <div>
+                              <h4 className="font-medium text-lg">{step.title}</h4>
+                              <p className="text-gray-600">{step.description}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                    
+                    <div className="mb-8">
+                      <div className="flex items-start mb-4">
+                        <div className="flex items-center h-5">
+                          <input
+                            id="agreeTerms"
+                            name="agreeTerms"
+                            type="checkbox"
+                            checked={formData.agreeTerms}
+                            onChange={handleChange}
+                            className="focus:ring-brand-pink h-4 w-4 text-brand-pink border-gray-300 rounded"
+                          />
+                        </div>
+                        <div className="ml-3 text-sm">
+                          <label htmlFor="agreeTerms" className="font-medium text-gray-700">
+                            I agree to the <a href="/terms" className="text-brand-pink hover:underline">Terms and Conditions</a> and <a href="/privacy" className="text-brand-pink hover:underline">Privacy Policy</a>
+                          </label>
+                        </div>
+                      </div>
+                      {errors.agreeTerms && <p className="text-sm text-red-600">{errors.agreeTerms}</p>}
+                    </div>
+                  </div>
+                )}
+                
+                {/* Step 6: Success */}
+                {currentStep === 6 && (
+                  <div className="text-center py-8">
+                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h2 className="text-2xl font-display font-bold mb-4">Welcome to the Teddy Family!</h2>
+                    <p className="text-lg text-gray-700 mb-8">
+                      We've received your application and a Teddicated human will be in touch within 24 hours.
+                    </p>
+                    <p className="text-gray-600 mb-8">
+                      A confirmation email has been sent to {formData.parentEmail}.
+                    </p>
+                    <Button 
+                      variant="primary"
+                      href="/"
+                      size="lg"
+                    >
+                      Return to Home
+                    </Button>
+                  </div>
+                )}
+                
+                {/* Navigation Buttons */}
+                {currentStep < 6 && (
+                  <div className="flex justify-between mt-8">
+                    {currentStep > 1 ? (
+                      <Button 
+                        variant="outline"
+                        type="button"
+                        onClick={handlePrevStep}
+                      >
+                        Previous
+                      </Button>
+                    ) : (
+                      <div></div>
+                    )}
+                    
+                    {currentStep < 5 ? (
+                      <Button 
+                        variant="primary"
+                        type="button"
+                        onClick={handleNextStep}
+                      >
+                        Next
+                      </Button>
+                    ) : (
+                      <Button 
+                        variant="primary"
+                        type="submit"
+                      >
+                        Begin My Teddy Journey
+                      </Button>
+                    )}
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Final CTA Footer */}
+      {currentStep === 1 && (
+        <section className="py-16 bg-brand-mint bg-opacity-10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-display font-bold mb-6">
+                You don't need to have it all figured out. Just let us know you're interested.
+              </h2>
+              <p className="text-lg text-gray-700 mb-8">
+                We'll take care of the rest—with care, clarity, and a little Teddy magic.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  variant="primary"
+                  href="#"
+                  size="lg"
+                  onClick={handleNextStep}
+                >
+                  Begin My Teddy Journey
+                </Button>
+                <Button 
+                  variant="outline"
+                  href="/contact"
+                  size="lg"
+                >
+                  Talk to a Teddicated Human
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+    </main>
+  );
+}

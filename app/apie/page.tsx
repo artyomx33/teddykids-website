@@ -1,23 +1,27 @@
 'use client';
 
-import { Metadata } from 'next';
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { useTranslation } from '@/lib/translations';
 
-export const metadata: Metadata = {
-  title: 'Apie\'s Playground | Teddy Kids',
-  description: 'A special place just for kids! Color with Apie, listen to stories, and have fun in this secret playground.',
-  robots: 'noindex, nofollow', // Keep this page hidden from search engines
-};
-
-const ApiePlayground: React.FC = () => {
+const ApiePlayground = () => {
   const { t } = useTranslation('en');
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const [confettiActive, setConfettiActive] = useState(false);
+  const [activeColor, setActiveColor] = useState('#FFD700'); // Default yellow color
+  const [coloringAreas, setColoringAreas] = useState({
+    banana1: '#FFFFFF',
+    banana2: '#FFFFFF',
+    leaf1: '#FFFFFF',
+    leaf2: '#FFFFFF',
+    monkey: '#FFFFFF',
+    sun: '#FFFFFF',
+    cloud: '#FFFFFF',
+    flower: '#FFFFFF',
+  });
   
   // Handle audio playback
   const toggleAudio = () => {
@@ -46,6 +50,31 @@ const ApiePlayground: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Handle coloring
+  const handleColorArea = (area) => {
+    setColoringAreas(prev => ({
+      ...prev,
+      [area]: activeColor
+    }));
+  };
+
+  // Banana puns for the page
+  const bananaPuns = [
+    "Why did the banana go to the doctor? Because it wasn't peeling well!",
+    "What's a banana's favorite gymnastics move? The split!",
+    "Why don't bananas ever get lonely? Because they hang around in bunches!",
+    "What did the banana say to the monkey? Nothing, bananas can't talk!",
+    "How do you make a banana split? Just tell it a scary story!"
+  ];
+
+  // Random pun selector
+  const [currentPun, setCurrentPun] = useState(0);
+  
+  const getNewPun = () => {
+    const randomIndex = Math.floor(Math.random() * bananaPuns.length);
+    setCurrentPun(randomIndex);
+  };
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-brand-yellow to-brand-mint overflow-hidden relative">
       {/* Jungle-themed decorative elements */}
@@ -71,224 +100,304 @@ const ApiePlayground: React.FC = () => {
       {/* Confetti animation */}
       {confettiActive && (
         <div className="absolute inset-0 pointer-events-none z-10">
-          {/* This would be replaced with actual confetti animation */}
-          <div className="confetti-container">
-            {[...Array(50)].map((_, i) => (
-              <div 
-                key={i}
-                className="confetti"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  backgroundColor: ['#FFB6C1', '#FFD700', '#98FB98', '#87CEFA'][Math.floor(Math.random() * 4)]
-                }}
-              />
-            ))}
-          </div>
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-fall"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `-${Math.random() * 20}%`,
+                width: `${Math.random() * 10 + 5}px`,
+                height: `${Math.random() * 10 + 5}px`,
+                backgroundColor: ['#FFD700', '#FF6B6B', '#4ECDC4', '#FF9F1C', '#A78BFA'][
+                  Math.floor(Math.random() * 5)
+                ],
+                animationDuration: `${Math.random() * 3 + 2}s`,
+              }}
+            />
+          ))}
         </div>
       )}
       
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden">
-          {/* Header */}
-          <div className="bg-brand-purple bg-opacity-30 p-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-2 text-gray-800">
-              {t('apiePlayground.title')}
-            </h1>
-            <p className="text-xl text-gray-600">
-              {t('apiePlayground.subtitle')}
-            </p>
-            <div className="mt-4 inline-block bg-white px-6 py-3 rounded-full text-lg font-medium text-gray-700 shadow-sm">
-              {t('apiePlayground.secretMessage')}
-            </div>
-          </div>
-          
-          {/* Main content */}
-          <div className="p-8">
-            {/* Apie Image and Quote */}
-            <div className="flex flex-col md:flex-row items-center mb-12">
-              <div className="md:w-1/2 mb-6 md:mb-0 relative">
-                <div className="relative w-64 h-64 mx-auto">
-                  <Image
-                    src="/images/apie/apie-character.png"
-                    alt="Apie the Monkey"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </div>
-              <div className="md:w-1/2">
-                <div className="bg-brand-yellow bg-opacity-30 p-6 rounded-2xl">
-                  <h2 className="text-2xl font-display font-semibold mb-4">
-                    Meet Apie!
-                  </h2>
-                  <blockquote className="text-lg italic text-gray-700 mb-4">
-                    "{t('apiePlayground.maelynQuote')}"
-                  </blockquote>
-                  <p className="text-right text-sm text-gray-600">- Maelyn</p>
-                </div>
-                
-                {/* Audio Player */}
-                <div className="mt-6">
-                  <h3 className="text-xl font-display font-medium mb-3">
-                    {t('apiePlayground.listenToApie')}
-                  </h3>
-                  <div className="flex items-center bg-gray-100 p-4 rounded-xl">
-                    <button
-                      onClick={toggleAudio}
-                      className="w-12 h-12 bg-brand-pink rounded-full flex items-center justify-center shadow-md hover:bg-opacity-80 transition-colors"
-                      aria-label={isAudioPlaying ? "Pause" : "Play"}
-                    >
-                      {isAudioPlaying ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="6" y="4" width="4" height="16"></rect>
-                          <rect x="14" y="4" width="4" height="16"></rect>
-                        </svg>
-                      ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
-                      )}
-                    </button>
-                    <div className="ml-4 flex-1">
-                      <div className="text-sm font-medium">Apie's Hello</div>
-                      <div className="h-2 bg-gray-200 rounded-full mt-2">
-                        <div 
-                          className={`h-full bg-brand-pink rounded-full ${
-                            isAudioPlaying ? 'animate-progress' : ''
-                          }`} 
-                          style={{ width: isAudioPlaying ? '100%' : '0%' }}
-                        ></div>
-                      </div>
-                    </div>
-                    <audio 
-                      ref={audioRef} 
-                      src="/audio/apie-hello.mp3" 
-                      onEnded={handleAudioEnded}
-                      className="hidden"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Coloring Section */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-display font-semibold mb-6 text-center">
-                {t('apiePlayground.coloringTitle')}
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Coloring Preview */}
-                <div className="bg-gray-50 p-4 rounded-xl">
-                  <div className="relative aspect-square">
-                    <Image
-                      src="/images/apie/coloring-page.png"
-                      alt="Apie Coloring Page"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-                
-                {/* Download Options */}
-                <div className="flex flex-col justify-center">
-                  <p className="text-gray-700 mb-6">
-                    Download Apie's coloring pages and have fun coloring them at home!
-                  </p>
-                  
-                  <Button
-                    variant="primary"
-                    href="/downloads/apie-coloring-page.pdf"
-                    icon={
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                      </svg>
-                    }
-                    className="mb-4"
-                  >
-                    {t('apiePlayground.downloadColoring')}
-                  </Button>
-                  
-                  <Button
-                    variant="outline"
-                    href="/downloads/apie-activity-book.pdf"
-                    icon={
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                      </svg>
-                    }
-                  >
-                    Download Activity Book
-                  </Button>
-                </div>
-              </div>
-            </div>
-            
-            {/* Back to Home */}
-            <div className="text-center">
-              <Link 
-                href="/"
-                className="inline-flex items-center text-gray-600 hover:text-gray-900"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      {/* Header */}
+      <div className="container mx-auto px-4 pt-12 pb-8 text-center">
+        <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-brand-purple">
+          Apie's Playground
+        </h1>
+        <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          Welcome to Apie's secret banana paradise! Color, play, and have fun!
+        </p>
+        
+        {/* Audio player */}
+        <div className="mb-8">
+          <audio 
+            ref={audioRef} 
+            src="/audio/jungle-sounds.mp3" 
+            onEnded={handleAudioEnded}
+          />
+          <Button
+            variant="secondary"
+            onClick={toggleAudio}
+            className="flex items-center gap-2"
+          >
+            {isAudioPlaying ? (
+              <>
+                <span>Pause Jungle Sounds</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                 </svg>
-                Back to Main Page
-              </Link>
-            </div>
-          </div>
+              </>
+            ) : (
+              <>
+                <span>Play Jungle Sounds</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </>
+            )}
+          </Button>
         </div>
       </div>
       
-      {/* CSS for confetti animation */}
-      <style jsx>{`
-        .confetti-container {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-        }
-        
-        .confetti {
-          position: absolute;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          animation: fall 3s linear forwards;
-        }
-        
-        @keyframes fall {
-          0% {
-            transform: translateY(-100px) rotate(0deg);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(100vh) rotate(360deg);
-            opacity: 0;
-          }
-        }
-        
-        @keyframes progress {
-          0% { width: 0%; }
-          100% { width: 100%; }
-        }
-        
-        .animate-progress {
-          animation: progress 30s linear;
-        }
-      `}</style>
+      {/* Coloring Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md">
+            <h2 className="text-2xl font-display font-bold mb-4 text-center">Coloring Time!</h2>
+            
+            {/* Color Palette */}
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <button 
+                className={`w-10 h-10 rounded-full ${activeColor === '#FFD700' ? 'ring-4 ring-gray-400' : ''}`}
+                style={{ backgroundColor: '#FFD700' }}
+                onClick={() => setActiveColor('#FFD700')}
+                aria-label="Yellow color"
+              />
+              <button 
+                className={`w-10 h-10 rounded-full ${activeColor === '#FF6B6B' ? 'ring-4 ring-gray-400' : ''}`}
+                style={{ backgroundColor: '#FF6B6B' }}
+                onClick={() => setActiveColor('#FF6B6B')}
+                aria-label="Red color"
+              />
+              <button 
+                className={`w-10 h-10 rounded-full ${activeColor === '#4ECDC4' ? 'ring-4 ring-gray-400' : ''}`}
+                style={{ backgroundColor: '#4ECDC4' }}
+                onClick={() => setActiveColor('#4ECDC4')}
+                aria-label="Teal color"
+              />
+              <button 
+                className={`w-10 h-10 rounded-full ${activeColor === '#A78BFA' ? 'ring-4 ring-gray-400' : ''}`}
+                style={{ backgroundColor: '#A78BFA' }}
+                onClick={() => setActiveColor('#A78BFA')}
+                aria-label="Purple color"
+              />
+              <button 
+                className={`w-10 h-10 rounded-full ${activeColor === '#10B981' ? 'ring-4 ring-gray-400' : ''}`}
+                style={{ backgroundColor: '#10B981' }}
+                onClick={() => setActiveColor('#10B981')}
+                aria-label="Green color"
+              />
+              <button 
+                className={`w-10 h-10 rounded-full ${activeColor === '#F59E0B' ? 'ring-4 ring-gray-400' : ''}`}
+                style={{ backgroundColor: '#F59E0B' }}
+                onClick={() => setActiveColor('#F59E0B')}
+                aria-label="Orange color"
+              />
+              <button 
+                className={`w-10 h-10 rounded-full ${activeColor === '#FFFFFF' ? 'ring-4 ring-gray-400' : ''}`}
+                style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E7EB' }}
+                onClick={() => setActiveColor('#FFFFFF')}
+                aria-label="Eraser"
+              />
+            </div>
+            
+            {/* Coloring Canvas */}
+            <div className="relative w-full h-64 md:h-96 border-2 border-gray-200 rounded-lg mb-4 overflow-hidden">
+              <div className="absolute inset-0 bg-white">
+                {/* SVG coloring elements */}
+                <svg width="100%" height="100%" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                  {/* Background elements */}
+                  <rect x="0" y="0" width="800" height="600" fill="#FFFFFF" />
+                  
+                  {/* Sun */}
+                  <circle 
+                    cx="700" 
+                    cy="100" 
+                    r="60" 
+                    fill={coloringAreas.sun} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('sun')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  
+                  {/* Cloud */}
+                  <path 
+                    d="M600,150 C600,120 620,100 650,100 C680,100 700,120 700,150 C700,180 680,200 650,200 C620,200 600,180 600,150 Z" 
+                    fill={coloringAreas.cloud} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('cloud')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  
+                  {/* Tree/Plant */}
+                  <rect x="100" y="300" width="30" height="200" fill="#8B4513" stroke="#000" strokeWidth="2" />
+                  
+                  {/* Leaves */}
+                  <path 
+                    d="M115,300 C50,250 50,150 115,100 C180,150 180,250 115,300 Z" 
+                    fill={coloringAreas.leaf1} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('leaf1')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <path 
+                    d="M200,350 C150,300 150,200 200,150 C250,200 250,300 200,350 Z" 
+                    fill={coloringAreas.leaf2} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('leaf2')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  
+                  {/* Bananas */}
+                  <path 
+                    d="M400,200 C450,150 500,150 550,200 C500,250 450,250 400,200 Z" 
+                    fill={coloringAreas.banana1} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('banana1')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <path 
+                    d="M350,300 C400,250 450,250 500,300 C450,350 400,350 350,300 Z" 
+                    fill={coloringAreas.banana2} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('banana2')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  
+                  {/* Monkey */}
+                  <circle 
+                    cx="600" 
+                    cy="400" 
+                    r="50" 
+                    fill={coloringAreas.monkey} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('monkey')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <circle cx="580" cy="380" r="10" fill="#000" />
+                  <circle cx="620" cy="380" r="10" fill="#000" />
+                  <path d="M580,420 Q600,440 620,420" stroke="#000" strokeWidth="3" fill="none" />
+                  
+                  {/* Flower */}
+                  <circle 
+                    cx="700" 
+                    cy="500" 
+                    r="30" 
+                    fill={coloringAreas.flower} 
+                    stroke="#000" 
+                    strokeWidth="2" 
+                    onClick={() => handleColorArea('flower')}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <circle cx="700" cy="500" r="10" fill="#FFFF00" stroke="#000" strokeWidth="1" />
+                </svg>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <Button 
+                variant="outline"
+                onClick={() => setColoringAreas({
+                  banana1: '#FFFFFF',
+                  banana2: '#FFFFFF',
+                  leaf1: '#FFFFFF',
+                  leaf2: '#FFFFFF',
+                  monkey: '#FFFFFF',
+                  sun: '#FFFFFF',
+                  cloud: '#FFFFFF',
+                  flower: '#FFFFFF',
+                })}
+              >
+                Clear All Colors
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
       
-      {/* Note about the banana click activation */}
-      {/* 
-        Note: The 3-banana-click activation mechanism should be implemented in the 
-        main layout or navigation component. When a user clicks on a hidden banana icon 
-        3 times, it should navigate to this page or reveal a link to this page.
-      */}
+      {/* Banana Puns Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md">
+            <h2 className="text-2xl font-display font-bold mb-4 text-center">Banana Puns</h2>
+            
+            <div className="bg-brand-yellow bg-opacity-20 p-6 rounded-lg mb-6">
+              <p className="text-xl text-center italic">"{bananaPuns[currentPun]}"</p>
+            </div>
+            
+            <div className="text-center">
+              <Button 
+                variant="primary"
+                onClick={getNewPun}
+              >
+                Tell Me Another Banana Joke!
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Fun Activities Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md">
+            <h2 className="text-2xl font-display font-bold mb-4 text-center">Fun Activities</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-brand-mint bg-opacity-20 p-4 rounded-lg">
+                <h3 className="text-xl font-medium mb-2">Banana Dance</h3>
+                <p className="mb-4">Follow these steps to do the banana dance:</p>
+                <ol className="list-decimal pl-5 space-y-2">
+                  <li>Stand up straight like a banana</li>
+                  <li>Bend to the left, like a curvy banana</li>
+                  <li>Bend to the right, even more curvy!</li>
+                  <li>Spin around and peel yourself!</li>
+                  <li>Jump up and shout "BANANA!"</li>
+                </ol>
+              </div>
+              
+              <div className="bg-brand-purple bg-opacity-20 p-4 rounded-lg">
+                <h3 className="text-xl font-medium mb-2">Monkey See, Monkey Do</h3>
+                <p className="mb-4">Can you act like these animals?</p>
+                <ul className="space-y-2">
+                  <li>🐒 Monkey: Make monkey sounds and scratch your head</li>
+                  <li>🦁 Lion: Roar loudly and show your claws</li>
+                  <li>🐘 Elephant: Make your arm like a trunk and trumpet</li>
+                  <li>🦒 Giraffe: Stretch your neck up tall</li>
+                  <li>🐸 Frog: Hop around and say "ribbit ribbit"</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Back to Home */}
+      <div className="container mx-auto px-4 py-12 text-center">
+        <Link href="/" className="inline-flex items-center text-brand-pink hover:underline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          Back to Teddy Kids
+        </Link>
+      </div>
     </main>
   );
 };

@@ -73,9 +73,11 @@ export default function ProgramsPage() {
       <section className="py-20 bg-brand-purple bg-opacity-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Our Programs</h1>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
+              Every child’s journey is different.
+            </h1>
             <p className="text-xl text-gray-700 mb-8">
-              From diapers to diplomas, our programs are designed for joy, growth, and global thinking.
+              But it should always begin with love, language, and laughter.
             </p>
           </div>
         </div>
@@ -93,7 +95,9 @@ export default function ProgramsPage() {
                     <span className="text-4xl mr-3">🍼</span>
                     <h2 className="text-3xl font-display font-bold">Nursery</h2>
                   </div>
-                  <p className="text-lg italic text-gray-700 mb-6">"Safe, soft beginnings"</p>
+                  <p className="text-lg italic text-gray-700 mb-6">
+                    “From tiny snoozes to big first steps—our littlest ones are held, heard, and loved in two languages.”
+                  </p>
                   
                   <div className="mb-6">
                     <h3 className="text-xl font-medium mb-3">Ages</h3>
@@ -116,13 +120,13 @@ export default function ProgramsPage() {
                     author="Emma & James, Parents"
                   />
                   
-                  <Button 
+                  <Button
                     variant="primary"
                     href="/programs/nursery"
                     fullWidth
                     className="mt-6"
                   >
-                    Learn More About Nursery
+                    Peek Inside Nursery
                   </Button>
                 </div>
               </div>
@@ -187,7 +191,9 @@ export default function ProgramsPage() {
                     <span className="text-4xl mr-3">🎨</span>
                     <h2 className="text-3xl font-display font-bold">Preschool</h2>
                   </div>
-                  <p className="text-lg italic text-gray-700 mb-6">"Where play meets purpose"</p>
+                  <p className="text-lg italic text-gray-700 mb-6">
+                    “Where stories, songs, and science spark wonder every day.”
+                  </p>
                   
                   <div className="mb-6">
                     <h3 className="text-xl font-medium mb-3">Ages</h3>
@@ -210,13 +216,13 @@ export default function ProgramsPage() {
                     author="Sophia K., Mother"
                   />
                   
-                  <Button 
+                  <Button
                     variant="primary"
                     href="/programs/preschool"
                     fullWidth
                     className="mt-6"
                   >
-                    Learn More About Preschool
+                    Play + Learn Tour
                   </Button>
                 </div>
               </div>
@@ -237,7 +243,9 @@ export default function ProgramsPage() {
                     <span className="text-4xl mr-3">🧩</span>
                     <h2 className="text-3xl font-display font-bold">After School</h2>
                   </div>
-                  <p className="text-lg italic text-gray-700 mb-6">"Exploration after hours"</p>
+                  <p className="text-lg italic text-gray-700 mb-6">
+                    “Adventures continue long after the bell. Our clubs inspire confidence, creativity, and community.”
+                  </p>
                   
                   <div className="mb-6">
                     <h3 className="text-xl font-medium mb-3">Ages</h3>
@@ -260,13 +268,13 @@ export default function ProgramsPage() {
                     author="Thomas & Julie, Parents of twins"
                   />
                   
-                  <Button 
+                  <Button
                     variant="primary"
                     href="/programs/after-school"
                     fullWidth
                     className="mt-6"
                   >
-                    Learn More About After School
+                    See the Clubs
                   </Button>
                 </div>
               </div>
@@ -331,7 +339,9 @@ export default function ProgramsPage() {
                     <span className="text-4xl mr-3">🌱</span>
                     <h2 className="text-3xl font-display font-bold">TISA</h2>
                   </div>
-                  <p className="text-lg italic text-gray-700 mb-6">"Bilingual International School"</p>
+                  <p className="text-lg italic text-gray-700 mb-6">
+                    “An international education—right around the corner. Small classes, big hearts, bilingual minds.”
+                  </p>
                   
                   <div className="mb-6">
                     <h3 className="text-xl font-medium mb-3">Ages</h3>
@@ -354,16 +364,62 @@ export default function ProgramsPage() {
                     author="Miguel & Ling, TISA Parents"
                   />
                   
-                  <Button 
+                  <Button
                     variant="primary"
-                    href="/programs/tisa"
+                    href="https://www.tisaschool.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     fullWidth
                     className="mt-6"
                   >
-                    Learn More About TISA
+                    Explore TISA
                   </Button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">
+              Compare Our Programs
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-brand-pink bg-opacity-10">
+                    <th className="p-4 font-medium">Feature</th>
+                    <th className="p-4 font-medium text-center">Nursery</th>
+                    <th className="p-4 font-medium text-center">Preschool</th>
+                    <th className="p-4 font-medium text-center">After&nbsp;School</th>
+                    <th className="p-4 font-medium text-center">TISA</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {[
+                    ['Bilingual', '✅', '✅', '✅', '✅'],
+                    ['Meals Included', '✅', '✅', '❌', '✅'],
+                    ['Open Year-Round', '✅', '✅', '✅', '✅'],
+                    ['Group Size', 'Small', 'Medium', 'Variable', 'Small'],
+                    ['Curriculum', 'Sensory Play', 'Thematic Inquiry', 'Creative Clubs', 'International IPC/IB'],
+                  ].map((row, idx) => (
+                    <tr key={idx} className="bg-white odd:bg-gray-50">
+                      {row.map((cell, i) => (
+                        <td
+                          key={i}
+                          className={`p-4 ${i === 0 ? 'font-medium text-gray-700' : 'text-center'}`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -372,9 +428,11 @@ export default function ProgramsPage() {
       {/* CTA Section */}
       <section className="py-16 bg-brand-purple bg-opacity-10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">Ready to Join the Teddy Kids Family?</h2>
+          <h2 className="text-3xl font-display font-bold mb-6">
+            Let’s find the perfect fit—together.
+          </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Schedule a tour to see our programs in action and discover the perfect fit for your child.
+            Every family has different needs. Our team is here to help you choose the right path.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

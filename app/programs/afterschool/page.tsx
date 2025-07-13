@@ -6,11 +6,11 @@ import { getLocationsByProgram } from '@/lib/locations';
 
 export const metadata: Metadata = {
   title: 'Teddy BSO Explorers | Teddy Kids',
-  description: 'After school doesn\\'t have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
+  description: 'After school doesn\'t have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
   keywords: 'teddy kids bso, after school care leiden, bilingual after school, after school activities, teddy explorers, leiden bso',
   openGraph: {
     title: 'Teddy BSO Explorers | Teddy Kids',
-    description: 'After school doesn\\'t have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
+    description: 'After school doesn\'t have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
     url: 'https://www.teddykids.nl/programs/afterschool',
     siteName: 'Teddy Kids',
     images: [
@@ -140,7 +140,7 @@ export default function AfterSchoolPage() {
                   <h1 className="text-4xl md:text-5xl font-display font-bold">Teddy BSO Explorers</h1>
                 </div>
                 <p className="text-xl italic text-gray-700 mb-6">
-                  "After school doesn't have to feel like after-thought."
+                  "After school doesn\'t have to feel like after-thought."
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
                   We turn those precious afternoon hours into adventures worth talking about at dinner. Bilingual activities, outdoor play, and creative exploration—because your child deserves more than just supervision.

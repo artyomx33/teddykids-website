@@ -69,7 +69,7 @@ const learningMoments: LearningMoment[] = [
   },
   {
     id: 'big-feelings',
-    title: 'When Emma's Tower Fell (And She Didn't)',
+    title: 'When Emma\'s Tower Fell (And She Didn\'t)',
     insight: 'The crash was spectacular—30 minutes of careful construction destroyed in seconds. We braced for tears, but instead watched Emma take a deep breath, say "I\'m feeling really frustrated," and start again. This emotional regulation didn\'t happen by accident. It came from months of naming feelings, modeling responses, and creating a safe space for big emotions. When children learn to identify and manage feelings early, they build resilience that will serve them through life\'s inevitable disappointments. That rebuilt tower? It\'s emotional intelligence you can see.',
     tag: '💛 Big Feelings',
     image: '/images/learning/big-feelings.jpg',

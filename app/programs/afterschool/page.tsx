@@ -6,11 +6,11 @@ import { getLocationsByProgram } from '@/lib/locations';
 
 export const metadata: Metadata = {
   title: 'Teddy BSO Explorers | Teddy Kids',
-  description: 'After school doesn't have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
+  description: 'After school doesn\\'t have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
   keywords: 'teddy kids bso, after school care leiden, bilingual after school, after school activities, teddy explorers, leiden bso',
   openGraph: {
     title: 'Teddy BSO Explorers | Teddy Kids',
-    description: 'After school doesn't have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
+    description: 'After school doesn\\'t have to feel like after-thought. Our BSO program gives your child the afternoon adventures they deserve, in two languages.',
     url: 'https://www.teddykids.nl/programs/afterschool',
     siteName: 'Teddy Kids',
     images: [

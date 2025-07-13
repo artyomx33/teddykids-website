@@ -29,7 +29,7 @@ const learningMoments: LearningMoment[] = [
   {
     id: 'music-brain',
     title: 'The Brain is Fluent in Music Before Words',
-    insight: 'Long before babies understand "please" or "thank you," they're decoding the rhythm and melody of language. That's why our nursery rooms are filled with songs, not instructions. When we sing "clean up time" instead of saying it, we're speaking the native language of the developing brain. Watch how even our youngest friends bob their heads to the beat—they're not just enjoying music, they're processing patterns that will later help them decode speech, math, and emotional cues.',
+    insight: 'Long before babies understand "please" or "thank you," they\'re decoding the rhythm and melody of language. That\'s why our nursery rooms are filled with songs, not instructions. When we sing "clean up time" instead of saying it, we\'re speaking the native language of the developing brain. Watch how even our youngest friends bob their heads to the beat—they\'re not just enjoying music, they\'re processing patterns that will later help them decode speech, math, and emotional cues.',
     tag: '🗣️ Talking in Two Languages',
     image: '/images/learning/music-brain.jpg',
     hasAudio: true,
@@ -38,7 +38,7 @@ const learningMoments: LearningMoment[] = [
   {
     id: 'sharing-snack',
     title: 'Teddy Shared His Snack, and Made a New Friend',
-    insight: 'It happened so quickly we almost missed it. Four-year-old Teddy noticed his classmate looking at his apple slices. Without prompting, he slid two pieces across the table. "For you," he said simply. What looks like a small moment is actually the foundation of empathy, generosity, and social connection. These micro-interactions build the neural pathways for lifelong relationship skills. We celebrate these tiny choices because they're actually enormous developmental milestones.',
+    insight: 'It happened so quickly we almost missed it. Four-year-old Teddy noticed his classmate looking at his apple slices. Without prompting, he slid two pieces across the table. "For you," he said simply. What looks like a small moment is actually the foundation of empathy, generosity, and social connection. These micro-interactions build the neural pathways for lifelong relationship skills. We celebrate these tiny choices because they\'re actually enormous developmental milestones.',
     tag: '🤝 Growing Together',
     image: '/images/learning/sharing-snack.jpg',
     hasAudio: true,
@@ -47,14 +47,14 @@ const learningMoments: LearningMoment[] = [
   {
     id: 'finger-paint',
     title: 'Finger Paint = Philosophy',
-    insight: 'When Sophia spent 20 minutes mixing blue and yellow paint with her fingers, she wasn't just making a mess—she was conducting a scientific experiment, making aesthetic choices, and developing fine motor control simultaneously. Each swirl was a decision: more blue or more yellow? Each handprint was spatial awareness in action. We don't rush these moments or worry about the cleanup, because we recognize them as complex thinking made visible. That green smudge? It's cognitive development you can see.',
+    insight: 'When Sophia spent 20 minutes mixing blue and yellow paint with her fingers, she wasn\'t just making a mess—she was conducting a scientific experiment, making aesthetic choices, and developing fine motor control simultaneously. Each swirl was a decision: more blue or more yellow? Each handprint was spatial awareness in action. We don\'t rush these moments or worry about the cleanup, because we recognize them as complex thinking made visible. That green smudge? It\'s cognitive development you can see.',
     tag: '🎨 Chaos & Wonder',
     image: '/images/learning/finger-paint.jpg'
   },
   {
     id: 'please-languages',
     title: 'The Day They Taught Each Other "Please" in Two Languages',
-    insight: 'We watched in amazement as Liam (Dutch-speaking) and Maya (English-speaking) created their own language lesson at snack time. "Alsjeblieft," offered Liam, handing Maya a cracker. "Please," she responded, returning the favor. For the next ten minutes, they exchanged crackers and language, giggling at each other's pronunciation. This peer-to-peer learning creates stronger neural connections than any formal lesson could. Children teaching children creates a special kind of magic that accelerates language acquisition and builds cultural bridges simultaneously.',
+    insight: 'We watched in amazement as Liam (Dutch-speaking) and Maya (English-speaking) created their own language lesson at snack time. "Alsjeblieft," offered Liam, handing Maya a cracker. "Please," she responded, returning the favor. For the next ten minutes, they exchanged crackers and language, giggling at each other\'s pronunciation. This peer-to-peer learning creates stronger neural connections than any formal lesson could. Children teaching children creates a special kind of magic that accelerates language acquisition and builds cultural bridges simultaneously.',
     tag: '🗣️ Talking in Two Languages',
     image: '/images/learning/please-languages.jpg',
     hasAudio: true,
@@ -63,14 +63,14 @@ const learningMoments: LearningMoment[] = [
   {
     id: 'blocks-thinking',
     title: 'Why We Call Blocks "Thinking Tools"',
-    insight: 'When 4-year-old Noah builds a tower that keeps falling, he's not just playing—he's developing scientific thinking. Each collapse is a hypothesis tested; each rebuild incorporates new learning. "Maybe it needs a bigger bottom," he mutters, demonstrating engineering principles he can't yet name. Block play develops spatial reasoning, physics understanding, and problem-solving resilience. It's STEM education in its purest form, happening naturally through play. That's why our classrooms have more blocks than almost any other material.',
+    insight: 'When 4-year-old Noah builds a tower that keeps falling, he\'s not just playing—he\'s developing scientific thinking. Each collapse is a hypothesis tested; each rebuild incorporates new learning. "Maybe it needs a bigger bottom," he mutters, demonstrating engineering principles he can\'t yet name. Block play develops spatial reasoning, physics understanding, and problem-solving resilience. It\'s STEM education in its purest form, happening naturally through play. That\'s why our classrooms have more blocks than almost any other material.',
     tag: '🔧 Real-World Teddy Tricks',
     image: '/images/learning/blocks-thinking.jpg'
   },
   {
     id: 'big-feelings',
     title: 'When Emma's Tower Fell (And She Didn't)',
-    insight: 'The crash was spectacular—30 minutes of careful construction destroyed in seconds. We braced for tears, but instead watched Emma take a deep breath, say "I'm feeling really frustrated," and start again. This emotional regulation didn't happen by accident. It came from months of naming feelings, modeling responses, and creating a safe space for big emotions. When children learn to identify and manage feelings early, they build resilience that will serve them through life's inevitable disappointments. That rebuilt tower? It's emotional intelligence you can see.',
+    insight: 'The crash was spectacular—30 minutes of careful construction destroyed in seconds. We braced for tears, but instead watched Emma take a deep breath, say "I\'m feeling really frustrated," and start again. This emotional regulation didn\'t happen by accident. It came from months of naming feelings, modeling responses, and creating a safe space for big emotions. When children learn to identify and manage feelings early, they build resilience that will serve them through life\'s inevitable disappointments. That rebuilt tower? It\'s emotional intelligence you can see.',
     tag: '💛 Big Feelings',
     image: '/images/learning/big-feelings.jpg',
     hasAudio: true,
@@ -79,21 +79,21 @@ const learningMoments: LearningMoment[] = [
   {
     id: 'puddle-science',
     title: 'The Great Puddle Experiment',
-    insight: 'What happens when you give six 3-year-olds access to puddles after a rainstorm? Spontaneous science class. They discovered water displacement ("Look, it splashes!"), weather patterns ("The sun makes it smaller"), and states of matter ("It's disappearing into the air!"). Their rain boots became research tools, and their excited shrieks were hypotheses being tested in real time. We document these moments because they remind us that curiosity is the foundation of all learning, and nature is the most engaging classroom.',
+    insight: 'What happens when you give six 3-year-olds access to puddles after a rainstorm? Spontaneous science class. They discovered water displacement ("Look, it splashes!"), weather patterns ("The sun makes it smaller"), and states of matter ("It\'s disappearing into the air!"). Their rain boots became research tools, and their excited shrieks were hypotheses being tested in real time. We document these moments because they remind us that curiosity is the foundation of all learning, and nature is the most engaging classroom.',
     tag: '🎨 Chaos & Wonder',
     image: '/images/learning/puddle-science.jpg'
   },
   {
     id: 'conflict-resolution',
     title: 'Two Children, One Teddy, Zero Adults Stepping In',
-    insight: 'When Jasmijn and Leo both reached for the same teddy bear, we resisted the urge to intervene. Instead, we watched as they worked through their first negotiation. "I hold one arm, you hold other arm?" suggested Leo. This spontaneous compromise wasn't just adorable—it was the beginning of conflict resolution skills that many adults still struggle with. By giving children space to solve social problems (while staying nearby for support), we help them develop the confidence to navigate relationships throughout life. That shared teddy bear moment? It's emotional intelligence in action.',
+    insight: 'When Jasmijn and Leo both reached for the same teddy bear, we resisted the urge to intervene. Instead, we watched as they worked through their first negotiation. "I hold one arm, you hold other arm?" suggested Leo. This spontaneous compromise wasn\'t just adorable—it was the beginning of conflict resolution skills that many adults still struggle with. By giving children space to solve social problems (while staying nearby for support), we help them develop the confidence to navigate relationships throughout life. That shared teddy bear moment? It\'s emotional intelligence in action.',
     tag: '🤝 Growing Together',
     image: '/images/learning/conflict-resolution.jpg'
   },
   {
     id: 'zipper-victory',
     title: 'The Day Mila Zipped Her Own Coat (And Why We Cheered)',
-    insight: '"I did it ALL BY MYSELF!" announced Mila, beaming with pride after conquering her coat zipper after weeks of trying. This wasn't just about outdoor preparation—it was a milestone in fine motor development, persistence, and self-efficacy. When children master self-care skills, they develop a powerful sense of competence that transfers to other challenges. We celebrate these moments loudly because independence builds confidence, and confidence builds lifelong learners. That zipper victory? It's the foundation of "I can do hard things" thinking.',
+    insight: '"I did it ALL BY MYSELF!" announced Mila, beaming with pride after conquering her coat zipper after weeks of trying. This wasn\'t just about outdoor preparation—it was a milestone in fine motor development, persistence, and self-efficacy. When children master self-care skills, they develop a powerful sense of competence that transfers to other challenges. We celebrate these moments loudly because independence builds confidence, and confidence builds lifelong learners. That zipper victory? It\'s the foundation of "I can do hard things" thinking.',
     tag: '🔧 Real-World Teddy Tricks',
     image: '/images/learning/zipper-victory.jpg',
     hasAudio: true,

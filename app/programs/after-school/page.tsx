@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { getLocationsByProgram } from '@/lib/locations';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'After School Program | Teddy Kids',
@@ -27,7 +28,13 @@ export const metadata: Metadata = {
 };
 
 // Schedule item component
-const ScheduleItem = ({ time, activity, description }) => {
+interface ScheduleItemProps {
+  time: string;
+  activity: string;
+  description: string;
+}
+
+const ScheduleItem: React.FC<ScheduleItemProps> = ({ time, activity, description }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4 py-4 border-b border-gray-100">
       <div className="md:w-1/4">
@@ -42,7 +49,13 @@ const ScheduleItem = ({ time, activity, description }) => {
 };
 
 // Feature item component
-const FeatureItem = ({ icon, title, description }) => {
+interface FeatureItemProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) => {
   return (
     <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
       <div className="text-3xl mb-3">{icon}</div>
@@ -53,7 +66,14 @@ const FeatureItem = ({ icon, title, description }) => {
 };
 
 // Testimonial component
-const Testimonial = ({ quote, author, location, imageSrc }) => {
+interface TestimonialProps {
+  quote: string;
+  author: string;
+  location: string;
+  imageSrc: string;
+}
+
+const Testimonial: React.FC<TestimonialProps> = ({ quote, author, location, imageSrc }) => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <div className="flex items-start mb-4">
@@ -70,13 +90,19 @@ const Testimonial = ({ quote, author, location, imageSrc }) => {
           <p className="text-sm text-gray-600">{location}</p>
         </div>
       </div>
-      <blockquote className="italic text-gray-700">"{quote}"</blockquote>
+      <blockquote className="italic text-gray-700">&quot;{quote}&quot;</blockquote>
     </div>
   );
 };
 
 // Location card component
-const LocationCard = ({ name, address, imageSrc }) => {
+interface LocationCardProps {
+  name: string;
+  address: string;
+  imageSrc: string;
+}
+
+const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative h-40 w-full">
@@ -102,7 +128,13 @@ const LocationCard = ({ name, address, imageSrc }) => {
 };
 
 // Activity tab component
-const ActivityTab = ({ title, description, imageSrc }) => {
+interface ActivityTabProps {
+  title: string;
+  description: string;
+  imageSrc: string;
+}
+
+const ActivityTab: React.FC<ActivityTabProps> = ({ title, description, imageSrc }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
       <div className="relative h-48 w-full">
@@ -137,7 +169,7 @@ export default function AfterSchoolPage() {
                   <span className="text-4xl mr-3">🧩</span>
                   <h1 className="text-4xl md:text-5xl font-display font-bold">After School</h1>
                 </div>
-                <p className="text-xl italic text-gray-700 mb-6">"Exploration after hours"</p>
+                <p className="text-xl italic text-gray-700 mb-6">&quot;Exploration after hours&quot;</p>
                 <p className="text-lg text-gray-700 mb-6">
                   Our After School program creates a vibrant, bilingual environment where school-age children can relax, complete homework, explore new interests, and build friendships. We balance structure with freedom, ensuring children continue learning while having fun after school hours.
                 </p>
@@ -212,7 +244,7 @@ export default function AfterSchoolPage() {
                 During school holidays and study days, we offer full-day care with themed activities, field trips, and special projects that make vacation time both fun and educational.
               </p>
               <p className="text-lg">
-                Our program adapts to different age groups, ensuring activities are appropriately challenging and engaging for each child's developmental stage.
+                Our program adapts to different age groups, ensuring activities are appropriately challenging and engaging for each child&apos;s developmental stage.
               </p>
             </div>
           </div>
@@ -272,7 +304,7 @@ export default function AfterSchoolPage() {
                 <ScheduleItem 
                   time="9:00 - 9:30"
                   activity="Morning Circle"
-                  description="Overview of the day's special activities and group planning."
+                  description="Overview of the day&apos;s special activities and group planning."
                 />
                 <ScheduleItem 
                   time="9:30 - 12:00"
@@ -303,7 +335,7 @@ export default function AfterSchoolPage() {
             </div>
             
             <p className="text-center text-gray-600 mt-6 text-sm">
-              *Schedules may vary slightly by location and can be adapted to accommodate special events or children's interests.
+              *Schedules may vary slightly by location and can be adapted to accommodate special events or children&apos;s interests.
             </p>
           </div>
         </div>
@@ -315,7 +347,7 @@ export default function AfterSchoolPage() {
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-8 text-center">Enrichment Activities</h2>
             <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
-              Our after school program offers a rotating selection of enrichment activities that expand children's horizons and develop new skills:
+              Our after school program offers a rotating selection of enrichment activities that expand children&apos;s horizons and develop new skills:
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -428,12 +460,12 @@ export default function AfterSchoolPage() {
               <FeatureItem 
                 icon="🏫"
                 title="School Partnerships"
-                description="Strong relationships with local schools ensure continuity and communication about children's needs."
+                description="Strong relationships with local schools ensure continuity and communication about children&apos;s needs."
               />
               <FeatureItem 
                 icon="📱"
                 title="Parent Connection"
-                description="Regular updates and easy communication through our parent app to keep you connected to your child's experiences."
+                description="Regular updates and easy communication through our parent app to keep you connected to your child&apos;s experiences."
               />
             </div>
           </div>
@@ -478,7 +510,7 @@ export default function AfterSchoolPage() {
                 imageSrc="/images/testimonials/parent10.jpg"
               />
               <Testimonial 
-                quote="The holiday programs are exceptional. My daughter has experienced everything from cooking workshops to science experiments. It's such a relief to know she's having fun and learning during school breaks while I'm at work."
+                quote="The holiday programs are exceptional. My daughter has experienced everything from cooking workshops to science experiments. It&apos;s such a relief to know she&apos;s having fun and learning during school breaks while I&apos;m at work."
                 author="Anna M."
                 location="Mother of Sofia, 7 years"
                 imageSrc="/images/testimonials/parent11.jpg"
@@ -499,7 +531,7 @@ export default function AfterSchoolPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-display font-bold mb-6">Looking for Quality After School Care?</h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Schedule a tour to see our after school program in action and discover how we can support your child's development beyond school hours.
+            Schedule a tour to see our after school program in action and discover how we can support your child&apos;s development beyond school hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

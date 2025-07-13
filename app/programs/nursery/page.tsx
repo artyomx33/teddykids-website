@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { getLocationsByProgram } from '@/lib/locations';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Nursery Program | Teddy Kids',
@@ -27,7 +28,13 @@ export const metadata: Metadata = {
 };
 
 // Schedule item component
-const ScheduleItem = ({ time, activity, description }) => {
+interface ScheduleItemProps {
+  time: string;
+  activity: string;
+  description: string;
+}
+
+const ScheduleItem: React.FC<ScheduleItemProps> = ({ time, activity, description }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4 py-4 border-b border-gray-100">
       <div className="md:w-1/4">
@@ -42,7 +49,13 @@ const ScheduleItem = ({ time, activity, description }) => {
 };
 
 // Feature item component
-const FeatureItem = ({ icon, title, description }) => {
+interface FeatureItemProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) => {
   return (
     <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
       <div className="text-3xl mb-3">{icon}</div>
@@ -52,31 +65,14 @@ const FeatureItem = ({ icon, title, description }) => {
   );
 };
 
-// Testimonial component
-const Testimonial = ({ quote, author, location, imageSrc }) => {
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm">
-      <div className="flex items-start mb-4">
-        <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-          <Image
-            src={imageSrc || '/images/testimonials/placeholder.jpg'}
-            alt={author}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h4 className="font-medium">{author}</h4>
-          <p className="text-sm text-gray-600">{location}</p>
-        </div>
-      </div>
-      <blockquote className="italic text-gray-700">"{quote}"</blockquote>
-    </div>
-  );
-};
-
 // Location card component
-const LocationCard = ({ name, address, imageSrc }) => {
+interface LocationCardProps {
+  name: string;
+  address: string;
+  imageSrc: string;
+}
+
+const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative h-40 w-full">
@@ -102,7 +98,13 @@ const LocationCard = ({ name, address, imageSrc }) => {
 };
 
 // Overview item component
-const OverviewItem = ({ icon, label, value }) => {
+interface OverviewItemProps {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+const OverviewItem: React.FC<OverviewItemProps> = ({ icon, label, value }) => {
   return (
     <div className="flex items-start p-3 border-b border-gray-100 last:border-b-0">
       <div className="text-2xl mr-3 flex-shrink-0">{icon}</div>
@@ -115,7 +117,12 @@ const OverviewItem = ({ icon, label, value }) => {
 };
 
 // Gallery item component
-const GalleryItem = ({ src, caption }) => {
+interface GalleryItemProps {
+  src: string;
+  caption: string;
+}
+
+const GalleryItem: React.FC<GalleryItemProps> = ({ src, caption }) => {
   return (
     <div className="rounded-lg overflow-hidden">
       <div className="relative h-48 w-full">
@@ -148,7 +155,7 @@ export default function NurseryPage() {
                   <h1 className="text-4xl md:text-5xl font-display font-bold">Nursery</h1>
                 </div>
                 <p className="text-xl italic text-gray-700 mb-6">
-                  "Your child's first world outside your arms should feel just as safe."
+                  &quot;Your child&apos;s first world outside your arms should feel just as safe.&quot;
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
                   Our nursery is soft, bilingual, and built for baby-level wonder. We hold, sing, rock, read, and smile in two languages.
@@ -274,7 +281,7 @@ export default function NurseryPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-gray-700 text-center">
-              "We couldn't believe how fast Ella started speaking both Dutch and English. And she's only one!"
+              &quot;We couldn&apos;t believe how fast Ella started speaking both Dutch and English. And she&apos;s only one!&quot;
               <footer className="text-right text-base font-medium text-gray-600 mt-4">– Mila, TK RBW Parent</footer>
             </blockquote>
             <div className="text-center mt-4">
@@ -367,7 +374,7 @@ export default function NurseryPage() {
             </div>
             
             <p className="text-center text-gray-600 mt-6 text-sm">
-              *Schedule is flexible and adapted to children's needs, especially for infants who follow their own feeding and sleeping patterns.
+              *Schedule is flexible and adapted to children&apos;s needs, especially for infants who follow their own feeding and sleeping patterns.
             </p>
           </div>
         </div>
@@ -395,10 +402,10 @@ export default function NurseryPage() {
       <section className="py-16 bg-brand-pink bg-opacity-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-display font-bold mb-6">
-            Let's make the first goodbye feel beautiful.
+            Let&apos;s make the first goodbye feel beautiful.
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            We know what this moment feels like. Let's walk through it together—with care, clarity, and calm.
+            We know what this moment feels like. Let&apos;s walk through it together—with care, clarity, and calm.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

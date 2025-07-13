@@ -1,11 +1,26 @@
 'use client';
-import Image from 'next/image';
-import { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import Button from '@/components/Button';
 import { useSearchParams } from 'next/navigation';
 
 // Progress step component
-const ProgressStep = ({ number, title, description, icon, isActive, isCompleted }) => {
+interface ProgressStepProps {
+  number: number;
+  title: string;
+  description?: string;
+  icon?: React.ReactNode;
+  isActive: boolean;
+  isCompleted: boolean;
+}
+
+const ProgressStep: React.FC<ProgressStepProps> = ({
+  number,
+  title,
+  description,
+  icon,
+  isActive,
+  isCompleted,
+}) => {
   return (
     <div className="flex flex-col items-center">
       <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
@@ -30,7 +45,21 @@ const ProgressStep = ({ number, title, description, icon, isActive, isCompleted 
 };
 
 // Program card component
-const ProgramCard = ({ title, icon, ages, selected, onClick }) => {
+interface ProgramCardProps {
+  title: string;
+  icon: React.ReactNode;
+  ages: string;
+  selected: boolean;
+  onClick: () => void;
+}
+
+const ProgramCard: React.FC<ProgramCardProps> = ({
+  title,
+  icon,
+  ages,
+  selected,
+  onClick,
+}) => {
   return (
     <div 
       className={`bg-white p-6 rounded-xl shadow-sm cursor-pointer transition-all duration-300 ${
@@ -57,7 +86,21 @@ const ProgramCard = ({ title, icon, ages, selected, onClick }) => {
 };
 
 // Location card component
-const LocationCard = ({ name, address, icon, selected, onClick }) => {
+interface LocationCardProps {
+  name: string;
+  address: string;
+  icon: React.ReactNode;
+  selected: boolean;
+  onClick: () => void;
+}
+
+const LocationCard: React.FC<LocationCardProps> = ({
+  name,
+  address,
+  icon,
+  selected,
+  onClick,
+}) => {
   return (
     <div 
       className={`bg-white p-6 rounded-xl shadow-sm cursor-pointer transition-all duration-300 ${
@@ -88,7 +131,27 @@ const LocationCard = ({ name, address, icon, selected, onClick }) => {
 };
 
 // Form input component
-const FormInput = ({ label, type = 'text', id, value, onChange, required = false, placeholder = '', error = '' }) => {
+interface FormInputProps {
+  label: string;
+  type?: string;
+  id: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+  placeholder?: string;
+  error?: string;
+}
+
+const FormInput: React.FC<FormInputProps> = ({
+  label,
+  type = 'text',
+  id,
+  value,
+  onChange,
+  required = false,
+  placeholder = '',
+  error = '',
+}) => {
   return (
     <div className="mb-4">
       <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
@@ -111,37 +174,26 @@ const FormInput = ({ label, type = 'text', id, value, onChange, required = false
   );
 };
 
-// Form select component
-const FormSelect = ({ label, id, options, value, onChange, required = false, error = '' }) => {
-  return (
-    <div className="mb-4">
-      <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
-      <select
-        id={id}
-        name={id}
-        value={value}
-        onChange={onChange}
-        required={required}
-        className={`w-full px-4 py-3 rounded-lg border ${
-          error ? 'border-red-500' : 'border-gray-300'
-        } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
-      >
-        <option value="">Select an option</option>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
-    </div>
-  );
-};
-
 // Form textarea component
-const FormTextarea = ({ label, id, value, onChange, required = false, placeholder = '', error = '' }) => {
+interface FormTextareaProps {
+  label: string;
+  id: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  required?: boolean;
+  placeholder?: string;
+  error?: string;
+}
+
+const FormTextarea: React.FC<FormTextareaProps> = ({
+  label,
+  id,
+  value,
+  onChange,
+  required = false,
+  placeholder = '',
+  error = '',
+}) => {
   return (
     <div className="mb-4">
       <label htmlFor={id} className="block text-sm font-medium text-gray-700 mb-1">
@@ -176,8 +228,8 @@ const AudioButton = ({ label = "Play" }) => {
   );
 };
 
-// Apply Page Component
-export default function ApplyPage() {
+// Main apply-page content component
+function ApplyPageContent() {
   const searchParams = useSearchParams();
   
   // Get initial program from URL if available
@@ -224,14 +276,21 @@ export default function ApplyPage() {
   });
   
   // Form errors
-  const [errors, setErrors] = useState({});
+  // Use an index signature so we can safely access errors[key]
+  const [errors, setErrors] = useState<Record<string, string>>({});
   
   // Handle form input changes
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value, type } = e.target;
+    // `checked` only exists on HTMLInputElement; cast to access safely
+    const isChecked = (e.target as HTMLInputElement).checked;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? isChecked : value
     }));
     
     // Clear error when field is updated
@@ -244,7 +303,7 @@ export default function ApplyPage() {
   };
   
   // Handle program selection
-  const handleProgramSelect = (program) => {
+  const handleProgramSelect = (program: string) => {
     setFormData(prev => ({
       ...prev,
       program
@@ -252,7 +311,7 @@ export default function ApplyPage() {
   };
   
   // Handle location selection
-  const handleLocationSelect = (location) => {
+  const handleLocationSelect = (location: string) => {
     setFormData(prev => ({
       ...prev,
       location
@@ -261,7 +320,7 @@ export default function ApplyPage() {
   
   // Validate current step
   const validateStep = () => {
-    const newErrors = {};
+    const newErrors: Record<string, string> = {};
     
     if (currentStep === 1) {
       if (!formData.program) newErrors.program = 'Please select a program';
@@ -306,7 +365,7 @@ export default function ApplyPage() {
   };
   
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (validateStep()) {
@@ -369,14 +428,6 @@ export default function ApplyPage() {
     }
   ];
   
-  // Gender options
-  const genderOptions = [
-    { value: 'male', label: 'Male' },
-    { value: 'female', label: 'Female' },
-    { value: 'other', label: 'Other' },
-    { value: 'prefer_not_to_say', label: 'Prefer not to say' }
-  ];
-  
   // Process steps with descriptions
   const processSteps = [
     {
@@ -419,7 +470,7 @@ export default function ApplyPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Your journey with Teddy Kids begins here.</h1>
             <p className="text-xl text-gray-700 mb-8">
-              We've made the first step simple, warm, and stress-free—just like everything else we do.
+              We&apos;ve made the first step simple, warm, and stress-free—just like everything else we do.
             </p>
             
             <div className="inline-block">
@@ -427,7 +478,7 @@ export default function ApplyPage() {
                 <AudioButton label="Hear from a parent who just applied" />
               </div>
               <p className="text-sm text-gray-600 mt-2 italic">
-                "It was honestly easier than I thought. They called me the next day. It felt human."
+                &quot;It was honestly easier than I thought. They called me the next day. It felt human.&quot;
               </p>
             </div>
           </div>
@@ -585,7 +636,7 @@ export default function ApplyPage() {
                     </div>
                     
                     <p className="text-center text-gray-600 italic">
-                      We'll try to match your preference—but will always offer the best fit.
+                      We&apos;ll try to match your preference—but will always offer the best fit.
                     </p>
                   </div>
                 )}
@@ -652,7 +703,7 @@ export default function ApplyPage() {
                     <div className="bg-brand-yellow bg-opacity-5 p-4 rounded-lg mb-6">
                       <h3 className="text-lg font-medium mb-2">Child Details</h3>
                       <FormInput 
-                        label="Child's First Name"
+                        label="Child&apos;s First Name"
                         id="childFirstName"
                         value={formData.childFirstName}
                         onChange={handleChange}
@@ -661,7 +712,7 @@ export default function ApplyPage() {
                       />
                       
                       <FormInput 
-                        label="Child's Age or Date of Birth"
+                        label="Child&apos;s Age or Date of Birth"
                         type="date"
                         id="childDateOfBirth"
                         value={formData.childDateOfBirth}
@@ -676,7 +727,7 @@ export default function ApplyPage() {
                       id="additionalComments"
                       value={formData.additionalComments}
                       onChange={handleChange}
-                      placeholder="Anything else you'd like us to know?"
+                      placeholder="Anything else you&apos;d like us to know?"
                       error={errors.additionalComments}
                     />
                     
@@ -694,7 +745,7 @@ export default function ApplyPage() {
                         </div>
                         <div className="ml-3 text-sm">
                           <label htmlFor="tourRequested" className="font-medium text-gray-700">
-                            I'd like to book a tour
+                            I&apos;d like to book a tour
                           </label>
                         </div>
                       </div>
@@ -712,7 +763,7 @@ export default function ApplyPage() {
                         </div>
                         <div className="ml-3 text-sm">
                           <label htmlFor="readyToApply" className="font-medium text-gray-700">
-                            I'm ready to apply now
+                            I&apos;m ready to apply now
                           </label>
                         </div>
                       </div>
@@ -792,7 +843,7 @@ export default function ApplyPage() {
                     </div>
                     <h2 className="text-2xl font-display font-bold mb-4">Welcome to the Teddy Family!</h2>
                     <p className="text-lg text-gray-700 mb-8">
-                      We've received your application and a Teddicated human will be in touch within 24 hours.
+                      We&apos;ve received your application and a Teddicated human will be in touch within 24 hours.
                     </p>
                     <p className="text-gray-600 mb-8">
                       A confirmation email has been sent to {formData.parentEmail}.
@@ -852,10 +903,10 @@ export default function ApplyPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-display font-bold mb-6">
-                You don't need to have it all figured out. Just let us know you're interested.
+                You don&apos;t need to have it all figured out. Just let us know you&apos;re interested.
               </h2>
               <p className="text-lg text-gray-700 mb-8">
-                We'll take care of the rest—with care, clarity, and a little Teddy magic.
+                We&apos;ll take care of the rest—with care, clarity, and a little Teddy magic.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -879,5 +930,15 @@ export default function ApplyPage() {
         </section>
       )}
     </main>
+  );
+}
+
+// --- Suspense-wrapped page export ---------------------------------
+
+export default function ApplyPage() {
+  return (
+    <Suspense fallback={null}>
+      <ApplyPageContent />
+    </Suspense>
   );
 }

@@ -34,7 +34,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ quote, author, audioSrc }) => {
     <div className="bg-white rounded-xl shadow-md p-6 flex flex-col h-full transition-all duration-300 hover:shadow-lg">
       <div className="flex-grow">
         <blockquote className="text-lg text-gray-700 mb-4 italic">
-          "{quote}"
+          &quot;{quote}&quot;
         </blockquote>
       </div>
       

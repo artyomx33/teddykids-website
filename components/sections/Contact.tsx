@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
               <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
               
               <div className="mb-8">
-                <p className="mb-2">We'd love to hear from you!</p>
+                <p className="mb-2">We&apos;d love to hear from you!</p>
                 <p className="text-sm text-gray-600 mb-1">Email: info@teddykids.nl</p>
                 <p className="text-sm text-gray-600">Phone: +31 71 123 4567</p>
               </div>
@@ -232,7 +232,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-lg border ${
                         errors.message ? 'border-red-500' : 'border-gray-300'
                       } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
-                      placeholder="I'd like to learn more about..."
+                      placeholder="I&apos;d like to learn more about..."
                     />
                     {errors.message && (
                       <p className="mt-1 text-sm text-red-600">{errors.message}</p>

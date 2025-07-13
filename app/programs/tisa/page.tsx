@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { getLocationsByProgram } from '@/lib/locations';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'TISA Program | Teddy Kids',
@@ -26,8 +27,18 @@ export const metadata: Metadata = {
   },
 };
 
-// Feature item component
-const FeatureItem = ({ icon, title, description }) => {
+// --------------------------------------------
+// Typed helper components
+// --------------------------------------------
+
+// 1. Feature item component
+interface FeatureItemProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) => {
   return (
     <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
       <div className="text-3xl mb-3">{icon}</div>
@@ -37,8 +48,14 @@ const FeatureItem = ({ icon, title, description }) => {
   );
 };
 
-// Location card component
-const LocationCard = ({ name, address, imageSrc }) => {
+// 2. Location card component
+interface LocationCardProps {
+  name: string;
+  address: string;
+  imageSrc: string;
+}
+
+const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative h-40 w-full">
@@ -63,8 +80,14 @@ const LocationCard = ({ name, address, imageSrc }) => {
   );
 };
 
-// Overview item component
-const OverviewItem = ({ icon, label, value }) => {
+// 3. Overview item component
+interface OverviewItemProps {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+const OverviewItem: React.FC<OverviewItemProps> = ({ icon, label, value }) => {
   return (
     <div className="flex items-start p-3 border-b border-gray-100 last:border-b-0">
       <div className="text-2xl mr-3 flex-shrink-0">{icon}</div>
@@ -76,8 +99,15 @@ const OverviewItem = ({ icon, label, value }) => {
   );
 };
 
-// Testimonial component
-const Testimonial = ({ quote, author, location, imageSrc }) => {
+// 4. Testimonial component
+interface TestimonialProps {
+  quote: string;
+  author: string;
+  location: string;
+  imageSrc: string;
+}
+
+const Testimonial: React.FC<TestimonialProps> = ({ quote, author, location, imageSrc }) => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <div className="flex items-start mb-4">
@@ -94,13 +124,18 @@ const Testimonial = ({ quote, author, location, imageSrc }) => {
           <p className="text-sm text-gray-600">{location}</p>
         </div>
       </div>
-      <blockquote className="italic text-gray-700">"{quote}"</blockquote>
+      <blockquote className="italic text-gray-700">&quot;{quote}&quot;</blockquote>
     </div>
   );
 };
 
-// Gallery item component
-const GalleryItem = ({ src, caption }) => {
+// 5. Gallery item component
+interface GalleryItemProps {
+  src: string;
+  caption: string;
+}
+
+const GalleryItem: React.FC<GalleryItemProps> = ({ src, caption }) => {
   return (
     <div className="rounded-lg overflow-hidden">
       <div className="relative h-48 w-full">
@@ -116,8 +151,16 @@ const GalleryItem = ({ src, caption }) => {
   );
 };
 
-// Program integration component
-const ProgramIntegration = ({ icon, title, description, linkText, linkHref }) => {
+// 6. Program integration component
+interface ProgramIntegrationProps {
+  icon: string;
+  title: string;
+  description: string;
+  linkText: string;
+  linkHref: string;
+}
+
+const ProgramIntegration: React.FC<ProgramIntegrationProps> = ({ icon, title, description, linkText, linkHref }) => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-brand-mint">
       <div className="flex items-start mb-3">
@@ -155,10 +198,10 @@ export default function TISAPage() {
                   <h1 className="text-4xl md:text-5xl font-display font-bold">TISA</h1>
                 </div>
                 <p className="text-xl italic text-gray-700 mb-6">
-                  "Where world-class international education meets the warmth of Teddy care."
+                  &quot;Where world-class international education meets the warmth of Teddy care.&quot;
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  Teddy International School Adventures (TISA) creates a seamless experience for international families, connecting our bilingual childcare with Leiden's premier international schools.
+                  Teddy International School Adventures (TISA) creates a seamless experience for international families, connecting our bilingual childcare with Leiden&apos;s premier international schools.
                 </p>
                 <div className="bg-white p-4 rounded-lg inline-block mb-6">
                   <span className="font-medium">Ages:</span> 3 months - 12 years
@@ -220,7 +263,7 @@ export default function TISAPage() {
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <span className="text-brand-mint mr-2">●</span>
-                  <span>Integrates seamlessly with Leiden's international schools</span>
+                  <span>Integrates seamlessly with Leiden&apos;s international schools</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-brand-mint mr-2">●</span>
@@ -300,7 +343,7 @@ export default function TISAPage() {
               <ProgramIntegration 
                 icon="🏫"
                 title="School Partnerships"
-                description="Direct relationships with Leiden's international schools for coordinated educational approaches."
+                description="Direct relationships with Leiden&apos;s international schools for coordinated educational approaches."
                 linkText="View Partner Schools"
                 linkHref="/locations#tisa-schools"
               />
@@ -324,7 +367,7 @@ export default function TISAPage() {
               <FeatureItem 
                 icon="📱"
                 title="TeddyConnect App"
-                description="Stay connected to your child's day with updates, photos, and messages in your preferred language."
+                description="Stay connected to your child&apos;s day with updates, photos, and messages in your preferred language."
               />
               <FeatureItem 
                 icon="🗣️"
@@ -365,7 +408,7 @@ export default function TISAPage() {
                 imageSrc="/images/testimonials/international-family-1.jpg"
               />
               <Testimonial 
-                quote="As a diplomatic family that moves frequently, finding consistent, quality care is crucial. Teddy Kids' TISA program understood our unique needs and provided our son with stability and cultural awareness that has been invaluable."
+                quote="As a diplomatic family that moves frequently, finding consistent, quality care is crucial. Teddy Kids&apos; TISA program understood our unique needs and provided our son with stability and cultural awareness that has been invaluable."
                 author="James T."
                 location="British-Japanese family, 3 years with Teddy Kids"
                 imageSrc="/images/testimonials/international-family-2.jpg"

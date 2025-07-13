@@ -201,11 +201,11 @@ export default function LearningPage() {
               What if the smartest person in the room… is the one finger painting in the corner?
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              Teddy Kids isn't just where children grow. It's where we learn to see growth differently.
+              Teddy Kids isn&apos;t just where children grow. It&apos;s where we learn to see growth differently.
             </p>
             {quote && (
               <div className="bg-white p-5 rounded-xl inline-block shadow-sm">
-                <p className="text-lg italic font-handwriting text-gray-700">"{quote}"</p>
+                <p className="text-lg italic font-handwriting text-gray-700">&quot;{quote}&quot;</p>
               </div>
             )}
           </div>
@@ -291,7 +291,7 @@ export default function LearningPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-6">
-              What if your child's most powerful learning moment… was happening today—and you didn't see it?
+              What if your child&apos;s most powerful learning moment… was happening today—and you didn&apos;t see it?
             </h2>
             <p className="text-lg text-gray-700 mb-8">
               Let us show you how brilliance hides in snack time, sandboxes, and squishy socks.

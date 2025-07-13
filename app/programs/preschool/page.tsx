@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import { getLocationsByProgram } from '@/lib/locations';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Teddy Learners Program | Teddy Kids',
@@ -27,7 +28,13 @@ export const metadata: Metadata = {
 };
 
 // Schedule item component
-const ScheduleItem = ({ time, activity, description }) => {
+interface ScheduleItemProps {
+  time: string;
+  activity: string;
+  description: string;
+}
+
+const ScheduleItem: React.FC<ScheduleItemProps> = ({ time, activity, description }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4 py-4 border-b border-gray-100">
       <div className="md:w-1/4">
@@ -42,7 +49,13 @@ const ScheduleItem = ({ time, activity, description }) => {
 };
 
 // Feature item component
-const FeatureItem = ({ icon, title, description }) => {
+interface FeatureItemProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) => {
   return (
     <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
       <div className="text-3xl mb-3">{icon}</div>
@@ -52,31 +65,14 @@ const FeatureItem = ({ icon, title, description }) => {
   );
 };
 
-// Testimonial component
-const Testimonial = ({ quote, author, location, imageSrc }) => {
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm">
-      <div className="flex items-start mb-4">
-        <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-          <Image
-            src={imageSrc || '/images/testimonials/placeholder.jpg'}
-            alt={author}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h4 className="font-medium">{author}</h4>
-          <p className="text-sm text-gray-600">{location}</p>
-        </div>
-      </div>
-      <blockquote className="italic text-gray-700">"{quote}"</blockquote>
-    </div>
-  );
-};
-
 // Location card component
-const LocationCard = ({ name, address, imageSrc }) => {
+interface LocationCardProps {
+  name: string;
+  address: string;
+  imageSrc: string;
+}
+
+const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative h-40 w-full">
@@ -102,7 +98,13 @@ const LocationCard = ({ name, address, imageSrc }) => {
 };
 
 // Overview item component
-const OverviewItem = ({ icon, label, value }) => {
+interface OverviewItemProps {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+const OverviewItem: React.FC<OverviewItemProps> = ({ icon, label, value }) => {
   return (
     <div className="flex items-start p-3 border-b border-gray-100 last:border-b-0">
       <div className="text-2xl mr-3 flex-shrink-0">{icon}</div>
@@ -115,7 +117,11 @@ const OverviewItem = ({ icon, label, value }) => {
 };
 
 // Kid quote component
-const KidQuote = ({ quote }) => {
+interface KidQuoteProps {
+  quote: string;
+}
+
+const KidQuote: React.FC<KidQuoteProps> = ({ quote }) => {
   return (
     <div className="bg-white p-4 rounded-xl shadow-sm">
       <p className="text-lg italic text-gray-700 font-handwriting">{quote}</p>
@@ -124,7 +130,12 @@ const KidQuote = ({ quote }) => {
 };
 
 // Gallery item component
-const GalleryItem = ({ src, caption }) => {
+interface GalleryItemProps {
+  src: string;
+  caption: string;
+}
+
+const GalleryItem: React.FC<GalleryItemProps> = ({ src, caption }) => {
   return (
     <div className="rounded-lg overflow-hidden">
       <div className="relative h-48 w-full">
@@ -157,7 +168,7 @@ export default function PreschoolPage() {
                   <h1 className="text-4xl md:text-5xl font-display font-bold">Teddy Learners</h1>
                 </div>
                 <p className="text-xl italic text-gray-700 mb-6">
-                  "They're not babies anymore. But they still need magic, hugs, and someone to explain the word 'why' in two languages."
+                  &quot;They&apos;re not babies anymore. But they still need magic, hugs, and someone to explain the word &apos;why&apos; in two languages.&quot;
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
                   Teddy Learners is where growing minds, wild imaginations, and little hearts get gently guided into their next big step.
@@ -263,12 +274,12 @@ export default function PreschoolPage() {
               <FeatureItem 
                 icon="🗣️"
                 title="Bilingual Play Everyday"
-                description="We don't 'teach' two languages—we live them. Songs, stories, play… all come in Dutch and English."
+                description="We don&apos;t &apos;teach&apos; two languages—we live them. Songs, stories, play… all come in Dutch and English."
               />
               <FeatureItem 
                 icon="🧠"
                 title="Teducation™ at Work"
-                description="Your child's mind is wired for pattern-making, problem-solving, and play. We call it Teddyfication when their spark lights up!"
+                description="Your child&apos;s mind is wired for pattern-making, problem-solving, and play. We call it Teddyfication when their spark lights up!"
               />
               <FeatureItem 
                 icon="💛"
@@ -305,7 +316,7 @@ export default function PreschoolPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-gray-700 text-center">
-              "I walked in and my son was explaining what 'boos' means in English. He's three. I actually teared up."
+              &quot;I walked in and my son was explaining what &apos;boos&apos; means in English. He&apos;s three. I actually teared up.&quot;
               <footer className="text-right text-base font-medium text-gray-600 mt-4">– Samira, TK Parent, ZML</footer>
             </blockquote>
             <div className="text-center mt-4">
@@ -337,7 +348,7 @@ export default function PreschoolPage() {
               />
               <GalleryItem 
                 src="/images/programs/teddy-learners-2.jpg"
-                caption="This book is upside down but the story's still magical"
+                caption="This book is upside down but the story&apos;s still magical"
               />
               <GalleryItem 
                 src="/images/programs/teddy-learners-3.jpg"
@@ -383,7 +394,7 @@ export default function PreschoolPage() {
               <ScheduleItem 
                 time="13:30–15:00"
                 activity="Group work or big questions"
-                description="Exploring important topics like 'Why is the moon round?' and other philosophical wonders."
+                description="Exploring important topics like &apos;Why is the moon round?&apos; and other philosophical wonders."
               />
               <ScheduleItem 
                 time="15:00–16:30"
@@ -425,7 +436,7 @@ export default function PreschoolPage() {
             Still figuring out if your child is ready?
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            So is every parent. That's why we're here—no pressure. Just answers, smiles, and
+            So is every parent. That&apos;s why we&apos;re here—no pressure. Just answers, smiles, and
             options.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

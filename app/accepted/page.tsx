@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Button from '@/components/Button';
@@ -32,7 +32,12 @@ const AudioButton = ({ label = "Play" }) => {
 };
 
 // Download button component
-const DownloadButton = ({ label, filename }) => {
+interface DownloadButtonProps {
+  label: string;
+  filename: string;
+}
+
+const DownloadButton: React.FC<DownloadButtonProps> = ({ label, filename }) => {
   return (
     <a 
       href={`/downloads/${filename}`} 
@@ -50,7 +55,13 @@ const DownloadButton = ({ label, filename }) => {
 };
 
 // Timeline step component
-const TimelineStep = ({ number, icon, title, description }) => {
+interface TimelineStepProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const TimelineStep: React.FC<TimelineStepProps> = ({ icon, title, description }) => {
   return (
     <div className="flex items-start gap-4">
       <div className="flex-shrink-0 w-12 h-12 bg-brand-pink text-white rounded-full flex items-center justify-center text-xl">
@@ -65,7 +76,13 @@ const TimelineStep = ({ number, icon, title, description }) => {
 };
 
 // Info card component
-const InfoCard = ({ icon, title, content }) => {
+interface InfoCardProps {
+  icon: string;
+  title: string;
+  content: React.ReactNode;
+}
+
+const InfoCard: React.FC<InfoCardProps> = ({ icon, title, content }) => {
   return (
     <div className="bg-white p-5 rounded-xl shadow-sm">
       <div className="flex items-center gap-3 mb-2">
@@ -79,7 +96,7 @@ const InfoCard = ({ icon, title, content }) => {
   );
 };
 
-export default function AcceptedPage() {
+function AcceptedPageContent() {
   const searchParams = useSearchParams();
   const childName = searchParams.get('child') || '';
   const startDate = searchParams.get('start') || 'September 1, 2025';
@@ -87,7 +104,6 @@ export default function AcceptedPage() {
   const locationFull = searchParams.get('location') || 'RBW – Rijnsburgerweg 35, Leiden';
   const leaderName = searchParams.get('leader') || 'Artem';
   const leaderMessage = searchParams.get('message') || "Hi! I'll be your contact—can't wait to meet you both!";
-  const quoteTag = searchParams.get('quote') || 'VOICE_PARENT_ACCEPTED01';
   
   const [showConfetti, setShowConfetti] = useState(false);
   // We don't have sound yet, but we expose a mute toggle for future-proof UX
@@ -97,26 +113,11 @@ export default function AcceptedPage() {
     height: 0
   });
   
-  // Welcome messages with child's name or fallback
-  const welcomeMessages = [
-    `${childName ? childName + ", we've" : "We've"} been waiting for you.`,
-    "Welcome to your new second home.",
-    "This is the start of something beautiful.",
-    "New friends, new stories, new snacks. Let's go!"
-  ];
-  
   // Randomly select a welcome message
   const [welcomeMessage, setWelcomeMessage] = useState('');
   const [shareUrl, setShareUrl] = useState('');
   
   useEffect(() => {
-    // Map program → emoji icon
-    const programIcons: Record<string, string> = {
-      Nursery: '🍼',
-      'Teddy Learners': '🎨',
-      'Teddy BSO Explorers': '🧩'
-    };
-
     // Set window dimensions for confetti
     if (typeof window !== 'undefined') {
       // Save current url for share links / copy functionality
@@ -147,12 +148,12 @@ export default function AcceptedPage() {
       // Select random welcome message
       const messages: string[] = [];
       if (childName) {
-        messages.push(`${childName}, we've been waiting for you.`);
+        messages.push(`${childName}, we&apos;ve been waiting for you.`);
       }
       messages.push(
         'Welcome to your new second home.',
         'This is the start of something beautiful.',
-        "New friends, new stories, new snacks. Let's go!"
+        "New friends, new stories, new snacks. Let&apos;s go!"
       );
       const randomIndex = Math.floor(Math.random() * messages.length);
       setWelcomeMessage(messages[randomIndex]);
@@ -162,7 +163,7 @@ export default function AcceptedPage() {
         clearTimeout(timer);
       };
     }
-  }, []);
+  }, [childName]);
   
   // Sample data - in a real app, this would come from a database or API
   const programInfo = {
@@ -265,7 +266,7 @@ export default function AcceptedPage() {
               {welcomeMessage}
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              We've made the first step simple, warm, and stress-free—just like everything else we do.
+              We&apos;ve made the first step simple, warm, and stress-free—just like everything else we do.
             </p>
           </div>
         </div>
@@ -279,13 +280,13 @@ export default function AcceptedPage() {
               <InfoCard 
                 icon="📅" 
                 title="Start Date" 
-                content={<p>Your expected start date: <strong>{programInfo.startDate}</strong> — we'll confirm it personally.</p>}
+                content={<p>Your expected start date: <strong>{programInfo.startDate}</strong> — we&apos;ll confirm it personally.</p>}
               />
               
               <InfoCard 
                 icon={programInfo.icon} 
                 title="Program" 
-                content={<p>You've been accepted to <strong>{programInfo.name}</strong></p>}
+                content={<p>You&apos;ve been accepted to <strong>{programInfo.name}</strong></p>}
               />
               
               <InfoCard 
@@ -338,7 +339,7 @@ export default function AcceptedPage() {
                 </div>
               </div>
               <p className="mt-4 text-gray-600 italic">
-                "When I got the email, I smiled. I just <em>knew</em> we were in the right place."
+                &quot;When I got the email, I smiled. I just <em>knew</em> we were in the right place.&quot;
               </p>
             </div>
             
@@ -402,7 +403,6 @@ export default function AcceptedPage() {
                 {timelineSteps.map((step, index) => (
                   <TimelineStep 
                     key={index}
-                    number={index + 1}
                     icon={step.icon}
                     title={step.title}
                     description={step.description}
@@ -425,7 +425,7 @@ export default function AcceptedPage() {
                   ))}
                 </div>
                 <p className="text-center text-sm text-gray-600 mt-6">
-                  {childName ? `Hi ${childName}! ` : ''}I'm Apie! I can't wait to meet you.
+                  {childName ? `Hi ${childName}! ` : ''}I&apos;m Apie! I can&apos;t wait to meet you.
                 </p>
               </div>
             </div>
@@ -438,10 +438,10 @@ export default function AcceptedPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold mb-6">
-              Now that you're in… we'll handle the rest.
+              Now that you&apos;re in… we&apos;ll handle the rest.
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              You've made a beautiful decision. We'll make it feel easy.
+              You&apos;ve made a beautiful decision. We&apos;ll make it feel easy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -470,5 +470,16 @@ export default function AcceptedPage() {
         </div>
       </section>
     </main>
+  );
+}
+
+// Wrapper component providing Suspense so `useSearchParams`
+// (which triggers a CSR bailout) is allowed while keeping
+// the page static-safe.
+export default function AcceptedPage() {
+  return (
+    <Suspense fallback={null}>
+      <AcceptedPageContent />
+    </Suspense>
   );
 }

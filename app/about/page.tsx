@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import Button from '@/components/Button';
 
 export const metadata: Metadata = {
@@ -26,7 +25,19 @@ export const metadata: Metadata = {
 };
 
 // Timeline item component
-const TimelineItem = ({ year, title, description, isLeft = true }) => {
+const TimelineItem = (
+  {
+    year,
+    title,
+    description,
+    isLeft = true,
+  }: {
+    year: string;
+    title: string;
+    description: string;
+    isLeft?: boolean;
+  },
+) => {
   return (
     <div className={`flex items-center w-full ${isLeft ? 'justify-start' : 'justify-end'}`}>
       <div className={`w-full md:w-5/12 ${!isLeft && 'order-1'}`}>
@@ -47,7 +58,17 @@ const TimelineItem = ({ year, title, description, isLeft = true }) => {
 };
 
 // Team preview item component
-const TeamPreviewItem = ({ name, role, imageSrc }) => {
+const TeamPreviewItem = (
+  {
+    name,
+    role,
+    imageSrc,
+  }: {
+    name: string;
+    role: string;
+    imageSrc: string;
+  },
+) => {
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-24 h-24 rounded-full overflow-hidden mb-3">
@@ -73,7 +94,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Why Teddy Kids Exists</h1>
             <p className="text-xl text-gray-700 mb-8">
-              We didn't build another daycare. We built what we wish we had as kids.
+              We didn&apos;t build another daycare. We built what we wish we had as kids.
             </p>
             <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
               <Image
@@ -164,7 +185,7 @@ export default function AboutPage() {
                 In the coming years, we will continue expanding our approach to more communities, bringing bilingual education and our values-based curriculum to children across Europe and beyond.
               </p>
               <p>
-                We're committed to:
+                We&apos;re committed to:
               </p>
               <ul>
                 <li>Preserving the magic of childhood in an increasingly digital world</li>
@@ -174,7 +195,7 @@ export default function AboutPage() {
                 <li>Empowering educators who share our passion for childhood</li>
               </ul>
               <p>
-                Together with families, educators, and communities, we're shaping a future where every child has the opportunity to become their best self.
+                Together with families, educators, and communities, we&apos;re shaping a future where every child has the opportunity to become their best self.
               </p>
             </div>
           </div>

@@ -94,7 +94,7 @@ const Button: React.FC<ButtonProps> = ({
         className={buttonStyles}
         target="_blank"
         rel="noopener noreferrer"
-        {...props as any}
+        {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
         {content}
       </a>
@@ -110,7 +110,7 @@ const Button: React.FC<ButtonProps> = ({
           className={buttonStyles}
           target="_blank"
           rel="noopener noreferrer"
-          {...props as any}
+          {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {content}
         </a>
@@ -121,7 +121,7 @@ const Button: React.FC<ButtonProps> = ({
       <Link 
         href={href}
         className={buttonStyles}
-        {...props as any}
+        {...(props as React.ComponentPropsWithoutRef<'a'>)}
       >
         {content}
       </Link>

@@ -1,11 +1,16 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  // Move potential dynamic class safelisting into the `content`
+  // object as recommended by Tailwind. This satisfies both the
+  // typing expectations and keeps configuration in one place.
+  content: {
+    files: [
+      "./app/**/*.{js,ts,jsx,tsx,mdx}",
+      "./components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+  },
   theme: {
     extend: {
       colors: {
@@ -46,17 +51,6 @@ const config: Config = {
     },
   },
   plugins: [],
-  safelist: [
-    // Classes that might be used dynamically
-    'bg-brand-pink',
-    'bg-brand-yellow',
-    'bg-brand-mint',
-    'bg-brand-purple',
-    'text-brand-pink',
-    'text-brand-yellow',
-    'text-brand-mint',
-    'text-brand-purple',
-  ],
 };
 
 export default config;

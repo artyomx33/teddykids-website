@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import Button from '@/components/Button';
 
 export const metadata: Metadata = {
@@ -26,7 +25,12 @@ export const metadata: Metadata = {
 };
 
 // Program gallery image component
-const ProgramGalleryImage = ({ src, alt }) => {
+interface ProgramGalleryImageProps {
+  src: string;
+  alt: string;
+}
+
+const ProgramGalleryImage = ({ src, alt }: ProgramGalleryImageProps) => {
   return (
     <div className="relative aspect-video rounded-lg overflow-hidden">
       <Image
@@ -40,17 +44,32 @@ const ProgramGalleryImage = ({ src, alt }) => {
 };
 
 // Program quote component
-const ProgramQuote = ({ quote, author }) => {
+interface ProgramQuoteProps {
+  quote: string;
+  author: string;
+}
+
+const ProgramQuote = ({ quote, author }: ProgramQuoteProps) => {
   return (
     <blockquote className="bg-brand-yellow bg-opacity-20 p-4 rounded-lg italic text-gray-700 my-4">
-      "{quote}"
+      &quot;{quote}&quot;
       <footer className="text-right text-sm text-gray-600 mt-2">— {author}</footer>
     </blockquote>
   );
 };
 
 // Program schedule component
-const ProgramSchedule = ({ title, items }) => {
+interface ScheduleItem {
+  day: string;
+  hours: string;
+}
+
+interface ProgramScheduleProps {
+  title: string;
+  items: ScheduleItem[];
+}
+
+const ProgramSchedule = ({ title, items }: ProgramScheduleProps) => {
   return (
     <div className="mb-6">
       <h4 className="font-medium text-lg mb-2">{title}</h4>
@@ -74,7 +93,7 @@ export default function ProgramsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Every child’s journey is different.
+              Every child&apos;s journey is different.
             </h1>
             <p className="text-xl text-gray-700 mb-8">
               But it should always begin with love, language, and laughter.
@@ -96,7 +115,7 @@ export default function ProgramsPage() {
                     <h2 className="text-3xl font-display font-bold">Nursery</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    “From tiny snoozes to big first steps—our littlest ones are held, heard, and loved in two languages.”
+                    &quot;From tiny snoozes to big first steps—our littlest ones are held, heard, and loved in two languages.&quot;
                   </p>
                   
                   <div className="mb-6">
@@ -116,7 +135,7 @@ export default function ProgramsPage() {
                   />
                   
                   <ProgramQuote 
-                    quote="Our daughter has been thriving at the nursery. The bilingual approach is amazing - she's already using words in both languages!"
+                    quote="Our daughter has been thriving at the nursery. The bilingual approach is amazing - she&apos;s already using words in both languages!"
                     author="Emma & James, Parents"
                   />
                   
@@ -192,7 +211,7 @@ export default function ProgramsPage() {
                     <h2 className="text-3xl font-display font-bold">Preschool</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    “Where stories, songs, and science spark wonder every day.”
+                    &quot;Where stories, songs, and science spark wonder every day.&quot;
                   </p>
                   
                   <div className="mb-6">
@@ -212,7 +231,7 @@ export default function ProgramsPage() {
                   />
                   
                   <ProgramQuote 
-                    quote="The preschool program has given our son such confidence. He's speaking both Dutch and English, and his social skills have blossomed."
+                    quote="The preschool program has given our son such confidence. He&apos;s speaking both Dutch and English, and his social skills have blossomed."
                     author="Sophia K., Mother"
                   />
                   
@@ -244,7 +263,7 @@ export default function ProgramsPage() {
                     <h2 className="text-3xl font-display font-bold">After School</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    “Adventures continue long after the bell. Our clubs inspire confidence, creativity, and community.”
+                    &quot;Adventures continue long after the bell. Our clubs inspire confidence, creativity, and community.&quot;
                   </p>
                   
                   <div className="mb-6">
@@ -340,7 +359,7 @@ export default function ProgramsPage() {
                     <h2 className="text-3xl font-display font-bold">TISA</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    “An international education—right around the corner. Small classes, big hearts, bilingual minds.”
+                    &quot;An international education—right around the corner. Small classes, big hearts, bilingual minds.&quot;
                   </p>
                   
                   <div className="mb-6">
@@ -367,8 +386,7 @@ export default function ProgramsPage() {
                   <Button
                     variant="primary"
                     href="https://www.tisaschool.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    isExternal={true}
                     fullWidth
                     className="mt-6"
                   >
@@ -429,7 +447,7 @@ export default function ProgramsPage() {
       <section className="py-16 bg-brand-purple bg-opacity-10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-display font-bold mb-6">
-            Let’s find the perfect fit—together.
+            Let&apos;s find the perfect fit—together.
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
             Every family has different needs. Our team is here to help you choose the right path.

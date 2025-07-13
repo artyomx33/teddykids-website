@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Team from '@/components/sections/Team';
 import Button from '@/components/Button';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Our Team | Teddy Kids',
@@ -63,7 +62,7 @@ export default function TeamPage() {
                     At Teddy Kids, we believe that our team is our greatest asset. We bring together passionate educators from diverse backgrounds who share a common commitment to childhood development and bilingual education.
                   </p>
                   <p className="text-lg mb-4">
-                    Our educators are more than teachers—they're mentors, researchers, and advocates for children. Each team member brings unique expertise and cultural perspectives that enrich our community and broaden children's horizons.
+                    We invest in continuous professional development, ensuring our team stays at the forefront of early childhood education. This commitment to excellence translates into innovative, responsive care for every child at Teddy Kids.
                   </p>
                   <p className="text-lg">
                     We invest in continuous professional development, ensuring our team stays at the forefront of early childhood education. This commitment to excellence translates into innovative, responsive care for every child at Teddy Kids.
@@ -158,7 +157,7 @@ export default function TeamPage() {
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
-                    Joyful, gentle, and full of laughter—Zeemanlaan's youngest stars get the best start in the most caring hands.
+                    Joyful, gentle, and full of laughter—Zeemanlaan&apos;s youngest stars get the best start in the most caring hands.
                   </p>
                 </div>
               </div>
@@ -195,7 +194,7 @@ export default function TeamPage() {
             <Button
               variant="primary"
               href="https://www.tisaschool.com"
-              target="_blank"
+              isExternal={true}
               size="lg"
             >
               Visit TISA
@@ -231,7 +230,7 @@ export default function TeamPage() {
                 <div className="text-3xl mb-3">🔍</div>
                 <h3 className="text-xl font-medium mb-2">Continuous Learning</h3>
                 <p className="text-gray-600">
-                  We're committed to ongoing professional development and innovation in early childhood education practices.
+                  We&apos;re committed to ongoing professional development and innovation in early childhood education practices.
                 </p>
               </div>
               
@@ -268,7 +267,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-display font-bold mb-6">Join Our Team</h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Passionate about early childhood education? Interested in working in a bilingual, international environment? We're always looking for talented educators to join our growing family.
+            Passionate about early childhood education? Interested in working in a bilingual, international environment? We&apos;re always looking for talented educators to join our growing family.
           </p>
           <Button 
             variant="primary"

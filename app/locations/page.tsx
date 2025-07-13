@@ -122,7 +122,7 @@ export default function LocationsPage() {
                 <Button
                   variant="primary"
                   href="https://www.tisaschool.com"
-                  target="_blank"
+                  isExternal={true}
                 >
                   Visit TISA Netherlands
                 </Button>
@@ -142,7 +142,7 @@ export default function LocationsPage() {
                 <Button
                   variant="primary"
                   href="https://www.tisaschool.com/portugal"
-                  target="_blank"
+                  isExternal={true}
                 >
                   Visit TISA Portugal
                 </Button>

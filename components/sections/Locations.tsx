@@ -122,7 +122,7 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
               {t('locations.googleReviews')}:
             </h4>
             <div className="text-sm italic text-gray-600">
-              "{location.reviews[0].text}"
+              &quot;{location.reviews[0].text}&quot;
             </div>
             <div className="flex items-center mt-2">
               <div className="flex">

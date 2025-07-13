@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useTranslation } from '@/lib/translations';
 
 interface TeamMemberProps {
-  id: string;
   name: string;
   role: string;
   funFact: string;
@@ -14,7 +13,6 @@ interface TeamMemberProps {
 }
 
 const TeamMember: React.FC<TeamMemberProps> = ({
-  id,
   name,
   role,
   funFact,
@@ -99,7 +97,7 @@ const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
           {member.childQuote && (
             <div className="bg-brand-yellow bg-opacity-20 p-4 rounded-lg mb-4">
               <h4 className="text-sm font-medium mb-1">What the children say:</h4>
-              <p className="italic text-gray-700">"{member.childQuote}"</p>
+              <p className="italic text-gray-700">&quot;{member.childQuote}&quot;</p>
             </div>
           )}
           
@@ -217,7 +215,6 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
           {teamMembers.map((member) => (
             <TeamMember
               key={member.id}
-              id={member.id}
               name={member.name}
               role={member.role}
               funFact={member.funFact}

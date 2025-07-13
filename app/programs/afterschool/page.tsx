@@ -27,7 +27,13 @@ export const metadata: Metadata = {
 };
 
 // Schedule item component
-const ScheduleItem = ({ time, activity, description }) => {
+interface ScheduleItemProps {
+  time: string;
+  activity: string;
+  description: string;
+}
+
+const ScheduleItem: React.FC<ScheduleItemProps> = ({ time, activity, description }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4 py-4 border-b border-gray-100">
       <div className="md:w-1/4">
@@ -42,7 +48,13 @@ const ScheduleItem = ({ time, activity, description }) => {
 };
 
 // Feature item component
-const FeatureItem = ({ icon, title, description }) => {
+interface FeatureItemProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const FeatureItem: React.FC<FeatureItemProps> = ({ icon, title, description }) => {
   return (
     <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
       <div className="text-3xl mb-3">{icon}</div>
@@ -53,7 +65,13 @@ const FeatureItem = ({ icon, title, description }) => {
 };
 
 // Location card component
-const LocationCard = ({ name, address, imageSrc }) => {
+interface LocationCardProps {
+  name: string;
+  address: string;
+  imageSrc: string;
+}
+
+const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative h-40 w-full">
@@ -79,7 +97,13 @@ const LocationCard = ({ name, address, imageSrc }) => {
 };
 
 // Overview item component
-const OverviewItem = ({ icon, label, value }) => {
+interface OverviewItemProps {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+const OverviewItem: React.FC<OverviewItemProps> = ({ icon, label, value }) => {
   return (
     <div className="flex items-start p-3 border-b border-gray-100 last:border-b-0">
       <div className="text-2xl mr-3 flex-shrink-0">{icon}</div>
@@ -92,7 +116,13 @@ const OverviewItem = ({ icon, label, value }) => {
 };
 
 // Quote component with perspective
-const PerspectiveQuote = ({ quote, author, perspective }) => {
+interface PerspectiveQuoteProps {
+  quote: string;
+  author: string;
+  perspective: 'parent' | 'kid';
+}
+
+const PerspectiveQuote: React.FC<PerspectiveQuoteProps> = ({ quote, author, perspective }) => {
   return (
     <div className={`bg-white p-6 rounded-xl shadow-sm ${perspective === 'parent' ? 'border-l-4 border-brand-pink' : 'border-l-4 border-brand-yellow'}`}>
       <div className="mb-2">
@@ -100,14 +130,19 @@ const PerspectiveQuote = ({ quote, author, perspective }) => {
           {perspective === 'parent' ? 'PARENT PERSPECTIVE' : 'KID PERSPECTIVE'}
         </span>
       </div>
-      <blockquote className="text-lg italic text-gray-700 mb-3">"{quote}"</blockquote>
+      <blockquote className="text-lg italic text-gray-700 mb-3">&quot;{quote}&quot;</blockquote>
       <p className="text-sm text-gray-600">— {author}</p>
     </div>
   );
 };
 
 // Gallery item component
-const GalleryItem = ({ src, caption }) => {
+interface GalleryItemProps {
+  src: string;
+  caption: string;
+}
+
+const GalleryItem: React.FC<GalleryItemProps> = ({ src, caption }) => {
   return (
     <div className="rounded-lg overflow-hidden">
       <div className="relative h-48 w-full">
@@ -140,7 +175,7 @@ export default function AfterSchoolPage() {
                   <h1 className="text-4xl md:text-5xl font-display font-bold">Teddy BSO Explorers</h1>
                 </div>
                 <p className="text-xl italic text-gray-700 mb-6">
-                  "After school doesn\'t have to feel like after-thought."
+                  &quot;After school doesn&apos;t have to feel like after-thought.&quot;
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
                   We turn those precious afternoon hours into adventures worth talking about at dinner. Bilingual activities, outdoor play, and creative exploration—because your child deserves more than just supervision.
@@ -437,7 +472,7 @@ export default function AfterSchoolPage() {
             Ready to give your kid the after-school life they deserve?
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            No more "How was your day?" "Fine." conversations. Get ready for "You won't BELIEVE what we did at BSO today!"
+            No more &quot;How was your day?&quot; &quot;Fine.&quot; conversations. Get ready for &quot;You won&apos;t BELIEVE what we did at BSO today!&quot;
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

@@ -4,10 +4,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
-import { useTranslation } from '@/lib/translations';
 
 const ApiePlayground = () => {
-  const { t } = useTranslation('en');
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const [confettiActive, setConfettiActive] = useState(false);
@@ -51,7 +49,18 @@ const ApiePlayground = () => {
   }, []);
 
   // Handle coloring
-  const handleColorArea = (area) => {
+  // Define the possible coloring areas explicitly to give the `area` parameter a type
+  type ColorArea =
+    | 'banana1'
+    | 'banana2'
+    | 'leaf1'
+    | 'leaf2'
+    | 'monkey'
+    | 'sun'
+    | 'cloud'
+    | 'flower';
+
+  const handleColorArea = (area: ColorArea) => {
     setColoringAreas(prev => ({
       ...prev,
       [area]: activeColor
@@ -122,10 +131,10 @@ const ApiePlayground = () => {
       {/* Header */}
       <div className="container mx-auto px-4 pt-12 pb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-brand-purple">
-          Apie's Playground
+          Apie&apos;s Playground
         </h1>
         <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-          Welcome to Apie's secret banana paradise! Color, play, and have fun!
+          Welcome to Apie&apos;s secret banana paradise! Color, play, and have fun!
         </p>
         
         {/* Audio player */}
@@ -339,7 +348,7 @@ const ApiePlayground = () => {
             <h2 className="text-2xl font-display font-bold mb-4 text-center">Banana Puns</h2>
             
             <div className="bg-brand-yellow bg-opacity-20 p-6 rounded-lg mb-6">
-              <p className="text-xl text-center italic">"{bananaPuns[currentPun]}"</p>
+              <p className="text-xl text-center italic">&quot;{bananaPuns[currentPun]}&quot;</p>
             </div>
             
             <div className="text-center">
@@ -369,7 +378,7 @@ const ApiePlayground = () => {
                   <li>Bend to the left, like a curvy banana</li>
                   <li>Bend to the right, even more curvy!</li>
                   <li>Spin around and peel yourself!</li>
-                  <li>Jump up and shout "BANANA!"</li>
+                  <li>Jump up and shout &quot;BANANA!&quot;</li>
                 </ol>
               </div>
               
@@ -381,7 +390,7 @@ const ApiePlayground = () => {
                   <li>🦁 Lion: Roar loudly and show your claws</li>
                   <li>🐘 Elephant: Make your arm like a trunk and trumpet</li>
                   <li>🦒 Giraffe: Stretch your neck up tall</li>
-                  <li>🐸 Frog: Hop around and say "ribbit ribbit"</li>
+                  <li>🐸 Frog: Hop around and say &quot;ribbit ribbit&quot;</li>
                 </ul>
               </div>
             </div>

@@ -32,7 +32,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           {title}
         </h3>
         <p className="text-gray-600 text-center italic">
-          "{tagline}"
+          &quot;{tagline}&quot;
         </p>
       </div>
     </Link>

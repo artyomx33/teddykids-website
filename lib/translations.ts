@@ -186,179 +186,179 @@ export const translations = {
   },
   nl: {
     navigation: {
-      home: "[NL_TRANSLATION_NEEDED]",
-      about: "[NL_TRANSLATION_NEEDED]",
-      programs: "[NL_TRANSLATION_NEEDED]",
-      locations: "[NL_TRANSLATION_NEEDED]",
-      team: "[NL_TRANSLATION_NEEDED]",
-      learning: "[NL_TRANSLATION_NEEDED]",
-      contact: "[NL_TRANSLATION_NEEDED]"
+      home: "Home",
+      about: "Over Ons",
+      programs: "Programma's",
+      locations: "Locaties",
+      team: "Team",
+      learning: "Leermomenten",
+      contact: "Contact"
     },
     hero: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
-      cta1: "[NL_TRANSLATION_NEEDED]",
-      cta2: "[NL_TRANSLATION_NEEDED]"
+      title: "Van Eerste Stapjes naar Wereldburgers",
+      subtitle: "Waar de eerste woorden van jouw kind leiden tot een wereld vol mogelijkheden.",
+      cta1: "Plan een Rondleiding",
+      cta2: "Schrijf je Nu In"
     },
     pillars: {
-      title: "[NL_TRANSLATION_NEEDED]",
+      title: "Onze Belofte aan Elk Kind",
       pillar1: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "Tweetalige Briljantheid",
+        description: "Taal opent deuren naar nieuwe werelden."
       },
       pillar2: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "Leren door Spel",
+        description: "Vreugde is de basis van blijvende kennis."
       },
       pillar3: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "Wereldse Harten & Geesten",
+        description: "Wij voeden de wereldburgers van morgen."
       },
       pillar4: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "20 Jaar Zorg",
+        description: "Twee decennia expertise in kindontwikkeling."
       }
     },
     socialProof: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
+      title: "Vertrouwd door 10.000+ families sinds 2004",
+      subtitle: "Dit zeggen sommige van onze ouders:",
       review1: {
-        quote: "[NL_TRANSLATION_NEEDED]",
-        author: "[NL_TRANSLATION_NEEDED]"
+        quote: "Teddy Kids verzorgde onze dochter niet alleen—ze vormden haar.",
+        author: "Emma & James, Ouders sinds 2018"
       },
       review2: {
-        quote: "[NL_TRANSLATION_NEEDED]",
-        author: "[NL_TRANSLATION_NEEDED]"
+        quote: "De tweetalige omgeving gaf onze zoon vertrouwen dat we nooit hadden verwacht.",
+        author: "Sophia, Moeder van twee"
       },
       review3: {
-        quote: "[NL_TRANSLATION_NEEDED]",
-        author: "[NL_TRANSLATION_NEEDED]"
+        quote: "Als internationale ouders vonden wij een tweede thuis bij Teddy Kids.",
+        author: "Miguel & Ling, TISA Ouders"
       },
-      trustedBy: "[NL_TRANSLATION_NEEDED]"
+      trustedBy: "Vertrouwd door organisaties zoals:"
     },
     programs: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
+      title: "Wat Wij Aanbieden",
+      subtitle: "Programma's ontworpen voor elke fase van de kindertijd",
       nursery: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        tagline: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "Kinderopvang",
+        tagline: "Veilige, zachte start",
+        description: "Zorgzame opvang voor onze jongste ontdekkers."
       },
       preschool: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        tagline: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "Peuterschool",
+        tagline: "Waar spel betekenis krijgt",
+        description: "Fundamenten bouwen door begeleide ontdekking."
       },
       afterSchool: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        tagline: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "Naschoolse Opvang",
+        tagline: "Ontdekken na schooltijd",
+        description: "Leren verlengen buiten het klaslokaal."
       },
       tisa: {
-        title: "[NL_TRANSLATION_NEEDED]",
-        tagline: "[NL_TRANSLATION_NEEDED]",
-        description: "[NL_TRANSLATION_NEEDED]"
+        title: "TISA",
+        tagline: "Tweetalige Internationale School",
+        description: "Onderwijs van wereldklasse met een globale visie."
       }
     },
     locations: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
-      viewDetails: "[NL_TRANSLATION_NEEDED]",
-      bookTour: "[NL_TRANSLATION_NEEDED]",
-      applyNow: "[NL_TRANSLATION_NEEDED]",
-      openingHours: "[NL_TRANSLATION_NEEDED]",
-      contactPerson: "[NL_TRANSLATION_NEEDED]",
-      googleReviews: "[NL_TRANSLATION_NEEDED]"
+      title: "Vind jouw Dichtstbijzijnde Teddy Kids",
+      subtitle: "Meerdere locaties in de regio",
+      viewDetails: "Bekijk Details",
+      bookTour: "Plan een Rondleiding",
+      applyNow: "Meld je Nu Aan",
+      openingHours: "Openingstijden",
+      contactPerson: "Contactpersoon",
+      googleReviews: "Google Reviews"
     },
     team: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
-      didYouKnow: "[NL_TRANSLATION_NEEDED]",
-      viewBio: "[NL_TRANSLATION_NEEDED]",
+      title: "Ontmoet de Magische Makers",
+      subtitle: "De gepassioneerde opvoeders achter Teddy Kids",
+      didYouKnow: "Wist je dat?",
+      viewBio: "Lees Volledig Profiel",
       members: {
         artem: {
           name: "Artem",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "Directeur",
+          funFact: "Altijd één idee vooruit"
         },
         tess: {
           name: "Tess",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "Hoofd Operaties",
+          funFact: "Heeft voor alles een spreadsheet"
         },
         jess: {
           name: "Jess",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "Kwaliteitsmanager Onderwijs",
+          funFact: "Bedenker van ons TK-regenlied"
         },
         meral: {
           name: "Meral",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "People & Culture",
+          funFact: "Bakt prijswinnende koekjes"
         },
         antonela: {
           name: "Antonela",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "Locatiemanager",
+          funFact: "Leerde een kind 4 talen vóór zijn 5e"
         },
         pamela: {
           name: "Pamela",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "HR",
+          funFact: "Maakt 7 soorten lasagne"
         },
         svetlana: {
           name: "Svetlana",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "Financiën",
+          funFact: "Stiekem een puzzelmeester"
         },
         sofia: {
           name: "Sofia",
-          role: "[NL_TRANSLATION_NEEDED]",
-          funFact: "[NL_TRANSLATION_NEEDED]"
+          role: "Creatief & Evenementen",
+          funFact: "Denkt dat glitter een primaire kleur is"
         }
       }
     },
     learningMoments: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
-      readMore: "[NL_TRANSLATION_NEEDED]",
-      watchVideo: "[NL_TRANSLATION_NEEDED]",
-      filterBy: "[NL_TRANSLATION_NEEDED]",
+      title: "Leermomenten",
+      subtitle: "Korte inzichten van binnen TK",
+      readMore: "Lees Meer",
+      watchVideo: "Bekijk Video",
+      filterBy: "Filter op:",
       categories: {
-        bilingual: "[NL_TRANSLATION_NEEDED]",
-        empathy: "[NL_TRANSLATION_NEEDED]",
-        stem: "[NL_TRANSLATION_NEEDED]",
-        creativity: "[NL_TRANSLATION_NEEDED]",
-        all: "[NL_TRANSLATION_NEEDED]"
+        bilingual: "Tweetalig",
+        empathy: "Empathie",
+        stem: "STEM",
+        creativity: "Creativiteit",
+        all: "Alle Onderwerpen"
       }
     },
     contact: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
-      whatsappButton: "[NL_TRANSLATION_NEEDED]",
-      whatsappMessage: "[NL_TRANSLATION_NEEDED]",
-      formName: "[NL_TRANSLATION_NEEDED]",
-      formEmail: "[NL_TRANSLATION_NEEDED]",
-      formChildAge: "[NL_TRANSLATION_NEEDED]",
-      formMessage: "[NL_TRANSLATION_NEEDED]",
-      formSubmit: "[NL_TRANSLATION_NEEDED]",
-      thankYou: "[NL_TRANSLATION_NEEDED]"
+      title: "Jouw Reis Begint Hier",
+      subtitle: "We kijken ernaar uit om jouw gezin te ontmoeten",
+      whatsappButton: "Chat op WhatsApp",
+      whatsappMessage: "Hoi Teddy Kids! Ik wil graag een rondleiding boeken voor mijn kind.",
+      formName: "Je Naam",
+      formEmail: "E-mailadres",
+      formChildAge: "Leeftijd van het Kind",
+      formMessage: "Je Bericht",
+      formSubmit: "Verstuur Bericht",
+      thankYou: "Dank je wel! We nemen snel contact op."
     },
     apiePlayground: {
-      title: "[NL_TRANSLATION_NEEDED]",
-      subtitle: "[NL_TRANSLATION_NEEDED]",
-      maelynQuote: "[NL_TRANSLATION_NEEDED]",
-      coloringTitle: "[NL_TRANSLATION_NEEDED]",
-      downloadColoring: "[NL_TRANSLATION_NEEDED]",
-      listenToApie: "[NL_TRANSLATION_NEEDED]",
-      secretMessage: "[NL_TRANSLATION_NEEDED]"
+      title: "Apie's Speelplaats",
+      subtitle: "Een speciale plek alleen voor kids",
+      maelynQuote: "Dit is de aap waarmee het allemaal begon.",
+      coloringTitle: "Kleuren met Apie",
+      downloadColoring: "Download Kleurplaat",
+      listenToApie: "Luister naar Apie",
+      secretMessage: "Je hebt de geheime pagina gevonden! Goed gedaan!"
     },
     footer: {
-      copyright: "[NL_TRANSLATION_NEEDED]",
-      privacy: "[NL_TRANSLATION_NEEDED]",
-      terms: "[NL_TRANSLATION_NEEDED]",
-      careers: "[NL_TRANSLATION_NEEDED]",
-      followUs: "[NL_TRANSLATION_NEEDED]"
+      copyright: "© 2024 Teddy Kids. Alle rechten voorbehouden.",
+      privacy: "Privacybeleid",
+      terms: "Servicevoorwaarden",
+      careers: "Vacatures",
+      followUs: "Volg Ons"
     }
   }
 };

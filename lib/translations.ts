@@ -201,6 +201,117 @@ export const translations = {
           "teddy kids programs, nursery, preschool, after school, TISA, international school, bilingual education, leiden"
       }
     },
+    /* ──────────────────────────────────────────────────────────
+     *  FULL LOCATIONS PAGE ( /locations )
+     * ────────────────────────────────────────────────────────── */
+    locationsPage: {
+      hero: {
+        title: "Find Your Nearest Teddy Kids",
+        subtitle: "Across Leiden, our locations offer the same loving care, bilingual approach, and joyful environments—with each team bringing its own energy."
+      },
+      map: {
+        title: "Map of Teddy Kids Locations",
+        locationsCount: "5 Locations Worldwide",
+        interactiveMapComing: "Interactive Map Coming Soon"
+      },
+      filters: {
+        title: "Filter by:",
+        all: "All Locations",
+        leiden: "Leiden",
+        oegstgeest: "Oegstgeest",
+        international: "International"
+      },
+      locations: {
+        rbw: {
+          title: "RBW – Rijnsburgerweg 35",
+          description: "Our original TK location—where it all began. A warm, nurturing space for our youngest learners.",
+          address: "Address:",
+          openingHours: "Opening Hours:",
+          days: {
+            monday: "Monday:",
+            tuesday: "Tuesday:",
+            wednesday: "Wednesday:",
+            thursday: "Thursday:",
+            friday: "Friday:",
+            weekend: "Weekend:"
+          },
+          closed: "Closed",
+          contactPerson: "Contact Person:",
+          siteLeader: "Site Leader",
+          googleReviews: "Google Reviews:",
+          quote: "RBW is like family. They made our daughter feel at home from day one.",
+          bookTour: "Book a Tour",
+          applyNow: "Apply Now"
+        },
+        rb35: {
+          title: "RB3/RB5 – Rijnsburgerweg 3 & 5",
+          description: "A dynamic, dual-building hub with spaces for both young children and school-aged adventurers.",
+          quote: "The after-school activities here are so creative—our son never wants to leave!"
+        },
+        lrz: {
+          title: "LRZ – Lorentzkade 15a",
+          description: "Home to both our bilingual after-school care and the international TISA program, all in one inspiring space.",
+          quote: "The staff at Lorentzkade are amazing—our daughter loves both TK and her new TISA class."
+        },
+        zml: {
+          title: "ZML – Zeemanlaan 22a",
+          description: "A cozy, creative setting where little ones explore, play, and thrive in a close-knit environment.",
+          quote: "ZML is magical. The environment is peaceful, clean, and full of laughter."
+        },
+        tisaPortugal: {
+          title: "TISA Portugal",
+          description: "Our international campus in sunny Portugal",
+          quote: "Moving to Portugal was made so much easier knowing our children had a familiar educational environment at TISA."
+        }
+      },
+      tisa: {
+        title: "TISA – Our International Schools",
+        description: "Teddy Kids also proudly operates two bilingual international schools under the TISA brand—designed for curious minds ready to take on the world.",
+        netherlands: {
+          description: "Bilingual international primary school in Leiden.",
+          button: "Visit TISA Netherlands"
+        },
+        portugal: {
+          description: "Our sunny international campus in Lisbon.",
+          button: "Visit TISA Portugal"
+        }
+      },
+      transportation: {
+        title: "Getting to Teddy Kids",
+        publicTransport: {
+          title: "Public Transportation",
+          items: [
+            "All our Leiden locations are within 10–15 minutes from Leiden Centraal Station by bus",
+            "Bus lines 1, 3, and 4 serve our various locations"
+          ]
+        },
+        parking: {
+          title: "Parking & Bicycles",
+          items: [
+            "All locations have dedicated drop-off/pick-up parking spaces",
+            "Covered bicycle parking available at every location",
+            "Stroller storage available inside each building"
+          ]
+        },
+        specialServices: {
+          title: "Special Transportation Services",
+          description: "For our TISA and After School programs, we offer transportation services between participating schools and our locations. Please inquire for specific routes and availability.",
+          button: "Ask about transportation options"
+        }
+      },
+      cta: {
+        title: "Ready to Visit a Location?",
+        subtitle: "Schedule a tour at your preferred location to see our facilities, meet our team, and experience the Teddy Kids difference firsthand.",
+        bookTour: "Book a Tour",
+        applyNow: "Apply Now"
+      },
+      metadata: {
+        title: "Our Locations | Teddy Kids",
+        description: "Find your nearest Teddy Kids location. Multiple locations throughout Leiden, Oegstgeest, and international campuses offering bilingual childcare and education.",
+        keywords: "teddy kids locations, childcare leiden, preschool oegstgeest, TISA portugal, international school locations, bilingual daycare netherlands",
+        alt: "Teddy Kids Locations - Find your nearest center"
+      }
+    },
     locations: {
       title: "Find Your Nearest Teddy Kids",
       subtitle: "Multiple locations throughout the region",
@@ -563,6 +674,117 @@ export const translations = {
           "Van luiers tot diploma's: ontdek Teddy Baby, Teddy Learners, Teddy BSO Explorers en TISA. Programma's vol vreugde, groei en wereldse blik.",
         keywords:
           "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
+      }
+    },
+    /* ──────────────────────────────────────────────────────────
+     *  VOLLEDIGE LOCATIES-PAGINA ( /locations )
+     * ────────────────────────────────────────────────────────── */
+    locationsPage: {
+      hero: {
+        title: "Vind jouw dichtstbijzijnde Teddy Kids",
+        subtitle: "In heel Leiden bieden onze locaties dezelfde liefdevolle zorg, tweetalige aanpak en vrolijke sfeer—met elk team dat z'n eigen energie meebrengt."
+      },
+      map: {
+        title: "Kaart van Teddy Kids locaties",
+        locationsCount: "5 locaties wereldwijd",
+        interactiveMapComing: "Interactieve kaart binnenkort beschikbaar"
+      },
+      filters: {
+        title: "Filter op:",
+        all: "Alle locaties",
+        leiden: "Leiden",
+        oegstgeest: "Oegstgeest",
+        international: "Internationaal"
+      },
+      locations: {
+        rbw: {
+          title: "RBW – Rijnsburgerweg 35",
+          description: "Onze allereerste locatie—waar alles begon. Een warme, zorgzame plek voor onze jongste Teddy's.",
+          address: "Adres:",
+          openingHours: "Openingstijden:",
+          days: {
+            monday: "Maandag:",
+            tuesday: "Dinsdag:",
+            wednesday: "Woensdag:",
+            thursday: "Donderdag:",
+            friday: "Vrijdag:",
+            weekend: "Weekend:"
+          },
+          closed: "Gesloten",
+          contactPerson: "Contactpersoon:",
+          siteLeader: "Locatiehoofd",
+          googleReviews: "Google Beoordelingen:",
+          quote: "RBW voelt als familie. Ze lieten onze dochter zich vanaf dag één thuis voelen.",
+          bookTour: "Plan een rondleiding",
+          applyNow: "Aanmelden"
+        },
+        rb35: {
+          title: "RB3/RB5 – Rijnsburgerweg 3 & 5",
+          description: "Een dynamisch dubbelpand met ruimte voor zowel jonge kinderen als schoolgaande avonturiers.",
+          quote: "De naschoolse activiteiten zijn zo creatief—onze zoon wil nooit meer naar huis!"
+        },
+        lrz: {
+          title: "LRZ – Lorentzkade 15a",
+          description: "Thuisbasis voor zowel onze tweetalige naschoolse opvang als het internationale TISA-programma—allemaal onder één inspirerend dak.",
+          quote: "Het team op Lorentzkade is geweldig—onze dochter is dol op zowel TK als haar TISA-klas."
+        },
+        zml: {
+          title: "ZML – Zeemanlaan 22a",
+          description: "Een knusse, creatieve plek waar kleintjes ontdekken, spelen en groeien in een vertrouwde omgeving.",
+          quote: "ZML is magisch. De sfeer is rustig, schoon en vol gelach."
+        },
+        tisaPortugal: {
+          title: "TISA Portugal",
+          description: "Ons internationale campus in het zonnige Portugal",
+          quote: "Verhuizen naar Portugal werd zoveel makkelijker doordat onze kinderen terecht konden in een vertrouwde leeromgeving bij TISA."
+        }
+      },
+      tisa: {
+        title: "TISA – Onze Internationale Scholen",
+        description: "Teddy Kids runt met trots twee tweetalige internationale scholen onder het TISA-label—voor nieuwsgierige denkers die klaar zijn om de wereld te verkennen.",
+        netherlands: {
+          description: "Tweetalige internationale basisschool in Leiden.",
+          button: "Bezoek TISA Nederland"
+        },
+        portugal: {
+          description: "Onze zonnige internationale campus in Lissabon.",
+          button: "Bezoek TISA Portugal"
+        }
+      },
+      transportation: {
+        title: "Bereikbaarheid van Teddy Kids",
+        publicTransport: {
+          title: "Openbaar vervoer",
+          items: [
+            "Al onze Leidse locaties liggen op 10–15 minuten van station Leiden Centraal met de bus",
+            "Buslijnen 1, 3 en 4 stoppen bij onze locaties"
+          ]
+        },
+        parking: {
+          title: "Parkeren & fietsen",
+          items: [
+            "Elke locatie heeft eigen parkeergelegenheid voor halen & brengen",
+            "Overdekte fietsenstalling bij elke locatie beschikbaar",
+            "Kinderwagenstalling aanwezig in elk gebouw"
+          ]
+        },
+        specialServices: {
+          title: "Speciale vervoersdiensten",
+          description: "Voor onze TISA- en naschoolse programma's bieden we vervoer tussen deelnemende scholen en onze locaties. Vraag gerust naar de routes en beschikbaarheid.",
+          button: "Vraag naar de vervoersmogelijkheden"
+        }
+      },
+      cta: {
+        title: "Klaar om een locatie te bezoeken?",
+        subtitle: "Plan een rondleiding op jouw gewenste locatie, bekijk onze ruimtes, ontmoet het team en ervaar zelf het Teddy Kids-gevoel.",
+        bookTour: "Plan een rondleiding",
+        applyNow: "Aanmelden"
+      },
+      metadata: {
+        title: "Onze Locaties | Teddy Kids",
+        description: "Vind jouw dichtstbijzijnde Teddy Kids locatie. Meerdere vestigingen in Leiden, Oegstgeest en internationale campussen met tweetalige kinderopvang en onderwijs.",
+        keywords: "teddy kids locaties, kinderopvang leiden, peuterspeelzaal oegstgeest, TISA portugal, internationale school locaties, tweetalige kinderopvang nederland",
+        alt: "Teddy Kids Locaties - Vind jouw dichtstbijzijnde centrum"
       }
     },
     locations: {

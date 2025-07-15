@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { getAllLocations, Location } from '@/lib/locations';
 import Button from '@/components/Button';
@@ -11,11 +12,36 @@ interface LocationCardProps {
 }
 
 const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // Format address for display
   const formattedAddress = `${location.address.street}, ${location.address.postalCode} ${location.address.city}, ${location.address.country}`;
+
+  // Get location-specific translations based on location ID
+  const getLocationTranslation = (locationId: string, field: string) => {
+    // Map location IDs to translation keys
+    const locationKeyMap: Record<string, string> = {
+      'rbw': 'rbw',
+      'rb35': 'rb35',
+      'lrz': 'lrz',
+      'zml': 'zml',
+      'tisa-pt': 'tisaPortugal'
+    };
+    
+    const key = locationKeyMap[locationId];
+    if (key && t(`locationsPage.locations.${key}.${field}`)) {
+      return t(`locationsPage.locations.${key}.${field}`);
+    }
+    
+    // Fallback to location object data if no translation
+    return null;
+  };
+
+  // Get location description or quote from translations if available
+  const locationDescription = getLocationTranslation(location.id, 'description') || location.tagline;
+  const locationQuote = getLocationTranslation(location.id, 'quote');
 
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg">
@@ -59,7 +85,7 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
         <div className="flex justify-between items-start mb-4">
           <div>
             <h3 className="text-xl font-display font-semibold">{location.name}</h3>
-            <p className="text-gray-600 italic">{location.tagline}</p>
+            <p className="text-gray-600 italic">{locationDescription}</p>
           </div>
           {location.featured && (
             <span className="bg-brand-yellow px-3 py-1 rounded-full text-xs font-medium">
@@ -70,7 +96,9 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
 
         {/* Address */}
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-700 mb-1">Address:</h4>
+          <h4 className="text-sm font-semibold text-gray-700 mb-1">
+            {t('locationsPage.locations.rbw.address')}
+          </h4>
           <p className="text-gray-600 text-sm">{formattedAddress}</p>
           <a
             href={location.address.googleMapsUrl}
@@ -85,31 +113,31 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
         {/* Opening Hours */}
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-gray-700 mb-1">
-            {t('locations.openingHours')}:
+            {t('locationsPage.locations.rbw.openingHours')}
           </h4>
           <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-600">
-            <span>Monday:</span>
+            <span>{t('locationsPage.locations.rbw.days.monday')}</span>
             <span>{location.hours.monday}</span>
-            <span>Tuesday:</span>
+            <span>{t('locationsPage.locations.rbw.days.tuesday')}</span>
             <span>{location.hours.tuesday}</span>
-            <span>Wednesday:</span>
+            <span>{t('locationsPage.locations.rbw.days.wednesday')}</span>
             <span>{location.hours.wednesday}</span>
-            <span>Thursday:</span>
+            <span>{t('locationsPage.locations.rbw.days.thursday')}</span>
             <span>{location.hours.thursday}</span>
-            <span>Friday:</span>
+            <span>{t('locationsPage.locations.rbw.days.friday')}</span>
             <span>{location.hours.friday}</span>
-            <span>Weekend:</span>
-            <span>{location.hours.weekend}</span>
+            <span>{t('locationsPage.locations.rbw.days.weekend')}</span>
+            <span>{location.hours.weekend || t('locationsPage.locations.rbw.closed')}</span>
           </div>
         </div>
 
         {/* Contact Person */}
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-gray-700 mb-1">
-            {t('locations.contactPerson')}:
+            {t('locationsPage.locations.rbw.contactPerson')}
           </h4>
           <p className="text-gray-600 text-sm">
-            {location.contact.name} - {location.contact.role}
+            {location.contact.name} - {t('locationsPage.locations.rbw.siteLeader')}
           </p>
           <p className="text-gray-600 text-sm">{location.contact.email}</p>
           <p className="text-gray-600 text-sm">{location.contact.phone}</p>
@@ -119,10 +147,10 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
         {location.reviews.length > 0 && (
           <div className="mb-6 p-4 bg-gray-50 rounded-lg">
             <h4 className="text-sm font-semibold text-gray-700 mb-2">
-              {t('locations.googleReviews')}:
+              {t('locationsPage.locations.rbw.googleReviews')}
             </h4>
             <div className="text-sm italic text-gray-600">
-              &quot;{location.reviews[0].text}&quot;
+              &quot;{locationQuote || location.reviews[0].text}&quot;
             </div>
             <div className="flex items-center mt-2">
               <div className="flex">
@@ -157,7 +185,7 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
             fullWidth
             size="md"
           >
-            {t('locations.bookTour')}
+            {t('locationsPage.locations.rbw.bookTour')}
           </Button>
           <Button
             variant="outline"
@@ -165,7 +193,7 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
             fullWidth
             size="md"
           >
-            {t('locations.applyNow')}
+            {t('locationsPage.locations.rbw.applyNow')}
           </Button>
         </div>
       </div>
@@ -182,7 +210,8 @@ const Locations: React.FC<LocationsProps> = ({
   className = '',
   limit
 }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const locations = getAllLocations();
   const displayedLocations = limit ? locations.slice(0, limit) : locations;
 
@@ -190,24 +219,24 @@ const Locations: React.FC<LocationsProps> = ({
     <section className={`py-16 ${className}`}>
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-4">
-          {t('locations.title')}
+          {t('locationsPage.hero.title')}
         </h2>
         
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          {t('locations.subtitle')}
+          {t('locationsPage.hero.subtitle')}
         </p>
         
         {/* Map Placeholder */}
         <div className="relative w-full h-64 md:h-96 mb-12 rounded-xl overflow-hidden shadow-md">
           <Image
             src="/images/tk-map.png"
-            alt="Teddy Kids Locations Map"
+            alt={t('locationsPage.map.title')}
             fill
             className="object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black/30">
             <span className="text-white text-lg font-medium">
-              Interactive Map Coming Soon
+              {t('locationsPage.map.interactiveMapComing')}
             </span>
           </div>
         </div>
@@ -227,7 +256,7 @@ const Locations: React.FC<LocationsProps> = ({
               href="/locations"
               size="lg"
             >
-              View All Locations
+              {t('locations.viewDetails')}
             </Button>
           </div>
         )}

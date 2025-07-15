@@ -195,10 +195,11 @@ export const translations = {
       contact: "Contact"
     },
     hero: {
-      title: "Van Eerste Stapjes naar Wereldburgers",
-      subtitle: "Waar de eerste woorden van jouw kind leiden tot een wereld vol mogelijkheden.",
-      cta1: "Plan een Rondleiding",
-      cta2: "Schrijf je Nu In"
+      title: "Van eerste stapjes tot wereldburgers",
+      subtitle:
+        "Waar de eerste woordjes van je kind leiden naar een wereld vol mogelijkheden. Tweetalige opvang en internationale school in Leiden.",
+      cta1: "Kom langs voor een rondleiding",
+      cta2: "Start vandaag met aanmelden"
     },
     pillars: {
       title: "Onze Belofte aan Elk Kind",
@@ -237,20 +238,20 @@ export const translations = {
       trustedBy: "Vertrouwd door organisaties zoals:"
     },
     programs: {
-      title: "Wat Wij Aanbieden",
+      title: "Wat wij bieden",
       subtitle: "Programma's ontworpen voor elke fase van de kindertijd",
       nursery: {
-        title: "Kinderopvang",
+        title: "Baby-opvang",
         tagline: "Veilige, zachte start",
         description: "Zorgzame opvang voor onze jongste ontdekkers."
       },
       preschool: {
-        title: "Peuterschool",
+        title: "Peuterklas",
         tagline: "Waar spel betekenis krijgt",
         description: "Fundamenten bouwen door begeleide ontdekking."
       },
       afterSchool: {
-        title: "Naschoolse Opvang",
+        title: "BSO",
         tagline: "Ontdekken na schooltijd",
         description: "Leren verlengen buiten het klaslokaal."
       },
@@ -264,8 +265,8 @@ export const translations = {
       title: "Vind jouw Dichtstbijzijnde Teddy Kids",
       subtitle: "Meerdere locaties in de regio",
       viewDetails: "Bekijk Details",
-      bookTour: "Plan een Rondleiding",
-      applyNow: "Meld je Nu Aan",
+      bookTour: "Kom langs voor een rondleiding",
+      applyNow: "Start vandaag met aanmelden",
       openingHours: "Openingstijden",
       contactPerson: "Contactpersoon",
       googleReviews: "Google Reviews"

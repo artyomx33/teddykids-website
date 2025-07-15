@@ -110,13 +110,19 @@ const Navigation: React.FC = () => {
               Apply Now
             </Button>
 
-            {/* Hidden Banana Icon */}
+            {/* Hidden Apie Monkey Icon */}
             <button
               onClick={handleBananaClick}
-              className="text-yellow-400 opacity-20 hover:opacity-100 transition-opacity cursor-default"
-              aria-label="Hidden banana icon"
+              className="text-yellow-400 opacity-[0.33] hover:opacity-100 transition-opacity cursor-default"
+              aria-label="Hidden Apie monkey icon"
             >
-              🍌
+              <Image
+                src="/images/icons/banana-icon.png"
+                alt="Hidden Apie monkey icon"
+                width={24}
+                height={24}
+                className="w-6 h-6 object-contain"
+              />
             </button>
           </div>
 
@@ -179,13 +185,20 @@ const Navigation: React.FC = () => {
               <LanguageSwitcher className="w-full justify-start" />
             </div>
             
-            {/* Hidden Banana Icon in Mobile Menu */}
+            {/* Hidden Apie Monkey Icon in Mobile Menu */}
             <button
               onClick={handleBananaClick}
-              className="text-yellow-400 opacity-20 hover:opacity-100 transition-opacity cursor-default py-2 text-left"
-              aria-label="Hidden banana icon"
+              className="text-yellow-400 opacity-[0.33] hover:opacity-100 transition-opacity cursor-default py-2 text-left"
+              aria-label="Hidden Apie monkey icon"
             >
-              🍌 Secret
+              <Image
+                src="/images/icons/banana-icon.png"
+                alt="Hidden Apie monkey icon"
+                width={24}
+                height={24}
+                className="inline-block w-6 h-6 object-contain mr-2"
+              />
+              Secret
             </button>
           </div>
         </div>

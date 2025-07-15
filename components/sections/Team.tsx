@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 
 interface TeamMemberProps {
@@ -19,6 +20,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   imageSrc = '/images/team/placeholder.jpg',
   onClick,
 }) => {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+  
   return (
     <div 
       className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden cursor-pointer"
@@ -36,7 +40,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
         <h3 className="text-xl font-display font-semibold">{name}</h3>
         <p className="text-gray-600 mb-3">{role}</p>
         <div className="bg-brand-pink bg-opacity-20 p-3 rounded-lg">
-          <p className="text-sm font-medium text-gray-700">Did You Know?</p>
+          <p className="text-sm font-medium text-gray-700">{t('teamPage.members.didYouKnow')}</p>
           <p className="text-sm italic text-gray-600">{funFact}</p>
         </div>
       </div>
@@ -58,6 +62,9 @@ interface BioModalProps {
 }
 
 const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+  
   if (!member) return null;
 
   return (
@@ -102,7 +109,7 @@ const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
           )}
           
           <div className="bg-brand-pink bg-opacity-20 p-4 rounded-lg">
-            <h4 className="text-sm font-medium mb-1">Did You Know?</h4>
+            <h4 className="text-sm font-medium mb-1">{t('teamPage.members.didYouKnow')}</h4>
             <p className="italic text-gray-700">{member.funFact}</p>
           </div>
         </div>
@@ -116,79 +123,80 @@ interface TeamProps {
 }
 
 const Team: React.FC<TeamProps> = ({ className = '' }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const [activeMember, setActiveMember] = useState<string | null>(null);
   
   // Team members data from translations
   const teamMembers = [
     {
       id: 'artem',
-      name: t('team.members.artem.name'),
-      role: t('team.members.artem.role'),
-      funFact: 'Built the first Teddy Kids location while still a student.',
+      name: 'Artem',
+      role: t('teamPage.members.artem.role'),
+      funFact: t('teamPage.members.artem.funFact'),
       imageSrc: '/images/team/artem.jpg',
       bio: "Artem leads Teddy Kids with vision and passion, always looking for innovative ways to enhance children's learning experiences.",
       childQuote: "Artem makes the best paper airplanes!"
     },
     {
       id: 'tess',
-      name: t('team.members.tess.name'),
-      role: t('team.members.tess.role'),
-      funFact: "Can organise anything—even a toddler's toy explosion—in under 5 minutes.",
+      name: 'Tess',
+      role: t('teamPage.members.tess.role'),
+      funFact: t('teamPage.members.tess.funFact'),
       imageSrc: '/images/team/tess.jpg',
       bio: "Tess ensures everything runs smoothly across all Teddy Kids locations, with an eye for detail and heart for people.",
       childQuote: "Miss Tess knows where everything is!"
     },
     {
       id: 'jess',
-      name: t('team.members.jess.name'),
-      role: t('team.members.jess.role'),
-      funFact: 'Plays five musical instruments and uses them in class sing-alongs.',
+      name: 'Jess',
+      role: t('teamPage.members.jess.role'),
+      funFact: t('teamPage.members.jess.funFact'),
       imageSrc: '/images/team/jess.jpg',
       bio: "Jess oversees our educational quality, bringing creativity and consistency to our curriculum across all locations.",
       childQuote: "Teacher Jess sings the best songs!"
     },
     {
       id: 'meral',
-      name: t('team.members.meral.name'),
-      role: t('team.members.meral.role'),
-      funFact: 'Has visited 30 countries and loves sharing stories at circle time.',
+      name: 'Meral',
+      role: t('teamPage.members.meral.role'),
+      funFact: t('teamPage.members.meral.funFact'),
       imageSrc: '/images/team/meral.jpg',
       bio: "Meral nurtures our team culture, ensuring Teddy Kids remains a place where both children and staff thrive.",
       childQuote: "Meral gives the best hugs!"
     },
     {
       id: 'antonela',
-      name: t('team.members.antonela.name'),
-      role: t('team.members.antonela.role'),
-      funFact: 'Speaks four languages and is learning a fifth from the kids.',
+      name: 'Antonela',
+      role: t('teamPage.members.antonela.role'),
+      funFact: t('teamPage.members.antonela.funFact'),
       imageSrc: '/images/team/antonela.jpg',
       bio: "Antonela leads our flagship location with warmth and expertise, creating a multilingual environment where children flourish.",
       childQuote: "Antonela knows how to say everything in different languages!"
     },
     {
       id: 'pamela',
-      name: t('team.members.pamela.name'),
-      role: t('team.members.pamela.role'),
-      funFact: 'Remembers every child’s birthday—and their favourite cake flavour.',
+      name: 'Pamela',
+      role: t('teamPage.members.pamela.role'),
+      funFact: t('teamPage.members.pamela.funFact'),
       imageSrc: '/images/team/pamela.jpg',
       bio: "Pamela ensures we have the best talent at Teddy Kids, with a keen eye for educators who truly care about children.",
       childQuote: "Miss Pamela always remembers my birthday!"
     },
     {
       id: 'svetlana',
-      name: t('team.members.svetlana.name'),
-      role: t('team.members.svetlana.role'),
-      funFact: 'Can solve a Rubik’s cube in under two minutes.',
+      name: 'Svetlana',
+      role: t('teamPage.members.svetlana.role'),
+      funFact: t('teamPage.members.svetlana.funFact'),
       imageSrc: '/images/team/svetlana.jpg',
       bio: "Svetlana manages our finances with precision, making sure Teddy Kids can continue to provide exceptional care.",
       childQuote: "Svetlana taught me how to count to 100!"
     },
     {
       id: 'sofia',
-      name: t('team.members.sofia.name'),
-      role: t('team.members.sofia.role'),
-      funFact: 'Once built a cardboard city taller than the children.',
+      name: 'Sofia',
+      role: t('teamPage.members.sofia.role'),
+      funFact: t('teamPage.members.sofia.funFact'),
       imageSrc: '/images/team/sofia.jpg',
       bio: "Sofia brings creativity to everything at Teddy Kids, from classroom designs to special events that children remember forever.",
       childQuote: "Sofia's art projects are magical!"
@@ -203,11 +211,11 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
     <section className={`py-16 ${className}`}>
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-4">
-          {t('team.title')}
+          {t('teamPage.hero.title')}
         </h2>
         
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          {t('team.subtitle')}
+          {t('teamPage.hero.subtitle')}
         </p>
         
         {/* Team Grid */}

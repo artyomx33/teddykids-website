@@ -356,6 +356,98 @@ export const translations = {
         alt: "Teddy Kids Locations - Find your nearest center"
       }
     },
+    /* ──────────────────────────────────────────────────────────
+     *  TEAM PAGE ( /team )
+     * ────────────────────────────────────────────────────────── */
+    teamPage: {
+      hero: {
+        title: "Meet the Magic Makers",
+        subtitle: "The passionate educators and staff who bring the Teddy Kids vision to life every day."
+      },
+      philosophy: {
+        title: "Our Team Philosophy",
+        paragraph1: "At Teddy Kids, we believe that our team is our greatest asset. We bring together passionate educators from diverse backgrounds who share a common commitment to childhood development and bilingual education.",
+        paragraph2: "We invest in continuous professional development, ensuring our team stays at the forefront of early childhood education. This commitment to excellence translates into innovative, responsive care for every child at Teddy Kids."
+      },
+      members: {
+        didYouKnow: "Did You Know?",
+        artem: {
+          role: "Director",
+          funFact: "Built the first Teddy Kids location while still a student."
+        },
+        tess: {
+          role: "Head of Operations",
+          funFact: "Can organise anything—even a toddler's toy explosion—in under 5 minutes."
+        },
+        jess: {
+          role: "Education Quality Lead",
+          funFact: "Plays five musical instruments and uses them in class sing-alongs."
+        },
+        meral: {
+          role: "People & Culture",
+          funFact: "Has visited 30 countries and loves sharing stories at circle time."
+        },
+        antonela: {
+          role: "Site Leader",
+          funFact: "Speaks four languages and is learning a fifth from the kids."
+        },
+        pamela: {
+          role: "HR",
+          funFact: "Remembers every child's birthday—and their favourite cake flavour."
+        },
+        svetlana: {
+          role: "Finance",
+          funFact: "Can solve a Rubik's cube in under two minutes."
+        },
+        sofia: {
+          role: "Creative & Events",
+          funFact: "Once built a cardboard city taller than the children."
+        }
+      },
+      locations: {
+        title: "The Heart of Every Location",
+        rbw: "From baby giggles to bilingual play, the RBW crew is where Teddy Kids began—and the love still flows strong.",
+        rb35: "This powerhouse team blends care with curiosity—where toddlers become thinkers, and after-schoolers become adventurers.",
+        lrz: "From art corners to bilingual science talks, the Lorentzkade crew nurtures thinkers from afternoon play to global dreams.",
+        zml: "Joyful, gentle, and full of laughter—Zeemanlaan's youngest stars get the best start in the most caring hands."
+      },
+      tisa: {
+        title: "Looking for international schooling?",
+        button: "Visit TISA"
+      },
+      values: {
+        title: "Our Shared Values",
+        value1: {
+          title: "Child-Centered Approach",
+          description: "We place children at the heart of everything we do, respecting their unique personalities, interests, and developmental journeys."
+        },
+        value2: {
+          title: "Global Mindset",
+          description: "We embrace cultural diversity and foster understanding across languages and traditions to prepare children for our interconnected world."
+        },
+        value3: {
+          title: "Continuous Learning",
+          description: "We're committed to ongoing professional development and innovation in early childhood education practices."
+        },
+        value4: {
+          title: "Collaborative Spirit",
+          description: "We work as a unified team across all locations, sharing knowledge and supporting each other to provide the best care."
+        },
+        value5: {
+          title: "Growth Mindset",
+          description: "We believe in the potential of every child and colleague, nurturing development through encouragement and positive feedback."
+        },
+        value6: {
+          title: "Excellence in Care",
+          description: "We maintain the highest standards in everything from educational practices to safety protocols and facility management."
+        }
+      },
+      joinTeam: {
+        title: "Join Our Team",
+        description: "Passionate about early childhood education? Interested in working in a bilingual, international environment? We're always looking for talented educators to join our growing family.",
+        button: "View Career Opportunities"
+      }
+    },
     locations: {
       title: "Find Your Nearest Teddy Kids",
       subtitle: "Multiple locations throughout the region",
@@ -873,6 +965,98 @@ export const translations = {
         description: "Vind jouw dichtstbijzijnde Teddy Kids locatie. Meerdere vestigingen in Leiden, Oegstgeest en internationale campussen met tweetalige kinderopvang en onderwijs.",
         keywords: "teddy kids locaties, kinderopvang leiden, peuterspeelzaal oegstgeest, TISA portugal, internationale school locaties, tweetalige kinderopvang nederland",
         alt: "Teddy Kids Locaties - Vind jouw dichtstbijzijnde centrum"
+      }
+    },
+    /* ──────────────────────────────────────────────────────────
+     *  TEAM PAGINA ( /team )
+     * ────────────────────────────────────────────────────────── */
+    teamPage: {
+      hero: {
+        title: "Maak kennis met de Teddy-helden",
+        subtitle: "De bevlogen begeleiders en medewerkers die elke dag de visie van Teddy Kids tot leven brengen."
+      },
+      philosophy: {
+        title: "Onze teamfilosofie",
+        paragraph1: "Bij Teddy Kids geloven we dat ons team onze grootste kracht is. We brengen bevlogen opvoeders uit diverse achtergronden samen, met een gedeelde toewijding aan kindontwikkeling en tweetalig onderwijs.",
+        paragraph2: "We investeren in voortdurende professionele groei, zodat ons team voorop blijft lopen in het kleuteronderwijs. Deze toewijding aan kwaliteit vertaalt zich in innovatieve, afgestemde zorg voor elk kind bij Teddy Kids."
+      },
+      members: {
+        didYouKnow: "Wist je dat?",
+        artem: {
+          role: "Directeur",
+          funFact: "Bouwde de eerste Teddy Kids locatie terwijl hij nog student was."
+        },
+        tess: {
+          role: "Operationeel Hoofd",
+          funFact: "Kan alles organiseren—zelfs een peuter-explosie van speelgoed—in minder dan 5 minuten."
+        },
+        jess: {
+          role: "Hoofd Onderwijskwaliteit",
+          funFact: "Bespeelt vijf instrumenten en gebruikt ze tijdens gezamenlijke zangmomenten."
+        },
+        meral: {
+          role: "People & Culture",
+          funFact: "Bezocht 30 landen en deelt haar verhalen graag tijdens kringmomenten."
+        },
+        antonela: {
+          role: "Locatiehoofd",
+          funFact: "Spreekt vier talen en leert de vijfde van de kinderen zelf."
+        },
+        pamela: {
+          role: "HR",
+          funFact: "Onthoudt ieders verjaardag—en hun favoriete taart."
+        },
+        svetlana: {
+          role: "Financiën",
+          funFact: "Lost een Rubik's cube op in minder dan twee minuten."
+        },
+        sofia: {
+          role: "Creatie & Events",
+          funFact: "Bouwde ooit een kartonnen stad hoger dan de kinderen zelf."
+        }
+      },
+      locations: {
+        title: "Het hart van elke locatie",
+        rbw: "Van babygelach tot tweetalig spel: bij RBW begon het allemaal—en de liefde stroomt nog steeds.",
+        rb35: "Dit powerteam combineert zorgzaamheid met nieuwsgierigheid—waar peuters denkers worden, en BSO'ers avonturiers.",
+        lrz: "Van knutselhoeken tot tweetalige wetenschapssessies: het team op Lorentzkade voedt denkers—van spel tot wereldvisie.",
+        zml: "Vrolijk, zacht en vol gelach—de jongste sterren van Zeemanlaan krijgen de beste start in de meest liefdevolle handen."
+      },
+      tisa: {
+        title: "Op zoek naar internationaal onderwijs?",
+        button: "Bezoek TISA"
+      },
+      values: {
+        title: "Onze gedeelde waarden",
+        value1: {
+          title: "Kindgericht werken",
+          description: "We zetten het kind centraal in alles wat we doen, met respect voor hun unieke karakter, interesses en ontwikkelpad."
+        },
+        value2: {
+          title: "Wereldse blik",
+          description: "We omarmen culturele diversiteit en bouwen bruggen tussen talen en tradities, zodat kinderen klaar zijn voor een verbonden wereld."
+        },
+        value3: {
+          title: "Blijven leren",
+          description: "We investeren continu in professionele groei en innovatie in het kleuteronderwijs."
+        },
+        value4: {
+          title: "Samenwerking",
+          description: "We werken als één team over alle locaties heen—delen kennis, ondersteunen elkaar en bieden samen de beste zorg."
+        },
+        value5: {
+          title: "Groeimindset",
+          description: "We geloven in het groeipotentieel van elk kind én elke collega—en stimuleren ontwikkeling met aanmoediging en positieve feedback."
+        },
+        value6: {
+          title: "Zorg met kwaliteit",
+          description: "We hanteren de hoogste standaarden—van onderwijs tot veiligheid en faciliteiten."
+        }
+      },
+      joinTeam: {
+        title: "Sluit je aan bij ons team",
+        description: "Heb jij een passie voor de vroege kindertijd? Wil je werken in een tweetalige, internationale omgeving? Wij zijn altijd op zoek naar talentvolle begeleiders die onze Teddy-familie komen versterken.",
+        button: "Bekijk onze vacatures... en sluit je aan!"
       }
     },
     locations: {

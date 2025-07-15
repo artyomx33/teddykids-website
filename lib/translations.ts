@@ -305,6 +305,50 @@ export const translations = {
         bookTour: "Book a Tour",
         applyNow: "Apply Now"
       },
+      /* ──────────────────────────────────────────────────────────
+       *  APPLY PAGE ( /apply )
+       * ────────────────────────────────────────────────────────── */
+      applyPage: {
+        hero: {
+          title: "Your journey with Teddy Kids begins here.",
+          subtitle: "We've made the first step simple, warm, and stress-free—just like everything else we do."
+        },
+        audio: {
+          label: "Hear from a parent who just applied",
+          quote: "It was honestly easier than I thought. They called me the next day. It felt human."
+        },
+        steps: {
+          programSelection: "Program Selection",
+          location: "Location",
+          startDate: "Start Date",
+          yourDetails: "Your Details",
+          confirm: "Confirm"
+        },
+        form: {
+          programSection: {
+            heading: "Where would your child feel most at home?",
+            options: {
+              nursery: { title: "Nursery", ages: "Ages: 3 months - 2.5 years" },
+              preschool: { title: "Teddy Learners", ages: "Ages: 2 - 4 years" },
+              afterschool: { title: "Teddy BSO Explorers", ages: "Ages: 4 - 12 years" }
+            },
+            tisaNote: "Looking for international primary school? Visit TISA ➝"
+          },
+          location: "Location",
+          startDate: "Start Date",
+          yourDetails: "Your Details",
+          confirm: "Confirm"
+        },
+        ctaFooter: {
+          line1: "You don't need to have it all figured out. Just let us know you're interested.",
+          line2: "We'll take care of the rest—with care, clarity, and a little Teddy magic.",
+          begin: "Begin My Teddy Journey",
+          talk: "Talk to a Teddicated Human"
+        },
+        metadata: {
+          title: "Teddy Kids | From Baby Steps to Global Citizens"
+        }
+      },
       metadata: {
         title: "Our Locations | Teddy Kids",
         description: "Find your nearest Teddy Kids location. Multiple locations throughout Leiden, Oegstgeest, and international campuses offering bilingual childcare and education.",
@@ -779,6 +823,50 @@ export const translations = {
         subtitle: "Plan een rondleiding op jouw gewenste locatie, bekijk onze ruimtes, ontmoet het team en ervaar zelf het Teddy Kids-gevoel.",
         bookTour: "Plan een rondleiding",
         applyNow: "Aanmelden"
+      },
+      /* ──────────────────────────────────────────────────────────
+       *  AANMELDEN-PAGINA ( /apply )
+       * ────────────────────────────────────────────────────────── */
+      applyPage: {
+        hero: {
+          title: "Jullie avontuur bij Teddy Kids begint hier.",
+          subtitle: "De eerste stap is eenvoudig, warm en zonder stress—net als alles bij Teddy Kids."
+        },
+        audio: {
+          label: "Luister naar een ouder die zich net heeft aangemeld",
+          quote: "Het ging veel makkelijker dan ik dacht. De volgende dag werd ik al gebeld. Het voelde persoonlijk en oprecht."
+        },
+        steps: {
+          programSelection: "Kies een programma",
+          location: "Voorkeurslocatie",
+          startDate: "Gewenste startdatum",
+          yourDetails: "Jouw gegevens",
+          confirm: "Bevestigen"
+        },
+        form: {
+          programSection: {
+            heading: "Waar zou jouw kind zich het meest thuis voelen?",
+            options: {
+              nursery: { title: "Teddy Baby", ages: "Leeftijd: 3 maanden – 2,5 jaar" },
+              preschool: { title: "Teddy Learners", ages: "Leeftijd: 2 – 4 jaar" },
+              afterschool: { title: "Teddy BSO Explorers", ages: "Leeftijd: 4 – 12 jaar" }
+            },
+            tisaNote: "Zoek je internationaal basisonderwijs? Bezoek TISA ➝"
+          },
+          location: "Voorkeurslocatie",
+          startDate: "Wanneer zou je willen beginnen?",
+          yourDetails: "Jouw gegevens",
+          confirm: "Bevestigen"
+        },
+        ctaFooter: {
+          line1: "Je hoeft het nog niet allemaal zeker te weten. Laat ons gewoon weten dat je interesse hebt.",
+          line2: "Wij zorgen voor de rest—met aandacht, duidelijkheid en een vleugje Teddy-magie.",
+          begin: "Begin mijn Teddy-reis",
+          talk: "Praat met een Teddy-teamlid"
+        },
+        metadata: {
+          title: "Teddy Kids | Van eerste stapjes tot wereldburgers"
+        }
       },
       metadata: {
         title: "Onze Locaties | Teddy Kids",

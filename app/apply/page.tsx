@@ -2,6 +2,8 @@
 import React, { useState, Suspense } from 'react';
 import Button from '@/components/Button';
 import { useSearchParams } from 'next/navigation';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
 
 // Progress step component
 interface ProgressStepProps {
@@ -71,7 +73,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
         <span className="text-3xl mr-3">{icon}</span>
         <h3 className="text-xl font-display font-semibold">{title}</h3>
       </div>
-      <p className="text-gray-600 mb-4">Ages: {ages}</p>
+      <p className="text-gray-600 mb-4">{ages}</p>
       <div className={`w-6 h-6 rounded-full border ${
         selected ? 'bg-brand-pink border-brand-pink' : 'border-gray-300'
       } flex items-center justify-center ml-auto`}>
@@ -231,6 +233,8 @@ const AudioButton = ({ label = "Play" }) => {
 // Main apply-page content component
 function ApplyPageContent() {
   const searchParams = useSearchParams();
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   
   // Get initial program from URL if available
   const initialProgram = searchParams.get('program') || '';
@@ -393,21 +397,21 @@ function ApplyPageContent() {
   const programs = [
     {
       id: 'nursery',
-      title: 'Nursery',
+      title: t('locationsPage.applyPage.form.programSection.options.nursery.title'),
       icon: '🍼',
-      ages: '3 months - 2.5 years'
+      ages: t('locationsPage.applyPage.form.programSection.options.nursery.ages')
     },
     {
       id: 'preschool',
-      title: 'Teddy Learners',
+      title: t('locationsPage.applyPage.form.programSection.options.preschool.title'),
       icon: '🎨',
-      ages: '2 - 4 years'
+      ages: t('locationsPage.applyPage.form.programSection.options.preschool.ages')
     },
     {
       id: 'afterschool',
-      title: 'Teddy BSO Explorers',
+      title: t('locationsPage.applyPage.form.programSection.options.afterschool.title'),
       icon: '🧩',
-      ages: '4 - 12 years'
+      ages: t('locationsPage.applyPage.form.programSection.options.afterschool.ages')
     }
   ];
   
@@ -479,17 +483,19 @@ function ApplyPageContent() {
       <section className="py-20 bg-brand-yellow bg-opacity-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Your journey with Teddy Kids begins here.</h1>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
+              {t('locationsPage.applyPage.hero.title')}
+            </h1>
             <p className="text-xl text-gray-700 mb-8">
-              We&apos;ve made the first step simple, warm, and stress-free—just like everything else we do.
+              {t('locationsPage.applyPage.hero.subtitle')}
             </p>
             
             <div className="inline-block">
               <div className="bg-white p-4 rounded-xl shadow-sm flex items-center gap-3">
-                <AudioButton label="Hear from a parent who just applied" />
+                <AudioButton label={t('locationsPage.applyPage.audio.label')} />
               </div>
               <p className="text-sm text-gray-600 mt-2 italic">
-                &quot;It was honestly easier than I thought. They called me the next day. It felt human.&quot;
+                &quot;{t('locationsPage.applyPage.audio.quote')}&quot;
               </p>
             </div>
           </div>
@@ -505,9 +511,9 @@ function ApplyPageContent() {
               <div className="hidden md:flex justify-between items-center">
                 <ProgressStep 
                   number={1} 
-                  title="Program Selection" 
+                  title={t('locationsPage.applyPage.steps.programSelection')} 
                   icon="🧸"
-                  description="Where would your child feel most at home?"
+                  description={t('locationsPage.applyPage.form.programSection.heading')}
                   isActive={currentStep === 1} 
                   isCompleted={currentStep > 1}
                 />
@@ -519,9 +525,9 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={2} 
-                  title="Location" 
+                  title={t('locationsPage.applyPage.steps.location')} 
                   icon="📍"
-                  description="Preferred location"
+                  description={t('locationsPage.applyPage.form.location')}
                   isActive={currentStep === 2} 
                   isCompleted={currentStep > 2}
                 />
@@ -533,9 +539,9 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={3} 
-                  title="Start Date" 
+                  title={t('locationsPage.applyPage.steps.startDate')} 
                   icon="📅"
-                  description="When would you like to start?"
+                  description={t('locationsPage.applyPage.form.startDate')}
                   isActive={currentStep === 3} 
                   isCompleted={currentStep > 3}
                 />
@@ -547,7 +553,7 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={4} 
-                  title="Your Details" 
+                  title={t('locationsPage.applyPage.steps.yourDetails')} 
                   icon="👪"
                   description="Parent + Child Info"
                   isActive={currentStep === 4} 
@@ -561,7 +567,7 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={5} 
-                  title="Confirm" 
+                  title={t('locationsPage.applyPage.steps.confirm')} 
                   icon="✨"
                   description="Almost there!"
                   isActive={currentStep === 5} 
@@ -573,11 +579,11 @@ function ApplyPageContent() {
               <div className="md:hidden text-center">
                 <p className="text-lg font-medium mb-2">
                   Step {currentStep} of 5: {
-                    currentStep === 1 ? 'Program Selection' :
-                    currentStep === 2 ? 'Location' :
-                    currentStep === 3 ? 'Start Date' :
-                    currentStep === 4 ? 'Your Details' :
-                    currentStep === 5 ? 'Confirm' : ''
+                    currentStep === 1 ? t('locationsPage.applyPage.steps.programSelection') :
+                    currentStep === 2 ? t('locationsPage.applyPage.steps.location') :
+                    currentStep === 3 ? t('locationsPage.applyPage.steps.startDate') :
+                    currentStep === 4 ? t('locationsPage.applyPage.steps.yourDetails') :
+                    currentStep === 5 ? t('locationsPage.applyPage.steps.confirm') : ''
                   }
                 </p>
                 <div className="h-2 bg-gray-200 rounded-full">
@@ -595,7 +601,9 @@ function ApplyPageContent() {
                 {/* Step 1: Program Selection */}
                 {currentStep === 1 && (
                   <div>
-                    <h2 className="text-2xl font-display font-bold mb-6">Where would your child feel most at home?</h2>
+                    <h2 className="text-2xl font-display font-bold mb-6">
+                      {t('locationsPage.applyPage.form.programSection.heading')}
+                    </h2>
                     
                     {errors.program && (
                       <p className="mb-4 text-sm text-red-600 bg-red-50 p-3 rounded-lg">
@@ -617,7 +625,7 @@ function ApplyPageContent() {
                     </div>
                     
                     <div className="text-center text-sm text-gray-600 mb-8 p-3 bg-gray-50 rounded-lg">
-                      Looking for international primary school? Visit <a href="https://www.tisaschool.nl" className="text-brand-mint hover:underline">TISA ➝</a>
+                      {t('locationsPage.applyPage.form.programSection.tisaNote')}
                     </div>
                   </div>
                 )}
@@ -625,7 +633,9 @@ function ApplyPageContent() {
                 {/* Step 2: Location Selection */}
                 {currentStep === 2 && (
                   <div>
-                    <h2 className="text-2xl font-display font-bold mb-6">Preferred Location</h2>
+                    <h2 className="text-2xl font-display font-bold mb-6">
+                      {t('locationsPage.applyPage.form.location')}
+                    </h2>
                     
                     {errors.location && (
                       <p className="mb-4 text-sm text-red-600 bg-red-50 p-3 rounded-lg">
@@ -655,10 +665,12 @@ function ApplyPageContent() {
                 {/* Step 3: Preferred Start Date */}
                 {currentStep === 3 && (
                   <div>
-                    <h2 className="text-2xl font-display font-bold mb-6">When would you like your child to start?</h2>
+                    <h2 className="text-2xl font-display font-bold mb-6">
+                      {t('locationsPage.applyPage.form.startDate')}
+                    </h2>
                     
                     <FormInput 
-                      label="Preferred Start Date"
+                      label={t('locationsPage.applyPage.form.startDate')}
                       type="date"
                       id="startDate"
                       value={formData.startDate}
@@ -676,7 +688,9 @@ function ApplyPageContent() {
                 {/* Step 4: Parent + Child Info */}
                 {currentStep === 4 && (
                   <div>
-                    <h2 className="text-2xl font-display font-bold mb-6">Parent + Child Information</h2>
+                    <h2 className="text-2xl font-display font-bold mb-6">
+                      {t('locationsPage.applyPage.steps.yourDetails')}
+                    </h2>
                     
                     <div className="bg-brand-pink bg-opacity-5 p-4 rounded-lg mb-6">
                       <h3 className="text-lg font-medium mb-2">Parent/Guardian Details</h3>
@@ -854,7 +868,7 @@ function ApplyPageContent() {
                     </div>
                     <h2 className="text-2xl font-display font-bold mb-4">Welcome to the Teddy Family!</h2>
                     <p className="text-lg text-gray-700 mb-8">
-                      We&apos;ve received your application and a Teddicated human will be in touch within 24 hours.
+                      We&apos;ve received your application and a Teddy-teamlid will be in touch within 24 hours.
                     </p>
                     <p className="text-gray-600 mb-8">
                       A confirmation email has been sent to {formData.parentEmail}.
@@ -897,7 +911,7 @@ function ApplyPageContent() {
                         variant="primary"
                         type="submit"
                       >
-                        Begin My Teddy Journey
+                        {t('locationsPage.applyPage.ctaFooter.begin')}
                       </Button>
                     )}
                   </div>
@@ -914,10 +928,10 @@ function ApplyPageContent() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-display font-bold mb-6">
-                You don&apos;t need to have it all figured out. Just let us know you&apos;re interested.
+                {t('locationsPage.applyPage.ctaFooter.line1')}
               </h2>
               <p className="text-lg text-gray-700 mb-8">
-                We&apos;ll take care of the rest—with care, clarity, and a little Teddy magic.
+                {t('locationsPage.applyPage.ctaFooter.line2')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -926,14 +940,14 @@ function ApplyPageContent() {
                   size="lg"
                   onClick={handleNextStep}
                 >
-                  Begin My Teddy Journey
+                  {t('locationsPage.applyPage.ctaFooter.begin')}
                 </Button>
                 <Button 
                   variant="outline"
                   href="/contact"
                   size="lg"
                 >
-                  Talk to a Teddicated Human
+                  {t('locationsPage.applyPage.ctaFooter.talk')}
                 </Button>
               </div>
             </div>

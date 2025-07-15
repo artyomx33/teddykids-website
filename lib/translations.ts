@@ -182,6 +182,74 @@ export const translations = {
       terms: "Terms of Service",
       careers: "Careers",
       followUs: "Follow Us"
+    },
+    about: {
+      metadata: {
+        title: "About Us | Teddy Kids",
+        description: "Learn about Teddy Kids' mission, history, and vision for bilingual childcare and international education since 2004.",
+        keywords: "teddy kids history, teddy kids mission, childcare leiden, international school history, tisa story, bilingual education netherlands",
+        alt: "About Teddy Kids - Our Mission and Vision"
+      },
+      hero: {
+        title: "Why Teddy Kids Exists",
+        subtitle: "We didn't build another daycare. We built what we wish we had as kids.",
+        imageAlt: "Children at Teddy Kids"
+      },
+      mission: {
+        title: "Our Mission",
+        paragraph1: "At Teddy Kids, we believe every child deserves an environment where their natural curiosity and joy of learning can flourish. Our mission is to nurture global citizens through bilingual education, play-based learning, and cultural awareness.",
+        paragraph2: "We create spaces where children develop confidence in multiple languages, build meaningful relationships, and gain the skills needed to thrive in our interconnected world.",
+        paragraph3: "Through our unique approach, we empower children to become compassionate, creative, and critical thinkers who will shape a better future."
+      },
+      journey: {
+        title: "Our Journey",
+        timeline: {
+          item2004: {
+            year: "2004",
+            title: "Teddy Kids Opens in Leiden",
+            description: "Our first location opens with just 15 children and a vision for bilingual care that would change early education in the Netherlands."
+          },
+          item2010: {
+            year: "2010",
+            title: "Expansion to 3rd Location",
+            description: "Growing demand leads to our third location, with our unique approach to bilingual education gaining recognition throughout the region."
+          },
+          item2022: {
+            year: "2022",
+            title: "Launch of TISA",
+            description: "The Teddy International School of Arts (TISA) opens its doors, extending our bilingual approach to primary education."
+          },
+          item2023: {
+            year: "2023",
+            title: "TISA Portugal",
+            description: "Our international vision grows with the opening of our first location outside the Netherlands, bringing our approach to Lisbon."
+          },
+          item2024: {
+            year: "2024",
+            title: "20 Years of Teddy Kids",
+            description: "Celebrating two decades of nurturing global citizens, with over 10,000 children having started their educational journey with us."
+          }
+        }
+      },
+      future: {
+        title: "Our Future",
+        paragraph1: "We envision a world where childhood is protected, curiosity is guided, and every child grows up believing they can lead.",
+        paragraph2: "In the coming years, we will continue expanding our approach to more communities, bringing bilingual education and our values-based curriculum to children across Europe and beyond.",
+        paragraph3: "We're committed to:",
+        bulletPoints: [
+          "Preserving the magic of childhood in an increasingly digital world",
+          "Developing innovative approaches to language acquisition",
+          "Building bridges between cultures through education",
+          "Creating sustainable learning environments that inspire wonder",
+          "Empowering educators who share our passion for childhood"
+        ],
+        paragraph4: "Together with families, educators, and communities, we're shaping a future where every child has the opportunity to become their best self."
+      },
+      team: {
+        title: "The People Behind Teddy Kids",
+        subtitle: "Our passionate team brings diverse expertise and a shared commitment to childhood education.",
+        buttonText: "Meet Our Full Team"
+      }
     }
   },
   nl: {
@@ -273,7 +341,7 @@ export const translations = {
     },
     team: {
       title: "Ontmoet de Magische Makers",
-      subtitle: "De gepassioneerde opvoeders achter Teddy Kids",
+      subtitle: "De betrokken opvoeders achter Teddy Kids",
       didYouKnow: "Wist je dat?",
       viewBio: "Lees Volledig Profiel",
       members: {
@@ -284,7 +352,7 @@ export const translations = {
         },
         tess: {
           name: "Tess",
-          role: "Hoofd Operaties",
+          role: "Operationeel Hoofd",
           funFact: "Heeft voor alles een spreadsheet"
         },
         jess: {
@@ -360,6 +428,74 @@ export const translations = {
       terms: "Servicevoorwaarden",
       careers: "Vacatures",
       followUs: "Volg Ons"
+    },
+    about: {
+      metadata: {
+        title: "Over Ons | Teddy Kids",
+        description: "Ontdek de missie, geschiedenis en visie van Teddy Kids voor tweetalige kinderopvang en internationaal onderwijs sinds 2004.",
+        keywords: "teddy kids geschiedenis, teddy kids missie, kinderopvang leiden, internationale school geschiedenis, tisa verhaal, tweetalig onderwijs nederland",
+        alt: "Over Teddy Kids - Onze Missie en Visie"
+      },
+      hero: {
+        title: "Waarom Teddy Kids Bestaat",
+        subtitle: "We bouwden niet zomaar een kinderdagverblijf. We bouwden wat we zelf als kind hadden willen hebben.",
+        imageAlt: "Kinderen bij Teddy Kids"
+      },
+      mission: {
+        title: "Onze Missie",
+        paragraph1: "Bij Teddy Kids geloven we dat ieder kind een omgeving verdient waar natuurlijke nieuwsgierigheid en leerplezier kunnen bloeien. Onze missie is het vormen van wereldburgers door tweetalig onderwijs, spelend leren en cultureel bewustzijn.",
+        paragraph2: "We creëren ruimtes waar kinderen zelfvertrouwen ontwikkelen in meerdere talen, betekenisvolle relaties opbouwen en vaardigheden verwerven om te gedijen in onze onderling verbonden wereld.",
+        paragraph3: "Met onze unieke aanpak helpen we kinderen om meelevende, creatieve en kritische denkers te worden die een betere toekomst zullen vormgeven."
+      },
+      journey: {
+        title: "Onze Reis",
+        timeline: {
+          item2004: {
+            year: "2004",
+            title: "Teddy Kids opent in Leiden",
+            description: "Onze eerste locatie opent met slechts 15 kinderen en een visie voor tweetalige zorg die het vroege onderwijs in Nederland zou veranderen."
+          },
+          item2010: {
+            year: "2010",
+            title: "Uitbreiding naar 3e locatie",
+            description: "Groeiende vraag leidt tot onze derde locatie, waarbij onze unieke benadering van tweetalig onderwijs erkenning krijgt in de hele regio."
+          },
+          item2022: {
+            year: "2022",
+            title: "Lancering van TISA",
+            description: "The Teddy International School of Arts (TISA) opent haar deuren en breidt onze tweetalige aanpak uit naar primair onderwijs."
+          },
+          item2023: {
+            year: "2023",
+            title: "TISA Portugal",
+            description: "Onze internationale visie groeit met de opening van onze eerste locatie buiten Nederland, waarmee we onze aanpak naar Lissabon brengen."
+          },
+          item2024: {
+            year: "2024",
+            title: "20 Jaar Teddy Kids",
+            description: "We vieren twee decennia van het vormen van wereldburgers, waarbij meer dan 10.000 kinderen hun educatieve reis bij ons zijn begonnen."
+          }
+        }
+      },
+      future: {
+        title: "Onze Toekomst",
+        paragraph1: "We zien een wereld voor ons waarin de kindertijd wordt beschermd, nieuwsgierigheid wordt begeleid, en elk kind opgroeit in de overtuiging dat het kan leiden.",
+        paragraph2: "In de komende jaren blijven we onze aanpak uitbreiden naar meer gemeenschappen, waarbij we tweetalig onderwijs en ons waardengerichte curriculum naar kinderen in heel Europa en daarbuiten brengen.",
+        paragraph3: "We zetten ons in voor:",
+        bulletPoints: [
+          "Het behouden van de magie van de kindertijd in een steeds digitalere wereld",
+          "Het ontwikkelen van innovatieve benaderingen voor taalverwerving",
+          "Het bouwen van bruggen tussen culturen door onderwijs",
+          "Het creëren van duurzame leeromgevingen die verwondering opwekken",
+          "Het versterken van opvoeders die onze passie voor de kindertijd delen"
+        ],
+        paragraph4: "Samen met families, opvoeders en gemeenschappen vormen we een toekomst waarin elk kind de kans heeft om zijn beste zelf te worden."
+      },
+      team: {
+        title: "De Mensen Achter Teddy Kids",
+        subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
+        buttonText: "Ontmoet Ons Volledige Team"
+      }
     }
   }
 };

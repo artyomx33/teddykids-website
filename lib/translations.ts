@@ -83,6 +83,124 @@ export const translations = {
         description: "A world-class education with global perspective."
       }
     },
+    /* ──────────────────────────────────────────────────────────
+     *  FULL PROGRAMS PAGE ( /programs )
+     * ────────────────────────────────────────────────────────── */
+    programsPage: {
+      hero: {
+        title: "Every child's journey is different.",
+        subtitle: "But it should always begin with love, language, and laughter."
+      },
+      sections: {
+        nursery: {
+          title: "Nursery",
+          tagline: "Safe, soft beginnings",
+          blurb:
+            "From tiny snoozes to big first steps—our littlest ones are held, heard, and loved in two languages.",
+          agesLabel: "Ages",
+          ages: "3 months – 2.5 years",
+          scheduleTitle: "Weekly Schedule",
+          scheduleItems: [
+            { day: "Monday - Friday", hours: "7:30 - 18:30" },
+            { day: "Half days available", hours: "7:30 - 13:00 or 13:00 - 18:30" },
+            { day: "Minimum days", hours: "2 days per week" }
+          ],
+          quote:
+            "Our daughter has been thriving at the nursery. The bilingual approach is amazing – she's already using words in both languages!",
+          quoteAuthor: "Emma & James, Parents",
+          button: "Peek Inside Nursery"
+        },
+        preschool: {
+          title: "Teddy Learners",
+          tagline: "Play + Learn",
+          blurb:
+            "Where stories, songs, and science spark wonder every day.",
+          agesLabel: "Ages",
+          ages: "2.5 – 4 years",
+          scheduleTitle: "Weekly Schedule",
+          scheduleItems: [
+            { day: "Monday - Friday", hours: "7:30 - 18:30" },
+            { day: "Half days available", hours: "7:30 - 13:00 or 13:00 - 18:30" },
+            { day: "Minimum days", hours: "2 days per week" }
+          ],
+          quote:
+            "The preschool program has given our son such confidence. He's speaking both Dutch and English, and his social skills have blossomed.",
+          quoteAuthor: "Sophia K., Mother",
+          button: "Play + Learn Tour"
+        },
+        afterSchool: {
+          title: "Teddy BSO Explorers",
+          tagline: "Adventures after the bell",
+          blurb:
+            "Adventures continue long after the bell. Our clubs inspire confidence, creativity, and community.",
+          agesLabel: "Ages",
+          ages: "4 – 12 years",
+          scheduleTitle: "Weekly Schedule",
+          scheduleItems: [
+            { day: "Monday - Friday", hours: "After school - 18:30" },
+            { day: "School holidays", hours: "7:30 - 18:30 (full day)" },
+            { day: "Study days", hours: "7:30 - 18:30 (full day)" }
+          ],
+          quote:
+            "The after-school program has been a lifesaver for our family. Our children get to continue their bilingual journey while having fun with friends.",
+          quoteAuthor: "Thomas & Julie, Parents of twins",
+          button: "See the Clubs"
+        },
+        tisa: {
+          title: "TISA",
+          tagline: "International education close to home",
+          blurb:
+            "An international education—right around the corner. Small classes, big hearts, bilingual minds.",
+          agesLabel: "Ages",
+          ages: "4 – 12 years (Primary education)",
+          scheduleTitle: "Weekly Schedule",
+          scheduleItems: [
+            { day: "Monday - Friday", hours: "8:30 - 15:00" },
+            { day: "After school care", hours: "15:00 - 18:30 (optional)" },
+            { day: "Early drop-off", hours: "From 7:30 (optional)" }
+          ],
+          quote:
+            "TISA has been transformational for our children. The international curriculum and caring teachers make this place special.",
+          quoteAuthor: "Miguel & Ling, TISA Parents",
+          button: "Explore TISA"
+        }
+      },
+      comparison: {
+        title: "Compare Our Programs",
+        feature: "Feature",
+        columns: {
+          nursery: "Nursery",
+          preschool: "Preschool",
+          afterSchool: "After School",
+          tisa: "TISA"
+        },
+        rows: {
+          bilingual: "Bilingual",
+          meals: "Meals Included",
+          openYear: "Open Year-Round",
+          groupSize: "Group Size",
+          curriculum: "Curriculum",
+          sensoryPlay: "Sensory Play",
+          thematicInquiry: "Thematic Inquiry",
+          creativeClubs: "Creative Clubs",
+          international: "International IPC/IB"
+        }
+      },
+      cta: {
+        title: "Let's find the perfect fit—together.",
+        subtitle:
+          "Every family has different needs. Our team is here to help you choose the right path.",
+        bookTour: "Book a Tour",
+        applyNow: "Apply Now"
+      },
+      metadata: {
+        title: "Our Programs | Teddy Kids",
+        description:
+          "From diapers to diplomas, our programs are designed for joy, growth, and global thinking. Discover our nursery, preschool, after school, and TISA programs.",
+        keywords:
+          "teddy kids programs, nursery, preschool, after school, TISA, international school, bilingual education, leiden"
+      }
+    },
     locations: {
       title: "Find Your Nearest Teddy Kids",
       subtitle: "Multiple locations throughout the region",
@@ -309,12 +427,12 @@ export const translations = {
       title: "Wat wij bieden",
       subtitle: "Programma's ontworpen voor elke fase van de kindertijd",
       nursery: {
-        title: "Baby-opvang",
+        title: "Teddy Baby",
         tagline: "Veilige, zachte start",
         description: "Zorgzame opvang voor onze jongste ontdekkers."
       },
       preschool: {
-        title: "Peuterklas",
+        title: "Teddy Learners",
         tagline: "Waar spel betekenis krijgt",
         description: "Fundamenten bouwen door begeleide ontdekking."
       },
@@ -327,6 +445,124 @@ export const translations = {
         title: "TISA",
         tagline: "Tweetalige Internationale School",
         description: "Onderwijs van wereldklasse met een globale visie."
+      }
+    },
+    /* ──────────────────────────────────────────────────────────
+     *  VOLLEDIGE PROGRAMMA-PAGINA ( /programs )
+     * ────────────────────────────────────────────────────────── */
+    programsPage: {
+      hero: {
+        title: "Elke kind volgt zijn eigen pad.",
+        subtitle: "Maar elk avontuur begint het best met liefde, taal en een glimlach."
+      },
+      sections: {
+        nursery: {
+          title: "Teddy Baby",
+          tagline: "Veilige, zachte start",
+          blurb:
+            "Van dutjes tot eerste stapjes—onze allerkleinsten worden gehoord, gekoesterd en geliefd in twee talen.",
+          agesLabel: "Leeftijd",
+          ages: "3 maanden – 2,5 jaar",
+          scheduleTitle: "Weekplanning",
+          scheduleItems: [
+            { day: "Maandag t/m vrijdag", hours: "7:30 - 18:30" },
+            { day: "Halve dagen mogelijk", hours: "7:30 - 13:00 of 13:00 - 18:30" },
+            { day: "Minimaal aantal dagen", hours: "2 dagen per week" }
+          ],
+          quote:
+            "Onze dochter bloeit helemaal op bij Teddy Baby. De tweetalige aanpak is geweldig – ze gebruikt nu al woorden in beide talen!",
+          quoteAuthor: "Emma & James, Ouders",
+          button: "Kijkje in Teddy Baby"
+        },
+        preschool: {
+          title: "Teddy Learners",
+          tagline: "Speel & Leer",
+          blurb:
+            "Waar verhalen, liedjes en ontdekkingen elke dag verwondering oproepen.",
+          agesLabel: "Leeftijd",
+          ages: "2,5 – 4 jaar",
+          scheduleTitle: "Weekplanning",
+          scheduleItems: [
+            { day: "Maandag t/m vrijdag", hours: "7:30 - 18:30" },
+            { day: "Halve dagen mogelijk", hours: "7:30 - 13:00 of 13:00 - 18:30" },
+            { day: "Minimaal aantal dagen", hours: "2 dagen per week" }
+          ],
+          quote:
+            "Teddy Learners heeft ons zoontje enorm zelfvertrouwen gegeven. Hij spreekt nu Nederlands én Engels en is sociaal enorm gegroeid.",
+          quoteAuthor: "Sophia K., Moeder",
+          button: "Speel & Leer Rondleiding"
+        },
+        afterSchool: {
+          title: "Teddy BSO Explorers",
+          tagline: "Avonturen na de bel",
+          blurb:
+            "Avonturen gaan verder na de schoolbel. Onze clubs stimuleren zelfvertrouwen, creativiteit en verbondenheid.",
+          agesLabel: "Leeftijd",
+          ages: "4 – 12 jaar",
+          scheduleTitle: "Weekplanning",
+          scheduleItems: [
+            { day: "Maandag t/m vrijdag", hours: "Na school - 18:30" },
+            { day: "Schoolvakanties", hours: "7:30 - 18:30 (hele dag)" },
+            { day: "Studiedagen", hours: "7:30 - 18:30 (hele dag)" }
+          ],
+          quote:
+            "Teddy BSO is een uitkomst voor ons gezin. Onze kinderen zetten hun tweetalige avontuur voort én hebben plezier met vrienden.",
+          quoteAuthor: "Thomas & Julie, Ouders van een tweeling",
+          button: "Bekijk de Clubs"
+        },
+        tisa: {
+          title: "TISA",
+          tagline: "Internationaal onderwijs om de hoek",
+          blurb:
+            "Internationaal onderwijs—gewoon om de hoek. Kleine klassen, grote harten, tweetalige geesten.",
+          agesLabel: "Leeftijd",
+          ages: "4 – 12 jaar (basisonderwijs)",
+          scheduleTitle: "Weekplanning",
+          scheduleItems: [
+            { day: "Maandag t/m vrijdag", hours: "8:30 - 15:00" },
+            { day: "Naschoolse opvang", hours: "15:00 - 18:30 (optioneel)" },
+            { day: "Vroege inloop", hours: "Vanaf 7:30 (optioneel)" }
+          ],
+          quote:
+            "TISA heeft een wereld van verschil gemaakt voor onze kinderen. Het internationale programma en de liefdevolle docenten maken het echt bijzonder.",
+          quoteAuthor: "Miguel & Ling, Ouders bij TISA",
+          button: "Ontdek TISA"
+        }
+      },
+      comparison: {
+        title: "Vergelijk onze programma's",
+        feature: "Kenmerk",
+        columns: {
+          nursery: "Teddy Baby",
+          preschool: "Teddy Learners",
+          afterSchool: "BSO",
+          tisa: "TISA"
+        },
+        rows: {
+          bilingual: "Tweetalig",
+          meals: "Maaltijden inbegrepen",
+          openYear: "Gehele jaar geopend",
+          groupSize: "Groepsgrootte",
+          curriculum: "Leerprogramma",
+          sensoryPlay: "Spel met al je zintuigen",
+          thematicInquiry: "Thematisch onderzoek",
+          creativeClubs: "Creatieve clubs",
+          international: "Internationaal IPC/IB"
+        }
+      },
+      cta: {
+        title: "Laten we samen de perfecte match vinden.",
+        subtitle:
+          "Elke familie is anders. Ons team helpt je graag bij het vinden van het juiste traject.",
+        bookTour: "Plan een rondleiding",
+        applyNow: "Aanmelden"
+      },
+      metadata: {
+        title: "Onze Programma's | Teddy Kids",
+        description:
+          "Van luiers tot diploma's: ontdek Teddy Baby, Teddy Learners, Teddy BSO Explorers en TISA. Programma's vol vreugde, groei en wereldse blik.",
+        keywords:
+          "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
       }
     },
     locations: {
@@ -509,7 +745,7 @@ export const translations = {
  */
 export const useTranslation = (language: Language = 'en') => {
   const t = useCallback(
-    (key: string): string => {
+    (key: string): any => {
       const keys = key.split('.');
       let value: any = translations[language];
 
@@ -522,7 +758,7 @@ export const useTranslation = (language: Language = 'en') => {
         }
       }
 
-      return typeof value === 'string' ? value : key;
+      return value;
     },
     [language]
   );

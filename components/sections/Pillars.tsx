@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface PillarCardProps {
   icon: React.ReactNode;
@@ -30,7 +31,8 @@ interface PillarsProps {
 }
 
 const Pillars: React.FC<PillarsProps> = ({ className = '' }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   
   const pillars = [
     {

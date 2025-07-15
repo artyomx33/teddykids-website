@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface ProgramCardProps {
   icon: React.ReactNode;
@@ -44,7 +45,8 @@ interface ProgramsProps {
 }
 
 const Programs: React.FC<ProgramsProps> = ({ className = '' }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   
   const programs = [
     {

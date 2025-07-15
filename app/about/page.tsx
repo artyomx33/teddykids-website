@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
-import { useTranslation } from '@/lib/translations';
+import { useTranslation, translations } from '@/lib/translations';
 // Timeline item component
 const TimelineItem = (
   {
@@ -67,6 +67,8 @@ const TeamPreviewItem = (
 export default function AboutPage() {
   const { language } = useLanguage();
   const { t } = useTranslation(language);
+  // bulletPoints is an array, access directly from the translations object
+  const bulletPoints = translations[language].about.future.bulletPoints as string[];
   
   return (
     <main>
@@ -170,7 +172,7 @@ export default function AboutPage() {
                 {t('about.future.paragraph3')}
               </p>
               <ul>
-                {t('about.future.bulletPoints').map((bullet: string, index: number) => (
+                {bulletPoints.map((bullet: string, index: number) => (
                   <li key={index}>{bullet}</li>
                 ))}
               </ul>

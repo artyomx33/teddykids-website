@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface ReviewCardProps {
   quote: string;
@@ -97,7 +98,8 @@ interface SocialProofProps {
 }
 
 const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   
   // Placeholder logos - replace with actual partner logos
   const logos = [

@@ -5,10 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Button from '@/components/Button';
 
 const Navigation: React.FC = () => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bananaClicks, setBananaClicks] = useState(0);
@@ -95,6 +98,9 @@ const Navigation: React.FC = () => {
               ))}
             </div>
 
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+
             {/* Apply Now Button */}
             <Button 
               variant="primary" 
@@ -167,6 +173,11 @@ const Navigation: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Language Switcher in Mobile Menu */}
+            <div className="py-2">
+              <LanguageSwitcher className="w-full justify-start" />
+            </div>
             
             {/* Hidden Banana Icon in Mobile Menu */}
             <button

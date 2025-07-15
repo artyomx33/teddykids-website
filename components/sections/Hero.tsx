@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface HeroProps {
   videoSrc?: string;
@@ -16,7 +17,8 @@ const Hero: React.FC<HeroProps> = ({
   fallbackImageSrc = '/images/hero-fallback.jpg',
   whatsappNumber,
 }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 

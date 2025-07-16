@@ -100,12 +100,13 @@ export default function RootLayout({
           {/* ------------------------------------------------------------------ */}
           {/*  Footer with Lighthouse Background + TeddyCharacter9 (Luna designs) */}
           {/* ------------------------------------------------------------------ */}
-          <footer className="relative mt-20">
+          {/* Provide explicit height so the lighthouse background is always visible */}
+          <footer className="relative mt-20 h-64 md:h-96">
             {/* Background image layer (opacity 0.3) */}
             <div
-              className="absolute inset-0 bg-cover bg-bottom opacity-30 pointer-events-none"
+              className="absolute inset-0 bg-cover bg-bottom opacity-50 pointer-events-none"
               style={{
-                backgroundImage: "url('/images/teddylighthousebackground.png')",
+                backgroundImage: "url('/images/teddylighthousebackground.jpg')",
               }}
             />
 

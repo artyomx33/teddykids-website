@@ -98,8 +98,10 @@ export const translations = {
      * ────────────────────────────────────────────────────────── */
     programsPage: {
       hero: {
-        title: "Every child's journey is different.",
-        subtitle: "But it should always begin with love, language, and laughter."
+        /* Luna upgrade */
+        title: "From First Steps to Big Leaps",
+        subtitle:
+          "Discover how each Teddy Kids program grows with your child — through love, language, and purposeful play."
       },
       sections: {
         nursery: {
@@ -118,7 +120,8 @@ export const translations = {
           quote:
             "Our daughter has been thriving at the nursery. The bilingual approach is amazing – she's already using words in both languages!",
           quoteAuthor: "Emma & James, Parents",
-          button: "Peek Inside Nursery"
+          /* Luna upgrade */
+          button: "See how we welcome our littlest ones"
         },
         preschool: {
           title: "Teddy Learners",
@@ -136,7 +139,8 @@ export const translations = {
           quote:
             "The preschool program has given our son such confidence. He's speaking both Dutch and English, and his social skills have blossomed.",
           quoteAuthor: "Sophia K., Mother",
-          button: "Play + Learn Tour"
+          /* Luna upgrade */
+          button: "Explore how play becomes purpose"
         },
         afterSchool: {
           title: "Teddy BSO Explorers",
@@ -154,7 +158,8 @@ export const translations = {
           quote:
             "The after-school program has been a lifesaver for our family. Our children get to continue their bilingual journey while having fun with friends.",
           quoteAuthor: "Thomas & Julie, Parents of twins",
-          button: "See the Clubs"
+          /* Luna upgrade */
+          button: "Discover our afternoon adventures"
         },
         tisa: {
           title: "TISA",
@@ -172,7 +177,8 @@ export const translations = {
           quote:
             "TISA has been transformational for our children. The international curriculum and caring teachers make this place special.",
           quoteAuthor: "Miguel & Ling, TISA Parents",
-          button: "Explore TISA"
+          /* Luna upgrade */
+          button: "Step into our bilingual international school"
         }
       },
       comparison: {
@@ -776,8 +782,9 @@ export const translations = {
      * ────────────────────────────────────────────────────────── */
     programsPage: {
       hero: {
-        title: "Elke kind volgt zijn eigen pad.",
-        subtitle: "Maar elk avontuur begint het best met liefde, taal en een glimlach."
+        title: "Van Eerste Stapjes tot Grote Sprongen",
+        subtitle:
+          "Ontdek hoe elk Teddy Kids programma meegroeit met je kind — door liefde, taal en betekenisvol spel."
       },
       sections: {
         nursery: {
@@ -796,7 +803,7 @@ export const translations = {
           quote:
             "Onze dochter bloeit helemaal op bij Teddy Baby. De tweetalige aanpak is geweldig – ze gebruikt nu al woorden in beide talen!",
           quoteAuthor: "Emma & James, Ouders",
-          button: "Kijkje in Teddy Baby"
+          button: "Zie hoe we onze allerkleinsten verwelkomen"
         },
         preschool: {
           title: "Teddy Learners",
@@ -814,7 +821,7 @@ export const translations = {
           quote:
             "Teddy Learners heeft ons zoontje enorm zelfvertrouwen gegeven. Hij spreekt nu Nederlands én Engels en is sociaal enorm gegroeid.",
           quoteAuthor: "Sophia K., Moeder",
-          button: "Speel & Leer Rondleiding"
+          button: "Ontdek hoe spel betekenis krijgt"
         },
         afterSchool: {
           title: "Teddy BSO Explorers",
@@ -832,7 +839,7 @@ export const translations = {
           quote:
             "Teddy BSO is een uitkomst voor ons gezin. Onze kinderen zetten hun tweetalige avontuur voort én hebben plezier met vrienden.",
           quoteAuthor: "Thomas & Julie, Ouders van een tweeling",
-          button: "Bekijk de Clubs"
+          button: "Verken onze middag avonturen"
         },
         tisa: {
           title: "TISA",
@@ -850,7 +857,7 @@ export const translations = {
           quote:
             "TISA heeft een wereld van verschil gemaakt voor onze kinderen. Het internationale programma en de liefdevolle docenten maken het echt bijzonder.",
           quoteAuthor: "Miguel & Ling, Ouders bij TISA",
-          button: "Ontdek TISA"
+          button: "Stap binnen in onze tweetalige internationale school"
         }
       },
       comparison: {

@@ -9,6 +9,7 @@ import SocialProof from '@/components/sections/SocialProof';
 import Programs from '@/components/sections/Programs';
 import LocationsPreview from '@/components/sections/LocationsPreview';
 import AppiesGPT from '@/components/sections/AppiesGPT';
+import Image from 'next/image';
 
 export default function Home() {
   /* Language & translations */
@@ -33,17 +34,21 @@ export default function Home() {
           fallbackImageSrc="/images/hero-fallback.jpg"
         />
         {/* TeddyCharacter1 – purple dino bottom-left */}
-        <img
+        <Image
           src="/images/characters/teddy-character-1.png"
           alt=""
           aria-hidden="true"
+          width={200}
+          height={200}
           className="character character-bottom-left"
         />
         {/* TeddyCharacter2 – girl in TK sweater floating near CTA */}
-        <img
+        <Image
           src="/images/characters/teddy-character-2.png"
           alt=""
           aria-hidden="true"
+          width={200}
+          height={200}
           className="character character-floating character-delay-1"
         />
       </div>

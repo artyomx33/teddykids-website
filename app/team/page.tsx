@@ -66,17 +66,21 @@ export default function TeamPage() {
       <div className="relative">
         <Team className="bg-brand-yellow bg-opacity-10" />
         {/* TeddyCharacter7 – girl with red scarf (near Antonela/Meral) */}
-        <img
+        <Image
           src="/images/characters/teddy-character-7.png"
           alt=""
           aria-hidden="true"
+          width={200}
+          height={200}
           className="character character-corner-bottom"
         />
         {/* TeddyCharacter8 – red bandana girl (near Els) */}
-        <img
+        <Image
           src="/images/characters/teddy-character-8.png"
           alt=""
           aria-hidden="true"
+          width={200}
+          height={200}
           className="character character-side-float"
         />
       </div>

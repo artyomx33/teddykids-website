@@ -88,17 +88,21 @@ export default function LocationsPage() {
       <div className="relative">
         <Locations />
         {/* TeddyCharacter3 – explorer girl with binoculars (card corner) */}
-        <img
+        <Image
           src="/images/characters/teddy-character-3.png"
           alt=""
           aria-hidden="true"
+          width={200}
+          height={200}
           className="character character-card-corner"
         />
         {/* TeddyCharacter4 – raincoat girl in puddle (bottom-right) */}
-        <img
+        <Image
           src="/images/characters/teddy-character-4.png"
           alt=""
           aria-hidden="true"
+          width={200}
+          height={200}
           className="character character-bottom-right"
         />
       </div>

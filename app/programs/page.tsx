@@ -156,10 +156,12 @@ export default function ProgramsPage() {
         </div>
       </section>
       {/* TeddyCharacter5 – little girl with handbag, floating near Nursery */}
-      <img
+      <Image
         src="/images/characters/teddy-character-5.png"
         alt=""
         aria-hidden="true"
+        width={200}
+        height={200}
         className="character character-floating character-delay-2"
       />
       
@@ -303,10 +305,12 @@ export default function ProgramsPage() {
         </div>
       </section>
       {/* TeddyCharacter6 – football boy near After School */}
-      <img
+      <Image
         src="/images/characters/teddy-character-6.png"
         alt=""
         aria-hidden="true"
+        width={200}
+        height={200}
         className="character character-card-left"
       />
       

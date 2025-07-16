@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation"; // actual navigation component
 import { LanguageProvider } from "@/lib/LanguageContext";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +23,7 @@ const balooDisplay = Baloo_2({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.teddykids.nl"),
   title: "Teddy Kids | From Baby Steps to Global Citizens",
   description:
     "Bilingual childcare & international school nurturing global citizens from their very first steps.",
@@ -111,10 +113,12 @@ export default function RootLayout({
             />
 
             {/* TeddyCharacter9 – girl waving in winter gear */}
-            <img
+            <Image
               src="/images/characters/teddy-character-9.png"
-              alt=""                /* decorative */
+              alt="" /* decorative */
               aria-hidden="true"
+              width={200}
+              height={200}
               className="character character-footer-waver"
             />
           </footer>

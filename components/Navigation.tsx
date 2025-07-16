@@ -5,10 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Button from '@/components/Button';
 
 const Navigation: React.FC = () => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bananaClicks, setBananaClicks] = useState(0);
@@ -69,7 +72,7 @@ const Navigation: React.FC = () => {
           <Link href="/" className="flex items-center">
             <div className="relative h-12 w-36">
               <Image
-                src="/images/teddy-kids-logo.svg"
+                src="/images/logos/teddykids-logo-placeholder.png"
                 alt="Teddy Kids"
                 fill
                 className="object-contain"
@@ -95,6 +98,9 @@ const Navigation: React.FC = () => {
               ))}
             </div>
 
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+
             {/* Apply Now Button */}
             <Button 
               variant="primary" 
@@ -104,13 +110,19 @@ const Navigation: React.FC = () => {
               Apply Now
             </Button>
 
-            {/* Hidden Banana Icon */}
+            {/* Hidden Apie Monkey Icon */}
             <button
               onClick={handleBananaClick}
-              className="text-yellow-400 opacity-20 hover:opacity-100 transition-opacity cursor-default"
-              aria-label="Hidden banana icon"
+              className="text-yellow-400 opacity-[0.33] hover:opacity-100 transition-opacity cursor-default"
+              aria-label="Hidden Apie monkey icon"
             >
-              🍌
+              <Image
+                src="/images/icons/banana-icon.png"
+                alt="Hidden Apie monkey icon"
+                width={24}
+                height={24}
+                className="w-6 h-6 object-contain"
+              />
             </button>
           </div>
 
@@ -168,13 +180,25 @@ const Navigation: React.FC = () => {
               </Link>
             ))}
             
-            {/* Hidden Banana Icon in Mobile Menu */}
+            {/* Language Switcher in Mobile Menu */}
+            <div className="py-2">
+              <LanguageSwitcher className="w-full justify-start" />
+            </div>
+            
+            {/* Hidden Apie Monkey Icon in Mobile Menu */}
             <button
               onClick={handleBananaClick}
-              className="text-yellow-400 opacity-20 hover:opacity-100 transition-opacity cursor-default py-2 text-left"
-              aria-label="Hidden banana icon"
+              className="text-yellow-400 opacity-[0.33] hover:opacity-100 transition-opacity cursor-default py-2 text-left"
+              aria-label="Hidden Apie monkey icon"
             >
-              🍌 Secret
+              <Image
+                src="/images/icons/banana-icon.png"
+                alt="Hidden Apie monkey icon"
+                width={24}
+                height={24}
+                className="inline-block w-6 h-6 object-contain mr-2"
+              />
+              Secret
             </button>
           </div>
         </div>

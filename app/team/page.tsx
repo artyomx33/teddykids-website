@@ -1,40 +1,28 @@
-import { Metadata } from 'next';
+'use client';
+
 import Image from 'next/image';
 import Team from '@/components/sections/Team';
 import Button from '@/components/Button';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
 
-export const metadata: Metadata = {
-  title: 'Our Team | Teddy Kids',
-  description: 'Meet the passionate educators and staff behind Teddy Kids. Our diverse team brings expertise, creativity, and dedication to nurturing global citizens.',
-  keywords: 'teddy kids team, childcare staff, bilingual educators, international school teachers, early childhood experts',
-  openGraph: {
-    title: 'Our Team | Teddy Kids',
-    description: 'Meet the passionate educators and staff behind Teddy Kids. Our diverse team brings expertise, creativity, and dedication to nurturing global citizens.',
-    url: 'https://www.teddykids.nl/team',
-    siteName: 'Teddy Kids',
-    images: [
-      {
-        url: '/images/og-image-team.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Teddy Kids Team - The Magic Makers',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-};
+// Metadata is handled in a separate layout file since this is now a client component
 
 export default function TeamPage() {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+  
   return (
     <main>
       {/* Hero Section */}
       <section className="py-20 bg-brand-purple bg-opacity-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">Meet the Magic Makers</h1>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
+              {t('teamPage.hero.title')}
+            </h1>
             <p className="text-xl text-gray-700 mb-8">
-              The passionate educators and staff who bring the Teddy Kids vision to life every day.
+              {t('teamPage.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -45,7 +33,9 @@ export default function TeamPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h2 className="text-3xl font-display font-bold mb-6 text-center">Our Team Philosophy</h2>
+              <h2 className="text-3xl font-display font-bold mb-6 text-center">
+                {t('teamPage.philosophy.title')}
+              </h2>
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/3">
                   <div className="relative h-64 w-full rounded-xl overflow-hidden">
@@ -53,19 +43,16 @@ export default function TeamPage() {
                       src="/images/team/team-group.jpg"
                       alt="Teddy Kids Team"
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                     />
                   </div>
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-lg mb-4">
-                    At Teddy Kids, we believe that our team is our greatest asset. We bring together passionate educators from diverse backgrounds who share a common commitment to childhood development and bilingual education.
+                    {t('teamPage.philosophy.paragraph1')}
                   </p>
                   <p className="text-lg mb-4">
-                    We invest in continuous professional development, ensuring our team stays at the forefront of early childhood education. This commitment to excellence translates into innovative, responsive care for every child at Teddy Kids.
-                  </p>
-                  <p className="text-lg">
-                    We invest in continuous professional development, ensuring our team stays at the forefront of early childhood education. This commitment to excellence translates into innovative, responsive care for every child at Teddy Kids.
+                    {t('teamPage.philosophy.paragraph2')}
                   </p>
                 </div>
               </div>
@@ -81,7 +68,9 @@ export default function TeamPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-10 text-center">The Heart of Every Location</h2>
+            <h2 className="text-3xl font-display font-bold mb-10 text-center">
+              {t('teamPage.locations.title')}
+            </h2>
             
             {/* RBW Location */}
             <div className="mb-16">
@@ -92,12 +81,12 @@ export default function TeamPage() {
                     src="/images/team/team-rbw.jpg"
                     alt="RBW Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
-                    From baby giggles to bilingual play, the RBW crew is where Teddy Kids began—and the love still flows strong.
+                    {t('teamPage.locations.rbw')}
                   </p>
                 </div>
               </div>
@@ -112,12 +101,12 @@ export default function TeamPage() {
                     src="/images/team/team-rb3rb5.jpg"
                     alt="RB3/RB5 Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
-                    This powerhouse team blends care with curiosity—where toddlers become thinkers, and after-schoolers become adventurers.
+                    {t('teamPage.locations.rb35')}
                   </p>
                 </div>
               </div>
@@ -132,12 +121,12 @@ export default function TeamPage() {
                     src="/images/team/team-lrz.jpg"
                     alt="LRZ Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
-                    From art corners to bilingual science talks, the Lorentzkade crew nurtures thinkers from afternoon play to global dreams.
+                    {t('teamPage.locations.lrz')}
                   </p>
                 </div>
               </div>
@@ -152,12 +141,12 @@ export default function TeamPage() {
                     src="/images/team/team-zml.jpg"
                     alt="ZML Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
-                    Joyful, gentle, and full of laughter—Zeemanlaan&apos;s youngest stars get the best start in the most caring hands.
+                    {t('teamPage.locations.zml')}
                   </p>
                 </div>
               </div>
@@ -189,7 +178,7 @@ export default function TeamPage() {
               </div>
             </div>
             
-            <h3 className="text-xl font-medium mb-6">Looking for international schooling?</h3>
+            <h3 className="text-xl font-medium mb-6">{t('teamPage.tisa.title')}</h3>
             
             <Button
               variant="primary"
@@ -197,7 +186,7 @@ export default function TeamPage() {
               isExternal={true}
               size="lg"
             >
-              Visit TISA
+              {t('teamPage.tisa.button')}
             </Button>
           </div>
         </div>
@@ -207,54 +196,56 @@ export default function TeamPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">Our Shared Values</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">
+              {t('teamPage.values.title')}
+            </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-3xl mb-3">❤️</div>
-                <h3 className="text-xl font-medium mb-2">Child-Centered Approach</h3>
+                <h3 className="text-xl font-medium mb-2">{t('teamPage.values.value1.title')}</h3>
                 <p className="text-gray-600">
-                  We place children at the heart of everything we do, respecting their unique personalities, interests, and developmental journeys.
+                  {t('teamPage.values.value1.description')}
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-3xl mb-3">🌍</div>
-                <h3 className="text-xl font-medium mb-2">Global Mindset</h3>
+                <h3 className="text-xl font-medium mb-2">{t('teamPage.values.value2.title')}</h3>
                 <p className="text-gray-600">
-                  We embrace cultural diversity and foster understanding across languages and traditions to prepare children for our interconnected world.
+                  {t('teamPage.values.value2.description')}
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-3xl mb-3">🔍</div>
-                <h3 className="text-xl font-medium mb-2">Continuous Learning</h3>
+                <h3 className="text-xl font-medium mb-2">{t('teamPage.values.value3.title')}</h3>
                 <p className="text-gray-600">
-                  We&apos;re committed to ongoing professional development and innovation in early childhood education practices.
+                  {t('teamPage.values.value3.description')}
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-3xl mb-3">🤝</div>
-                <h3 className="text-xl font-medium mb-2">Collaborative Spirit</h3>
+                <h3 className="text-xl font-medium mb-2">{t('teamPage.values.value4.title')}</h3>
                 <p className="text-gray-600">
-                  We work as a unified team across all locations, sharing knowledge and supporting each other to provide the best care.
+                  {t('teamPage.values.value4.description')}
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-3xl mb-3">🌱</div>
-                <h3 className="text-xl font-medium mb-2">Growth Mindset</h3>
+                <h3 className="text-xl font-medium mb-2">{t('teamPage.values.value5.title')}</h3>
                 <p className="text-gray-600">
-                  We believe in the potential of every child and colleague, nurturing development through encouragement and positive feedback.
+                  {t('teamPage.values.value5.description')}
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-3xl mb-3">🏆</div>
-                <h3 className="text-xl font-medium mb-2">Excellence in Care</h3>
+                <h3 className="text-xl font-medium mb-2">{t('teamPage.values.value6.title')}</h3>
                 <p className="text-gray-600">
-                  We maintain the highest standards in everything from educational practices to safety protocols and facility management.
+                  {t('teamPage.values.value6.description')}
                 </p>
               </div>
             </div>
@@ -265,16 +256,16 @@ export default function TeamPage() {
       {/* Join Our Team CTA */}
       <section className="py-16 bg-brand-pink bg-opacity-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">Join Our Team</h2>
+          <h2 className="text-3xl font-display font-bold mb-6">{t('teamPage.joinTeam.title')}</h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Passionate about early childhood education? Interested in working in a bilingual, international environment? We&apos;re always looking for talented educators to join our growing family.
+            {t('teamPage.joinTeam.description')}
           </p>
           <Button 
             variant="primary"
             href="/careers"
             size="lg"
           >
-            View Career Opportunities
+            {t('teamPage.joinTeam.button')}
           </Button>
         </div>
       </section>

@@ -5,12 +5,15 @@ import Image from 'next/image';
 import { useTranslation } from '@/lib/translations';
 import { getFeaturedLocations, Location } from '@/lib/locations';
 import Button from '@/components/Button';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface LocationPreviewCardProps {
   location: Location;
 }
 
 const LocationPreviewCard: React.FC<LocationPreviewCardProps> = ({ location }) => {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
       {/* Location Image */}
@@ -55,7 +58,7 @@ const LocationPreviewCard: React.FC<LocationPreviewCardProps> = ({ location }) =
             size="sm"
             className="flex-1"
           >
-            Book a Tour
+            {t('locations.bookTour')}
           </Button>
           
           <Button
@@ -64,7 +67,7 @@ const LocationPreviewCard: React.FC<LocationPreviewCardProps> = ({ location }) =
             size="sm"
             className="flex-1"
           >
-            Details
+            {t('locations.viewDetails')}
           </Button>
         </div>
       </div>
@@ -77,7 +80,8 @@ interface LocationsPreviewProps {
 }
 
 const LocationsPreview: React.FC<LocationsPreviewProps> = ({ className = '' }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const featuredLocations = getFeaturedLocations().slice(0, 3);
 
   return (
@@ -88,7 +92,7 @@ const LocationsPreview: React.FC<LocationsPreviewProps> = ({ className = '' }) =
         </h2>
         
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Find your nearest Teddy Kids location
+          {t('locations.subtitle')}
         </p>
         
         {/* Locations Grid - Preview */}
@@ -105,7 +109,7 @@ const LocationsPreview: React.FC<LocationsPreviewProps> = ({ className = '' }) =
             href="/locations"
             size="lg"
           >
-            View All Locations
+            {t('locations.viewAll')}
           </Button>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface ReviewCardProps {
   quote: string;
@@ -97,13 +98,14 @@ interface SocialProofProps {
 }
 
 const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
-  const { t } = useTranslation('en');
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   
   // Placeholder logos - replace with actual partner logos
   const logos = [
     { src: '/images/logos/leiden-university.png', alt: 'Leiden University' },
-    { src: '/images/logos/gemeente-leiden.png', alt: 'Gemeente Leiden' },
-    { src: '/images/logos/erasmus.png', alt: 'Erasmus' },
+    { src: '/images/logos/moekes-maaltijd.png', alt: 'Moekes Maaltijd' },
+    { src: '/images/logos/tesla.png', alt: 'Tesla' },
     { src: '/images/logos/partner-4.png', alt: 'Partner 4' },
   ];
 

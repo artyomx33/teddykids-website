@@ -1,28 +1,9 @@
-import { Metadata } from 'next';
+'use client';
+
 import Image from 'next/image';
 import Button from '@/components/Button';
-
-export const metadata: Metadata = {
-  title: 'Our Programs | Teddy Kids',
-  description: 'From diapers to diplomas, our programs are designed for joy, growth, and global thinking. Discover our nursery, preschool, after school, and TISA programs.',
-  keywords: 'teddy kids programs, nursery, preschool, after school, TISA, international school, bilingual education, leiden',
-  openGraph: {
-    title: 'Our Programs | Teddy Kids',
-    description: 'From diapers to diplomas, our programs are designed for joy, growth, and global thinking. Discover our nursery, preschool, after school, and TISA programs.',
-    url: 'https://www.teddykids.nl/programs',
-    siteName: 'Teddy Kids',
-    images: [
-      {
-        url: '/images/og-image-programs.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Teddy Kids Programs - Nursery, Preschool, After School, and TISA',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-};
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
 
 // Program gallery image component
 interface ProgramGalleryImageProps {
@@ -86,6 +67,9 @@ const ProgramSchedule = ({ title, items }: ProgramScheduleProps) => {
 };
 
 export default function ProgramsPage() {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+
   return (
     <main>
       {/* Hero Section */}
@@ -93,10 +77,10 @@ export default function ProgramsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Every child&apos;s journey is different.
+              {t('programsPage.hero.title')}
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              But it should always begin with love, language, and laughter.
+              {t('programsPage.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -112,31 +96,27 @@ export default function ProgramsPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm h-full">
                   <div className="flex items-center mb-4">
                     <span className="text-4xl mr-3">🍼</span>
-                    <h2 className="text-3xl font-display font-bold">Nursery</h2>
+                    <h2 className="text-3xl font-display font-bold">{t('programsPage.sections.nursery.title')}</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    &quot;From tiny snoozes to big first steps—our littlest ones are held, heard, and loved in two languages.&quot;
+                    &quot;{t('programsPage.sections.nursery.blurb')}&quot;
                   </p>
                   
                   <div className="mb-6">
-                    <h3 className="text-xl font-medium mb-3">Ages</h3>
+                    <h3 className="text-xl font-medium mb-3">{t('programsPage.sections.nursery.agesLabel')}</h3>
                     <p className="bg-brand-pink bg-opacity-20 p-3 rounded-lg">
-                      3 months - 2.5 years
+                      {t('programsPage.sections.nursery.ages')}
                     </p>
                   </div>
                   
                   <ProgramSchedule 
-                    title="Weekly Schedule"
-                    items={[
-                      { day: "Monday - Friday", hours: "7:30 - 18:30" },
-                      { day: "Half days available", hours: "7:30 - 13:00 or 13:00 - 18:30" },
-                      { day: "Minimum days", hours: "2 days per week" }
-                    ]}
+                    title={t('programsPage.sections.nursery.scheduleTitle')}
+                    items={t('programsPage.sections.nursery.scheduleItems') as ScheduleItem[]}
                   />
                   
                   <ProgramQuote 
-                    quote="Our daughter has been thriving at the nursery. The bilingual approach is amazing - she&apos;s already using words in both languages!"
-                    author="Emma & James, Parents"
+                    quote={t('programsPage.sections.nursery.quote')}
+                    author={t('programsPage.sections.nursery.quoteAuthor')}
                   />
                   
                   <Button
@@ -145,7 +125,7 @@ export default function ProgramsPage() {
                     fullWidth
                     className="mt-6"
                   >
-                    Peek Inside Nursery
+                    {t('programsPage.sections.nursery.button')}
                   </Button>
                 </div>
               </div>
@@ -208,31 +188,27 @@ export default function ProgramsPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm h-full">
                   <div className="flex items-center mb-4">
                     <span className="text-4xl mr-3">🎨</span>
-                    <h2 className="text-3xl font-display font-bold">Preschool</h2>
+                    <h2 className="text-3xl font-display font-bold">{t('programsPage.sections.preschool.title')}</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    &quot;Where stories, songs, and science spark wonder every day.&quot;
+                    &quot;{t('programsPage.sections.preschool.blurb')}&quot;
                   </p>
                   
                   <div className="mb-6">
-                    <h3 className="text-xl font-medium mb-3">Ages</h3>
+                    <h3 className="text-xl font-medium mb-3">{t('programsPage.sections.preschool.agesLabel')}</h3>
                     <p className="bg-brand-pink bg-opacity-20 p-3 rounded-lg">
-                      2.5 - 4 years
+                      {t('programsPage.sections.preschool.ages')}
                     </p>
                   </div>
                   
                   <ProgramSchedule 
-                    title="Weekly Schedule"
-                    items={[
-                      { day: "Monday - Friday", hours: "7:30 - 18:30" },
-                      { day: "Half days available", hours: "7:30 - 13:00 or 13:00 - 18:30" },
-                      { day: "Minimum days", hours: "2 days per week" }
-                    ]}
+                    title={t('programsPage.sections.preschool.scheduleTitle')}
+                    items={t('programsPage.sections.preschool.scheduleItems') as ScheduleItem[]}
                   />
                   
                   <ProgramQuote 
-                    quote="The preschool program has given our son such confidence. He&apos;s speaking both Dutch and English, and his social skills have blossomed."
-                    author="Sophia K., Mother"
+                    quote={t('programsPage.sections.preschool.quote')}
+                    author={t('programsPage.sections.preschool.quoteAuthor')}
                   />
                   
                   <Button
@@ -241,7 +217,7 @@ export default function ProgramsPage() {
                     fullWidth
                     className="mt-6"
                   >
-                    Play + Learn Tour
+                    {t('programsPage.sections.preschool.button')}
                   </Button>
                 </div>
               </div>
@@ -260,31 +236,27 @@ export default function ProgramsPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm h-full">
                   <div className="flex items-center mb-4">
                     <span className="text-4xl mr-3">🧩</span>
-                    <h2 className="text-3xl font-display font-bold">After School</h2>
+                    <h2 className="text-3xl font-display font-bold">{t('programsPage.sections.afterSchool.title')}</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    &quot;Adventures continue long after the bell. Our clubs inspire confidence, creativity, and community.&quot;
+                    &quot;{t('programsPage.sections.afterSchool.blurb')}&quot;
                   </p>
                   
                   <div className="mb-6">
-                    <h3 className="text-xl font-medium mb-3">Ages</h3>
+                    <h3 className="text-xl font-medium mb-3">{t('programsPage.sections.afterSchool.agesLabel')}</h3>
                     <p className="bg-brand-pink bg-opacity-20 p-3 rounded-lg">
-                      4 - 12 years
+                      {t('programsPage.sections.afterSchool.ages')}
                     </p>
                   </div>
                   
                   <ProgramSchedule 
-                    title="Weekly Schedule"
-                    items={[
-                      { day: "Monday - Friday", hours: "After school - 18:30" },
-                      { day: "School holidays", hours: "7:30 - 18:30 (full day)" },
-                      { day: "Study days", hours: "7:30 - 18:30 (full day)" }
-                    ]}
+                    title={t('programsPage.sections.afterSchool.scheduleTitle')}
+                    items={t('programsPage.sections.afterSchool.scheduleItems') as ScheduleItem[]}
                   />
                   
                   <ProgramQuote 
-                    quote="The after school program has been a lifesaver for our family. Our children get to continue their bilingual journey while having fun with friends."
-                    author="Thomas & Julie, Parents of twins"
+                    quote={t('programsPage.sections.afterSchool.quote')}
+                    author={t('programsPage.sections.afterSchool.quoteAuthor')}
                   />
                   
                   <Button
@@ -293,7 +265,7 @@ export default function ProgramsPage() {
                     fullWidth
                     className="mt-6"
                   >
-                    See the Clubs
+                    {t('programsPage.sections.afterSchool.button')}
                   </Button>
                 </div>
               </div>
@@ -356,31 +328,27 @@ export default function ProgramsPage() {
                 <div className="bg-white p-6 rounded-xl shadow-sm h-full">
                   <div className="flex items-center mb-4">
                     <span className="text-4xl mr-3">🌱</span>
-                    <h2 className="text-3xl font-display font-bold">TISA</h2>
+                    <h2 className="text-3xl font-display font-bold">{t('programsPage.sections.tisa.title')}</h2>
                   </div>
                   <p className="text-lg italic text-gray-700 mb-6">
-                    &quot;An international education—right around the corner. Small classes, big hearts, bilingual minds.&quot;
+                    &quot;{t('programsPage.sections.tisa.blurb')}&quot;
                   </p>
                   
                   <div className="mb-6">
-                    <h3 className="text-xl font-medium mb-3">Ages</h3>
+                    <h3 className="text-xl font-medium mb-3">{t('programsPage.sections.tisa.agesLabel')}</h3>
                     <p className="bg-brand-pink bg-opacity-20 p-3 rounded-lg">
-                      4 - 12 years (Primary education)
+                      {t('programsPage.sections.tisa.ages')}
                     </p>
                   </div>
                   
                   <ProgramSchedule 
-                    title="Weekly Schedule"
-                    items={[
-                      { day: "Monday - Friday", hours: "8:30 - 15:00" },
-                      { day: "After school care", hours: "15:00 - 18:30 (optional)" },
-                      { day: "Early drop-off", hours: "From 7:30 (optional)" }
-                    ]}
+                    title={t('programsPage.sections.tisa.scheduleTitle')}
+                    items={t('programsPage.sections.tisa.scheduleItems') as ScheduleItem[]}
                   />
                   
                   <ProgramQuote 
-                    quote="TISA has been transformational for our children. The international curriculum and caring teachers make this place special."
-                    author="Miguel & Ling, TISA Parents"
+                    quote={t('programsPage.sections.tisa.quote')}
+                    author={t('programsPage.sections.tisa.quoteAuthor')}
                   />
                   
                   <Button
@@ -390,7 +358,7 @@ export default function ProgramsPage() {
                     fullWidth
                     className="mt-6"
                   >
-                    Explore TISA
+                    {t('programsPage.sections.tisa.button')}
                   </Button>
                 </div>
               </div>
@@ -404,26 +372,32 @@ export default function ProgramsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-8 text-center">
-              Compare Our Programs
+              {t('programsPage.comparison.title')}
             </h2>
             <div className="overflow-x-auto">
               <table className="min-w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-brand-pink bg-opacity-10">
-                    <th className="p-4 font-medium">Feature</th>
-                    <th className="p-4 font-medium text-center">Nursery</th>
-                    <th className="p-4 font-medium text-center">Preschool</th>
-                    <th className="p-4 font-medium text-center">After&nbsp;School</th>
-                    <th className="p-4 font-medium text-center">TISA</th>
+                    <th className="p-4 font-medium">{t('programsPage.comparison.feature')}</th>
+                    <th className="p-4 font-medium text-center">{t('programsPage.comparison.columns.nursery')}</th>
+                    <th className="p-4 font-medium text-center">{t('programsPage.comparison.columns.preschool')}</th>
+                    <th className="p-4 font-medium text-center">{t('programsPage.comparison.columns.afterSchool')}</th>
+                    <th className="p-4 font-medium text-center">{t('programsPage.comparison.columns.tisa')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    ['Bilingual', '✅', '✅', '✅', '✅'],
-                    ['Meals Included', '✅', '✅', '❌', '✅'],
-                    ['Open Year-Round', '✅', '✅', '✅', '✅'],
-                    ['Group Size', 'Small', 'Medium', 'Variable', 'Small'],
-                    ['Curriculum', 'Sensory Play', 'Thematic Inquiry', 'Creative Clubs', 'International IPC/IB'],
+                    [t('programsPage.comparison.rows.bilingual'), '✅', '✅', '✅', '✅'],
+                    [t('programsPage.comparison.rows.meals'), '✅', '✅', '❌', '✅'],
+                    [t('programsPage.comparison.rows.openYear'), '✅', '✅', '✅', '✅'],
+                    [t('programsPage.comparison.rows.groupSize'), 'Small', 'Medium', 'Variable', 'Small'],
+                    [
+                      t('programsPage.comparison.rows.curriculum'), 
+                      t('programsPage.comparison.rows.sensoryPlay'), 
+                      t('programsPage.comparison.rows.thematicInquiry'), 
+                      t('programsPage.comparison.rows.creativeClubs'), 
+                      t('programsPage.comparison.rows.international')
+                    ],
                   ].map((row, idx) => (
                     <tr key={idx} className="bg-white odd:bg-gray-50">
                       {row.map((cell, i) => (
@@ -447,10 +421,10 @@ export default function ProgramsPage() {
       <section className="py-16 bg-brand-purple bg-opacity-10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-display font-bold mb-6">
-            Let&apos;s find the perfect fit—together.
+            {t('programsPage.cta.title')}
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Every family has different needs. Our team is here to help you choose the right path.
+            {t('programsPage.cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -458,14 +432,14 @@ export default function ProgramsPage() {
               href="/contact"
               size="lg"
             >
-              Book a Tour
+              {t('programsPage.cta.bookTour')}
             </Button>
             <Button 
               variant="outline"
               href="/apply"
               size="lg"
             >
-              Apply Now
+              {t('programsPage.cta.applyNow')}
             </Button>
           </div>
         </div>

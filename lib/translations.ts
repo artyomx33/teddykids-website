@@ -69,6 +69,15 @@ export const translations = {
       },
       trustedBy: "Trusted by organizations like:"
     },
+    /* ──────────────────────────────────────────────────────────
+     *  APPIESGPT SECTION (Homepage AI assistant)
+     * ────────────────────────────────────────────────────────── */
+    appiesGPT: {
+      title: "Have a question?",
+      description:
+        "Ask <strong>AppiesGPT</strong> — our playful AI assistant trained on everything Teddy Kids! 🎓<br/>She can answer your questions about programs, age groups, locations, or anything else you'd like to know.",
+      buttonText: "Open AppiesGPT Chat"
+    },
     programs: {
       title: "What We Offer",
       subtitle: "Programs designed for every stage of childhood",
@@ -752,6 +761,15 @@ export const translations = {
         author: "Miguel & Ling, TISA Ouders"
       },
       trustedBy: "Vertrouwd door organisaties zoals:"
+    },
+    /* ──────────────────────────────────────────────────────────
+     *  APPIESGPT SECTIE (Homepage AI-assistent)
+     * ────────────────────────────────────────────────────────── */
+    appiesGPT: {
+      title: "Heb je een vraag?",
+      description:
+        "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je vragen beantwoorden over programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
+      buttonText: "Open AppiesGPT Chat"
     },
     programs: {
       title: "Wat wij bieden",

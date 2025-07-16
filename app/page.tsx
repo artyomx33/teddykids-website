@@ -8,6 +8,7 @@ import Pillars from '@/components/sections/Pillars';
 import SocialProof from '@/components/sections/SocialProof';
 import Programs from '@/components/sections/Programs';
 import LocationsPreview from '@/components/sections/LocationsPreview';
+import AppiesGPT from '@/components/sections/AppiesGPT';
 
 export default function Home() {
   /* Language & translations */
@@ -46,6 +47,9 @@ export default function Home() {
           className="character character-floating character-delay-1"
         />
       </div>
+      
+      {/* AppiesGPT Section (AI assistant) */}
+      <AppiesGPT />
       
       {/* Core Values Pillars */}
       <Pillars />

@@ -4,8 +4,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
 
 const ApiePlayground = () => {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+  
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const [confettiActive, setConfettiActive] = useState(false);
@@ -69,7 +74,7 @@ const ApiePlayground = () => {
 
   // Banana puns for the page
   const bananaPuns = [
-    "Why did the banana go to the doctor? Because it wasn't peeling well!",
+    t('apiePlayground.defaultJoke'),
     "What's a banana's favorite gymnastics move? The split!",
     "Why don't bananas ever get lonely? Because they hang around in bunches!",
     "What did the banana say to the monkey? Nothing, bananas can't talk!",
@@ -131,10 +136,10 @@ const ApiePlayground = () => {
       {/* Header */}
       <div className="container mx-auto px-4 pt-12 pb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-brand-purple">
-          Apie&apos;s Playground
+          {t('apiePlayground.title')}
         </h1>
         <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-          Welcome to Apie&apos;s secret banana paradise! Color, play, and have fun!
+          {t('apiePlayground.subtitle')}
         </p>
         
         {/* Audio player */}
@@ -151,14 +156,14 @@ const ApiePlayground = () => {
           >
             {isAudioPlaying ? (
               <>
-                <span>Pause Jungle Sounds</span>
+                <span>Pause {t('apiePlayground.playSound')}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                 </svg>
               </>
             ) : (
               <>
-                <span>Play Jungle Sounds</span>
+                <span>{t('apiePlayground.playSound')}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z" />
                 </svg>
@@ -172,7 +177,7 @@ const ApiePlayground = () => {
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-display font-bold mb-4 text-center">Coloring Time!</h2>
+            <h2 className="text-2xl font-display font-bold mb-4 text-center">{t('apiePlayground.coloringTitle')}</h2>
             
             {/* Color Palette */}
             <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -334,7 +339,7 @@ const ApiePlayground = () => {
                   flower: '#FFFFFF',
                 })}
               >
-                Clear All Colors
+                {t('apiePlayground.clearColors')}
               </Button>
             </div>
           </div>
@@ -345,7 +350,7 @@ const ApiePlayground = () => {
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-display font-bold mb-4 text-center">Banana Puns</h2>
+            <h2 className="text-2xl font-display font-bold mb-4 text-center">{t('apiePlayground.punsTitle')}</h2>
             
             <div className="bg-brand-yellow bg-opacity-20 p-6 rounded-lg mb-6">
               <p className="text-xl text-center italic">&quot;{bananaPuns[currentPun]}&quot;</p>
@@ -356,7 +361,7 @@ const ApiePlayground = () => {
                 variant="primary"
                 onClick={getNewPun}
               >
-                Tell Me Another Banana Joke!
+                {t('apiePlayground.anotherJoke')}
               </Button>
             </div>
           </div>
@@ -367,30 +372,26 @@ const ApiePlayground = () => {
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-2xl font-display font-bold mb-4 text-center">Fun Activities</h2>
+            <h2 className="text-2xl font-display font-bold mb-4 text-center">{t('apiePlayground.activitiesTitle')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-brand-mint bg-opacity-20 p-4 rounded-lg">
-                <h3 className="text-xl font-medium mb-2">Banana Dance</h3>
-                <p className="mb-4">Follow these steps to do the banana dance:</p>
+                <h3 className="text-xl font-medium mb-2">{t('apiePlayground.bananaDance.title')}</h3>
+                <p className="mb-4">{t('apiePlayground.bananaDance.intro')}</p>
                 <ol className="list-decimal pl-5 space-y-2">
-                  <li>Stand up straight like a banana</li>
-                  <li>Bend to the left, like a curvy banana</li>
-                  <li>Bend to the right, even more curvy!</li>
-                  <li>Spin around and peel yourself!</li>
-                  <li>Jump up and shout &quot;BANANA!&quot;</li>
+                  {t('apiePlayground.bananaDance.steps').map((step: string, index: number) => (
+                    <li key={index}>{step}</li>
+                  ))}
                 </ol>
               </div>
               
               <div className="bg-brand-purple bg-opacity-20 p-4 rounded-lg">
-                <h3 className="text-xl font-medium mb-2">Monkey See, Monkey Do</h3>
-                <p className="mb-4">Can you act like these animals?</p>
+                <h3 className="text-xl font-medium mb-2">{t('apiePlayground.monkeySee.title')}</h3>
+                <p className="mb-4">{t('apiePlayground.monkeySee.subtitle')}</p>
                 <ul className="space-y-2">
-                  <li>🐒 Monkey: Make monkey sounds and scratch your head</li>
-                  <li>🦁 Lion: Roar loudly and show your claws</li>
-                  <li>🐘 Elephant: Make your arm like a trunk and trumpet</li>
-                  <li>🦒 Giraffe: Stretch your neck up tall</li>
-                  <li>🐸 Frog: Hop around and say &quot;ribbit ribbit&quot;</li>
+                  {t('apiePlayground.monkeySee.animals').map((animal: string, index: number) => (
+                    <li key={index}>{animal}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -404,7 +405,7 @@ const ApiePlayground = () => {
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
-          Back to Teddy Kids
+          {t('apiePlayground.backCTA')}
         </Link>
       </div>
     </main>

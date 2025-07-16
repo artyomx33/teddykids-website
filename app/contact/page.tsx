@@ -1,37 +1,26 @@
-import { Metadata } from 'next';
-import Contact from '@/components/sections/Contact';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Teddy Kids',
-  description: 'Get in touch with Teddy Kids. Book a tour, apply for enrollment, or ask us any questions about our bilingual childcare and international school programs.',
-  keywords: 'contact teddy kids, book a tour, apply teddy kids, childcare contact, international school contact, leiden',
-  openGraph: {
-    title: 'Contact Us | Teddy Kids',
-    description: 'Get in touch with Teddy Kids. Book a tour, apply for enrollment, or ask us any questions about our bilingual childcare and international school programs.',
-    url: 'https://www.teddykids.nl/contact',
-    siteName: 'Teddy Kids',
-    images: [
-      {
-        url: '/images/og-image-contact.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Contact Teddy Kids - Bilingual Childcare and International School',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Contact Us | Teddy Kids',
-    description: 'Get in touch with Teddy Kids. Book a tour, apply for enrollment, or ask us any questions about our bilingual childcare and international school programs.',
-    images: ['/images/og-image-contact.jpg'],
-  },
-};
+import Head from 'next/head';
+import Contact from '@/components/sections/Contact';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
 
 export default function ContactPage() {
+  /* Grab current language & translation helper */
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+
+  /* Dynamic metadata */
+  const metaTitle = `${t('contact.title')} | Teddy Kids`;
+  const metaDescription = t('contact.subtitle');
+
   return (
     <main>
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+      </Head>
+
       <Contact />
     </main>
   );

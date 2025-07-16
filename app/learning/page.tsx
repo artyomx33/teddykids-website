@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
+import Head from 'next/head';
 
 // Types for our learning moments
 type Tag = '🗣️ Talking in Two Languages' | '💛 Big Feelings' | '🎨 Chaos & Wonder' | '🔧 Real-World Teddy Tricks' | '🤝 Growing Together';
@@ -158,6 +161,15 @@ const FilterTag = ({ tag, isActive, onClick }: { tag: Tag, isActive: boolean, on
 };
 
 export default function LearningPage() {
+  /* ------------------------------------------------------------------
+   * Language & translations
+   * ------------------------------------------------------------------ */
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+
+  const metaTitle = `${t('learningMoments.title')} | Teddy Kids`;
+  const metaDescription = t('learningMoments.subtitle');
+
   // State for random child quote
   const [quote, setQuote] = useState('');
   
@@ -193,15 +205,22 @@ export default function LearningPage() {
 
   return (
     <main>
+      {/* Dynamic metadata based on current language */}
+      <Head>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+      </Head>
+
       {/* Hero Section */}
       <section className="py-20 bg-brand-pink bg-opacity-10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            {/* translated hero */}
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              What if the smartest person in the room… is the one finger painting in the corner?
+              {t('learningMoments.title')}
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              Teddy Kids isn&apos;t just where children grow. It&apos;s where we learn to see growth differently.
+              {t('learningMoments.subtitle')}
             </p>
             {quote && (
               <div className="bg-white p-5 rounded-xl inline-block shadow-sm">
@@ -273,12 +292,12 @@ export default function LearningPage() {
             
             {filteredMoments.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-xl text-gray-700">No learning moments found with this filter. Try another category!</p>
+                <p className="text-xl text-gray-700">{t('learningMoments.noResults')}</p>
                 <button 
                   onClick={() => setActiveFilter(null)}
                   className="mt-4 px-6 py-2 bg-brand-pink text-white rounded-lg hover:bg-opacity-90 transition-all duration-300"
                 >
-                  Show All Moments
+                  {t('learningMoments.showAll')}
                 </button>
               </div>
             )}
@@ -291,10 +310,10 @@ export default function LearningPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-6">
-              What if your child&apos;s most powerful learning moment… was happening today—and you didn&apos;t see it?
+              {t('learningMoments.ctaTitle')}
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              Let us show you how brilliance hides in snack time, sandboxes, and squishy socks.
+              {t('learningMoments.ctaSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -302,14 +321,14 @@ export default function LearningPage() {
                 href="/contact"
                 size="lg"
               >
-                See It Firsthand
+                {t('learningMoments.ctaPrimary')}
               </Button>
               <Button 
                 variant="outline"
                 href="/contact?tour=true"
                 size="lg"
               >
-                Book a 20-Minute Tour That Might Change Everything
+                {t('learningMoments.ctaSecondary')}
               </Button>
             </div>
           </div>

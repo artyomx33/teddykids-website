@@ -201,6 +201,15 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
       bio: "Sofia brings creativity to everything at Teddy Kids, from classroom designs to special events that children remember forever.",
       childQuote: "Sofia's art projects are magical!"
     },
+    {
+      id: 'els',
+      name: 'Els',
+      role: 'Team Member',
+      funFact: 'Brings positivity and energy to every day at Teddy Kids.',
+      imageSrc: '/images/team/els.jpg',
+      bio: 'Els is a valued member of our team, bringing dedication and care to everything she does.',
+      childQuote: 'Els always has a smile for us!'
+    },
   ];
   
   const activeMemberData = activeMember 

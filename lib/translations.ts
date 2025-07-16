@@ -23,6 +23,16 @@ export const translations = {
       cta1: "Book a Tour",
       cta2: "Apply Now"
     },
+    /* New: Why Teddy Kids teaser (Home page) */
+    whyTeddyKids: {
+      title: "Why Teddy Kids Exists",
+      subtitle: "We didn't build another daycare. We built what we wish we had as kids."
+    },
+    /* New: Begin Your Journey (CTA footer segment) */
+    beginYourJourney: {
+      title: "Begin Your Journey",
+      subtitle: "Ready to take the first step?"
+    },
     pillars: {
       title: "Our Promise to Every Child",
       pillar1: {
@@ -451,6 +461,7 @@ export const translations = {
     locations: {
       title: "Find Your Nearest Teddy Kids",
       subtitle: "Multiple locations throughout the region",
+      viewAll: "View All Locations",
       viewDetails: "View Details",
       bookTour: "Book a Tour",
       applyNow: "Apply Now",
@@ -533,13 +544,52 @@ export const translations = {
       thankYou: "Thank you! We'll be in touch soon."
     },
     apiePlayground: {
+      /* ───── Header ───── */
       title: "Apie's Playground",
-      subtitle: "A special place just for kids",
-      maelynQuote: "This is the monkey that started it all.",
-      coloringTitle: "Color with Apie",
-      downloadColoring: "Download Coloring Page",
-      listenToApie: "Listen to Apie",
-      secretMessage: "You found the secret page! Well done!"
+      subtitle: "Welcome to Apie's secret banana paradise! Color, play, and have fun!",
+
+      /* ───── Sound Button ───── */
+      playSound: "Play Jungle Sounds",
+
+      /* ───── Coloring UI ───── */
+      coloringTitle: "Coloring Time!",
+      clearColors: "Clear All Colors",
+
+      /* ───── Banana Puns ───── */
+      punsTitle: "Banana Puns",
+      defaultJoke: "Why did the banana go to the doctor? Because it wasn't peeling well!",
+      anotherJoke: "Tell Me Another Banana Joke!",
+
+      /* ───── Fun Activities ───── */
+      activitiesTitle: "Fun Activities",
+
+      bananaDance: {
+        title: "Banana Dance",
+        intro: "Follow these steps to do the banana dance:",
+        steps: [
+          "Stand up straight like a banana",
+          "Bend to the left, like a curvy banana",
+          "Bend to the right, even more curvy!",
+          "Spin around and peel yourself!",
+          "Jump up and shout 'BANANA!'"
+        ]
+      },
+
+      /* ───── Monkey See, Monkey Do ───── */
+      monkeySee: {
+        title: "Monkey See, Monkey Do",
+        subtitle: "Can you act like these animals?",
+        animals: [
+          "🐒 Monkey: Make monkey sounds and scratch your head",
+          "🦁 Lion: Roar loudly and show your claws",
+          "🐘 Elephant: Make your arm like a trunk and trumpet",
+          "🦒 Giraffe: Stretch your neck up tall",
+          "🐸 Frog: Hop around and say 'ribbit ribbit'"
+        ]
+      },
+
+      /* ───── Footer CTA ───── */
+      backCTA: "Back to Teddy Kids"
     },
     footer: {
       copyright: "© 2024 Teddy Kids. All rights reserved.",
@@ -1062,6 +1112,7 @@ export const translations = {
     locations: {
       title: "Vind jouw Dichtstbijzijnde Teddy Kids",
       subtitle: "Meerdere locaties in de regio",
+      viewAll: "Bekijk alle locaties",
       viewDetails: "Bekijk Details",
       bookTour: "Kom langs voor een rondleiding",
       applyNow: "Start vandaag met aanmelden",
@@ -1144,13 +1195,52 @@ export const translations = {
       thankYou: "Dank je wel! We nemen snel contact op."
     },
     apiePlayground: {
-      title: "Apie's Speelplaats",
-      subtitle: "Een speciale plek alleen voor kids",
-      maelynQuote: "Dit is de aap waarmee het allemaal begon.",
-      coloringTitle: "Kleuren met Apie",
-      downloadColoring: "Download Kleurplaat",
-      listenToApie: "Luister naar Apie",
-      secretMessage: "Je hebt de geheime pagina gevonden! Goed gedaan!"
+      /* ───── Header ───── */
+      title: "Appies Speelhoek",
+      subtitle: "Welkom in Appies geheime bananenparadijs! Kleur, speel en geniet!",
+
+      /* ───── Sound Button ───── */
+      playSound: "Laat de jungle brullen!",
+
+      /* ───── Coloring UI ───── */
+      coloringTitle: "Tijd om te kleuren!",
+      clearColors: "Alles wissen",
+
+      /* ───── Banana Puns ───── */
+      punsTitle: "Bananengrappen",
+      defaultJoke: "Waarom ging de banaan naar de dokter? Omdat hij zich niet goed schilde!",
+      anotherJoke: "Vertel me nog een bananengrapje!",
+
+      /* ───── Fun Activities ───── */
+      activitiesTitle: "Leuke dingen om te doen",
+
+      bananaDance: {
+        title: "Bananendans",
+        intro: "Volg deze stappen voor de bananendans:",
+        steps: [
+          "Sta rechtop als een banaan",
+          "Buig naar links, als een kromme banaan",
+          "Buig naar rechts, nog krommer!",
+          "Draai rond en pel jezelf!",
+          "Spring omhoog en roep: 'BANAAN!'"
+        ]
+      },
+
+      /* ───── Monkey See, Monkey Do ───── */
+      monkeySee: {
+        title: "Aapjes nadoen!",
+        subtitle: "Kun jij deze dieren nadoen?",
+        animals: [
+          "🐒 Aap: Maak aapgeluiden en krab aan je hoofd",
+          "🦁 Leeuw: Brul hard en laat je klauwen zien",
+          "🐘 Olifant: Maak van je arm een slurf en toeter!",
+          "🦒 Giraf: Strek je nek zo hoog als je kunt",
+          "🐸 Kikker: Spring rond en zeg 'kwak kwak'"
+        ]
+      },
+
+      /* ───── Footer CTA ───── */
+      backCTA: "Terug naar Teddy Kids"
     },
     footer: {
       copyright: "© 2024 Teddy Kids. Alle rechten voorbehouden.",

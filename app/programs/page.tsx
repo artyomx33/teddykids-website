@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Script from 'next/script';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
@@ -72,6 +73,129 @@ export default function ProgramsPage() {
 
   return (
     <main>
+      {/* Structured Data for Programs */}
+      <Script
+        id="program-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "Course",
+                  "name": t('programsPage.sections.nursery.title'),
+                  "description": t('programsPage.sections.nursery.blurb'),
+                  "provider": {
+                    "@type": "ChildCare",
+                    "name": "Teddy Kids",
+                    "sameAs": "https://www.teddykids.nl"
+                  },
+                  "educationalLevel": "Infant to Toddler",
+                  "timeRequired": "P1D",
+                  "url": "https://www.teddykids.nl/programs/nursery",
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "offers": {
+                      "@type": "Offer",
+                      "availability": "https://schema.org/InStock",
+                      "availabilityStarts": "2024-01-01",
+                      "availabilityEnds": "2025-12-31"
+                    }
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "Course",
+                  "name": t('programsPage.sections.preschool.title'),
+                  "description": t('programsPage.sections.preschool.blurb'),
+                  "provider": {
+                    "@type": "ChildCare",
+                    "name": "Teddy Kids",
+                    "sameAs": "https://www.teddykids.nl"
+                  },
+                  "educationalLevel": "Preschool",
+                  "timeRequired": "P1D",
+                  "url": "https://www.teddykids.nl/programs/preschool",
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "offers": {
+                      "@type": "Offer",
+                      "availability": "https://schema.org/InStock",
+                      "availabilityStarts": "2024-01-01",
+                      "availabilityEnds": "2025-12-31"
+                    }
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "Course",
+                  "name": t('programsPage.sections.afterSchool.title'),
+                  "description": t('programsPage.sections.afterSchool.blurb'),
+                  "provider": {
+                    "@type": "ChildCare",
+                    "name": "Teddy Kids",
+                    "sameAs": "https://www.teddykids.nl"
+                  },
+                  "educationalLevel": "School Age",
+                  "timeRequired": "PT5H",
+                  "url": "https://www.teddykids.nl/programs/after-school",
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "offers": {
+                      "@type": "Offer",
+                      "availability": "https://schema.org/InStock",
+                      "availabilityStarts": "2024-01-01",
+                      "availabilityEnds": "2025-12-31"
+                    }
+                  }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "Course",
+                  "name": t('programsPage.sections.tisa.title'),
+                  "description": t('programsPage.sections.tisa.blurb'),
+                  "provider": {
+                    "@type": "EducationalOrganization",
+                    "name": "TISA - Teddy International School of Arts",
+                    "sameAs": "https://www.tisaschool.com"
+                  },
+                  "educationalLevel": "Primary Education",
+                  "timeRequired": "P1D",
+                  "url": "https://www.tisaschool.com",
+                  "hasCourseInstance": {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "offers": {
+                      "@type": "Offer",
+                      "availability": "https://schema.org/InStock",
+                      "availabilityStarts": "2024-01-01",
+                      "availabilityEnds": "2025-12-31"
+                    }
+                  }
+                }
+              }
+            ]
+          })
+        }}
+      />
+
       {/* Hero Section */}
       <section className="py-20 bg-brand-purple bg-opacity-10">
         <div className="container mx-auto px-4">

@@ -89,6 +89,45 @@ export default function RootLayout({
           />
         </noscript>
 
+        {/* Structured Data: Organization & ChildCare */}
+        <Script
+          id="ld-json-org"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ChildCare",
+              name: "Teddy Kids",
+              url: "https://www.teddykids.nl",
+              logo: "https://www.teddykids.nl/images/logo.png",
+              description:
+                "Bilingual childcare & international school nurturing global citizens from their very first steps.",
+              telephone: "+31 71 870 05 05",
+              email: "info@teddykids.nl",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Rijnsburgerweg 35",
+                addressLocality: "Leiden",
+                postalCode: "2334 BN",
+                addressCountry: "NL",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+31 71 870 05 05",
+                contactType: "customer support",
+                areaServed: "NL",
+                availableLanguage: ["English", "Dutch"],
+              },
+              sameAs: [
+                "https://www.facebook.com/teddykids",
+                "https://www.instagram.com/teddykids",
+                "https://www.linkedin.com/company/teddy-kids",
+              ],
+            }),
+          }}
+        />
+
         <LanguageProvider>
           {/* Invisible element to safelist brand utility classes for Tailwind build */}
           <div

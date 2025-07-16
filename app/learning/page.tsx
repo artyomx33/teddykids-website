@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+import Script from 'next/script';   /* <-- Structured-data support */
 import Head from 'next/head';
 
 // Types for our learning moments
@@ -205,6 +206,37 @@ export default function LearningPage() {
 
   return (
     <main>
+      {/* ------------------------------------------------------------------ */}
+      {/*  Structured Data (Schema.org) for all Learning Moments              */}
+      {/* ------------------------------------------------------------------ */}
+      <Script
+        id="ld-learning-moments"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: learningMoments.map((m, idx) => ({
+              '@type': 'ListItem',
+              position: idx + 1,
+              item: {
+                '@type': 'Article',
+                '@id': `https://www.teddykids.nl/learning#${m.id}`,
+                headline: m.title,
+                description: m.insight,
+                author: {
+                  '@type': 'Organization',
+                  name: 'Teddy Kids',
+                },
+                image: `https://www.teddykids.nl${m.image}`,
+                url: `https://www.teddykids.nl/learning#${m.id}`,
+              },
+            })),
+          }),
+        }}
+      />
+
       {/* Dynamic metadata based on current language */}
       <Head>
         <title>{metaTitle}</title>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { getAllLocations, Location } from '@/lib/locations';
@@ -45,6 +46,90 @@ const LocationCard: React.FC<LocationCardProps> = ({ location }) => {
 
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+      {/* Structured Data for Location */}
+      <Script
+        id={`location-schema-${location.id}`}
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ChildCare",
+            "@id": `https://www.teddykids.nl/locations#${location.id}`,
+            name: `Teddy Kids - ${location.name}`,
+            description: locationDescription,
+            url: `https://www.teddykids.nl/locations?id=${location.id}`,
+            telephone: location.contact.phone,
+            email: location.contact.email,
+            image: location.images[0],
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: location.address.street,
+              addressLocality: location.address.city,
+              postalCode: location.address.postalCode,
+              addressCountry: location.address.country === "Netherlands" ? "NL" : location.address.country === "Portugal" ? "PT" : location.address.country,
+            },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: "Monday",
+                opens: location.hours.monday.split(" - ")[0],
+                closes: location.hours.monday.split(" - ")[1],
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: "Tuesday",
+                opens: location.hours.tuesday.split(" - ")[0],
+                closes: location.hours.tuesday.split(" - ")[1],
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: "Wednesday",
+                opens: location.hours.wednesday.split(" - ")[0],
+                closes: location.hours.wednesday.split(" - ")[1],
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: "Thursday",
+                opens: location.hours.thursday.split(" - ")[0],
+                closes: location.hours.thursday.split(" - ")[1],
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: "Friday",
+                opens: location.hours.friday.split(" - ")[0],
+                closes: location.hours.friday.split(" - ")[1],
+              },
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: location.contact.phone,
+              contactType: "customer service",
+              availableLanguage: ["English", "Dutch"],
+            },
+            ...(location.reviews.length > 0 && {
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: location.reviews[0].rating,
+                reviewCount: 1,
+              },
+              review: {
+                "@type": "Review",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: location.reviews[0].rating,
+                },
+                author: {
+                  "@type": "Person",
+                  name: location.reviews[0].author,
+                },
+                reviewBody: locationQuote || location.reviews[0].text,
+              },
+            }),
+          }),
+        }}
+      />
+
       {/* Location Images Carousel */}
       <div className="relative h-64 w-full">
         {location.images.map((src, index) => (

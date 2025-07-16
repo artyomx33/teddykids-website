@@ -75,8 +75,9 @@ export const translations = {
     appiesGPT: {
       title: "Have a question?",
       description:
-        "Ask <strong>AppiesGPT</strong> — our playful AI assistant trained on everything Teddy Kids! 🎓<br/>She can answer your questions about programs, age groups, locations, or anything else you'd like to know.",
-      buttonText: "Open AppiesGPT Chat"
+        "Ask <strong>AppiesGPT</strong> — our playful AI assistant trained on everything Teddy Kids! 🎓<br/>She can help you with programs, age groups, locations, or anything else you'd like to know.",
+      buttonText: "Chat with AppiesGPT",
+      note: "AppiesGPT opens in a new tab using ChatGPT. No account required to view."
     },
     programs: {
       title: "What We Offer",
@@ -768,8 +769,9 @@ export const translations = {
     appiesGPT: {
       title: "Heb je een vraag?",
       description:
-        "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je vragen beantwoorden over programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
-      buttonText: "Open AppiesGPT Chat"
+        "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je helpen met programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
+      buttonText: "Chat met AppiesGPT",
+      note: "AppiesGPT opent in een nieuwe tab via ChatGPT. Geen account nodig om te bekijken."
     },
     programs: {
       title: "Wat wij bieden",

@@ -222,8 +222,8 @@ export const translations = {
      * ────────────────────────────────────────────────────────── */
     locationsPage: {
       hero: {
-        title: "Find Your Nearest Teddy Kids",
-        subtitle: "Across Leiden, our locations offer the same loving care, bilingual approach, and joyful environments—with each team bringing its own energy."
+        title: "Find Your Nearest Teddy Home",
+        subtitle: "Each of our locations has its own energy — all built on love, care, and curiosity."
       },
       map: {
         title: "Map of Teddy Kids Locations",
@@ -240,7 +240,7 @@ export const translations = {
       locations: {
         rbw: {
           title: "RBW – Rijnsburgerweg 35",
-          description: "Our original TK location—where it all began. A warm, nurturing space for our youngest learners.",
+          description: "Our largest, most international location, full of light and language.",
           address: "Address:",
           openingHours: "Opening Hours:",
           days: {
@@ -261,22 +261,22 @@ export const translations = {
         },
         rb35: {
           title: "RB3/RB5 – Rijnsburgerweg 3 & 5",
-          description: "A dynamic, dual-building hub with spaces for both young children and school-aged adventurers.",
+          description: "A dynamic, dual-building hub where toddlers and school-agers both find their perfect space.",
           quote: "The after-school activities here are so creative—our son never wants to leave!"
         },
         lrz: {
           title: "LRZ – Lorentzkade 15a",
-          description: "Home to both our bilingual after-school care and the international TISA program, all in one inspiring space.",
+          description: "Home to bilingual after-school adventures and TISA dreams, all under one inspiring roof.",
           quote: "The staff at Lorentzkade are amazing—our daughter loves both TK and her new TISA class."
         },
         zml: {
           title: "ZML – Zeemanlaan 22a",
-          description: "A cozy, creative setting where little ones explore, play, and thrive in a close-knit environment.",
+          description: "A cozy, creative haven where our youngest explorers discover their voices in two languages.",
           quote: "ZML is magical. The environment is peaceful, clean, and full of laughter."
         },
         tisaPortugal: {
           title: "TISA Portugal",
-          description: "Our international campus in sunny Portugal",
+          description: "Our sunny international campus where Portuguese warmth meets Teddy innovation.",
           quote: "Moving to Portugal was made so much easier knowing our children had a familiar educational environment at TISA."
         }
       },
@@ -901,8 +901,8 @@ export const translations = {
      * ────────────────────────────────────────────────────────── */
     locationsPage: {
       hero: {
-        title: "Vind jouw dichtstbijzijnde Teddy Kids",
-        subtitle: "In heel Leiden bieden onze locaties dezelfde liefdevolle zorg, tweetalige aanpak en vrolijke sfeer—met elk team dat z'n eigen energie meebrengt."
+        title: "Vind jouw dichtstbijzijnde Teddy Thuis",
+        subtitle: "Elke locatie heeft z'n eigen energie — allemaal gebouwd op liefde, zorg en nieuwsgierigheid."
       },
       map: {
         title: "Kaart van Teddy Kids locaties",
@@ -919,7 +919,7 @@ export const translations = {
       locations: {
         rbw: {
           title: "RBW – Rijnsburgerweg 35",
-          description: "Onze allereerste locatie—waar alles begon. Een warme, zorgzame plek voor onze jongste Teddy's.",
+          description: "Onze grootste, meest internationale locatie, vol licht en taal.",
           address: "Adres:",
           openingHours: "Openingstijden:",
           days: {
@@ -940,22 +940,22 @@ export const translations = {
         },
         rb35: {
           title: "RB3/RB5 – Rijnsburgerweg 3 & 5",
-          description: "Een dynamisch dubbelpand met ruimte voor zowel jonge kinderen als schoolgaande avonturiers.",
+          description: "Een dynamisch dubbelpand waar peuters en schoolkinderen elk hun perfecte plek vinden.",
           quote: "De naschoolse activiteiten zijn zo creatief—onze zoon wil nooit meer naar huis!"
         },
         lrz: {
           title: "LRZ – Lorentzkade 15a",
-          description: "Thuisbasis voor zowel onze tweetalige naschoolse opvang als het internationale TISA-programma—allemaal onder één inspirerend dak.",
+          description: "Thuisbasis voor tweetalige naschoolse avonturen en TISA-dromen, allemaal onder één inspirerend dak.",
           quote: "Het team op Lorentzkade is geweldig—onze dochter is dol op zowel TK als haar TISA-klas."
         },
         zml: {
           title: "ZML – Zeemanlaan 22a",
-          description: "Een knusse, creatieve plek waar kleintjes ontdekken, spelen en groeien in een vertrouwde omgeving.",
+          description: "Een knusse, creatieve haven waar onze jongste ontdekkers hun stem vinden in twee talen.",
           quote: "ZML is magisch. De sfeer is rustig, schoon en vol gelach."
         },
         tisaPortugal: {
           title: "TISA Portugal",
-          description: "Ons internationale campus in het zonnige Portugal",
+          description: "Ons zonnige internationale campus waar Portugese warmte en Teddy-innovatie samenkomen.",
           quote: "Verhuizen naar Portugal werd zoveel makkelijker doordat onze kinderen terecht konden in een vertrouwde leeromgeving bij TISA."
         }
       },

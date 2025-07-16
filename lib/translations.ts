@@ -382,36 +382,40 @@ export const translations = {
       members: {
         didYouKnow: "Did You Know?",
         artem: {
-          role: "Director",
-          funFact: "Built the first Teddy Kids location while still a student."
+          role: "Founder & Vision Architect",
+          funFact: "Good morning team — remember, chaos is just creativity in disguise."
         },
         tess: {
-          role: "Head of Operations",
-          funFact: "Can organise anything—even a toddler's toy explosion—in under 5 minutes."
+          role: "Executive Daycare Whisperer",
+          funFact: "I don’t just solve problems… I predict them."
         },
         jess: {
-          role: "Education Quality Lead",
-          funFact: "Plays five musical instruments and uses them in class sing-alongs."
+          role: "Chaos Containment Officer – RBW",
+          funFact: "I did inventory, budgeting, and found a lost sock. All before 9 am."
         },
         meral: {
-          role: "People & Culture",
-          funFact: "Has visited 30 countries and loves sharing stories at circle time."
+          role: "SMO – Smile Management Officer – ZML",
+          funFact: "We are out of glitter again. That’s either good or very bad."
         },
         antonela: {
-          role: "Site Leader",
-          funFact: "Speaks four languages and is learning a fifth from the kids."
+          role: "Office & LRZ BSO Commander-in-Flow",
+          funFact: "If something’s missing… it’s already on my list."
         },
         pamela: {
-          role: "HR",
-          funFact: "Remembers every child's birthday—and their favourite cake flavour."
+          role: "BSO & After School Ops",
+          funFact: "Children listen. Adults try. I smile… and carry on."
         },
         svetlana: {
-          role: "Finance",
-          funFact: "Can solve a Rubik's cube in under two minutes."
+          role: "ZML Pediatric Heart & Hug Coordinator",
+          funFact: "I carry plasters and glitter. Both make magic."
         },
         sofia: {
-          role: "Creative & Events",
-          funFact: "Once built a cardboard city taller than the children."
+          role: "RBW Location Energy Manager",
+          funFact: "I planned a wedding and a weekly roster in the same weekend."
+        },
+        els: {
+          role: "Teddy Grandmother & Poffertjes Queen",
+          funFact: "I bring the smiles, the giggles… and the poffertjes."
         }
       },
       locations: {
@@ -1033,36 +1037,40 @@ export const translations = {
       members: {
         didYouKnow: "Wist je dat?",
         artem: {
-          role: "Directeur",
-          funFact: "Bouwde de eerste Teddy Kids locatie terwijl hij nog student was."
+          role: "Oprichter & Visie-Architect",
+          funFact: "Goedemorgen team — chaos is gewoon creativiteit in vermomming."
         },
         tess: {
-          role: "Operationeel Hoofd",
-          funFact: "Kan alles organiseren—zelfs een peuter-explosie van speelgoed—in minder dan 5 minuten."
+          role: "Directeur van Alles & Kinderfluisteraar",
+          funFact: "Ik los problemen niet alleen op… ik voorspel ze."
         },
         jess: {
-          role: "Hoofd Onderwijskwaliteit",
-          funFact: "Bespeelt vijf instrumenten en gebruikt ze tijdens gezamenlijke zangmomenten."
+          role: "Chaosbeheerser – RBW",
+          funFact: "Ik deed voorraadbeheer, budgettering én vond een verloren sok. Voor 9 uur."
         },
         meral: {
-          role: "People & Culture",
-          funFact: "Bezocht 30 landen en deelt haar verhalen graag tijdens kringmomenten."
+          role: "SMO – Smile Manager – ZML",
+          funFact: "We hebben weer geen glitter. Dat is óf goed, óf heel slecht."
         },
         antonela: {
-          role: "Locatiehoofd",
-          funFact: "Spreekt vier talen en leert de vijfde van de kinderen zelf."
+          role: "Office & LRZ BSO Flowcommandant",
+          funFact: "Als er iets mist… staat het al op mijn lijstje."
         },
         pamela: {
-          role: "HR",
-          funFact: "Onthoudt ieders verjaardag—en hun favoriete taart."
+          role: "BSO & Buitenschoolse Operaties",
+          funFact: "Kinderen luisteren. Volwassenen proberen. Ik glimlach… en ga door."
         },
         svetlana: {
-          role: "Financiën",
-          funFact: "Lost een Rubik's cube op in minder dan twee minuten."
+          role: "ZML Kinderhart & Knuffelcoördinator",
+          funFact: "Ik draag pleisters en glitter. Allebei maken magie."
         },
         sofia: {
-          role: "Creatie & Events",
-          funFact: "Bouwde ooit een kartonnen stad hoger dan de kinderen zelf."
+          role: "Locatie-energiebeheerder RBW",
+          funFact: "Ik plande een bruiloft én een weekrooster in hetzelfde weekend."
+        },
+        els: {
+          role: "Teddy Grootmoeder & Poffertjes Koningin",
+          funFact: "Ik breng de glimlachjes, het gegiechel… en de poffertjes."
         }
       },
       locations: {

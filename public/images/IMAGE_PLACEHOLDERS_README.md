@@ -59,6 +59,18 @@ _All placeholder files currently use the tiny **Apie-monkey** icon (24 × 24 px 
 
 ---
 
+## 5. Programs Section (Home → “What We Offer” cards)
+| Path | Replace with | Suggested size / format |
+|------|--------------|-------------------------|
+`images/programs/nursery.jpg` | Real nursery / baby-care photo | 800 × 600 px JPG, ≤200 KB |
+`images/programs/preschool.jpg` | Preschool activities & learning | 800 × 600 px JPG, ≤200 KB |
+`images/programs/afterschool.jpg` | After-school fun & exploration | 800 × 600 px JPG, ≤200 KB |
+`images/programs/tisa.jpg` | TISA campus / logo montage | 800 × 600 px JPG (PNG if logo), ≤200 KB |
+
+Each card uses the image as a full-bleed background with text & emoji overlaid, so choose photos with good contrast or add a subtle darken/lighten overlay.
+
+---
+
 ### How to Replace
 1. Keep the **exact filename & path** so code references remain valid.  
 2. Optimise files (TinyPNG, Squoosh) before copying over the placeholder.  

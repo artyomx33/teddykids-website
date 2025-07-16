@@ -71,6 +71,24 @@ Each card uses the image as a full-bleed background with text & emoji overlaid, 
 
 ---
 
+## 6. Luna Character System  🎉
+Whimsical illustrated characters that “live” around the site. Each file currently contains the **Apie-monkey** placeholder – drop in the final PNGs when ready.
+
+| Path | Purpose / Placement | Suggested size / format |
+|------|--------------------|--------------------------|
+`images/teddylighthousebackground.png` | Footer / Contact / About background (soft, 30 % opacity) | Full-width PNG/JPG, ≥1920 px wide |
+`images/characters/teddy-character-1.png` | Purple dinosaur – homepage bottom-left hero | Transparent PNG, ~100 × 100 px |
+`images/characters/teddy-character-2.png` | Girl in TK sweater – homepage floating near CTAs | Transparent PNG, ~100 × 100 px |
+`images/characters/teddy-character-3.png` | Explorer girl – on each location card | Transparent PNG, ~60 × 60 px |
+`images/characters/teddy-character-4.png` | Rain-coat puddle girl – locations page bottom-right | Transparent PNG, ~100 × 100 px |
+`images/characters/teddy-character-5.png` | Nursery handbag girl – programs page (Nursery) | Transparent PNG, ~90 × 90 px |
+`images/characters/teddy-character-6.png` | Football boy – programs page (After School) | Transparent PNG, ~90 × 90 px |
+`images/characters/teddy-character-7.png` | Red-scarf thumbs-up girl – team page (near Antonela/Meral) | Transparent PNG, ~70 × 70 px |
+`images/characters/teddy-character-8.png` | Red-bandana heart-dress girl – team page (near Els) | Transparent PNG, ~70 × 70 px |
+`images/characters/teddy-character-9.png` | Winter-gear waving girl – footer waver | Transparent PNG, ~120 × 120 px |
+
+All character PNGs can include a small drop-shadow for better contrast on light backgrounds.
+
 ### How to Replace
 1. Keep the **exact filename & path** so code references remain valid.  
 2. Optimise files (TinyPNG, Squoosh) before copying over the placeholder.  

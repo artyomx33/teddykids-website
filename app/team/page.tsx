@@ -62,7 +62,24 @@ export default function TeamPage() {
       </section>
       
       {/* Team Grid Component */}
-      <Team className="bg-brand-yellow bg-opacity-10" />
+      {/* Wrap team grid in a relative container so characters can be positioned absolutely */}
+      <div className="relative">
+        <Team className="bg-brand-yellow bg-opacity-10" />
+        {/* TeddyCharacter7 – girl with red scarf (near Antonela/Meral) */}
+        <img
+          src="/images/characters/teddy-character-7.png"
+          alt=""
+          aria-hidden="true"
+          className="character character-corner-bottom"
+        />
+        {/* TeddyCharacter8 – red bandana girl (near Els) */}
+        <img
+          src="/images/characters/teddy-character-8.png"
+          alt=""
+          aria-hidden="true"
+          className="character character-side-float"
+        />
+      </div>
       
       {/* Location-Based Team Photos */}
       <section className="py-16 bg-white">

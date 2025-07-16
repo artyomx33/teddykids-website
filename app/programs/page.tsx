@@ -87,7 +87,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Nursery Program */}
-      <section id="nursery" className="py-16">
+      <section id="nursery" className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8">
@@ -155,6 +155,13 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
+      {/* TeddyCharacter5 – little girl with handbag, floating near Nursery */}
+      <img
+        src="/images/characters/teddy-character-5.png"
+        alt=""
+        aria-hidden="true"
+        className="character character-floating character-delay-2"
+      />
       
       {/* Preschool Program */}
       <section id="preschool" className="py-16 bg-brand-pink bg-opacity-10">
@@ -227,7 +234,7 @@ export default function ProgramsPage() {
       </section>
       
       {/* After School Program */}
-      <section id="after-school" className="py-16">
+      <section id="after-school" className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8">
@@ -295,6 +302,13 @@ export default function ProgramsPage() {
           </div>
         </div>
       </section>
+      {/* TeddyCharacter6 – football boy near After School */}
+      <img
+        src="/images/characters/teddy-character-6.png"
+        alt=""
+        aria-hidden="true"
+        className="character character-card-left"
+      />
       
       {/* TISA Program */}
       <section id="tisa" className="py-16 bg-brand-mint bg-opacity-20">

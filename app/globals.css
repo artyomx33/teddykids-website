@@ -58,3 +58,44 @@ html {
 .section-pastel {
   background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-yellow) 100%);
 }
+
+/* ------------------------------------------------------------------
+ *  Luna Character System
+ * ------------------------------------------------------------------ */
+
+/* Floating animation */
+@keyframes float {
+  0%   { transform: translateY(0);   }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0);   }
+}
+
+/* Base character styling */
+.character {
+  position: absolute;
+  z-index: 3;           /* above normal content, below nav/menus */
+  max-width: 100px;     /* default desktop size */
+  pointer-events: none; /* decorative only */
+}
+
+/* Responsive – make a bit smaller on small screens */
+@media (max-width: 640px) {
+  .character {
+    max-width: 70px;
+  }
+}
+
+/* Position helpers */
+.character-bottom-left  { bottom: 0;  left: 0; }
+.character-bottom-right { bottom: 0;  right: 0; }
+.character-card-corner  { top: -20px; right: -10px; max-width: 60px; }
+.character-footer-waver { bottom: 0;  right: 30px; max-width: 120px; }
+.character-side-float   { top: 50%;  right: -40px; transform: translateY(-50%); }
+.character-corner-bottom{ bottom: -10px; left: -10px; max-width: 60px; }
+/* New helper: position character on the left side of cards */
+.character-card-left    { top: 50%;  left: -40px;  transform: translateY(-50%); max-width: 60px; }
+
+/* Animation helpers */
+.character-floating { animation: float 4s ease-in-out infinite; }
+.character-delay-1  { animation-delay: 1s; }
+.character-delay-2  { animation-delay: 2s; }

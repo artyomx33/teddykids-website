@@ -96,6 +96,27 @@ export default function RootLayout({
 
           {/* Vercel Web Analytics */}
           <Analytics />
+
+          {/* ------------------------------------------------------------------ */}
+          {/*  Footer with Lighthouse Background + TeddyCharacter9 (Luna designs) */}
+          {/* ------------------------------------------------------------------ */}
+          <footer className="relative mt-20">
+            {/* Background image layer (opacity 0.3) */}
+            <div
+              className="absolute inset-0 bg-cover bg-bottom opacity-30 pointer-events-none"
+              style={{
+                backgroundImage: "url('/images/teddylighthousebackground.png')",
+              }}
+            />
+
+            {/* TeddyCharacter9 – girl waving in winter gear */}
+            <img
+              src="/images/characters/teddy-character-9.png"
+              alt=""                /* decorative */
+              aria-hidden="true"
+              className="character character-footer-waver"
+            />
+          </footer>
         </LanguageProvider>
       </body>
     </html>

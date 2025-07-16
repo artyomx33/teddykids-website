@@ -84,7 +84,24 @@ export default function LocationsPage() {
       </section>
       
       {/* Full Locations Component */}
-      <Locations />
+      {/* Wrap in relative container so characters can be absolutely positioned */}
+      <div className="relative">
+        <Locations />
+        {/* TeddyCharacter3 – explorer girl with binoculars (card corner) */}
+        <img
+          src="/images/characters/teddy-character-3.png"
+          alt=""
+          aria-hidden="true"
+          className="character character-card-corner"
+        />
+        {/* TeddyCharacter4 – raincoat girl in puddle (bottom-right) */}
+        <img
+          src="/images/characters/teddy-character-4.png"
+          alt=""
+          aria-hidden="true"
+          className="character character-bottom-right"
+        />
+      </div>
       
       {/* TISA Schools Section */}
       <section className="py-16 bg-white">

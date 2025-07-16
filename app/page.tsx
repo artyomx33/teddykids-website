@@ -25,11 +25,27 @@ export default function Home() {
         <meta name="description" content={metaDescription} />
       </Head>
 
-      {/* Hero Section with video background */}
-      <Hero 
-        videoSrc="/videos/tk-hero-loop.mp4" 
-        fallbackImageSrc="/images/hero-fallback.jpg"
-      />
+      {/* Hero Section with Luna characters */}
+      <div className="relative">
+        <Hero 
+          videoSrc="/videos/tk-hero-loop.mp4" 
+          fallbackImageSrc="/images/hero-fallback.jpg"
+        />
+        {/* TeddyCharacter1 – purple dino bottom-left */}
+        <img
+          src="/images/characters/teddy-character-1.png"
+          alt=""
+          aria-hidden="true"
+          className="character character-bottom-left"
+        />
+        {/* TeddyCharacter2 – girl in TK sweater floating near CTA */}
+        <img
+          src="/images/characters/teddy-character-2.png"
+          alt=""
+          aria-hidden="true"
+          className="character character-floating character-delay-1"
+        />
+      </div>
       
       {/* Core Values Pillars */}
       <Pillars />

@@ -387,7 +387,7 @@ export const translations = {
         },
         tess: {
           role: "Executive Daycare Whisperer",
-          funFact: "I don’t just solve problems… I predict them."
+          funFact: "I don't just solve problems… I predict them."
         },
         jess: {
           role: "Chaos Containment Officer – RBW",
@@ -395,11 +395,11 @@ export const translations = {
         },
         meral: {
           role: "SMO – Smile Management Officer – ZML",
-          funFact: "We are out of glitter again. That’s either good or very bad."
+          funFact: "We are out of glitter again. That's either good or very bad."
         },
         antonela: {
           role: "Office & LRZ BSO Commander-in-Flow",
-          funFact: "If something’s missing… it’s already on my list."
+          funFact: "If something's missing… it's already on my list."
         },
         pamela: {
           role: "BSO & After School Ops",
@@ -533,7 +533,16 @@ export const translations = {
         stem: "STEM",
         creativity: "Creativity",
         all: "All Topics"
-      }
+      },
+      /* ─── Runtime Messages & CTA ─── */
+      noResults: "No learning moments found with this filter. Try another category!",
+      showAll: "Show All Moments",
+      ctaTitle:
+        "What if your child's most powerful learning moment… was happening today—and you didn't see it?",
+      ctaSubtitle:
+        "Let us show you how brilliance hides in snack time, sandboxes, and squishy socks.",
+      ctaPrimary: "See It Firsthand",
+      ctaSecondary: "Book a 20-Minute Tour That Might Change Everything"
     },
     contact: {
       title: "Your Journey Starts Here",
@@ -1188,7 +1197,18 @@ export const translations = {
         stem: "STEM",
         creativity: "Creativiteit",
         all: "Alle Onderwerpen"
-      }
+      },
+      /* ─── Runtime Messages & CTA ─── */
+      noResults:
+        "Geen leermomenten gevonden met dit filter. Probeer een andere categorie!",
+      showAll: "Toon Alle Momenten",
+      ctaTitle:
+        "Wat als jouw kind's krachtigste leermoment… vandaag gebeurde—en je het niet zag?",
+      ctaSubtitle:
+        "Laat ons je tonen hoe genialiteit zich verstopt in snacktijd, zandbakken en zachte sokjes.",
+      ctaPrimary: "Zie het met eigen ogen",
+      ctaSecondary:
+        "Boek een 20-minuten rondleiding die alles kan veranderen"
     },
     contact: {
       title: "Jouw Reis Begint Hier",

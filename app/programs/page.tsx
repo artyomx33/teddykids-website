@@ -381,6 +381,86 @@ export default function ProgramsPage() {
         </div>
       </section>
 
+      {/* Program Benefits */}
+      <section className="py-16 bg-brand-yellow bg-opacity-10">
+        <div className="container mx-auto px-4">
+          {/* Section Heading */}
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-display font-bold">
+              {language === 'nl' ? 'Programma Voordelen' : 'Program Benefits'}
+            </h2>
+            <p className="text-lg text-gray-700 mt-4">
+              {language === 'nl'
+                ? 'Alles wat jouw gezin nodig heeft, inbegrepen.'
+                : 'Everything your family needs, built-in.'}
+            </p>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Flexible Scheduling */}
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center hover:shadow-md transition-all duration-300">
+              <div className="relative w-20 h-20 mb-4">
+                <Image
+                  src="/images/website-icon-flexible.png"
+                  alt="Flexible Scheduling"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-display font-semibold mb-2">
+                {language === 'nl' ? 'Flexibele Roosters' : 'Flexible Scheduling'}
+              </h3>
+              <p className="text-gray-700">
+                {language === 'nl'
+                  ? 'Volledige & halve dagen, passend bij jouw schema.'
+                  : 'Full & half days that flex to your schedule.'}
+              </p>
+            </div>
+
+            {/* Trial Days Available */}
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center hover:shadow-md transition-all duration-300">
+              <div className="relative w-20 h-20 mb-4">
+                <Image
+                  src="/images/website-icon-1-day.png"
+                  alt="Trial Days"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-display font-semibold mb-2">
+                {language === 'nl' ? 'Proefdagen Beschikbaar' : 'Trial Days Available'}
+              </h3>
+              <p className="text-gray-700">
+                {language === 'nl'
+                  ? 'Ervaar een dag Teddy Kids zonder verplichtingen.'
+                  : 'Experience a day at Teddy Kids, no strings attached.'}
+              </p>
+            </div>
+
+            {/* Healthy Meals Included */}
+            <div className="bg-white p-6 rounded-xl shadow-sm flex flex-col items-center text-center hover:shadow-md transition-all duration-300">
+              <div className="relative w-20 h-20 mb-4">
+                <Image
+                  src="/images/website-icon-fruit.png"
+                  alt="Healthy Meals Included"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-display font-semibold mb-2">
+                {language === 'nl' ? 'Gezonde Maaltijden' : 'Healthy Meals Included'}
+              </h3>
+              <p className="text-gray-700">
+                {language === 'nl'
+                  ? 'Dagelijks vers fruit & gezonde snacks.'
+                  : 'Daily fresh fruit & healthy snacks.'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Comparison Table */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">

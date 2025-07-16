@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
 import Button from '@/components/Button';
 
 interface FormData {
@@ -19,7 +20,9 @@ interface FormErrors {
 }
 
 const Contact: React.FC = () => {
-  const { t } = useTranslation('en');
+  /* Get active language from context and hook into translations */
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -97,7 +100,7 @@ const Contact: React.FC = () => {
   };
 
   const whatsappMessage = encodeURIComponent(t('contact.whatsappMessage'));
-  const whatsappLink = `https://wa.me/?text=${whatsappMessage}`;
+  const whatsappLink = `https://wa.me/31620966405?text=${whatsappMessage}`;
 
   return (
     <section className="py-16 bg-brand-mint bg-opacity-20">
@@ -114,16 +117,16 @@ const Contact: React.FC = () => {
           <div className="md:flex">
             {/* Left Column - Contact Info & WhatsApp */}
             <div className="md:w-1/3 bg-brand-pink bg-opacity-30 p-6 md:p-8">
-              <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
+              <h3 className="text-xl font-semibold mb-4">{t('contact.getInTouch')}</h3>
               
               <div className="mb-8">
-                <p className="mb-2">We&apos;d love to hear from you!</p>
-                <p className="text-sm text-gray-600 mb-1">Email: info@teddykids.nl</p>
-                <p className="text-sm text-gray-600">Phone: +31 71 123 4567</p>
+                <p className="mb-2">{t('contact.loveToHear')}</p>
+                <p className="text-sm text-gray-600 mb-1">{t('contact.email')}: info@teddykids.nl</p>
+                <p className="text-sm text-gray-600">{t('contact.phone')}: +31 71 123 4567</p>
               </div>
               
               <div className="mb-6">
-                <h4 className="text-sm font-semibold mb-2">Quick Response?</h4>
+                <h4 className="text-sm font-semibold mb-2">{t('contact.quickResponse')}</h4>
                 <Button
                   variant="whatsapp"
                   href={whatsappLink}
@@ -140,7 +143,7 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="text-sm text-gray-600">
-                <p>We typically respond within 24 hours during business days.</p>
+                <p>{t('contact.responseTime')}</p>
               </div>
             </div>
             
@@ -153,13 +156,13 @@ const Contact: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t('contact.thankYouTitle')}</h3>
                   <p className="text-gray-600 mb-4">{t('contact.thankYou')}</p>
                   <Button 
                     variant="secondary"
                     onClick={() => setIsSubmitted(false)}
                   >
-                    Send Another Message
+                    {t('contact.sendAnother')}
                   </Button>
                 </div>
               ) : (
@@ -177,7 +180,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-lg border ${
                         errors.name ? 'border-red-500' : 'border-gray-300'
                       } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
-                      placeholder="John Doe"
+                      placeholder={t('contact.namePlaceholder')}
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-red-600">{errors.name}</p>
@@ -197,7 +200,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-lg border ${
                         errors.email ? 'border-red-500' : 'border-gray-300'
                       } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
-                      placeholder="john@example.com"
+                      placeholder={t('contact.emailPlaceholder')}
                     />
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-600">{errors.email}</p>
@@ -215,7 +218,7 @@ const Contact: React.FC = () => {
                       value={formData.childAge}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent"
-                      placeholder="3 years"
+                      placeholder={t('contact.agePlaceholder')}
                     />
                   </div>
                   
@@ -232,7 +235,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-lg border ${
                         errors.message ? 'border-red-500' : 'border-gray-300'
                       } focus:outline-none focus:ring-2 focus:ring-brand-pink focus:border-transparent`}
-                      placeholder="I&apos;d like to learn more about..."
+                      placeholder={t('contact.messagePlaceholder')}
                     />
                     {errors.message && (
                       <p className="mt-1 text-sm text-red-600">{errors.message}</p>
@@ -254,7 +257,7 @@ const Contact: React.FC = () => {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Processing...
+                          {t('contact.processing')}
                         </span>
                       ) : (
                         t('contact.formSubmit')

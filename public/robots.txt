@@ -1,0 +1,10 @@
+# robots.txt for Teddy Kids – https://www.teddykids.nl
+# ----------------------------------------------------
+# 1) Allow all search engines to crawl every part of the site.
+#    Setting User-agent to * means “this applies to all crawlers”.
+User-agent: *
+Allow: /
+
+# 2) Tell search engines where to find the XML sitemap so they
+#    can discover and index all pages quickly.
+Sitemap: https://www.teddykids.nl/sitemap.xml

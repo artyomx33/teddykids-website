@@ -76,7 +76,7 @@ export default function RootLayout({
 
           {/* Floating WhatsApp Button */}
           <a
-            href="https://wa.me/?text=Hi%20Teddy%20Kids!%20I'd%20love%20to%20book%20a%20tour%20for%20my%20child."
+            href="https://wa.me/31620966405?text=Hi%20Teddy%20Kids!%20I'd%20love%20to%20book%20a%20tour%20for%20my%20child."
             className="btn-whatsapp"
             target="_blank"
             rel="noopener noreferrer"

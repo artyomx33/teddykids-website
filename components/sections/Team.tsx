@@ -28,7 +28,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({
       className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden cursor-pointer"
       onClick={onClick}
     >
-      <div className="relative h-64 w-full">
+      {/* Taller container to achieve roughly 2:3 (w:h) portrait ratio */}
+      <div className="relative h-72 w-full">
         <Image
           src={imageSrc}
           alt={`${name} - ${role} at Teddy Kids`}
@@ -73,7 +74,8 @@ const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
         className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative h-64 w-full">
+        {/* Match the same 2:3 portrait ratio used in grid cards */}
+        <div className="relative h-72 w-full">
           <Image
             src={member.imageSrc || '/images/team/placeholder.jpg'}
             alt={`${member.name} - ${member.role} at Teddy Kids`}

@@ -33,7 +33,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({
           src={imageSrc}
           alt={`${name} - ${role} at Teddy Kids`}
           fill
-          className="object-cover"
+          className="object-cover object-top"
         />
       </div>
       <div className="p-5">
@@ -78,7 +78,7 @@ const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
             src={member.imageSrc || '/images/team/placeholder.jpg'}
             alt={`${member.name} - ${member.role} at Teddy Kids`}
             fill
-            className="object-cover"
+            className="object-cover object-top"
           />
           <button 
             className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md"

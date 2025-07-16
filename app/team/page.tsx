@@ -43,7 +43,7 @@ export default function TeamPage() {
                       src="/images/team/team-group.jpg"
                       alt="Teddy Kids Team"
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                     />
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export default function TeamPage() {
                     src="/images/team/team-rbw.jpg"
                     alt="RBW Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
@@ -101,7 +101,7 @@ export default function TeamPage() {
                     src="/images/team/team-rb3rb5.jpg"
                     alt="RB3/RB5 Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
@@ -121,7 +121,7 @@ export default function TeamPage() {
                     src="/images/team/team-lrz.jpg"
                     alt="LRZ Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
@@ -141,7 +141,7 @@ export default function TeamPage() {
                     src="/images/team/team-zml.jpg"
                     alt="ZML Team"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">

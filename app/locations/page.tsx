@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Locations from '@/components/sections/Locations';
 import Button from '@/components/Button';
-import { getAllLocations } from '@/lib/locations';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 
@@ -12,7 +11,6 @@ import { useTranslation } from '@/lib/translations';
 export default function LocationsPage() {
   const { language } = useLanguage();
   const { t } = useTranslation(language);
-  const locations = getAllLocations();
   
   return (
     <main>

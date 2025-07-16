@@ -5,6 +5,7 @@ import Button from '@/components/Button';
 import { getLocationsByProgram } from '@/lib/locations';
 import React from 'react';
 
+// Keep metadata as server component
 export const metadata: Metadata = {
   title: 'Nursery Program | Teddy Kids',
   description: 'Your child\'s first world outside your arms should feel just as safe. Our nursery is soft, bilingual, and built for baby-level wonder.',
@@ -70,9 +71,10 @@ interface LocationCardProps {
   name: string;
   address: string;
   imageSrc: string;
+  viewDetailsText: string;
 }
 
-const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc }) => {
+const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc, viewDetailsText }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative h-40 w-full">
@@ -90,7 +92,7 @@ const LocationCard: React.FC<LocationCardProps> = ({ name, address, imageSrc }) 
           href={`/locations#${name.toLowerCase().replace(/\s+/g, '-')}`}
           className="text-sm text-brand-pink hover:underline mt-2 inline-block"
         >
-          View location details
+          {viewDetailsText}
         </Link>
       </div>
     </div>
@@ -138,7 +140,17 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ src, caption }) => {
   );
 };
 
-export default function NurseryPage() {
+// Client-side wrapper component that uses translations
+'use client';
+
+import { useTranslation } from '@/lib/translations';
+import { useLanguage } from '@/lib/LanguageContext';
+
+const NurseryPageContent = () => {
+  // Get the current language and translation function
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+  
   // Get locations that offer the nursery program
   const nurseryLocations = getLocationsByProgram('nursery');
 
@@ -152,16 +164,16 @@ export default function NurseryPage() {
               <div className="md:w-1/2">
                 <div className="flex items-center mb-4">
                   <span className="text-4xl mr-3">🍼</span>
-                  <h1 className="text-4xl md:text-5xl font-display font-bold">Nursery</h1>
+                  <h1 className="text-4xl md:text-5xl font-display font-bold">{t('nurseryPage.hero.title')}</h1>
                 </div>
                 <p className="text-xl italic text-gray-700 mb-6">
-                  &quot;Your child&apos;s first world outside your arms should feel just as safe.&quot;
+                  &quot;{t('nurseryPage.hero.tagline')}&quot;
                 </p>
                 <p className="text-lg text-gray-700 mb-6">
-                  Our nursery is soft, bilingual, and built for baby-level wonder. We hold, sing, rock, read, and smile in two languages.
+                  {t('nurseryPage.hero.description')}
                 </p>
                 <div className="bg-white p-4 rounded-lg inline-block mb-6">
-                  <span className="font-medium">Ages:</span> 3 months - 2.5 years
+                  <span className="font-medium">{t('nurseryPage.hero.ages')}</span>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button 
@@ -169,14 +181,14 @@ export default function NurseryPage() {
                     href="/contact"
                     size="lg"
                   >
-                    Book a Tour
+                    {t('nurseryPage.hero.buttons.bookTour')}
                   </Button>
                   <Button 
                     variant="outline"
                     href="/apply?program=nursery"
                     size="lg"
                   >
-                    Apply Now
+                    {t('nurseryPage.hero.buttons.applyNow')}
                   </Button>
                 </div>
               </div>
@@ -184,7 +196,7 @@ export default function NurseryPage() {
                 <div className="relative h-80 w-full rounded-xl overflow-hidden">
                   <Image
                     src="/images/programs/nursery-hero.jpg"
-                    alt="Teddy Kids Nursery Program"
+                    alt={t('nurseryPage.metadata.alt')}
                     fill
                     className="object-cover"
                     priority
@@ -200,43 +212,43 @@ export default function NurseryPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">Age & Overview</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('nurseryPage.overview.title')}</h2>
             <div className="bg-white p-8 rounded-xl shadow-sm">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <OverviewItem 
-                  icon="🍼" 
-                  label="Age Range" 
-                  value="3 months – 2.5 years"
+                  icon={t('nurseryPage.overview.items.ageRange.icon')}
+                  label={t('nurseryPage.overview.items.ageRange.label')}
+                  value={t('nurseryPage.overview.items.ageRange.value')}
                 />
                 <OverviewItem 
-                  icon="🕒" 
-                  label="Hours" 
-                  value="Mon–Fri, 07:30–18:30"
+                  icon={t('nurseryPage.overview.items.hours.icon')}
+                  label={t('nurseryPage.overview.items.hours.label')}
+                  value={t('nurseryPage.overview.items.hours.value')}
                 />
                 <OverviewItem 
-                  icon="🥗" 
-                  label="Meals" 
-                  value="All meals and snacks included"
+                  icon={t('nurseryPage.overview.items.meals.icon')}
+                  label={t('nurseryPage.overview.items.meals.label')}
+                  value={t('nurseryPage.overview.items.meals.value')}
                 />
                 <OverviewItem 
-                  icon="👥" 
-                  label="Staff Ratio" 
-                  value="1:3 (under 1), 1:4 (over 1)"
+                  icon={t('nurseryPage.overview.items.staffRatio.icon')}
+                  label={t('nurseryPage.overview.items.staffRatio.label')}
+                  value={t('nurseryPage.overview.items.staffRatio.value')}
                 />
                 <OverviewItem 
-                  icon="🧍‍♀️" 
-                  label="Care Model" 
-                  value="Primary caregiver assignment for attachment bonding"
+                  icon={t('nurseryPage.overview.items.careModel.icon')}
+                  label={t('nurseryPage.overview.items.careModel.label')}
+                  value={t('nurseryPage.overview.items.careModel.value')}
                 />
                 <OverviewItem 
-                  icon="📍" 
-                  label="Available At" 
-                  value="RBW, RB3/5, ZML"
+                  icon={t('nurseryPage.overview.items.availableAt.icon')}
+                  label={t('nurseryPage.overview.items.availableAt.label')}
+                  value={t('nurseryPage.overview.items.availableAt.value')}
                 />
                 <OverviewItem 
-                  icon="📱" 
-                  label="Daily Updates" 
-                  value="Via TeddyConnect app"
+                  icon={t('nurseryPage.overview.items.dailyUpdates.icon')}
+                  label={t('nurseryPage.overview.items.dailyUpdates.label')}
+                  value={t('nurseryPage.overview.items.dailyUpdates.value')}
                 />
               </div>
             </div>
@@ -248,29 +260,17 @@ export default function NurseryPage() {
       <section className="py-16 bg-brand-yellow bg-opacity-10">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">What Makes Our Nursery Special</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('nurseryPage.features.title')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-              <FeatureItem 
-                icon="💬"
-                title="Bilingual from the Beginning"
-                description="Children are spoken to in Dutch and English from day one. They soak it up effortlessly."
-              />
-              <FeatureItem 
-                icon="🎨"
-                title="Play-Based Learning"
-                description="Even the tiniest learners explore the world through textures, sounds, and gentle stimulation."
-              />
-              <FeatureItem 
-                icon="💛"
-                title="Attachment First"
-                description="Consistency, warmth, and emotional safety form the foundation of every child's experience."
-              />
-              <FeatureItem 
-                icon="👂"
-                title="Soft Spaces"
-                description="Every corner is designed with texture, sound, and smell in mind—safe materials, low light, and calming soundscapes."
-              />
+              {t('nurseryPage.features.items').map((feature, index) => (
+                <FeatureItem 
+                  key={index}
+                  icon={feature.icon}
+                  title={feature.title}
+                  description={feature.description}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -281,8 +281,8 @@ export default function NurseryPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <blockquote className="bg-white p-8 rounded-xl shadow-sm text-xl italic text-gray-700 text-center">
-              &quot;We couldn&apos;t believe how fast Ella started speaking both Dutch and English. And she&apos;s only one!&quot;
-              <footer className="text-right text-base font-medium text-gray-600 mt-4">– Mila, TK RBW Parent</footer>
+              &quot;{t('nurseryPage.quote.text')}&quot;
+              <footer className="text-right text-base font-medium text-gray-600 mt-4">{t('nurseryPage.quote.author')}</footer>
             </blockquote>
             <div className="text-center mt-4">
               <Button
@@ -293,7 +293,7 @@ export default function NurseryPage() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z" />
                 </svg>
-                Play Voice Snippet
+                {t('nurseryPage.quote.button')}
               </Button>
             </div>
           </div>
@@ -304,21 +304,16 @@ export default function NurseryPage() {
       <section className="py-16 bg-brand-mint bg-opacity-10">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">Gallery</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('nurseryPage.gallery.title')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <GalleryItem 
-                src="/images/programs/nursery-play.jpg"
-                caption="Circle time in two languages"
-              />
-              <GalleryItem 
-                src="/images/programs/nursery-sleep.jpg"
-                caption="Snuggle + Story corner"
-              />
-              <GalleryItem 
-                src="/images/programs/nursery-circle.jpg"
-                caption="Outdoor discovery with our caregivers"
-              />
+              {t('nurseryPage.gallery.items').map((item, index) => (
+                <GalleryItem 
+                  key={index}
+                  src={item.src}
+                  caption={item.caption}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -328,53 +323,21 @@ export default function NurseryPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">Daily Rhythm</h2>
+            <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('nurseryPage.schedule.title')}</h2>
             
             <div className="bg-white rounded-xl shadow-sm p-6">
-              <ScheduleItem 
-                time="07:30–09:00"
-                activity="Arrival hugs"
-                description="Quiet corners, and familiar songs."
-              />
-              <ScheduleItem 
-                time="09:00–10:00"
-                activity="Singing & bilingual circle time"
-                description="Gentle songs and simple stories in both languages."
-              />
-              <ScheduleItem 
-                time="10:00–11:00"
-                activity="Outdoor strolls or garden play"
-                description="Fresh air and natural exploration with attentive caregivers."
-              />
-              <ScheduleItem 
-                time="11:00–11:30"
-                activity="Fresh lunch prepared in-house"
-                description="Nutritious meals with social connections and language development."
-              />
-              <ScheduleItem 
-                time="12:00–14:00"
-                activity="Nap time"
-                description="Dim lights, soft white noise, cozy blankets from home."
-              />
-              <ScheduleItem 
-                time="14:00–15:30"
-                activity="Sensory play & cuddles"
-                description="Textures, sounds, and one-on-one attention."
-              />
-              <ScheduleItem 
-                time="15:30–17:00"
-                activity="Free play & story time"
-                description="Exploration and stories in two languages."
-              />
-              <ScheduleItem 
-                time="17:00–18:30"
-                activity="Pick-up & one-on-one snuggles"
-                description="Gentle transitions and warm goodbyes."
-              />
+              {t('nurseryPage.schedule.items').map((item, index) => (
+                <ScheduleItem 
+                  key={index}
+                  time={item.time}
+                  activity={item.activity}
+                  description={item.description}
+                />
+              ))}
             </div>
             
             <p className="text-center text-gray-600 mt-6 text-sm">
-              *Schedule is flexible and adapted to children&apos;s needs, especially for infants who follow their own feeding and sleeping patterns.
+              {t('nurseryPage.schedule.note')}
             </p>
           </div>
         </div>
@@ -383,7 +346,7 @@ export default function NurseryPage() {
       {/* Locations */}
       <section className="py-16 bg-brand-purple bg-opacity-10">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-display font-bold mb-8 text-center">Locations Offering Nursery Program</h2>
+          <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('nurseryPage.locations.title')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {nurseryLocations.map((location, index) => (
@@ -392,6 +355,7 @@ export default function NurseryPage() {
                 name={location.name}
                 address={`${location.address.street}, ${location.address.city}`}
                 imageSrc={location.images[0]}
+                viewDetailsText={t('nurseryPage.locations.viewDetails')}
               />
             ))}
           </div>
@@ -402,10 +366,10 @@ export default function NurseryPage() {
       <section className="py-16 bg-brand-pink bg-opacity-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-display font-bold mb-6">
-            Let&apos;s make the first goodbye feel beautiful.
+            {t('nurseryPage.cta.title')}
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            We know what this moment feels like. Let&apos;s walk through it together—with care, clarity, and calm.
+            {t('nurseryPage.cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -413,21 +377,26 @@ export default function NurseryPage() {
               href="/contact"
               size="lg"
             >
-              Meet the Nursery Team
+              {t('nurseryPage.cta.buttons.meetTeam')}
             </Button>
             <Button 
               variant="outline"
               href="/apply?program=nursery"
               size="lg"
             >
-              Book a Personal Tour
+              {t('nurseryPage.cta.buttons.bookTour')}
             </Button>
           </div>
           <p className="text-sm text-gray-600 mt-4">
-            Prefer to chat first? <a href="https://wa.me/31612345678" className="text-brand-pink hover:underline">WhatsApp us here</a>.
+            {t('nurseryPage.cta.chatPrompt')} <a href="https://wa.me/31612345678" className="text-brand-pink hover:underline">{t('nurseryPage.cta.chatLink')}</a>.
           </p>
         </div>
       </section>
     </main>
   );
+};
+
+// Server component that renders the client component
+export default function NurseryPage() {
+  return <NurseryPageContent />;
 }

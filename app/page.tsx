@@ -42,15 +42,6 @@ export default function Home() {
           height={200}
           className="character character-bottom-left"
         />
-        {/* TeddyCharacter2 – girl in TK sweater floating near CTA */}
-        <Image
-          src="/images/characters/teddy-character-2.png"
-          alt=""
-          aria-hidden="true"
-          width={200}
-          height={200}
-          className="character character-floating character-delay-1"
-        />
       </div>
       
       {/* AppiesGPT Section (AI assistant) */}
@@ -60,7 +51,19 @@ export default function Home() {
       <Pillars />
       
       {/* Social Proof and Reviews */}
-      <SocialProof />
+      {/* Wrapper allows absolute-positioned character above the “20 Years of Care” copy */}
+      <div className="relative">
+        {/* TeddyCharacter2 – girl in TK sweater now decorates Social Proof section */}
+        <Image
+          src="/images/characters/teddy-character-2.png"
+          alt=""
+          aria-hidden="true"
+          width={200}
+          height={200}
+          className="character character-floating character-delay-1"
+        />
+        <SocialProof />
+      </div>
       
       {/* Program Overview */}
       <Programs />

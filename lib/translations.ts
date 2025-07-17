@@ -58,7 +58,7 @@ export const translations = {
 import { useCallback } from 'react';
 
 export function useTranslation(language: Language = 'en') {
-  return useCallback(
+  const t = useCallback(
     (key: string) => {
       const parts = key.split('.');
       let current: any = translations[language as keyof typeof translations];
@@ -71,4 +71,7 @@ export function useTranslation(language: Language = 'en') {
     },
     [language]
   );
+
+  // Return object wrapper so callers can use `const { t } = useTranslation()`
+  return { t };
 }

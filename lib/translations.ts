@@ -707,6 +707,16 @@ export const translations = {
         subtitle: "Our passionate team brings diverse expertise and a shared commitment to childhood education.",
         buttonText: "Meet Our Full Team"
       },
+
+      /* ──────────────────────────────────────────────────────────
+       *  POLICY & REPORTS TEASER ( /about  – new section)
+       * ────────────────────────────────────────────────────────── */
+      policyReports: {
+        title: "Policy & Reports",
+        description:
+          "Looking for our pedagogical plan, privacy policy, or official inspection reports? You'll find everything — from our vision on childcare to our GGD documentation — right here.",
+        buttonText: "View All Policies"
+      },
       /* ──────────────────────────────────────────────────────────
        *  POLICY PAGE ( /about/policy )
        * ────────────────────────────────────────────────────────── */
@@ -1445,6 +1455,16 @@ export const translations = {
         title: "De Mensen Achter Teddy Kids",
         subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
         buttonText: "Ontmoet Ons Volledige Team"
+      },
+
+      /* ──────────────────────────────────────────────────────────
+       *  POLICY & REPORTS TEASER ( /about  – new section)
+       * ────────────────────────────────────────────────────────── */
+      policyReports: {
+        title: "Beleid & Rapporten",
+        description:
+          "Op zoek naar ons pedagogisch plan, privacybeleid of officiële inspectierapporten? Je vindt alles — van onze visie op kinderopvang tot onze GGD-documentatie — hier.",
+        buttonText: "Bekijk Alle Beleidsstukken"
       },
       /* ──────────────────────────────────────────────────────────
        *  POLICY PAGE ( /about/policy )

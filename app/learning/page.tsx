@@ -6,8 +6,85 @@ import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 
+/* -------------------------------------------------------------------------- */
+/*  Types & Shared Components                                                  */
+/* -------------------------------------------------------------------------- */
+
+interface LearningMoment {
+  id: number;
+  title: string;
+  excerpt: string;
+  category: string;
+  image: string;
+  type: 'article' | 'video';
+}
+
+type TranslateFn = (key: string) => string;
+
+interface LearningMomentCardProps {
+  moment: LearningMoment;
+  t: TranslateFn;
+}
+
+// Card used in the grid
+const LearningMomentCard: React.FC<LearningMomentCardProps> = ({ moment, t }) => (
+  <div className="bg-white rounded-xl overflow-hidden soft-shadow document-hover">
+    <div className="relative h-48 w-full">
+      <Image
+        src={moment.image}
+        alt={moment.title}
+        fill
+        className="object-cover"
+      />
+
+      {/* Category badge */}
+      <div className="absolute top-3 left-3 bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium">
+        {moment.category}
+      </div>
+
+      {/* Content type indicator */}
+      {moment.type === 'video' && (
+        <div className="absolute bottom-3 right-3 bg-white rounded-full p-2 shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-pink" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+          </svg>
+        </div>
+      )}
+
+      {/* Character decoration for some cards */}
+      {(moment.id % 4 === 0) && (
+        <div className="character character-card-corner">
+          <Image
+            src="/images/green dino.png"
+            alt=""
+            width={60}
+            height={60}
+          />
+        </div>
+      )}
+    </div>
+
+    <div className="p-5">
+      <h3 className="text-xl font-display font-semibold mb-2">{moment.title}</h3>
+      <p className="text-gray-600 mb-4">{moment.excerpt}</p>
+
+      <div className="flex justify-between items-center">
+        {moment.type === 'article' ? (
+          <Button variant="text" href={`/learning/${moment.id}`}>
+            {t('learningMoments.readMore')}
+          </Button>
+        ) : (
+          <Button variant="text" href={`/learning/${moment.id}`}>
+            {t('learningMoments.watchVideo')}
+          </Button>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
 // Mock learning moments data - in a real app, this would come from a CMS or API
-const learningMoments = [
+const learningMoments: LearningMoment[] = [
   {
     id: 1,
     title: 'First Words in Two Languages',
@@ -50,7 +127,7 @@ const learningMoments = [
   },
   {
     id: 6,
-    title: 'Nature's Classroom',
+    title: "Nature's Classroom",
     excerpt: 'Learning about ecosystems during our forest exploration days',
     category: 'stem',
     image: '/images/learning/stem-moment-2.jpg',
@@ -74,67 +151,14 @@ const learningMoments = [
   },
 ];
 
-// Learning moment card component
-const LearningMomentCard = ({ moment, t }) => {
-  return (
-    <div className="bg-white rounded-xl overflow-hidden soft-shadow document-hover">
-      <div className="relative h-48 w-full">
-        <Image
-          src={moment.image}
-          alt={moment.title}
-          fill
-          className="object-cover"
-        />
-        
-        {/* Category badge */}
-        <div className="absolute top-3 left-3 bg-white bg-opacity-90 px-3 py-1 rounded-full text-sm font-medium">
-          {moment.category}
-        </div>
-        
-        {/* Content type indicator */}
-        {moment.type === 'video' && (
-          <div className="absolute bottom-3 right-3 bg-white rounded-full p-2 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-pink" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-            </svg>
-          </div>
-        )}
-        
-        {/* Character decoration for some cards */}
-        {(moment.id % 4 === 0) && (
-          <div className="character character-card-corner">
-            <Image
-              src="/images/green dino.png"
-              alt=""
-              width={60}
-              height={60}
-            />
-          </div>
-        )}
-      </div>
-      
-      <div className="p-5">
-        <h3 className="text-xl font-display font-semibold mb-2">{moment.title}</h3>
-        <p className="text-gray-600 mb-4">{moment.excerpt}</p>
-        
-        <div className="flex justify-between items-center">
-          {moment.type === 'article' ? (
-            <Button variant="link" href={`/learning/${moment.id}`}>
-              {t('learningMoments.readMore')}
-            </Button>
-          ) : (
-            <Button variant="link" href={`/learning/${moment.id}`}>
-              {t('learningMoments.watchVideo')}
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 // Filter button component
-const FilterButton = ({ active, onClick, children }) => {
+interface FilterButtonProps {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+const FilterButton: React.FC<FilterButtonProps> = ({ active, onClick, children }) => {
   return (
     <button
       onClick={onClick}

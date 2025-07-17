@@ -227,18 +227,6 @@ export const translations = {
       }
     },
     /* ──────────────────────────────────────────────────────────
-     *  AFTER SCHOOL PAGE ( /programs/after-school )
-     * ────────────────────────────────────────────────────────── */
-    afterSchoolPage: {
-      /* ───────────────────────────────────────────────
-       *  NEW: Adventure Section (Luna upgrade)
-       * ─────────────────────────────────────────────── */
-      adventure: {
-        title: "Adventure Awaits Every Day",
-        description: "Our after-school program is where curiosity meets discovery, imagination takes flight, and friendships grow through shared adventures."
-      }
-    },
-    /* ──────────────────────────────────────────────────────────
      *  FULL LOCATIONS PAGE ( /locations )
      * ────────────────────────────────────────────────────────── */
     locationsPage: {
@@ -394,21 +382,12 @@ export const translations = {
       }
     },
     /* ──────────────────────────────────────────────────────────
-     *  LEARNING MOMENTS PAGE ( /learning )
-     * ────────────────────────────────────────────────────────── */
-    learningPage: {
-      hero: {
-        title: "Learning Moments",
-        subtitle: "Discover the magic that happens every day at Teddy Kids"
-      }
-    },
-    /* ──────────────────────────────────────────────────────────
      *  TEAM PAGE ( /team )
      * ────────────────────────────────────────────────────────── */
     teamPage: {
       hero: {
-        title: "Meet the Teddy Team",
-        subtitle: "These are the people who cuddle, guide, teach, and laugh with your children every day."
+        title: "Meet the Magic Makers",
+        subtitle: "The passionate educators and staff who bring the Teddy Kids vision to life every day."
       },
       philosophy: {
         title: "Our Team Philosophy",
@@ -513,7 +492,6 @@ export const translations = {
       title: "Meet the Magic Makers",
       subtitle: "The passionate educators behind Teddy Kids",
       didYouKnow: "Did You Know?",
-      photoComingSoon: "Photo coming soon",
       viewBio: "Read Full Bio",
       members: {
         artem: {
@@ -728,67 +706,6 @@ export const translations = {
         title: "The People Behind Teddy Kids",
         subtitle: "Our passionate team brings diverse expertise and a shared commitment to childhood education.",
         buttonText: "Meet Our Full Team"
-      },
-
-      /* ──────────────────────────────────────────────────────────
-       *  POLICY & REPORTS TEASER ( /about  – new section)
-       * ────────────────────────────────────────────────────────── */
-      policyReports: {
-        title: "Policy & Reports",
-        description:
-          "Looking for our pedagogical plan, privacy policy, or official inspection reports? You'll find everything — from our vision on childcare to our GGD documentation — right here.",
-        buttonText: "View All Policies"
-      },
-      /* ──────────────────────────────────────────────────────────
-       *  POLICY PAGE ( /about/policy )
-       * ────────────────────────────────────────────────────────── */
-      policy: {
-        metadata: {
-          title: "Policy & Reports | Teddy Kids",
-          description:
-            "Official documents, inspection reports, and policies for regulatory access and parent transparency.",
-          keywords:
-            "teddy kids policy, ggd reports, pedagogical plan, privacy policy, downloads"
-        },
-        title: "Policy & Reports",
-        subtitle:
-          "Official documents, inspection reports, and policies for regulatory access and parent transparency.",
-        pedagogical: {
-          title: "Pedagogical Policy",
-          description:
-            "Our pedagogical policy outlines how we nurture, educate, and care for children at Teddy Kids. It reflects our values, bilingual approach, and developmental goals.",
-          dutchDocument: "Pedagogisch Beleidsplan (NL)",
-          englishDocument: "Pedagogical Policy (EN)"
-        },
-        ggd: {
-          title: "GGD Inspection Reports",
-          description:
-            "Every Teddy Kids location is reviewed by the GGD for quality and compliance. You can download each location's most recent reports below.",
-          locations: {
-            rbw: "Rijnsburgerweg 35 (RBW)",
-            rb3rb5: "Rijnsburgerweg 3 & 5 (RB3/RB5)",
-            lrz: "Lorentzkade (LRZ)",
-            zml: "Zeemanlaan (ZML)"
-          }
-        },
-        privacy: {
-          title: "Privacy & GDPR",
-          description:
-            "Our privacy policy explains how we handle data with care — in full compliance with GDPR (AVG).",
-          comingSoon:
-            "Privacy Policy coming soon — final version will be downloadable here.",
-          downloadLink: "Download Privacy Policy (EN/NL)"
-        },
-        additional: {
-          title: "Other Documents",
-          incidentForm: "Incident Reporting Form (NL)",
-          vogSample: "VOG Sample (NL)"
-        },
-        /* assistance footer */
-        helpTitle: "Need help finding something?",
-        helpCta:
-          "If you need help finding a document, just message us here.",
-        downloadReport: "Download GGD Report"
       }
     }
   },
@@ -991,29 +908,10 @@ export const translations = {
       },
       metadata: {
         title: "Onze Programma's | Teddy Kids",
-        description: "Van luiers tot diploma's: ontdek Teddy Baby, Teddy Learners, Teddy BSO Explorers en TISA. Programma's vol vreugde, groei en wereldse blik.",
-        keywords: "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
-      }
-    },
-    /* ──────────────────────────────────────────────────────────
-     *  AFTER SCHOOL PAGE ( /programs/after-school )
-     * ────────────────────────────────────────────────────────── */
-    afterSchoolPage: {
-      /* ───────────────────────────────────────────────
-       *  NEW: Adventure Section (Luna upgrade)
-       * ─────────────────────────────────────────────── */
-      adventure: {
-        title: "Avontuur Wacht Elke Dag",
-        description: "Ons naschoolse programma is waar nieuwsgierigheid ontdekking ontmoet, verbeelding vleugels krijgt en vriendschappen groeien door gedeelde avonturen."
-      }
-    },
-    /* ──────────────────────────────────────────────────────────
-     *  LEARNING MOMENTS PAGE ( /learning )
-     * ────────────────────────────────────────────────────────── */
-    learningPage: {
-      hero: {
-        title: "Learning Moments",
-        subtitle: "Discover the magic that happens every day at Teddy Kids"
+        description:
+          "Van luiers tot diploma's: ontdek Teddy Baby, Teddy Learners, Teddy BSO Explorers en TISA. Programma's vol vreugde, groei en wereldse blik.",
+        keywords:
+          "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
       }
     },
     /* ──────────────────────────────────────────────────────────
@@ -1176,8 +1074,8 @@ export const translations = {
      * ────────────────────────────────────────────────────────── */
     teamPage: {
       hero: {
-        title: "Ontmoet het Teddy Team",
-        subtitle: "Dit zijn de mensen die elke dag knuffelen, begeleiden, onderwijzen en lachen met jouw kinderen."
+        title: "Maak kennis met de Teddy-helden",
+        subtitle: "De bevlogen begeleiders en medewerkers die elke dag de visie van Teddy Kids tot leven brengen."
       },
       philosophy: {
         title: "Onze teamfilosofie",
@@ -1257,8 +1155,8 @@ export const translations = {
           description: "We geloven in het groeipotentieel van elk kind én elke collega—en stimuleren ontwikkeling met aanmoediging en positieve feedback."
         },
         value6: {
-          title: "Excellence in Care",
-          description: "We maintain the highest standards in everything from educational practices to safety protocols and facility management."
+          title: "Zorg met kwaliteit",
+          description: "We hanteren de hoogste standaarden—van onderwijs tot veiligheid en faciliteiten."
         }
       },
       joinTeam: {
@@ -1282,7 +1180,6 @@ export const translations = {
       title: "Ontmoet de Magische Makers",
       subtitle: "De betrokken opvoeders achter Teddy Kids",
       didYouKnow: "Wist je dat?",
-      photoComingSoon: "Foto komt binnenkort",
       viewBio: "Lees Volledig Profiel",
       members: {
         artem: {
@@ -1499,52 +1396,37 @@ export const translations = {
         title: "De Mensen Achter Teddy Kids",
         subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
         buttonText: "Ontmoet Ons Volledige Team"
-      },
+      }
+    }
+  }
+};
 
-      /* ──────────────────────────────────────────────────────────
-       *  POLICY & REPORTS TEASER ( /about  – new section)
-       * ────────────────────────────────────────────────────────── */
-      policyReports: {
-        title: "Beleid & Rapporten",
-        description:
-          "Op zoek naar ons pedagogisch plan, privacybeleid of officiële inspectierapporten? Je vindt alles — van onze visie op kinderopvang tot onze GGD-documentatie — hier.",
-        buttonText: "Bekijk Alle Beleidsstukken"
-      },
-      /* ──────────────────────────────────────────────────────────
-       *  POLICY PAGE ( /about/policy )
-       * ────────────────────────────────────────────────────────── */
-      policy: {
-        metadata: {
-          title: "Beleid & Rapporten | Teddy Kids",
-          description:
-            "Officiële documenten, inspectierapporten en beleidsstukken voor regelgeving en transparantie richting ouders.",
-          keywords:
-            "teddy kids beleid, ggd rapporten, pedagogisch plan, privacybeleid, downloads"
-        },
-        title: "Beleid & Rapporten",
-        subtitle:
-          "Officiële documenten, inspectierapporten en beleidsstukken voor regelgeving en oudertransparantie.",
-        pedagogical: {
-          title: "Pedagogisch Beleid",
-          description:
-            "Ons pedagogisch beleid beschrijft hoe wij kinderen verzorgen, onderwijzen en begeleiden bij Teddy Kids. Het weerspiegelt onze waarden, tweetalige aanpak en ontwikkelingsdoelen.",
-          dutchDocument: "Pedagogisch Beleidsplan (NL)",
-          englishDocument: "Pedagogical Policy (EN)"
-        },
-        ggd: {
-          title: "GGD Inspectierapporten",
-          description:
-            "Elke Teddy Kids-locatie wordt door de GGD beoordeeld op kwaliteit en naleving. Download hieronder de meest recente rapporten per locatie.",
-          locations: {
-            rbw: "Rijnsburgerweg 35 (RBW)",
-            rb3rb5: "Rijnsburgerweg 3 & 5 (RB3/RB5)",
-            lrz: "Lorentzkade (LRZ)",
-            zml: "Zeemanlaan (ZML)"
-          }
-        },
-        privacy: {
-          title: "Privacy & AVG",
-          description:
-            "Ons privacybeleid legt uit hoe wij zorgvuldig omgaan met gegevens — volledig in lijn met de AVG.",
-          comingSoon:
-            "Privacybeleid binnenkort
+/**
+ * Hook that returns a translation helper `t`.
+ *
+ * Usage:
+ * const { t } = useTranslation('en');
+ * t('hero.title') -> "From Baby Steps to Global Citizens"
+ */
+export const useTranslation = (language: Language = 'en') => {
+  const t = useCallback(
+    (key: string): any => {
+      const keys = key.split('.');
+      let value: any = translations[language];
+
+      for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+          value = value[k];
+        } else {
+          // Return the key itself if translation is missing
+          return key;
+        }
+      }
+
+      return value;
+    },
+    [language]
+  );
+
+  return { t, language };
+};

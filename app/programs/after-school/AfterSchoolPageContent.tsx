@@ -203,7 +203,7 @@ const AfterSchoolPageContent = () => {
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         {/* Background image (girl / dino / monkey tree) */}
         <Image
-          src="/images/1karakter-meisje-dino-tree.jpg"
+          src="/images/programs/after-school-adventure.jpg" /* ensure asset exists */
           alt="Girl, purple dino and monkey exploring a tree"
           fill
           priority

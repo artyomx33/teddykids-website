@@ -707,6 +707,55 @@ export const translations = {
         title: "The People Behind Teddy Kids",
         subtitle: "Our passionate team brings diverse expertise and a shared commitment to childhood education.",
         buttonText: "Meet Our Full Team"
+      },
+      /* ──────────────────────────────────────────────────────────
+       *  POLICY PAGE ( /about/policy )
+       * ────────────────────────────────────────────────────────── */
+      policy: {
+        metadata: {
+          title: "Policy & Reports | Teddy Kids",
+          description:
+            "Official documents, inspection reports, and policies for regulatory access and parent transparency.",
+          keywords:
+            "teddy kids policy, ggd reports, pedagogical plan, privacy policy, downloads"
+        },
+        title: "Policy & Reports",
+        subtitle:
+          "Official documents, inspection reports, and policies for regulatory access and parent transparency.",
+        pedagogical: {
+          title: "Pedagogical Policy",
+          description:
+            "Our pedagogical policy outlines how we nurture, educate, and care for children at Teddy Kids. It reflects our values, bilingual approach, and developmental goals.",
+          dutchDocument: "Pedagogisch Beleidsplan (NL)",
+          englishDocument: "Pedagogical Policy (EN)"
+        },
+        ggd: {
+          title: "GGD Inspection Reports",
+          description:
+            "Every Teddy Kids location is reviewed by the GGD for quality and compliance. You can download each location's most recent reports below.",
+          locations: {
+            rbw: "Rijnsburgerweg 35 (RBW)",
+            rb3rb5: "Rijnsburgerweg 3 & 5 (RB3/RB5)",
+            lrz: "Lorentzkade (LRZ)",
+            zml: "Zeemanlaan (ZML)"
+          }
+        },
+        privacy: {
+          title: "Privacy & GDPR",
+          description:
+            "Our privacy policy explains how we handle data with care — in full compliance with GDPR (AVG).",
+          comingSoon:
+            "Privacy Policy coming soon — final version will be downloadable here.",
+          downloadLink: "Download Privacy Policy (EN/NL)"
+        },
+        additional: {
+          title: "Other Documents",
+          incidentForm: "Incident Reporting Form (NL)",
+          vogSample: "VOG Sample (NL)"
+        },
+        helpCta:
+          "If you need help finding a document, just message us here.",
+        downloadReport: "Download GGD Report"
       }
     }
   },
@@ -1398,6 +1447,55 @@ export const translations = {
         title: "De Mensen Achter Teddy Kids",
         subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
         buttonText: "Ontmoet Ons Volledige Team"
+      },
+      /* ──────────────────────────────────────────────────────────
+       *  POLICY PAGE ( /about/policy )
+       * ────────────────────────────────────────────────────────── */
+      policy: {
+        metadata: {
+          title: "Beleid & Rapporten | Teddy Kids",
+          description:
+            "Officiële documenten, inspectierapporten en beleidsstukken voor regelgeving en transparantie richting ouders.",
+          keywords:
+            "teddy kids beleid, ggd rapporten, pedagogisch plan, privacybeleid, downloads"
+        },
+        title: "Beleid & Rapporten",
+        subtitle:
+          "Officiële documenten, inspectierapporten en beleidsstukken voor regelgeving en oudertransparantie.",
+        pedagogical: {
+          title: "Pedagogisch Beleid",
+          description:
+            "Ons pedagogisch beleid beschrijft hoe wij kinderen verzorgen, onderwijzen en begeleiden bij Teddy Kids. Het weerspiegelt onze waarden, tweetalige aanpak en ontwikkelingsdoelen.",
+          dutchDocument: "Pedagogisch Beleidsplan (NL)",
+          englishDocument: "Pedagogical Policy (EN)"
+        },
+        ggd: {
+          title: "GGD Inspectierapporten",
+          description:
+            "Elke Teddy Kids-locatie wordt door de GGD beoordeeld op kwaliteit en naleving. Download hieronder de meest recente rapporten per locatie.",
+          locations: {
+            rbw: "Rijnsburgerweg 35 (RBW)",
+            rb3rb5: "Rijnsburgerweg 3 & 5 (RB3/RB5)",
+            lrz: "Lorentzkade (LRZ)",
+            zml: "Zeemanlaan (ZML)"
+          }
+        },
+        privacy: {
+          title: "Privacy & AVG",
+          description:
+            "Ons privacybeleid legt uit hoe wij zorgvuldig omgaan met gegevens — volledig in lijn met de AVG.",
+          comingSoon:
+            "Privacybeleid binnenkort beschikbaar — de definitieve versie komt hier te staan.",
+          downloadLink: "Download Privacybeleid (EN/NL)"
+        },
+        additional: {
+          title: "Overige Documenten",
+          incidentForm: "Incidenten Meldingsformulier (NL)",
+          vogSample: "Voorbeeld VOG (NL)"
+        },
+        helpCta:
+          "Hulp nodig bij het vinden van een document? Stuur ons gerust een bericht.",
+        downloadReport: "Download GGD Rapport"
       }
     }
   }

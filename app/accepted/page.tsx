@@ -235,6 +235,17 @@ function AcceptedPageContent() {
   
   return (
     <main>
+      {/* Hero Image - Added at the top per Luna specs */}
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
+        <Image 
+          src="/shared-images/accepted to teddy kids.png"
+          alt="Celebration - Accepted to Teddy Kids!"
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
+      
       {/* Confetti effect */}
       {showConfetti && (
         <Confetti

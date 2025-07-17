@@ -197,18 +197,24 @@ export default function ProgramsPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 bg-brand-purple bg-opacity-10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              {t('programsPage.hero.title')}
-            </h1>
-            <p className="text-xl text-gray-700 mb-8">
-              {t('programsPage.hero.subtitle')}
-            </p>
-          </div>
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden">
+        <Image
+          src="/shared-images/hero banner 1.png"
+          alt="Teddy Kids Programs Hero Banner"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-30" />
+        <div className="relative container mx-auto px-4 py-20 text-center text-white">
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            {t('programsPage.hero.title')}
+          </h1>
+          <p className="text-xl max-w-2xl mx-auto">
+            {t('programsPage.hero.subtitle')}
+          </p>
         </div>
-      </section>
+      </div>
 
       {/* Nursery Program */}
       <section id="nursery" className="py-16 relative">

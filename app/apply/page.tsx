@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, react/no-unescaped-entities */
 'use client';
 import React, { useState, Suspense } from 'react';
 import Button from '@/components/Button';
@@ -215,18 +216,6 @@ const FormTextarea: React.FC<FormTextareaProps> = ({
       />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
-  );
-};
-
-// Audio player button component
-const AudioButton = ({ label = "Play" }) => {
-  return (
-    <button className="flex items-center gap-2 text-sm text-brand-pink hover:text-brand-purple transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8 5v14l11-7z" />
-      </svg>
-      {label}
-    </button>
   );
 };
 
@@ -479,26 +468,56 @@ function ApplyPageContent() {
   
   return (
     <main>
-      {/* Hero Section */}
-      <section className="py-20 bg-brand-yellow bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              {t('locationsPage.applyPage.hero.title')}
-            </h1>
-            <p className="text-xl text-gray-700 mb-8">
-              {t('locationsPage.applyPage.hero.subtitle')}
-            </p>
-            
-            <div className="inline-block">
-              <div className="bg-white p-4 rounded-xl shadow-sm flex items-center gap-3">
-                <AudioButton label={t('locationsPage.applyPage.audio.label')} />
-              </div>
-              <p className="text-sm text-gray-600 mt-2 italic">
-                &quot;{t('locationsPage.applyPage.audio.quote')}&quot;
-              </p>
-            </div>
+      {/* Hero Section – Luna Makeover */}
+      <section className="hero-apply">
+        <div className="hero-overlay">
+          <h1 className="text-5xl font-display font-bold mb-4">
+            Welcome to the Teddy Kids Family!
+          </h1>
+          <p className="text-xl mb-6">
+            Ready to begin your child's bilingual adventure? We're here to guide you every step of the way.
+          </p>
+          <div className="hero-ctas">
+            <a href="/apply" className="btn-primary">Apply Now</a>
+            <a href="/book-tour" className="btn-secondary">Book a Tour</a>
           </div>
+          {/* Micro-copy under CTAs */}
+          <p className="text-sm italic mt-4 text-white">
+            *No application fee. We tour with heart.*
+          </p>
+        </div>
+      </section>
+
+      {/* What Happens Next – three-step flow */}
+      <section className="py-16 bg-gray-50 text-center">
+        <h2 className="text-3xl font-display font-bold mb-8">What Happens Next</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
+          <div>
+            <div className="text-4xl mb-2">📍</div>
+            <h3 className="font-medium mb-1">Book a Tour</h3>
+            <p className="text-gray-600 text-sm">Meet our team and see our spaces in person.</p>
+          </div>
+          <div>
+            <div className="text-4xl mb-2">📝</div>
+            <h3 className="font-medium mb-1">Complete Application</h3>
+            <p className="text-gray-600 text-sm">Fill out a quick form—we'll guide you all the way.</p>
+          </div>
+          <div>
+            <div className="text-4xl mb-2">🎉</div>
+            <h3 className="font-medium mb-1">Start the Adventure</h3>
+            <p className="text-gray-600 text-sm">Join the Teddy family and begin the fun.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Sound Recording Section */}
+      <section className="sound-snippet">
+        <h2 className="text-2xl font-display font-bold mb-4">Hear the Teddy Magic</h2>
+        <p className="text-gray-700 mb-6">
+          Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
+        </p>
+        <div className="audio-player-wrapper">
+          <audio src="/audio/appies-welcome.mp3" controls />
         </div>
       </section>
       
@@ -928,10 +947,10 @@ function ApplyPageContent() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-display font-bold mb-6">
-                {t('locationsPage.applyPage.ctaFooter.line1')}
+                {"You don't need to have it all figured out. Just let us know you're interested."}
               </h2>
               <p className="text-lg text-gray-700 mb-8">
-                {t('locationsPage.applyPage.ctaFooter.line2')}
+                {"We'll take care of the rest—with care, clarity, and a little Teddy magic."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -940,20 +959,58 @@ function ApplyPageContent() {
                   size="lg"
                   onClick={handleNextStep}
                 >
-                  {t('locationsPage.applyPage.ctaFooter.begin')}
+                  {"Begin My Teddy Journey"}
                 </Button>
                 <Button 
                   variant="outline"
                   href="/contact"
                   size="lg"
                 >
-                  {t('locationsPage.applyPage.ctaFooter.talk')}
+                  {"Talk to a Teddicated Human"}
                 </Button>
               </div>
             </div>
           </div>
         </section>
       )}
+
+      {/* FAQ Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-display font-bold mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6 text-left">
+            <div>
+              <h3 className="font-medium">Do I need to pay a fee?</h3>
+              <p>No application fee—your tour and our guidance are on us.</p>
+            </div>
+            <div>
+              <h3 className="font-medium">Can I schedule a tour first?</h3>
+              <p>Absolutely—choose &quot;Book a Tour&quot; above and we'll find a time that works.</p>
+            </div>
+            <div>
+              <h3 className="font-medium">Is Teddy Kids bilingual?</h3>
+              <p>Yes! All our programs are fully bilingual in Dutch and English.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="py-16 bg-brand-mint bg-opacity-20 text-center">
+        <h2 className="text-3xl font-display font-bold mb-4">
+          Apply now and let&apos;s start this journey together.
+        </h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Button variant="primary" href="/apply#apply-form">
+            Apply Now
+          </Button>
+          <Button variant="outline" href="/book-tour">
+            Book a Tour
+          </Button>
+        </div>
+      </section>
     </main>
   );
 }

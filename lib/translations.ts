@@ -559,6 +559,12 @@ export const translations = {
       ctaPrimary: "See It Firsthand",
       ctaSecondary: "Book a 20-Minute Tour That Might Change Everything"
     },
+    learningPage: {
+      hero: {
+        title: "Where brilliance hides in everyday moments",
+        subtitle: "Peek inside to see how your child learns when they think they're just playing."
+      }
+    },
     contact: {
       title: "Your Journey Starts Here",
       subtitle: "We're excited to meet your family",
@@ -706,6 +712,49 @@ export const translations = {
         title: "The People Behind Teddy Kids",
         subtitle: "Our passionate team brings diverse expertise and a shared commitment to childhood education.",
         buttonText: "Meet Our Full Team"
+      },
+      policyReports: {
+        title: "Policy & Reports",
+        description: "Our commitment to transparency and accountability is reflected in our comprehensive documentation.",
+        buttonText: "View All Documents"
+      },
+      policy: {
+        hero: {
+          title: "Our Policies & Reports",
+          subtitle: "Transparency, accountability, and continuous improvement guide everything we do.",
+          imageAlt: "Policy documents and reports"
+        },
+        intro: {
+          title: "Your Trust, Our Responsibility",
+          description: "At Teddy Kids, we believe that excellent childcare starts with clear policies and open communication. Here you'll find all our official documents, inspection reports, and guidelines that ensure your child's safety, development, and happiness."
+        },
+        documents: {
+          title: "Policy Documents",
+          description: "Our comprehensive policies covering all aspects of care and education."
+        },
+        ggdReports: {
+          title: "GGD Inspection Reports",
+          description: "Official inspection reports from the Dutch Public Health Service (GGD).",
+          downloadReport: "Download GGD Report"
+        },
+        quality: {
+          title: "Quality & Safety",
+          description: "Protocols and procedures ensuring the highest standards of care."
+        },
+        privacy: {
+          title: "Privacy & GDPR",
+          description: "How we protect and handle personal data in compliance with GDPR regulations.",
+          comingSoon: "Privacy policy coming soon — the full document will be available for download here.",
+          downloadLink: "Download Privacy Policy (NL/EN)"
+        },
+        additional: {
+          title: "Additional Documents",
+          incidentForm: "Incident Report Form (NL)",
+          vogSample: "VOG Sample Document (NL)"
+        },
+        helpTitle: "Need help finding something?",
+        helpCta: "Can't find what you're looking for? Send us a message.",
+        downloadReport: "Download Report"
       }
     }
   },
@@ -1249,6 +1298,12 @@ export const translations = {
       ctaSecondary:
         "Boek een 20-minuten rondleiding die alles kan veranderen"
     },
+    learningPage: {
+      hero: {
+        title: "Waar genialiteit zich verstopt in alledaagse momenten",
+        subtitle: "Kijk binnen om te zien hoe je kind leert terwijl ze denken dat ze alleen maar spelen."
+      }
+    },
     contact: {
       title: "Jullie Avontuur Begint Hier",
       subtitle: "We kunnen niet wachten om jullie te ontmoeten!",
@@ -1396,6 +1451,49 @@ export const translations = {
         title: "De Mensen Achter Teddy Kids",
         subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
         buttonText: "Ontmoet Ons Volledige Team"
+      },
+      policyReports: {
+        title: "Beleid & Rapporten",
+        description: "Onze toewijding aan transparantie en verantwoordelijkheid komt tot uiting in onze uitgebreide documentatie.",
+        buttonText: "Bekijk alle documenten"
+      },
+      policy: {
+        hero: {
+          title: "Onze beleidsdocumenten & rapporten",
+          subtitle: "Transparantie, verantwoordelijkheid en voortdurende verbetering leiden alles wat we doen.",
+          imageAlt: "Beleidsdocumenten en rapporten"
+        },
+        intro: {
+          title: "Uw vertrouwen, onze verantwoordelijkheid",
+          description: "Bij Teddy Kids begint uitstekende kinderopvang met duidelijke beleidslijnen en open communicatie. Hier vindt u al onze officiële documenten, inspectierapporten en richtlijnen die de veiligheid, ontwikkeling en het geluk van uw kind waarborgen."
+        },
+        documents: {
+          title: "Beleidsdocumenten",
+          description: "Onze uitgebreide beleidsstukken die alle aspecten van zorg en educatie behandelen."
+        },
+        ggdReports: {
+          title: "GGD Inspectierapporten",
+          description: "Officiële inspectierapporten van de GGD.",
+          downloadReport: "Download GGD-rapport"
+        },
+        quality: {
+          title: "Kwaliteit & Veiligheid",
+          description: "Protocollen en procedures die de hoogste kwaliteitsnormen garanderen."
+        },
+        privacy: {
+          title: "Privacy & AVG",
+          description: "Hoe wij persoonsgegevens beschermen en verwerken in overeenstemming met de AVG.",
+          comingSoon: "Privacybeleid binnenkort beschikbaar — het volledige document kan hier worden gedownload.",
+          downloadLink: "Download Privacybeleid (NL/EN)"
+        },
+        additional: {
+          title: "Overige Documenten",
+          incidentForm: "Incidentenmeldingsformulier (NL)",
+          vogSample: "Voorbeeld VOG (NL)"
+        },
+        helpTitle: "Hulp nodig bij het vinden van iets?",
+        helpCta: "Kunt u niet vinden wat u zoekt? Stuur ons een bericht.",
+        downloadReport: "Download Rapport"
       }
     }
   }

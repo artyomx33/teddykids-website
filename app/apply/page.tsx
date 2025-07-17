@@ -492,6 +492,32 @@ function ApplyPageContent() {
             <a href="/apply" className="btn-primary">Apply Now</a>
             <a href="/book-tour" className="btn-secondary">Book a Tour</a>
           </div>
+          {/* Micro-copy under CTAs */}
+          <p className="text-sm italic mt-4 text-white">
+            *No application fee. We tour with heart.*
+          </p>
+        </div>
+      </section>
+
+      {/* What Happens Next – three-step flow */}
+      <section className="py-16 bg-gray-50 text-center">
+        <h2 className="text-3xl font-display font-bold mb-8">What Happens Next</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
+          <div>
+            <div className="text-4xl mb-2">📍</div>
+            <h3 className="font-medium mb-1">Book a Tour</h3>
+            <p className="text-gray-600 text-sm">Meet our team and see our spaces in person.</p>
+          </div>
+          <div>
+            <div className="text-4xl mb-2">📝</div>
+            <h3 className="font-medium mb-1">Complete Application</h3>
+            <p className="text-gray-600 text-sm">Fill out a quick form—we’ll guide you all the way.</p>
+          </div>
+          <div>
+            <div className="text-4xl mb-2">🎉</div>
+            <h3 className="font-medium mb-1">Start the Adventure</h3>
+            <p className="text-gray-600 text-sm">Join the Teddy family and begin the fun.</p>
+          </div>
         </div>
       </section>
 

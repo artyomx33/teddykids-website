@@ -117,10 +117,10 @@ export default function PolicyPage() {
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6">
-              {t('about.policy.title')}
+              {t('about.policy.hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-              {t('about.policy.subtitle')}
+              {t('about.policy.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -131,63 +131,31 @@ export default function PolicyPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             
-            {/* Pedagogical Policy */}
+            {/* Documents */}
             <Accordion 
-              title={t('about.policy.pedagogical.title')} 
+              title={t('about.policy.documents.title')} 
               icon="📋"
               defaultOpen={true}
             >
-              <p className="text-gray-700 mb-6">{t('about.policy.pedagogical.description')}</p>
-              <div className="space-y-3">
-                <DocumentLink 
-                  title={t('about.policy.pedagogical.dutchDocument')}
-                  href="/docs/PedagogischBeleidsplan-TeddyKids-NL.pdf"
-                  language="Nederlands"
-                />
-                <DocumentLink 
-                  title={t('about.policy.pedagogical.englishDocument')}
-                  href="/docs/PedagogicalPolicy-TeddyKids-EN.pdf"
-                  language="English"
-                />
+              <p className="text-gray-700 mb-6">
+                {t('about.policy.documents.description')}
+              </p>
+              <div className="bg-brand-yellow bg-opacity-10 p-4 rounded-lg">
+                <p className="text-gray-700 italic">{t('about.policy.documents.comingSoon') ?? 'Documents will be available for download soon.'}</p>
               </div>
             </Accordion>
 
             {/* GGD Reports */}
-            <Accordion title={t('about.policy.ggd.title')} icon="🏥">
-              <p className="text-gray-700 mb-6">{t('about.policy.ggd.description')}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-3">{t('about.policy.ggd.locations.rbw')}</h4>
-                  <DocumentLink 
-                    title="GGD Report 2024"
-                    href="/docs/GGD-RBW-2024.pdf"
-                    language="Nederlands"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-3">{t('about.policy.ggd.locations.rb3rb5')}</h4>
-                  <DocumentLink 
-                    title="GGD Report 2024"
-                    href="/docs/GGD-RB3RB5-2024.pdf"
-                    language="Nederlands"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-3">{t('about.policy.ggd.locations.lrz')}</h4>
-                  <DocumentLink 
-                    title="GGD Report 2024"
-                    href="/docs/GGD-LRZ-2024.pdf"
-                    language="Nederlands"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900 mb-3">{t('about.policy.ggd.locations.zml')}</h4>
-                  <DocumentLink 
-                    title="GGD Report 2024"
-                    href="/docs/GGD-ZML-2024.pdf"
-                    language="Nederlands"
-                  />
-                </div>
+            <Accordion title={t('about.policy.ggdReports.title')} icon="🏥">
+              <p className="text-gray-700 mb-6">
+                {t('about.policy.ggdReports.description')}
+              </p>
+              <div className="space-y-3">
+                <DocumentLink
+                  title={t('about.policy.ggdReports.downloadReport')}
+                  href="/docs/GGD-Report.pdf"
+                  language="PDF"
+                />
               </div>
             </Accordion>
 

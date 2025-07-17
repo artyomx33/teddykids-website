@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, react/no-unescaped-entities */
 'use client';
 import React, { useState, Suspense } from 'react';
 import Button from '@/components/Button';
@@ -43,44 +44,6 @@ const ProgressStep: React.FC<ProgressStepProps> = ({
         <span className="text-xs text-gray-500 text-center mt-1 max-w-[120px]">{description}</span>
       )}
     </div>
-      {/* FAQ Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-display font-bold mb-6 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6 text-left">
-            <div>
-              <h3 className="font-medium">Do I need to pay a fee?</h3>
-              <p>No application fee—your tour and our guidance are on us.</p>
-            </div>
-            <div>
-              <h3 className="font-medium">Can I schedule a tour first?</h3>
-              <p>Absolutely—choose &quot;Book a Tour&quot; above and we’ll find a time that works.</p>
-            </div>
-            <div>
-              <h3 className="font-medium">Is Teddy Kids bilingual?</h3>
-              <p>Yes! All our programs are fully bilingual in Dutch and English.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Closing CTA */}
-      <section className="py-16 bg-brand-mint bg-opacity-20 text-center">
-        <h2 className="text-3xl font-display font-bold mb-4">
-          Apply now and let&apos;s start this journey together.
-        </h2>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button variant="primary" href="/apply#apply-form">
-            Apply Now
-          </Button>
-          <Button variant="outline" href="/book-tour">
-            Book a Tour
-          </Button>
-        </div>
-      </section>
-
   );
 };
 
@@ -253,18 +216,6 @@ const FormTextarea: React.FC<FormTextareaProps> = ({
       />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
-  );
-};
-
-// Audio player button component
-const AudioButton = ({ label = "Play" }) => {
-  return (
-    <button className="flex items-center gap-2 text-sm text-brand-pink hover:text-brand-purple transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M8 5v14l11-7z" />
-      </svg>
-      {label}
-    </button>
   );
 };
 
@@ -549,7 +500,7 @@ function ApplyPageContent() {
           <div>
             <div className="text-4xl mb-2">📝</div>
             <h3 className="font-medium mb-1">Complete Application</h3>
-            <p className="text-gray-600 text-sm">Fill out a quick form—we’ll guide you all the way.</p>
+            <p className="text-gray-600 text-sm">Fill out a quick form—we'll guide you all the way.</p>
           </div>
           <div>
             <div className="text-4xl mb-2">🎉</div>
@@ -1022,6 +973,44 @@ function ApplyPageContent() {
           </div>
         </section>
       )}
+
+      {/* FAQ Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-3xl font-display font-bold mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6 text-left">
+            <div>
+              <h3 className="font-medium">Do I need to pay a fee?</h3>
+              <p>No application fee—your tour and our guidance are on us.</p>
+            </div>
+            <div>
+              <h3 className="font-medium">Can I schedule a tour first?</h3>
+              <p>Absolutely—choose &quot;Book a Tour&quot; above and we'll find a time that works.</p>
+            </div>
+            <div>
+              <h3 className="font-medium">Is Teddy Kids bilingual?</h3>
+              <p>Yes! All our programs are fully bilingual in Dutch and English.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="py-16 bg-brand-mint bg-opacity-20 text-center">
+        <h2 className="text-3xl font-display font-bold mb-4">
+          Apply now and let&apos;s start this journey together.
+        </h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Button variant="primary" href="/apply#apply-form">
+            Apply Now
+          </Button>
+          <Button variant="outline" href="/book-tour">
+            Book a Tour
+          </Button>
+        </div>
+      </section>
     </main>
   );
 }

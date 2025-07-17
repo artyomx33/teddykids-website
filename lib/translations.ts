@@ -763,6 +763,8 @@ export const translations = {
           incidentForm: "Incident Reporting Form (NL)",
           vogSample: "VOG Sample (NL)"
         },
+        /* assistance footer */
+        helpTitle: "Need help finding something?",
         helpCta:
           "If you need help finding a document, just message us here.",
         downloadReport: "Download GGD Report"
@@ -969,7 +971,25 @@ export const translations = {
       metadata: {
         title: "Onze Programma's | Teddy Kids",
         description:
+      ,
+      /* ───────────────────────────────────────────────
+       *  NEW: Adventure Section (Luna upgrade)
+       * ─────────────────────────────────────────────── */
+      adventure: {
+        title: "Adventure Awaits Every Day",
+        description:
+          "Our after-school program is where curiosity meets discovery, imagination takes flight, and friendships grow through shared adventures."
+      }
           "Van luiers tot diploma's: ontdek Teddy Baby, Teddy Learners, Teddy BSO Explorers en TISA. Programma's vol vreugde, groei en wereldse blik.",
+    /* ──────────────────────────────────────────────────────────
+     *  LEARNING MOMENTS PAGE ( /learning )
+     * ────────────────────────────────────────────────────────── */
+    learningPage: {
+      hero: {
+        title: "Learning Moments",
+        subtitle: "Discover the magic that happens every day at Teddy Kids"
+      }
+    },
         keywords:
           "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
       }

@@ -118,3 +118,65 @@ html {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(0.95) rotate(-5deg); }
 }
+
+
+/* ------------------------------------------------------------------
+ *  🌟 Luna Design Enhancements 2025-07-17
+ * ------------------------------------------------------------------ */
+
+/* ---------- Hero Parallax & Content Layering ---------- */
+.hero-parallax {
+  @apply relative overflow-hidden;
+}
+
+.hero-parallax::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/50;
+  z-index: 1; /* sits above bg image, below text */
+}
+
+.hero-content {
+  @apply relative z-10; /* keeps text above overlays */
+}
+
+/* ---------- Extended Character Float Animation ---------- */
+.character-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ---------- Document Hover Lift Effect ---------- */
+.document-hover {
+  @apply transition-transform duration-300 ease-out;
+}
+.document-hover:hover {
+  @apply -translate-y-1 scale-105;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Accordion Smooth Transitions ---------- */
+.accordion-content {
+  @apply overflow-hidden transition-all duration-300 ease-in-out;
+}
+.accordion-open {
+  @apply max-h-screen opacity-100;
+}
+.accordion-closed {
+  @apply max-h-0 opacity-0;
+}
+
+/* ---------- Gradient Text Utility ---------- */
+.gradient-text {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Soft Box Shadows ---------- */
+.soft-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  @apply transition-shadow duration-300;
+}
+.soft-shadow:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}

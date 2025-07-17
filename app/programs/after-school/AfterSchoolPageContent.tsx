@@ -197,6 +197,53 @@ const AfterSchoolPageContent = () => {
         </div>
       </section>
 
+      {/* ──────────────────────────────────────────────────────────
+       *  Adventure Section (Luna upgrade)
+       * ────────────────────────────────────────────────────────── */}
+      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+        {/* Background image (girl / dino / monkey tree) */}
+        <Image
+          src="/images/programs/after-school-adventure.jpg" /* ensure asset exists */
+          alt="Girl, purple dino and monkey exploring a tree"
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/30" />
+
+        {/* Floating character decorations */}
+        <div className="character character-bottom-left character-floating character-delay-1 hidden md:block">
+          <Image
+            src="/images/characters/teddy-character-1.png"
+            alt=""
+            width={120}
+            height={120}
+          />
+        </div>
+        <div className="character character-bottom-right character-floating character-delay-2 hidden md:block">
+          <Image
+            src="/images/characters/purple-dino.png"
+            alt=""
+            width={140}
+            height={140}
+          />
+        </div>
+
+        {/* Adventure copy */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 gradient-text">
+              {t('afterSchoolPage.adventure.title')}
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-700">
+              {t('afterSchoolPage.adventure.description')}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Daily Schedule */}
       <section className="py-16 bg-brand-yellow bg-opacity-10">
         <div className="container mx-auto px-4">

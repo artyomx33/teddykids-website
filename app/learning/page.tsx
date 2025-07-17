@@ -178,7 +178,7 @@ export default function LearningPage() {
         {/* Green dino character - strategically positioned */}
         <div className="character character-bottom-right character-floating hidden md:block">
           <Image
-            src="/images/characters/green-dino.png"
+            src="/images/green dino.png"
             alt=""
             width={180}
             height={180}
@@ -189,7 +189,7 @@ export default function LearningPage() {
         {/* Small floating character on the left */}
         <div className="character character-bottom-left character-floating character-delay-1 hidden md:block">
           <Image
-            src="/images/characters/teddy-character-2.png"
+            src="/images/1karakter-dino-lief.jpg"
             alt=""
             width={100}
             height={100}
@@ -282,7 +282,7 @@ export default function LearningPage() {
           <div className="relative h-40 my-12 hidden md:block">
             <div className="character character-side-float character-floating">
               <Image
-                src="/images/characters/green-dino.png"
+                src="/images/green dino.png"
                 alt=""
                 width={120}
                 height={120}
@@ -320,7 +320,7 @@ export default function LearningPage() {
             <div className="relative h-24 mt-8">
               <div className="character character-floating character-delay-2" style={{ left: '50%', transform: 'translateX(-50%)' }}>
                 <Image
-                  src="/images/characters/green-dino.png"
+                  src="/images/green dino.png"
                   alt=""
                   width={80}
                   height={80}

@@ -28,7 +28,7 @@ export default function ContactPage() {
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/hero/lighthouse.jpg" /* make sure asset exists */
+          src="/images/teddylighthousebackground.jpg"
           alt="Lighthouse guiding families to Teddy Kids"
           fill
           priority
@@ -41,7 +41,7 @@ export default function ContactPage() {
         {/* Purple dino character */}
         <div className="character character-bottom-right character-floating hidden md:block">
           <Image
-            src="/images/characters/purple-dino.png" /* make sure asset exists */
+            src="/images/1karakter-dino-lief.jpg"
             alt=""
             width={180}
             height={180}

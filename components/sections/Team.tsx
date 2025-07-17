@@ -101,7 +101,8 @@ const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
             src={member.imageSrc || '/images/team/placeholder.jpg'}
             alt={`${member.name} - ${member.role} at Teddy Kids`}
             fill
-            className="object-cover object-center"
+            /* Show the top of the image so faces stay framed in landscape ratio */
+            className="object-cover object-top"
           />
           <button 
             className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md"

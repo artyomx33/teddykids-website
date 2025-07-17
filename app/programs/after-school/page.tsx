@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import React from 'react';
 import AfterSchoolPageContent from './AfterSchoolPageContent';
 
 // Metadata for the After School Program page

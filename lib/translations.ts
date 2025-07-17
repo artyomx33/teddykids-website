@@ -386,8 +386,8 @@ export const translations = {
      * ────────────────────────────────────────────────────────── */
     teamPage: {
       hero: {
-        title: "Meet the Magic Makers",
-        subtitle: "The passionate educators and staff who bring the Teddy Kids vision to life every day."
+        title: "Meet the Teddy Team",
+        subtitle: "These are the people who cuddle, guide, teach, and laugh with your children every day."
       },
       philosophy: {
         title: "Our Team Philosophy",

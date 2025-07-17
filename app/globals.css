@@ -99,3 +99,22 @@ html {
 .character-floating { animation: float 4s ease-in-out infinite; }
 .character-delay-1  { animation-delay: 1s; }
 .character-delay-2  { animation-delay: 2s; }
+
+/* ------------------------------------------------------------------
+ *  Hover Animations (Luna flair!)
+ * ------------------------------------------------------------------ */
+
+/* Smooth transform on hover-ready characters */
+.character {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Trigger a playful “wink” motion on hover */
+.character:hover {
+  animation: wink 0.3s ease-in-out;
+}
+
+@keyframes wink {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(0.95) rotate(-5deg); }
+}

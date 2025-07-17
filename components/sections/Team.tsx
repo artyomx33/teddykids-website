@@ -22,6 +22,9 @@ const TeamMember: React.FC<TeamMemberProps> = ({
 }) => {
   const { language } = useLanguage();
   const { t } = useTranslation(language);
+  // Determine if we should show a real image or a placeholder block
+  const isPlaceholder =
+    !imageSrc || imageSrc.includes('placeholder');
   
   return (
     <div 
@@ -30,12 +33,27 @@ const TeamMember: React.FC<TeamMemberProps> = ({
     >
       {/* Taller container to achieve roughly 2:3 (w:h) portrait ratio */}
       <div className="relative h-72 w-full">
-        <Image
-          src={imageSrc}
-          alt={`${name} - ${role} at Teddy Kids`}
-          fill
-          className="object-cover object-top"
-        />
+        {!isPlaceholder ? (
+          <Image
+            src={imageSrc}
+            alt={`${name} - ${role} at Teddy Kids`}
+            fill
+            className="object-cover object-top"
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center h-full w-full bg-brand-pink bg-opacity-10">
+            {/* Friendly Appies fallback illustration */}
+            <Image
+              src="/images/characters/appies-waving.png"
+              alt="Appies placeholder"
+              width={80}
+              height={80}
+            />
+            <p className="text-sm text-gray-600 mt-2">
+              {t?.('team.photoComingSoon') ?? 'Photo coming soon'}
+            </p>
+          </div>
+        )}
       </div>
       <div className="p-5">
         <h3 className="text-xl font-display font-semibold">{name}</h3>
@@ -74,13 +92,16 @@ const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
         className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Match the same 2:3 portrait ratio used in grid cards */}
-        <div className="relative h-72 w-full">
+        {/* 3:2 landscape ratio for cleaner face framing */}
+        <div
+          className="relative w-full"
+          style={{ aspectRatio: '3 / 2' }}
+        >
           <Image
             src={member.imageSrc || '/images/team/placeholder.jpg'}
             alt={`${member.name} - ${member.role} at Teddy Kids`}
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
           />
           <button 
             className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md"
@@ -105,8 +126,8 @@ const BioModal: React.FC<BioModalProps> = ({ member, onClose }) => {
           
           {member.childQuote && (
             <div className="bg-brand-yellow bg-opacity-20 p-4 rounded-lg mb-4">
-              <h4 className="text-sm font-medium mb-1">What the children say:</h4>
-              <p className="italic text-gray-700">&quot;{member.childQuote}&quot;</p>
+              <h4 className="text-sm font-medium mb-3">What the children say:</h4>
+              <p className="italic text-gray-700 text-lg">“{member.childQuote}”</p>
             </div>
           )}
           

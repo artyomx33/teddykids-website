@@ -492,6 +492,7 @@ export const translations = {
       title: "Meet the Magic Makers",
       subtitle: "The passionate educators behind Teddy Kids",
       didYouKnow: "Did You Know?",
+      photoComingSoon: "Photo coming soon",
       viewBio: "Read Full Bio",
       members: {
         artem: {
@@ -1133,8 +1134,8 @@ export const translations = {
      * ────────────────────────────────────────────────────────── */
     teamPage: {
       hero: {
-        title: "Maak kennis met de Teddy-helden",
-        subtitle: "De bevlogen begeleiders en medewerkers die elke dag de visie van Teddy Kids tot leven brengen."
+        title: "Ontmoet het Teddy Team",
+        subtitle: "Dit zijn de mensen die elke dag knuffelen, begeleiden, onderwijzen en lachen met jouw kinderen."
       },
       philosophy: {
         title: "Onze teamfilosofie",
@@ -1239,6 +1240,7 @@ export const translations = {
       title: "Ontmoet de Magische Makers",
       subtitle: "De betrokken opvoeders achter Teddy Kids",
       didYouKnow: "Wist je dat?",
+      photoComingSoon: "Foto komt binnenkort",
       viewBio: "Lees Volledig Profiel",
       members: {
         artem: {

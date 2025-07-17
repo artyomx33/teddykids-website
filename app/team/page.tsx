@@ -119,7 +119,7 @@ export default function TeamPage() {
               <div className="bg-brand-yellow bg-opacity-5 rounded-xl overflow-hidden">
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/images/team/team-rb3rb5.jpg"
+                    src="/images/locations/rb3-rb5-entrance.jpg"
                     alt="RB3/RB5 Team"
                     fill
                     className="object-cover object-top"
@@ -139,7 +139,7 @@ export default function TeamPage() {
               <div className="bg-brand-mint bg-opacity-5 rounded-xl overflow-hidden">
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/images/team/team-lrz.jpg"
+                    src="/images/locations/lrz-building.jpg"
                     alt="LRZ Team"
                     fill
                     className="object-cover object-top"
@@ -159,7 +159,7 @@ export default function TeamPage() {
               <div className="bg-brand-purple bg-opacity-5 rounded-xl overflow-hidden">
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/images/team/team-zml.jpg"
+                    src="/images/locations/zml-exterior.jpg"
                     alt="ZML Team"
                     fill
                     className="object-cover object-top"
@@ -176,39 +176,65 @@ export default function TeamPage() {
         </div>
       </section>
       
-      {/* TISA Section */}
-      <section className="py-16 bg-brand-mint bg-opacity-10">
+      {/* TISA Partnership Section – pastel makeover */}
+      <section className="py-20" style={{ backgroundColor: '#FCF5EC' }}>
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex flex-col md:flex-row justify-center gap-8 mb-8">
-              <div className="relative h-24 w-48">
+          <div className="max-w-4xl mx-auto">
+            {/* Logos Row */}
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-10">
+              <div className="relative h-20 w-48">
                 <Image
-                  src="/images/logos/tisa-logo-placeholder.png"
+                  src="/images/logos/teddy-kids-logo.png"
+                  alt="Teddy Kids Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative h-20 w-48">
+                <Image
+                  src="/images/logos/tisa-logo.png"
                   alt="TISA Logo"
                   fill
                   className="object-contain"
                 />
               </div>
-              <div className="relative h-24 w-48">
-                <Image
-                  src="/images/logos/tisa-pt-logo-placeholder.png"
-                  alt="TISA Portugal Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
             </div>
-            
-            <h3 className="text-xl font-medium mb-6">{t('teamPage.tisa.title')}</h3>
-            
-            <Button
-              variant="primary"
-              href="https://www.tisaschool.com"
-              isExternal={true}
-              size="lg"
-            >
-              {t('teamPage.tisa.button')}
-            </Button>
+
+            {/* Entrepreneurial Copy */}
+            <div className="text-center mb-10 space-y-4">
+              <p className="text-xl font-medium">
+                TISA isn’t just international education&nbsp;— it’s international imagination.
+              </p>
+              <p className="text-lg">
+                Together with Teddy Kids, we grow the next generation of confident thinkers and young entrepreneurs.
+              </p>
+              <p className="text-lg">
+                At TISA, kids explore SWOT analysis at five, speed math with joy, and star in theater shows that spark big ideas. 
+                It’s a bold continuation of the Teddy spirit&nbsp;— powered by curiosity, creativity, and courage.
+              </p>
+            </div>
+
+            {/* Kids Performing Placeholder Image */}
+            <div className="relative h-64 w-full rounded-xl overflow-hidden mb-12 shadow-sm">
+              <Image
+                src="/images/programs/after-school-activities.jpg"
+                alt="Kids performing at TISA"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Button
+                variant="primary"
+                href="https://www.tisaschool.com"
+                isExternal
+                size="lg"
+              >
+                {t('teamPage.tisa.button')}
+              </Button>
+            </div>
           </div>
         </div>
       </section>

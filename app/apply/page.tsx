@@ -932,10 +932,10 @@ function ApplyPageContent() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-display font-bold mb-6">
-                {t('locationsPage.applyPage.ctaFooter.line1')}
+                {"You don't need to have it all figured out. Just let us know you're interested."}
               </h2>
               <p className="text-lg text-gray-700 mb-8">
-                {t('locationsPage.applyPage.ctaFooter.line2')}
+                {"We'll take care of the rest—with care, clarity, and a little Teddy magic."}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -944,14 +944,14 @@ function ApplyPageContent() {
                   size="lg"
                   onClick={handleNextStep}
                 >
-                  {t('locationsPage.applyPage.ctaFooter.begin')}
+                  {"Begin My Teddy Journey"}
                 </Button>
                 <Button 
                   variant="outline"
                   href="/contact"
                   size="lg"
                 >
-                  {t('locationsPage.applyPage.ctaFooter.talk')}
+                  {"Talk to a Teddicated Human"}
                 </Button>
               </div>
             </div>

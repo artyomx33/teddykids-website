@@ -479,26 +479,30 @@ function ApplyPageContent() {
   
   return (
     <main>
-      {/* Hero Section */}
-      <section className="py-20 bg-brand-yellow bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              {t('locationsPage.applyPage.hero.title')}
-            </h1>
-            <p className="text-xl text-gray-700 mb-8">
-              {t('locationsPage.applyPage.hero.subtitle')}
-            </p>
-            
-            <div className="inline-block">
-              <div className="bg-white p-4 rounded-xl shadow-sm flex items-center gap-3">
-                <AudioButton label={t('locationsPage.applyPage.audio.label')} />
-              </div>
-              <p className="text-sm text-gray-600 mt-2 italic">
-                &quot;{t('locationsPage.applyPage.audio.quote')}&quot;
-              </p>
-            </div>
+      {/* Hero Section – Luna Makeover */}
+      <section className="hero-apply">
+        <div className="hero-overlay">
+          <h1 className="text-5xl font-display font-bold mb-4">
+            Welcome to the Teddy Kids Family!
+          </h1>
+          <p className="text-xl mb-6">
+            Ready to begin your child's bilingual adventure? We're here to guide you every step of the way.
+          </p>
+          <div className="hero-ctas">
+            <a href="/apply" className="btn-primary">Apply Now</a>
+            <a href="/book-tour" className="btn-secondary">Book a Tour</a>
           </div>
+        </div>
+      </section>
+
+      {/* Sound Recording Section */}
+      <section className="sound-snippet">
+        <h2 className="text-2xl font-display font-bold mb-4">Hear the Teddy Magic</h2>
+        <p className="text-gray-700 mb-6">
+          Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
+        </p>
+        <div className="audio-player-wrapper">
+          <audio src="/audio/appies-welcome.mp3" controls />
         </div>
       </section>
       

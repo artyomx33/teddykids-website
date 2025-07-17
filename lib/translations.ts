@@ -227,6 +227,18 @@ export const translations = {
       }
     },
     /* ──────────────────────────────────────────────────────────
+     *  AFTER SCHOOL PAGE ( /programs/after-school )
+     * ────────────────────────────────────────────────────────── */
+    afterSchoolPage: {
+      /* ───────────────────────────────────────────────
+       *  NEW: Adventure Section (Luna upgrade)
+       * ─────────────────────────────────────────────── */
+      adventure: {
+        title: "Adventure Awaits Every Day",
+        description: "Our after-school program is where curiosity meets discovery, imagination takes flight, and friendships grow through shared adventures."
+      }
+    },
+    /* ──────────────────────────────────────────────────────────
      *  FULL LOCATIONS PAGE ( /locations )
      * ────────────────────────────────────────────────────────── */
     locationsPage: {
@@ -382,12 +394,21 @@ export const translations = {
       }
     },
     /* ──────────────────────────────────────────────────────────
+     *  LEARNING MOMENTS PAGE ( /learning )
+     * ────────────────────────────────────────────────────────── */
+    learningPage: {
+      hero: {
+        title: "Learning Moments",
+        subtitle: "Discover the magic that happens every day at Teddy Kids"
+      }
+    },
+    /* ──────────────────────────────────────────────────────────
      *  TEAM PAGE ( /team )
      * ────────────────────────────────────────────────────────── */
     teamPage: {
       hero: {
-        title: "Meet the Teddy Team",
-        subtitle: "These are the people who cuddle, guide, teach, and laugh with your children every day."
+        title: "Meet the Magic Makers",
+        subtitle: "The passionate educators and staff who bring the Teddy Kids vision to life every day."
       },
       philosophy: {
         title: "Our Team Philosophy",
@@ -970,17 +991,22 @@ export const translations = {
       },
       metadata: {
         title: "Onze Programma's | Teddy Kids",
-        description:
-      ,
+        description: "Van luiers tot diploma's: ontdek Teddy Baby, Teddy Learners, Teddy BSO Explorers en TISA. Programma's vol vreugde, groei en wereldse blik.",
+        keywords: "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
+      }
+    },
+    /* ──────────────────────────────────────────────────────────
+     *  AFTER SCHOOL PAGE ( /programs/after-school )
+     * ────────────────────────────────────────────────────────── */
+    afterSchoolPage: {
       /* ───────────────────────────────────────────────
        *  NEW: Adventure Section (Luna upgrade)
        * ─────────────────────────────────────────────── */
       adventure: {
-        title: "Adventure Awaits Every Day",
-        description:
-          "Our after-school program is where curiosity meets discovery, imagination takes flight, and friendships grow through shared adventures."
+        title: "Avontuur Wacht Elke Dag",
+        description: "Ons naschoolse programma is waar nieuwsgierigheid ontdekking ontmoet, verbeelding vleugels krijgt en vriendschappen groeien door gedeelde avonturen."
       }
-          "Van luiers tot diploma's: ontdek Teddy Baby, Teddy Learners, Teddy BSO Explorers en TISA. Programma's vol vreugde, groei en wereldse blik.",
+    },
     /* ──────────────────────────────────────────────────────────
      *  LEARNING MOMENTS PAGE ( /learning )
      * ────────────────────────────────────────────────────────── */
@@ -988,10 +1014,6 @@ export const translations = {
       hero: {
         title: "Learning Moments",
         subtitle: "Discover the magic that happens every day at Teddy Kids"
-      }
-    },
-        keywords:
-          "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
       }
     },
     /* ──────────────────────────────────────────────────────────
@@ -1525,48 +1547,4 @@ export const translations = {
           description:
             "Ons privacybeleid legt uit hoe wij zorgvuldig omgaan met gegevens — volledig in lijn met de AVG.",
           comingSoon:
-            "Privacybeleid binnenkort beschikbaar — de definitieve versie komt hier te staan.",
-          downloadLink: "Download Privacybeleid (EN/NL)"
-        },
-        additional: {
-          title: "Overige Documenten",
-          incidentForm: "Incidenten Meldingsformulier (NL)",
-          vogSample: "Voorbeeld VOG (NL)"
-        },
-        helpCta:
-          "Hulp nodig bij het vinden van een document? Stuur ons gerust een bericht.",
-        downloadReport: "Download GGD Rapport"
-      }
-    }
-  }
-};
-
-/**
- * Hook that returns a translation helper `t`.
- *
- * Usage:
- * const { t } = useTranslation('en');
- * t('hero.title') -> "From Baby Steps to Global Citizens"
- */
-export const useTranslation = (language: Language = 'en') => {
-  const t = useCallback(
-    (key: string): any => {
-      const keys = key.split('.');
-      let value: any = translations[language];
-
-      for (const k of keys) {
-        if (value && typeof value === 'object' && k in value) {
-          value = value[k];
-        } else {
-          // Return the key itself if translation is missing
-          return key;
-        }
-      }
-
-      return value;
-    },
-    [language]
-  );
-
-  return { t, language };
-};
+            "Privacybeleid binnenkort

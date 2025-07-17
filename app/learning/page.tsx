@@ -104,7 +104,7 @@ const LearningMomentCard = ({ moment, t }) => {
         {(moment.id % 4 === 0) && (
           <div className="character character-card-corner">
             <Image
-              src="/images/characters/green-dino.png"
+              src="/images/green dino.png"
               alt=""
               width={60}
               height={60}

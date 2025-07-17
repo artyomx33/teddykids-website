@@ -75,9 +75,8 @@ export const translations = {
     appiesGPT: {
       title: "Have a question?",
       description:
-        "Ask <strong>AppiesGPT</strong> — our playful AI assistant trained on everything Teddy Kids! 🎓<br/>She can help you with programs, age groups, locations, or anything else you'd like to know.",
-      buttonText: "Chat with AppiesGPT",
-      note: "AppiesGPT opens in a new tab using ChatGPT. No account required to view."
+        "Ask <strong>AppiesGPT</strong> — our playful AI assistant trained on everything Teddy Kids! 🎓<br/>She can answer your questions about programs, age groups, locations, or anything else you'd like to know.",
+      buttonText: "Open AppiesGPT Chat"
     },
     programs: {
       title: "What We Offer",
@@ -478,134 +477,10 @@ export const translations = {
         button: "View Career Opportunities"
       }
     },
-        bilingual: "Tweetalig",
-        empathy: "Empathie",
-        stem: "STEM",
-        creativity: "Creativiteit",
-        all: "Alle onderwerpen"
-      },
-      /* ─── Runtime Messages & CTA ─── */
-      noResults:
-        "Geen leermomenten gevonden met dit filter. Probeer een andere categorie!",
-      showAll: "Toon alle momenten",
-      ctaTitle:
-        "Wat als het krachtigste leermoment van jouw kind… vandaag gebeurde—en je het niet zag?",
-      ctaSubtitle:
-        "Laat ons je tonen hoe genialiteit zich schuilhoudt in snacktijd, zandbakken en zachte sokjes.",
-      ctaPrimary: "Zie het met eigen ogen",
-      ctaSecondary:
-        "Boek een rondleiding van 20 minuten die alles kan veranderen"
+    locations: {
       title: "Find Your Nearest Teddy Kids",
-    /* ──────────────────────────────────────────────────────────
-     *  CONTACT-PAGINA
-     * ────────────────────────────────────────────────────────── */
-    contact: {
-      title: "Jullie avontuur begint hier",
-      subtitle: "We kunnen niet wachten om jullie te ontmoeten!",
-      getInTouch: "Neem contact op",
-      loveToHear: "We horen graag van je!",
-      email: "E-mail",
-      phone: "Telefoon",
-      quickResponse: "Snel antwoord?",
-      responseTime: "We reageren meestal binnen 24 uur op werkdagen.",
-      thankYouTitle: "Dank je wel!",
-      sendAnother: "Stuur nog een bericht",
-      namePlaceholder: "Jan Jansen",
-      emailPlaceholder: "jan@example.com",
-      agePlaceholder: "3 jaar",
-      messagePlaceholder: "Ik wil graag meer weten over…",
-      processing: "Bezig...",
-      whatsappButton: "Chat op WhatsApp",
-      whatsappMessage: "Hoi Teddy Kids! Ik wil graag een rondleiding boeken voor mijn kind.",
-      formName: "Jouw naam",
-      formEmail: "E-mailadres",
-      formChildAge: "Leeftijd van je kind",
-      formMessage: "Jouw bericht",
-      formSubmit: "Verstuur bericht",
-      thankYou: "Dank je wel! We nemen snel contact op."
-    },
-    /* ──────────────────────────────────────────────────────────
-     *  APIE PLAYGROUND
-     * ────────────────────────────────────────────────────────── */
-    apiePlayground: {
-      title: "Apies Speelhoek",
-      subtitle: "Welkom in Apies geheime bananenparadijs! Kleur, speel en geniet!",
-      playSound: "Laat de jungle brullen!",
-      coloringTitle: "Tijd om te kleuren!",
-      clearColors: "Alles wissen",
-      punsTitle: "Bananengrappen",
-      defaultJoke: "Waarom ging de banaan naar de dokter? Omdat hij zich niet goed schilde!",
-      anotherJoke: "Vertel me nog een bananengrapje!",
-      activitiesTitle: "Leuke activiteiten",
-      bananaDance: {
-        title: "Bananendans",
-        intro: "Volg deze stappen voor de bananendans:",
-        steps: [
-          "Sta rechtop als een banaan",
-          "Buig naar links, als een kromme banaan",
-          "Buig naar rechts, nog krommer!",
-          "Draai rond en pel jezelf!",
-          "Spring omhoog en roep: 'BANAAN!'"
-        ]
-      },
-      monkeySee: {
-        title: "Aapjes nadoen!",
-        subtitle: "Kun jij deze dieren nadoen?",
-        animals: [
-          "🐒 Aap: Maak aapgeluiden en krab aan je hoofd",
-          "🦁 Leeuw: Brul hard en laat je klauwen zien",
-          "🐘 Olifant: Maak van je arm een slurf en toeter!",
-          "🦒 Giraf: Strek je nek zo hoog als je kunt",
-          "🐸 Kikker: Spring rond en zeg 'kwak kwak'"
-        ]
-      },
-      backCTA: "Terug naar Teddy Kids"
-    },
-    /* ──────────────────────────────────────────────────────────
-     *  FOOTER
-     * ────────────────────────────────────────────────────────── */
-    footer: {
-      copyright: "© 2024 Teddy Kids. Alle rechten voorbehouden.",
-      privacy: "Privacybeleid",
-      terms: "Servicevoorwaarden",
-      careers: "Vacatures",
-      followUs: "Volg ons"
-    }
       subtitle: "Multiple locations throughout the region",
-    /* End nl object */
-  },
-  /* ── End translations object ── */
-};
-
-/**
- * Hook that returns a translation helper `t`.
- *
- * Usage:
- * const { t } = useTranslation('en');
- * t('hero.title') -> \"From Baby Steps to Global Citizens\"
- */
-export const useTranslation = (language: Language = 'en') => {
-  const t = useCallback(
-    (key: string): any => {
-      const keys = key.split('.');
-      let value: any = translations[language];
-
-      for (const k of keys) {
-        if (value && typeof value === 'object' && k in value) {
-          value = value[k];
-        } else {
-          // Return key if translation missing
-          return key;
-        }
-      }
-
-      return value;
-    },
-    [language]
-  );
-
-  return { t, language };
-};
+      viewAll: "View All Locations",
       viewDetails: "View Details",
       bookTour: "Book a Tour",
       applyNow: "Apply Now",
@@ -831,6 +706,55 @@ export const useTranslation = (language: Language = 'en') => {
         title: "The People Behind Teddy Kids",
         subtitle: "Our passionate team brings diverse expertise and a shared commitment to childhood education.",
         buttonText: "Meet Our Full Team"
+      },
+      /* ──────────────────────────────────────────────────────────
+       *  POLICY PAGE ( /about/policy )
+       * ────────────────────────────────────────────────────────── */
+      policy: {
+        metadata: {
+          title: "Policy & Reports | Teddy Kids",
+          description:
+            "Official documents, inspection reports, and policies for regulatory access and parent transparency.",
+          keywords:
+            "teddy kids policy, ggd reports, pedagogical plan, privacy policy, downloads"
+        },
+        title: "Policy & Reports",
+        subtitle:
+          "Official documents, inspection reports, and policies for regulatory access and parent transparency.",
+        pedagogical: {
+          title: "Pedagogical Policy",
+          description:
+            "Our pedagogical policy outlines how we nurture, educate, and care for children at Teddy Kids. It reflects our values, bilingual approach, and developmental goals.",
+          dutchDocument: "Pedagogisch Beleidsplan (NL)",
+          englishDocument: "Pedagogical Policy (EN)"
+        },
+        ggd: {
+          title: "GGD Inspection Reports",
+          description:
+            "Every Teddy Kids location is reviewed by the GGD for quality and compliance. You can download each location's most recent reports below.",
+          locations: {
+            rbw: "Rijnsburgerweg 35 (RBW)",
+            rb3rb5: "Rijnsburgerweg 3 & 5 (RB3/RB5)",
+            lrz: "Lorentzkade (LRZ)",
+            zml: "Zeemanlaan (ZML)"
+          }
+        },
+        privacy: {
+          title: "Privacy & GDPR",
+          description:
+            "Our privacy policy explains how we handle data with care — in full compliance with GDPR (AVG).",
+          comingSoon:
+            "Privacy Policy coming soon — final version will be downloadable here.",
+          downloadLink: "Download Privacy Policy (EN/NL)"
+        },
+        additional: {
+          title: "Other Documents",
+          incidentForm: "Incident Reporting Form (NL)",
+          vogSample: "VOG Sample (NL)"
+        },
+        helpCta:
+          "If you need help finding a document, just message us here.",
+        downloadReport: "Download GGD Report"
       }
     }
   },
@@ -893,9 +817,8 @@ export const useTranslation = (language: Language = 'en') => {
     appiesGPT: {
       title: "Heb je een vraag?",
       description:
-        "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je helpen met programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
-      buttonText: "Chat met AppiesGPT",
-      note: "AppiesGPT opent in een nieuwe tab via ChatGPT. Geen account nodig om te bekijken."
+        "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je vragen beantwoorden over programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
+      buttonText: "Open AppiesGPT Chat"
     },
     programs: {
       title: "Wat wij bieden",
@@ -1040,311 +963,6 @@ export const useTranslation = (language: Language = 'en') => {
           "teddy kids programma's, teddy baby, teddy learners, bso explorers, TISA, internationale school, tweetalig onderwijs, leiden"
       }
     },
-
-    /* ──────────────────────────────────────────────────────────
-     *  INDIVIDUEEL PROGRAMMA – NURSERY ( /programs/nursery )
-     * ────────────────────────────────────────────────────────── */
-    nurseryPage: {
-      metadata: {
-        title: "Teddy Baby | Zachte, Veilige Start",
-        description:
-          "De eerste wereld van je kind buiten je armen hoort net zo veilig te voelen. Ontdek Teddy Baby: een tweetalige babygroep vol warmte, ritme en verwondering.",
-        keywords:
-          "babygroep leiden, kinderopvang 3 maanden, Teddy Baby, tweetalige opvang, zachte start, Teddy Kids",
-        alt: "Teddy Baby groep – warme knuffels en zachte kleuren"
-      },
-      hero: {
-        title: "Teddy Baby",
-        tagline: "Zacht, tweetalig en geborgen.",
-        description:
-          "We wiegen, zingen, lezen en glimlachen in twee talen. Elk baby-moment is een kans om veiligheid en nieuwsgierigheid te weven.",
-        ages: "Leeftijd: 3 maanden – 2,5 jaar",
-        buttons: {
-          bookTour: "Plan een Rondleiding",
-          applyNow: "Aanmelden"
-        }
-      },
-      overview: {
-        title: "Praktische Info",
-        items: {
-          ageRange: { icon: "🍼", label: "Leeftijdsgroep", value: "3 mnd – 2,5 jr" },
-          hours: { icon: "🕒", label: "Openingstijden", value: "Ma–Vr 07:30–18:30" },
-          meals: { icon: "🥗", label: "Maaltijden", value: "Vers & inbegrepen" },
-          staffRatio: { icon: "👥", label: "Leidster-kindratio", value: "1:3 (<1 jr) 1:4 (>1 jr)" },
-          careModel: { icon: "🤱", label: "Zorgmodel", value: "Vaste verzorger voor hechting" },
-          availableAt: { icon: "📍", label: "Locaties", value: "RBW, RB3/5, ZML" },
-          dailyUpdates: { icon: "📱", label: "Dagupdates", value: "Via TeddyConnect-app" }
-        }
-      },
-      features: {
-        title: "Waarom ouders voor Teddy Baby kiezen",
-        items: [
-          {
-            icon: "💬",
-            title: "Tweetalig vanaf dag één",
-            description: "Babybreinen zuigen taal op als sponsen. Wij bieden Nederlands én Engels in elk lief woord."
-          },
-          {
-            icon: "🎨",
-            title: "Spelen met alle zintuigen",
-            description: "Veilige texturen, zachte geluiden en rustige kleuren stimuleren ontdekkingsdrang zonder overprikkeling."
-          },
-          {
-            icon: "💛",
-            title: "Hechting staat centraal",
-            description: "Consistente gezichten en veel knuffels bouwen een basis van vertrouwen en emotionele veiligheid."
-          },
-          {
-            icon: "🌱",
-            title: "Ritme & rust",
-            description: "Een voorspelbaar dagritme geeft baby's houvast en ouders gemoedsrust."
-          }
-        ]
-      },
-      quote: {
-        text:
-          "Binnen een paar maanden begon Ella woordjes in beide talen te brabbelen. Maar belangrijker: ze straalt elke ophaalmiddag.",
-        author: "– Mila, TK-ouder",
-        button: "Luister fragment"
-      },
-      gallery: {
-        title: "Een kijkje in Teddy Baby",
-        items: [
-          { src: "/images/programs/nursery-play.jpg", caption: "Kring in twee talen" },
-          { src: "/images/programs/nursery-sleep.jpg", caption: "Snoezel & verhaalhoek" },
-          { src: "/images/programs/nursery-circle.jpg", caption: "Buiten ontdekken met begeleiding" }
-        ]
-      },
-      schedule: {
-        title: "Dagritme (voorbeeld)",
-        note:
-          "*Schema wordt afgestemd op individuele slaaptijden en voedingen. Baby's leiden, wij volgen.",
-        items: [
-          { time: "07:30–09:00", activity: "Aankomst & knuffels", description: "Rustige start met vertrouwde liedjes" },
-          { time: "09:00–10:00", activity: "Zing- & verhaaltijd", description: "Korte verhaaltjes in NL & EN" },
-          { time: "10:00–11:00", activity: "Buitenwandeling", description: "Frisse lucht in de kinderwagen" },
-          { time: "11:00–11:30", activity: "Verse lunch", description: "Gevarieerde hapjes, samen aan tafel" },
-          { time: "12:00–14:00", activity: "Slaaptijd", description: "Donkere kamer, white-noise, eigen knuffel" },
-          { time: "14:00–15:30", activity: "Zintuiglijk spel", description: "Voelen, luisteren, glimlachen" },
-          { time: "15:30–17:00", activity: "Vrij spel & verhalen", description: "Ontdekken op eigen tempo" },
-          { time: "17:00–18:30", activity: "Ophalen & één-op-één", description: "Warme overdracht aan ouders" }
-        ]
-      },
-      locations: {
-        title: "Locaties met Teddy Baby",
-        viewDetails: "Bekijk details"
-      },
-      cta: {
-        title: "Maak van het eerste afscheid iets moois.",
-        description:
-          "We begrijpen hoe spannend dit moment is. Samen zorgen we voor een zachte overgang — met zorg, duidelijkheid en rust.",
-        buttons: {
-          meetTeam: "Ontmoet het Baby-team",
-          bookTour: "Plan een Persoonlijke Rondleiding"
-        },
-        chatPrompt: "Eerst even appen?",
-        chatLink: "WhatsApp ons hier"
-      }
-    },
-    
-    /* ──────────────────────────────────────────────────────────
-     *  INDIVIDUEEL PROGRAMMA – AFTER SCHOOL ( /programs/after-school )
-     * ────────────────────────────────────────────────────────── */
-    afterSchoolPage: {
-      metadata: {
-        title: "After School / BSO | Teddy Kids",
-        description: "Ontdekken na schooltijd. Onze BSO biedt een levendige, tweetalige omgeving waar kinderen kunnen ontspannen, nieuwe interesses ontdekken en zichzelf zijn.",
-        keywords: "bso leiden, opvang na schooltijd, naschoolse opvang, tweetalige bso, vakantieopvang, huiswerkbegeleiding",
-        alt: "Teddy Kids After School / BSO - Ontdekken na schooltijd"
-      },
-      hero: {
-        title: "After School",
-        tagline: "Ontdekken na schooltijd",
-        description: "Onze After School (BSO) creëert een levendige, tweetalige omgeving waar basisschoolkinderen kunnen ontspannen, nieuwe interesses ontdekken, hun huiswerk maken en gewoon zichzelf zijn.",
-        subDescription: "We combineren structuur en vrijheid — zodat leren, spelen en vriendschappen op een natuurlijke manier doorgaan ná schooltijd.",
-        ages: "Leeftijd: 4 – 12 jaar",
-        locations: "Locaties: RB3/5, LRZ",
-        times: "Tijden: Ma–Vr, schooluit – 18:30",
-        holidays: "Vakantieopvang: 07:30 – 18:30",
-        buttons: {
-          bookTour: "Plan een Rondleiding",
-          applyNow: "Aanmelden"
-        }
-      },
-      overview: {
-        title: "Programma-overzicht",
-        description: "Onze After School is een brug tussen school en thuis. Een veilige plek vol energie, plezier en persoonlijke groei. Kinderen kunnen hier:",
-        items: [
-          "Huiswerk maken met begeleiding in Nederlands én Engels",
-          "Meedoen aan verdiepende activiteiten & clubs",
-          "Nieuwe vaardigheden ontwikkelen via workshops",
-          "Vrij spelen en hun creativiteit kwijt",
-          "Vriendschappen opbouwen met kinderen van andere leeftijden"
-        ],
-        holidayNote: "Tijdens schoolvakanties en studiedagen bieden we hele dagen vol themaweken, uitstapjes en projecten.",
-        ageNote: "We stemmen het programma af op verschillende leeftijden, zodat elk kind wordt uitgedaagd op zijn of haar niveau."
-      },
-      schedule: {
-        schoolDays: {
-          title: "Dagindeling – Tijdens Schoolweken",
-          items: [
-            { time: "Schooltijd eindigt", activity: "Ophalen bij school, aankomst & check-in", description: "" },
-            { time: "Tot 15:30", activity: "Gezonde snack & ontladen met vrije gesprekken", description: "" },
-            { time: "15:30 – 16:15", activity: "Huiswerkbegeleiding in beide talen", description: "" },
-            { time: "16:15 – 17:15", activity: "Keuze uit kunst, sport, koken, wetenschap, enz.", description: "" },
-            { time: "17:15 – 18:00", activity: "Vrij spel & buitenactiviteiten", description: "" },
-            { time: "18:00 – 18:30", activity: "Rustige afsluiting & ophaalmoment", description: "" }
-          ]
-        },
-        holidays: {
-          title: "Dagindeling – Vakanties & Studiedagen",
-          items: [
-            { time: "07:30 – 09:00", activity: "Inloop & rustige opstartactiviteiten", description: "" },
-            { time: "09:00 – 09:30", activity: "Ochtendkring & planning van de dag", description: "" },
-            { time: "09:30 – 12:00", activity: "Themaworkshops of uitstapjes", description: "" },
-            { time: "12:00 – 13:00", activity: "Lunch & ontspanning", description: "" },
-            { time: "13:00 – 15:30", activity: "Middagactiviteiten of buitenavonturen", description: "" },
-            { time: "15:30 – 16:00", activity: "Snack & groepsgesprek", description: "" },
-            { time: "16:00 – 18:30", activity: "Vrije keuze, spel & ophaalwindow", description: "" }
-          ],
-          note: "Het programma kan per locatie iets verschillen en wordt afgestemd op de interesses en energie van de kinderen."
-        }
-      },
-      activities: {
-        title: "Verdiepende Activiteiten",
-        description: "Onze BSO biedt een wisselend aanbod van activiteiten die kinderen uitdagen, inspireren en laten groeien:",
-        items: [
-          {
-            icon: "🔬",
-            title: "STEM Ontdekkers",
-            description: "Wetenschap, techniek, coderen & wiskundespeurtochten — leerzaam én leuk."
-          },
-          {
-            icon: "🎭",
-            title: "Creatieve Studio",
-            description: "Kunst, toneel, muziek, dans — uitdrukking geven aan wie je bent."
-          },
-          {
-            icon: "🌍",
-            title: "Wereldburgers",
-            description: "Talen, verhalen, koken & feestdagen van over de hele wereld ontdekken."
-          },
-          {
-            icon: "🏃‍♂️",
-            title: "Sport & Beweging",
-            description: "Spelletjes, yoga, buitenavonturen en dans om lichaam en hoofd in balans te brengen."
-          },
-          {
-            icon: "🌱",
-            title: "Eco Warriors",
-            description: "Tuinieren, recyclen, natuurexpedities — liefde voor onze planeet begint hier."
-          },
-          {
-            icon: "💼",
-            title: "Junior Ondernemers",
-            description: "Projecten met creativiteit, samenwerking, oplossingsgericht denken en een tikkeltje lef."
-          }
-        ]
-      },
-      themeWeeks: {
-        title: "Themaweken & Specials (Vakanties)",
-        description: "Tijdens vakanties organiseren we speciale themaweken zoals:",
-        items: [
-          "Ruimteweek (Space Explorers)",
-          "Tijdreizen & geschiedenis",
-          "Kookkamp (Junior Chefs)",
-          "Buitenspeelweek",
-          "Art & Design Studio",
-          "Sport Olympiade",
-          "Wetenschap & Innovatie",
-          "Wereldculturen Festival"
-        ],
-        note: "Met gastdocenten, uitstapjes en presentaties maken we vakanties onvergetelijk én leerzaam."
-      },
-      features: {
-        title: "Wat maakt onze BSO bijzonder?",
-        items: [
-          {
-            icon: "📚",
-            title: "Huiswerk Succes",
-            description: "Ondersteuning in twee talen, met rust en structuur."
-          },
-          {
-            icon: "🔄",
-            title: "Tweetalig blijven groeien",
-            description: "Via spel en begeleiding ontwikkelen kinderen hun Nederlands én Engels."
-          },
-          {
-            icon: "🧠",
-            title: "Vaardigheden voor het leven",
-            description: "Nieuwe interesses, verdiepende ervaringen, en ruimte om te groeien buiten het klaslokaal."
-          },
-          {
-            icon: "🤝",
-            title: "Mix van leeftijden",
-            description: "Kinderen leren van elkaar, bouwen vriendschappen, en ontwikkelen leiderschap."
-          },
-          {
-            icon: "🏫",
-            title: "Schoolconnecties",
-            description: "Sterke samenwerking met scholen voor heldere communicatie en continuïteit."
-          },
-          {
-            icon: "📱",
-            title: "Ouders blijven verbonden",
-            description: "Dagelijkse updates en makkelijke communicatie via de ouder-app."
-          }
-        ]
-      },
-      locations: {
-        title: "Locaties met BSO",
-        items: [
-          {
-            name: "RB3/5",
-            address: "Rijnsburgerweg 3–5, Leiden",
-            buttonText: "Bekijk locatie"
-          },
-          {
-            name: "LRZ",
-            address: "Lorentzkade 15a, Leiden",
-            buttonText: "Bekijk locatie"
-          }
-        ],
-        viewDetails: "Bekijk details"
-      },
-      quotes: {
-        title: "Wat Ouders Zeggen",
-        items: [
-          {
-            text: "De BSO is echt een redding geweest. Onze kinderen komen blij thuis, met hun huiswerk af én vol verhalen.",
-            author: "Thomas & Julie, ouders van een tweeling (6)"
-          },
-          {
-            text: "Lucas had altijd een hekel aan huiswerk, maar nu kijkt hij er zelfs naar uit. De afwisseling houdt hem scherp en enthousiast.",
-            author: "David P., vader van Lucas (8)"
-          },
-          {
-            text: "De vakantieopvang is fantastisch. Van koken tot wetenschap — ik weet dat Sofia plezier heeft én leert als ik aan het werk ben.",
-            author: "Anna M., moeder van Sofia (7)"
-          },
-          {
-            text: "Als internationale ouders waarderen we hoe beide talen hier versterkt worden. Leo is socialer, vrijer en spreekt nu ook Nederlands met vertrouwen.",
-            author: "Miguel & Ling, ouders van Leo (9)"
-          }
-        ]
-      },
-      cta: {
-        title: "Op zoek naar kwaliteitsvolle naschoolse opvang?",
-        description: "Plan een rondleiding en ontdek hoe wij je kind helpen groeien — ook ná schooltijd.",
-        buttons: {
-          bookTour: "Boek een Rondleiding",
-          applyNow: "Meld je aan"
-        },
-        chatPrompt: "Eerst even appen?",
-        chatLink: "WhatsApp ons hier"
-      }
-    },
-    
     /* ──────────────────────────────────────────────────────────
      *  VOLLEDIGE LOCATIES-PAGINA ( /locations )
      * ────────────────────────────────────────────────────────── */
@@ -1586,8 +1204,8 @@ export const useTranslation = (language: Language = 'en') => {
           description: "We geloven in het groeipotentieel van elk kind én elke collega—en stimuleren ontwikkeling met aanmoediging en positieve feedback."
         },
         value6: {
-          title: "Zorg met kwaliteit",
-          description: "We hanteren de hoogste standaarden—van onderwijs tot veiligheid en faciliteiten."
+          title: "Excellence in Care",
+          description: "We maintain the highest standards in everything from educational practices to safety protocols and facility management."
         }
       },
       joinTeam: {
@@ -1662,4 +1280,251 @@ export const useTranslation = (language: Language = 'en') => {
       watchVideo: "Bekijk Video",
       filterBy: "Filter op:",
       categories: {
-        bilingual: "
+        bilingual: "Tweetalig",
+        empathy: "Empathie",
+        stem: "STEM",
+        creativity: "Creativiteit",
+        all: "Alle Onderwerpen"
+      },
+      /* ─── Runtime Messages & CTA ─── */
+      noResults:
+        "Geen leermomenten gevonden met dit filter. Probeer een andere categorie!",
+      showAll: "Toon Alle Momenten",
+      ctaTitle:
+        "Wat als jouw kind's krachtigste leermoment… vandaag gebeurde—en je het niet zag?",
+      ctaSubtitle:
+        "Laat ons je tonen hoe genialiteit zich verstopt in snacktijd, zandbakken en zachte sokjes.",
+      ctaPrimary: "Zie het met eigen ogen",
+      ctaSecondary:
+        "Boek een 20-minuten rondleiding die alles kan veranderen"
+    },
+    contact: {
+      title: "Jullie Avontuur Begint Hier",
+      subtitle: "We kunnen niet wachten om jullie te ontmoeten!",
+      /* ─── Luna Upgrades ─── */
+      getInTouch: "Neem Contact op",
+      loveToHear: "We horen graag van je!",
+      email: "E-mail",
+      phone: "Telefoon",
+      quickResponse: "Snel antwoord? Stuur ons een WhatsAppje",
+      responseTime: "We reageren meestal binnen 24 uur op werkdagen.",
+      formName: "Jouw Naam",
+      formEmail: "E-mailadres",
+      formChildAge: "Leeftijd van je kind",
+      formMessage: "Jouw Bericht",
+      formSubmit: "Verstuur Bericht",
+      thankYouTitle: "Dank je wel!",
+      sendAnother: "Verstuur nog een bericht",
+      namePlaceholder: "Jan Jansen",
+      emailPlaceholder: "jan@example.com",
+      agePlaceholder: "3 jaar",
+      messagePlaceholder: "Ik wil graag meer weten over…",
+      processing: "Verwerken...",
+      whatsappButton: "Chat op WhatsApp",
+      whatsappMessage: "Hoi Teddy Kids! Ik wil graag een rondleiding boeken voor mijn kind.",
+      thankYou: "Dank je wel! We nemen snel contact op."
+    },
+    apiePlayground: {
+      /* ───── Header ───── */
+      title: "Appies Speelhoek",
+      subtitle: "Welkom in Appies geheime bananenparadijs! Kleur, speel en geniet!",
+
+      /* ───── Sound Button ───── */
+      playSound: "Laat de jungle brullen!",
+
+      /* ───── Coloring UI ───── */
+      coloringTitle: "Tijd om te kleuren!",
+      clearColors: "Alles wissen",
+
+      /* ───── Banana Puns ───── */
+      punsTitle: "Bananengrappen",
+      defaultJoke: "Waarom ging de banaan naar de dokter? Omdat hij zich niet goed schilde!",
+      anotherJoke: "Vertel me nog een bananengrapje!",
+
+      /* ───── Fun Activities ───── */
+      activitiesTitle: "Leuke dingen om te doen",
+
+      bananaDance: {
+        title: "Bananendans",
+        intro: "Volg deze stappen voor de bananendans:",
+        steps: [
+          "Sta rechtop als een banaan",
+          "Buig naar links, als een kromme banaan",
+          "Buig naar rechts, nog krommer!",
+          "Draai rond en pel jezelf!",
+          "Spring omhoog en roep: 'BANAAN!'"
+        ]
+      },
+
+      /* ───── Monkey See, Monkey Do ───── */
+      monkeySee: {
+        title: "Aapjes nadoen!",
+        subtitle: "Kun jij deze dieren nadoen?",
+        animals: [
+          "🐒 Aap: Maak aapgeluiden en krab aan je hoofd",
+          "🦁 Leeuw: Brul hard en laat je klauwen zien",
+          "🐘 Olifant: Maak van je arm een slurf en toeter!",
+          "🦒 Giraf: Strek je nek zo hoog als je kunt",
+          "🐸 Kikker: Spring rond en zeg 'kwak kwak'"
+        ]
+      },
+
+      /* ───── Footer CTA ───── */
+      backCTA: "Terug naar Teddy Kids"
+    },
+    footer: {
+      copyright: "© 2024 Teddy Kids. Alle rechten voorbehouden.",
+      privacy: "Privacybeleid",
+      terms: "Servicevoorwaarden",
+      careers: "Vacatures",
+      followUs: "Volg Ons"
+    },
+    about: {
+      metadata: {
+        title: "Over Ons | Teddy Kids",
+        description: "Ontdek de missie, geschiedenis en visie van Teddy Kids voor tweetalige kinderopvang en internationaal onderwijs sinds 2004.",
+        keywords: "teddy kids geschiedenis, teddy kids missie, kinderopvang leiden, internationale school geschiedenis, tisa verhaal, tweetalig onderwijs nederland",
+        alt: "Over Teddy Kids - Onze Missie en Visie"
+      },
+      hero: {
+        title: "Waarom Teddy Kids Bestaat",
+        subtitle: "We bouwden niet zomaar een kinderdagverblijf. We bouwden wat we zelf als kind hadden willen hebben.",
+        imageAlt: "Kinderen bij Teddy Kids"
+      },
+      mission: {
+        title: "Onze Missie",
+        paragraph1: "Bij Teddy Kids geloven we dat ieder kind een omgeving verdient waar natuurlijke nieuwsgierigheid en leerplezier kunnen bloeien. Onze missie is het vormen van wereldburgers door tweetalig onderwijs, spelend leren en cultureel bewustzijn.",
+        paragraph2: "We creëren ruimtes waar kinderen zelfvertrouwen ontwikkelen in meerdere talen, betekenisvolle relaties opbouwen en vaardigheden verwerven om te gedijen in onze onderling verbonden wereld.",
+        paragraph3: "Met onze unieke aanpak helpen we kinderen om meelevende, creatieve en kritische denkers te worden die een betere toekomst zullen vormgeven."
+      },
+      journey: {
+        title: "Onze Reis",
+        timeline: {
+          item2004: {
+            year: "2004",
+            title: "Teddy Kids opent in Leiden",
+            description: "Onze eerste locatie opent met slechts 15 kinderen en een visie voor tweetalige zorg die het vroege onderwijs in Nederland zou veranderen."
+          },
+          item2010: {
+            year: "2010",
+            title: "Uitbreiding naar 3e locatie",
+            description: "Groeiende vraag leidt tot onze derde locatie, waarbij onze unieke benadering van tweetalig onderwijs erkenning krijgt in de hele regio."
+          },
+          item2022: {
+            year: "2022",
+            title: "Lancering van TISA",
+            description: "The Teddy International School of Arts (TISA) opent haar deuren en breidt onze tweetalige aanpak uit naar primair onderwijs."
+          },
+          item2023: {
+            year: "2023",
+            title: "TISA Portugal",
+            description: "Onze internationale visie groeit met de opening van onze eerste locatie buiten Nederland, waarmee we onze aanpak naar Lissabon brengen."
+          },
+          item2024: {
+            year: "2024",
+            title: "20 Jaar Teddy Kids",
+            description: "We vieren twee decennia van het vormen van wereldburgers, waarbij meer dan 10.000 kinderen hun educatieve reis bij ons zijn begonnen."
+          }
+        }
+      },
+      future: {
+        title: "Onze Toekomst",
+        paragraph1: "We zien een wereld voor ons waarin de kindertijd wordt beschermd, nieuwsgierigheid wordt begeleid, en elk kind opgroeit in de overtuiging dat het kan leiden.",
+        paragraph2: "In de komende jaren blijven we onze aanpak uitbreiden naar meer gemeenschappen, waarbij we tweetalig onderwijs en ons waardengerichte curriculum naar kinderen in heel Europa en daarbuiten brengen.",
+        paragraph3: "We zetten ons in voor:",
+        bulletPoints: [
+          "Het behouden van de magie van de kindertijd in een steeds digitalere wereld",
+          "Het ontwikkelen van innovatieve benaderingen voor taalverwerving",
+          "Het bouwen van bruggen tussen culturen door onderwijs",
+          "Het creëren van duurzame leeromgevingen die verwondering opwekken",
+          "Het versterken van opvoeders die onze passie voor de kindertijd delen"
+        ],
+        paragraph4: "Samen met families, opvoeders en gemeenschappen vormen we een toekomst waarin elk kind de kans heeft om zijn beste zelf te worden."
+      },
+      team: {
+        title: "De Mensen Achter Teddy Kids",
+        subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
+        buttonText: "Ontmoet Ons Volledige Team"
+      },
+      /* ──────────────────────────────────────────────────────────
+       *  POLICY PAGE ( /about/policy )
+       * ────────────────────────────────────────────────────────── */
+      policy: {
+        metadata: {
+          title: "Beleid & Rapporten | Teddy Kids",
+          description:
+            "Officiële documenten, inspectierapporten en beleidsstukken voor regelgeving en transparantie richting ouders.",
+          keywords:
+            "teddy kids beleid, ggd rapporten, pedagogisch plan, privacybeleid, downloads"
+        },
+        title: "Beleid & Rapporten",
+        subtitle:
+          "Officiële documenten, inspectierapporten en beleidsstukken voor regelgeving en oudertransparantie.",
+        pedagogical: {
+          title: "Pedagogisch Beleid",
+          description:
+            "Ons pedagogisch beleid beschrijft hoe wij kinderen verzorgen, onderwijzen en begeleiden bij Teddy Kids. Het weerspiegelt onze waarden, tweetalige aanpak en ontwikkelingsdoelen.",
+          dutchDocument: "Pedagogisch Beleidsplan (NL)",
+          englishDocument: "Pedagogical Policy (EN)"
+        },
+        ggd: {
+          title: "GGD Inspectierapporten",
+          description:
+            "Elke Teddy Kids-locatie wordt door de GGD beoordeeld op kwaliteit en naleving. Download hieronder de meest recente rapporten per locatie.",
+          locations: {
+            rbw: "Rijnsburgerweg 35 (RBW)",
+            rb3rb5: "Rijnsburgerweg 3 & 5 (RB3/RB5)",
+            lrz: "Lorentzkade (LRZ)",
+            zml: "Zeemanlaan (ZML)"
+          }
+        },
+        privacy: {
+          title: "Privacy & AVG",
+          description:
+            "Ons privacybeleid legt uit hoe wij zorgvuldig omgaan met gegevens — volledig in lijn met de AVG.",
+          comingSoon:
+            "Privacybeleid binnenkort beschikbaar — de definitieve versie komt hier te staan.",
+          downloadLink: "Download Privacybeleid (EN/NL)"
+        },
+        additional: {
+          title: "Overige Documenten",
+          incidentForm: "Incidenten Meldingsformulier (NL)",
+          vogSample: "Voorbeeld VOG (NL)"
+        },
+        helpCta:
+          "Hulp nodig bij het vinden van een document? Stuur ons gerust een bericht.",
+        downloadReport: "Download GGD Rapport"
+      }
+    }
+  }
+};
+
+/**
+ * Hook that returns a translation helper `t`.
+ *
+ * Usage:
+ * const { t } = useTranslation('en');
+ * t('hero.title') -> "From Baby Steps to Global Citizens"
+ */
+export const useTranslation = (language: Language = 'en') => {
+  const t = useCallback(
+    (key: string): any => {
+      const keys = key.split('.');
+      let value: any = translations[language];
+
+      for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+          value = value[k];
+        } else {
+          // Return the key itself if translation is missing
+          return key;
+        }
+      }
+
+      return value;
+    },
+    [language]
+  );
+
+  return { t, language };
+};

@@ -167,12 +167,14 @@ const AfterSchoolPageContent = () => {
                   {t('afterSchoolPage.overview.description')}
                 </p>
                 <ul className="space-y-3 mb-6">
-                  {t('afterSchoolPage.overview.items').map((item, index) => (
+                  {t('afterSchoolPage.overview.items').map(
+                    (item: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <span className="text-brand-pink mr-2">●</span>
                       <span>{item}</span>
                     </li>
-                  ))}
+                  ),
+                  )}
                 </ul>
                 <Button 
                   variant="outline"
@@ -202,27 +204,31 @@ const AfterSchoolPageContent = () => {
             <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('afterSchoolPage.schedule.schoolDays.title')}</h2>
             
             <div className="bg-white rounded-xl shadow-sm p-6">
-              {t('afterSchoolPage.schedule.schoolDays.items').map((item, index) => (
+              {t('afterSchoolPage.schedule.schoolDays.items').map(
+                (item: ScheduleItemProps, index: number) => (
                 <ScheduleItem 
                   key={index}
                   time={item.time}
                   activity={item.activity}
                   description={item.description}
                 />
-              ))}
+                ),
+              )}
             </div>
             
             <div className="mt-12">
               <h3 className="text-2xl font-display font-bold mb-6 text-center">{t('afterSchoolPage.schedule.holidays.title')}</h3>
               <div className="bg-white rounded-xl shadow-sm p-6">
-                {t('afterSchoolPage.schedule.holidays.items').map((item, index) => (
+                {t('afterSchoolPage.schedule.holidays.items').map(
+                  (item: ScheduleItemProps, index: number) => (
                   <ScheduleItem 
                     key={index}
                     time={item.time}
                     activity={item.activity}
                     description={item.description}
                   />
-                ))}
+                  ),
+                )}
               </div>
             </div>
             
@@ -244,14 +250,16 @@ const AfterSchoolPageContent = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {t('afterSchoolPage.activities.items').map((item, index) => (
+              {t('afterSchoolPage.activities.items').map(
+                (item: FeatureItemProps, index: number) => (
                 <FeatureItem 
                   key={index}
                   icon={item.icon}
                   title={item.title}
                   description={item.description}
                 />
-              ))}
+                ),
+              )}
             </div>
             
             <div className="bg-white p-8 rounded-xl shadow-sm mb-12">
@@ -262,12 +270,14 @@ const AfterSchoolPageContent = () => {
                 {t('afterSchoolPage.themeWeeks.description')}
               </p>
               <ul className="space-y-2 mb-4 grid grid-cols-1 md:grid-cols-2 gap-2">
-                {t('afterSchoolPage.themeWeeks.items').map((item, index) => (
+                {t('afterSchoolPage.themeWeeks.items').map(
+                  (item: string, index: number) => (
                   <li key={index} className="flex items-start">
                     <span className="text-brand-pink mr-2">●</span>
                     <span>{item}</span>
                   </li>
-                ))}
+                  ),
+                )}
               </ul>
             </div>
           </div>
@@ -281,14 +291,16 @@ const AfterSchoolPageContent = () => {
             <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('afterSchoolPage.features.title')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {t('afterSchoolPage.features.items').map((feature, index) => (
+              {t('afterSchoolPage.features.items').map(
+                (feature: FeatureItemProps, index: number) => (
                 <FeatureItem 
                   key={index}
                   icon={feature.icon}
                   title={feature.title}
                   description={feature.description}
                 />
-              ))}
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -320,13 +332,15 @@ const AfterSchoolPageContent = () => {
             <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('afterSchoolPage.quotes.title')}</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {t('afterSchoolPage.quotes.items').map((quote, index) => (
+              {t('afterSchoolPage.quotes.items').map(
+                (quote: { text: string; author: string }, index: number) => (
                 <Testimonial 
                   key={index}
                   quote={quote.text}
                   author={quote.author}
                 />
-              ))}
+                ),
+              )}
             </div>
           </div>
         </div>

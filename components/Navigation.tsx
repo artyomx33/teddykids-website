@@ -89,8 +89,8 @@ const Navigation: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-brand-pink ${
-                    pathname === link.href ? 'text-brand-pink' : 'text-gray-700'
+                  className={`nav-link text-sm font-medium ${
+                    pathname === link.href ? 'active' : ''
                   }`}
                 >
                   {link.label}
@@ -171,8 +171,8 @@ const Navigation: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`py-2 text-base font-medium transition-colors hover:text-brand-pink ${
-                  pathname === link.href ? 'text-brand-pink' : 'text-gray-700'
+                className={`nav-link py-2 text-base font-medium ${
+                  pathname === link.href ? 'active' : ''
                 }`}
                 onClick={closeMenu}
               >

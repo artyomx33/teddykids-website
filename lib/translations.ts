@@ -112,31 +112,6 @@ export const translations = {
         subtitle:
           "Discover how every Teddy Kids program grows with your child—through love, language, and purposeful play."
       },
-      /* ---------- OVERVIEW GRID ---------- */
-      overview: {
-        title: "Kies het traject dat past bij jouw gezin",
-        ageRange: "Leeftijdsgroep",
-        learnMore: "Lees meer",
-        visitWebsite: "Bezoek website"
-      },
-
-      /* ---------- PROGRAM CARD SHORT COPIES ---------- */
-      nursery: {
-        title: "Teddy Baby",
-        shortDescription: "Zachte start, warme zorg. Tweetalig vanaf dag één."
-      },
-      preschool: {
-        title: "Teddy Learners",
-        shortDescription: "Verhalen, STEM en liedjes laten elke dag verwonderen."
-      },
-      afterSchool: {
-        title: "BSO",
-        shortDescription: "Creatieve clubs en avonturen vol zelfvertrouwen."
-      },
-      tisa: {
-        title: "TISA",
-        shortDescription: "Onze tweetalige internationale basisschool."
-      },
 
       /* ---------- OVERVIEW GRID ---------- */
       overview: {
@@ -182,66 +157,7 @@ export const translations = {
         }
       },
 
-      /* ---------- CURRICULUM SECTION ---------- */
-      curriculum: {
-        title: "Onze onderwijsaanpak",
-        approach: {
-          title: "Leren via Taal & Spel",
-          description:
-            "Onderzoek + spelpedagogiek + volledige taalonderdompeling: zo denken, dromen en creëren kinderen in twee talen."
-        },
-        bilingual: {
-          title: "Zo bloeit een tweetalig brein",
-          description:
-            "Taal zit in elke hoek van de dag — niet opgesloten in een lesblok.",
-          immersion: {
-            title: "Hele-dag onderdompeling",
-            description: "Native Engels & Nederlands begeleiden elke routine."
-          },
-          consistency: {
-            title: "One Teacher – One Language",
-            description: "Consistente input bouwt zelfverzekerde sprekers."
-          },
-          cultural: {
-            title: "Cultuur in elke hoek",
-            description: "Liedjes, verhalen & vieringen van over de hele wereld."
-          }
-        }
-      },
-
-      /* ---------- SCHEDULE & FEES ---------- */
-      schedule: {
-        title: "Openingstijden & Kosten",
-        hours: {
-          title: "Openingstijden",
-          nursery: { title: "Teddy Baby" },
-          afterSchool: { title: "BSO" }
-        },
-        fees: {
-          title: "Tarieven",
-          description: "Heldere prijzen, geen verborgen kosten.",
-          nursery: {
-            title: "Teddy Baby",
-            price: "€125 per dag",
-            details: "Inclusief maaltijden, luiers & activiteiten"
-          },
-          preschool: {
-            title: "Teddy Learners",
-            price: "€115 per dag",
-            details: "Halve dag opties beschikbaar"
-          },
-          afterSchool: {
-            title: "BSO",
-            price: "€9 per uur",
-            details: "Vakantiekampen apart gefactureerd"
-          },
-          subsidies: {
-            description:
-              "Kinderopvangtoeslag kan tot 90% van de kosten dekken.",
-            button: "Vraag ons hoe"
-          }
-        }
-      },
+      /*  (Dutch curriculum & schedule sections removed – English versions kept below) */
 
       /* ---------- CURRICULUM SECTION ---------- */
       curriculum: {

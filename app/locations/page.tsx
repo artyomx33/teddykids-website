@@ -94,19 +94,16 @@ export default function LocationsPage() {
             </p>
             
             <div className="rounded-xl overflow-hidden shadow-md bg-white">
-              <div className="aspect-w-16 aspect-h-9 w-full">
-                <iframe 
-                  src="https://www.google.com/maps/d/embed?mid=1dP3Q0UF6NPHY00haFSGZ6xHk87typtw&ehbc=2E312F" 
-                  width="100%" 
-                  height="480" 
-                  style={{ border: 0 }}
-                  allowFullScreen 
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Teddy Kids Locations Map"
-                  className="w-full h-full"
-                ></iframe>
-              </div>
+              {/* Explicit height to ensure map renders on all devices */}
+              <iframe
+                src="https://www.google.com/maps/d/embed?mid=1dP3Q0UF6NPHY00haFSGZ6xHk87typtw"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Teddy Kids Locations Map"
+                className="w-full h-[500px]"
+              ></iframe>
               <div className="p-4 text-sm text-gray-500 italic">
                 {t('locationsPage.map.interactive') || 'Click on markers to see details about each location.'}
               </div>

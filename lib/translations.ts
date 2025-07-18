@@ -245,6 +245,7 @@ export const translations = {
       },
       map: {
         title: "Map of Teddy Kids Locations",
+        description: "Explore our cozy corners of the world where little hearts learn, play, and grow together.",
         locationsCount: "5 Locations Worldwide",
         interactiveMapComing: "Interactive Map Coming Soon"
       },
@@ -988,6 +989,104 @@ export const translations = {
           },
           cultural: {
             title: "Cultuur in elke hoek",
+            description: "Liedjes, verhalen & vieringen van over de hele wereld."
+          }
+        }
+      },
+      vision: {
+        title: "Onze Visie",
+        subtitle:
+          "We zijn hier niet om middelmatigheid te schalen. We zijn hier om te beschermen wat onvervangbaar is — want de kindertijd gebeurt maar één keer.",
+        promises: [
+          { icon: "🕯️", text: "We beschermen nieuwsgierigheid als een vlammetje." },
+          { icon: "✨", text: "We bewaren magie op plekken waar schermen het willen stelen." },
+          { icon: "🌍", text: "We onderwijzen taal niet als vak — maar als paspoort voor de ziel." },
+          { icon: "🏡", text: "We bouwen ruimtes die aanvoelen als thuis, maar denken als een school." },
+          { icon: "🎯", text: "We houden onze standaarden onmogelijk hoog — omdat jouw kind dat waard is." }
+        ],
+        closing: "Jij bracht een kind in deze wereld. Wij zijn er om dat kind te laten bloeien."
+      },
+      team: {
+        title: "De Mensen Achter Teddy Kids",
+        subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
+        buttonText: "Ontmoet Ons Volledige Team"
+      },
+      policyReports: {
+        title: "Beleid & Rapporten",
+        description: "Onze toewijding aan transparantie en verantwoordelijkheid komt tot uiting in onze uitgebreide documentatie.",
+        buttonText: "Bekijk alle documenten"
+      },
+      policy: {
+        hero: {
+          title: "Onze beleidsdocumenten & rapporten",
+          subtitle: "Transparantie, verantwoordelijkheid en voortdurende verbetering leiden alles wat we doen.",
+          imageAlt: "Beleidsdocumenten en rapporten"
+        },
+        intro: {
+          title: "Uw vertrouwen, onze verantwoordelijkheid",
+          description: "Bij Teddy Kids begint uitstekende kinderopvang met duidelijke beleidslijnen en open communicatie. Hier vindt u al onze officiële documenten, inspectierapporten en richtlijnen die de veiligheid, ontwikkeling en het geluk van uw kind waarborgen."
+        },
+        documents: {
+          title: "Beleidsdocumenten",
+          description: "Onze uitgebreide beleidsstukken die alle aspecten van zorg en educatie behandelen."
+        },
+        ggdReports: {
+          title: "GGD Inspectierapporten",
+          description: "Officiële inspectierapporten van de GGD.",
+          downloadReport: "Download GGD-rapport"
+        },
+        quality: {
+          title: "Kwaliteit & Veiligheid",
+          description: "Protocollen en procedures die de hoogste kwaliteitsnormen garanderen."
+        },
+        privacy: {
+          title: "Privacy & AVG",
+          description: "Hoe wij persoonsgegevens beschermen en verwerken in overeenstemming met de AVG.",
+          comingSoon: "Privacybeleid binnenkort beschikbaar — het volledige document kan hier worden gedownload.",
+          downloadLink: "Download Privacybeleid (NL/EN)"
+        },
+        additional: {
+          title: "Overige Documenten",
+          incidentForm: "Incidentenmeldingsformulier (NL)",
+          vogSample: "Voorbeeld VOG (NL)"
+        },
+        helpTitle: "Hulp nodig bij het vinden van iets?",
+        helpCta: "Kunt u niet vinden wat u zoekt? Stuur ons een bericht.",
+        downloadReport: "Download Rapport"
+      }
+    } // end of about
+  } // end of nl
+}; // end of translations
+
+/**
+ * Hook that returns a translation helper `t`.
+ *
+ * Usage:
+ * const { t } = useTranslation('en');
+ * t('hero.title') -> "From Baby Steps to Global Citizens"
+ */
+export const useTranslation = (language: Language = 'en') => {
+  const t = useCallback(
+    (key: string): any => {
+      const keys = key.split('.');
+      let value: any = translations[language];
+
+      for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+          value = value[k];
+        } else {
+          // Return the key itself if translation is missing to avoid runtime errors
+          return key;
+        }
+      }
+
+      return value;
+    },
+    [language]
+  );
+
+  return { t, language };
+};
             description: "Liedjes, verhalen & vieringen van over de hele wereld."
           }
         }

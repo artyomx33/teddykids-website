@@ -148,12 +148,11 @@ export default function LearningPageClient() {
             </p>
             <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
               <Image
-                src="/images/hero-learning-moments.png"
-                alt="Teddy Kids children discovering through play in a bilingual setting"
+                src="/images/learning/learning-hero.jpg"
+                alt="Children engaged in learning activities at Teddy Kids"
                 fill
                 className="object-cover"
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
               />
             </div>
           </div>
@@ -265,7 +264,7 @@ export default function LearningPageClient() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold mb-4">
-              What if your child's most powerful learning moment… was happening today—and you didn't see it?
+              What if your child&apos;s most powerful learning moment… was happening today—and you didn&apos;t see it?
             </h2>
             <p className="text-lg text-gray-700 mb-8">
               Let us show you how brilliance hides in snack time, sandboxes, and squishy socks.

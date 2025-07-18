@@ -5,18 +5,10 @@ import Locations from '@/components/sections/Locations';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
-import type { Metadata } from 'next';
 
 // ──────────────────────────────────────────────────────────
 //  Static page metadata (SEO & social sharing)
 // ──────────────────────────────────────────────────────────
-export const metadata: Metadata = {
-  title: 'Our Locations in Leiden | Teddy Kids Childcare & International School',
-  description:
-    'Discover Teddy Kids’ welcoming childcare centres across Leiden, each offering bilingual care, spacious outdoor play areas, and easy access by bike, public transport, or car.',
-  keywords:
-    'teddy kids locations, childcare leiden, bilingual daycare centres, nursery oegstgeest, preschool leiden, after-school care netherlands',
-};
 
 export default function LocationsPage() {
   const { language } = useLanguage();

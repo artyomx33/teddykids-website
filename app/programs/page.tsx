@@ -5,18 +5,6 @@ import Script from 'next/script';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
-import type { Metadata } from 'next';
-
-// ──────────────────────────────────────────────────────────
-//  Static page metadata (SEO & social sharing)
-// ──────────────────────────────────────────────────────────
-export const metadata: Metadata = {
-  title: 'Programs | Teddy Kids Childcare & International School',
-  description:
-    'Explore Teddy Kids’ bilingual Nursery, Preschool, After-School care, and TISA primary programs. Flexible schedules, healthy meals, and a play-based curriculum that nurtures global citizens.',
-  keywords:
-    'teddy kids programs, bilingual nursery, preschool leiden, after-school care, TISA school, childcare netherlands, international education',
-};
 
 // Program gallery image component
 interface ProgramGalleryImageProps {

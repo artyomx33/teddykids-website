@@ -23,6 +23,14 @@ const config: Config = {
            * Usage: text-brand-yellowDark, bg-brand-yellowDark, border-brand-yellowDark, etc.
            */
           yellowDark: "#C9A96A",
+          /**
+           * Additional dark variants (WCAG AA contrast) mapped to CSS variables.
+           * Usage examples:
+           *  text-brand-pinkDark   bg-brand-pinkDark   border-brand-pinkDark
+           */
+          pinkDark: "var(--brand-pink-dark)",
+          mintDark: "var(--brand-mint-dark)",
+          purpleDark: "var(--brand-purple-dark)",
           mint: "var(--brand-mint)",
           purple: "var(--brand-purple)",
         },

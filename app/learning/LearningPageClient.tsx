@@ -78,7 +78,7 @@ export default function LearningPageClient() {
       title: "When Two Languages Become One",
       description: "Watch how our nursery children naturally switch between Dutch and English during playtime, building neural pathways that will benefit them for life.",
       category: "bilingual",
-      image: "/images/learning/bilingual-moment.jpg",
+      image: "/images/learning/please-languages.png",
       type: "video" as const,
       link: "/learning/bilingual-development"
     },
@@ -87,7 +87,7 @@ export default function LearningPageClient() {
       title: "The Science of Sharing",
       description: "Our preschoolers demonstrate how guided conflict resolution helps develop empathy and emotional intelligence.",
       category: "empathy",
-      image: "/images/learning/empathy-moment.jpg",
+      image: "/images/learning/conflict-resolution.png",
       type: "article" as const,
       link: "/learning/empathy-development"
     },
@@ -96,7 +96,7 @@ export default function LearningPageClient() {
       title: "Building Bridges, Building Minds",
       description: "See how simple blocks and questions lead to complex STEM thinking in our 3-year-olds.",
       category: "stem",
-      image: "/images/learning/stem-moment.jpg",
+      image: "/images/learning/blocks-thinking.png",
       type: "video" as const,
       link: "/learning/stem-exploration"
     },
@@ -105,7 +105,7 @@ export default function LearningPageClient() {
       title: "From Mess to Masterpiece",
       description: "The developmental importance of sensory play and artistic expression in language acquisition.",
       category: "creativity",
-      image: "/images/learning/creativity-moment.jpg",
+      image: "/images/learning/finger-paint.png",
       type: "article" as const,
       link: "/learning/creative-expression"
     },
@@ -114,7 +114,7 @@ export default function LearningPageClient() {
       title: "Cultural Celebrations: Sinterklaas",
       description: "How we incorporate Dutch traditions while making them accessible to our international families.",
       category: "bilingual",
-      image: "/images/learning/cultural-moment.jpg",
+      image: "/images/learning/music-brain.png",
       type: "video" as const,
       link: "/learning/cultural-celebrations"
     },
@@ -123,7 +123,7 @@ export default function LearningPageClient() {
       title: "The Teddy Garden Project",
       description: "Our preschoolers learn about sustainability, patience, and nutrition by growing their own vegetables.",
       category: "stem",
-      image: "/images/learning/garden-moment.jpg",
+      image: "/images/learning/puddle-science.png",
       type: "article" as const,
       link: "/learning/garden-project"
     }

@@ -144,7 +144,6 @@ export default function LearningPageClient() {
           alt="Teddy Kids children discovering through play in a bilingual setting"
           fill
           priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
           className="object-cover"
         />
 

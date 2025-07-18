@@ -12,18 +12,18 @@ module.exports = {
     collect: {
       // All main TeddyKids routes
       url: [
-        'http://localhost:3003/',
-        'http://localhost:3003/about',
-        'http://localhost:3003/about/policy',
-        'http://localhost:3003/programs',
-        'http://localhost:3003/programs/after-school',
-        'http://localhost:3003/programs/nursery',
-        'http://localhost:3003/team',
-        'http://localhost:3003/locations',
-        'http://localhost:3003/learning',
-        'http://localhost:3003/contact',
-        'http://localhost:3003/apply',
-        'http://localhost:3003/accepted',
+        'http://localhost:3002/',
+        'http://localhost:3002/about',
+        'http://localhost:3002/about/policy',
+        'http://localhost:3002/programs',
+        'http://localhost:3002/programs/after-school',
+        'http://localhost:3002/programs/nursery',
+        'http://localhost:3002/team',
+        'http://localhost:3002/locations',
+        'http://localhost:3002/learning',
+        'http://localhost:3002/contact',
+        'http://localhost:3002/apply',
+        'http://localhost:3002/accepted',
       ],
       // Performance settings
       numberOfRuns: 1,
@@ -44,7 +44,7 @@ module.exports = {
         '--allow-insecure-localhost',                     // treat localhost as secure
         '--disable-web-security',                         // disable same-origin policy for testing
         '--ignore-certificate-errors',                    // ignore TLS/SSL cert errors
-        '--unsafely-treat-insecure-origin-as-secure=http://localhost:3003', // whitelist our dev origin
+        '--unsafely-treat-insecure-origin-as-secure=http://localhost:3002', // whitelist our dev origin
         // Additional aggressive flags to further relax security & resource constraints
         '--disable-features=VizDisplayCompositor',
         '--no-sandbox',

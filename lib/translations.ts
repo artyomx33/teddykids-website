@@ -261,7 +261,8 @@ export const translations = {
         title: "Map of Teddy Kids Locations",
         description: "Explore our cozy corners of the world where little hearts learn, play, and grow together.",
         locationsCount: "5 Locations Worldwide",
-        interactiveMapComing: "Interactive Map Coming Soon"
+        interactiveMapComing: "Interactive Map Coming Soon",
+        interactive: "Click on markers to see details about each location."
       },
       filters: {
         title: "Filter by:",
@@ -1137,7 +1138,8 @@ export const translations = {
         title: "Kaart van Teddy Kids locaties",
         description: "Verken onze gezellige plekken waar kleine hartjes samen leren, spelen en groeien.",
         locationsCount: "5 locaties wereldwijd",
-        interactiveMapComing: "Interactieve kaart binnenkort beschikbaar"
+        interactiveMapComing: "Interactieve kaart binnenkort beschikbaar",
+        interactive: "Klik op markeringen om details over elke locatie te zien."
       },
       filters: {
         title: "Filter op:",

@@ -72,7 +72,7 @@ const DocumentLink: React.FC<DocumentLinkProps> = ({ title, href, language }) =>
         <h4 className="font-medium text-gray-900 group-hover:text-brand-pink transition-colors">{title}</h4>
         {language && <p className="text-sm text-gray-500">{language}</p>}
       </div>
-      <svg className="w-5 h-5 text-gray-400 group-hover:text-brand-pink transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-gray-600 group-hover:text-brand-pink transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
       </svg>
     </a>
@@ -88,7 +88,7 @@ export default function PolicyPage() {
       {/* Hero Section with Tree Meadow Background */}
       <section className="relative py-24 bg-gradient-to-br from-brand-mint to-brand-yellow overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 opacity-60">
+        <div className="absolute inset-0 opacity-80">
           <Image
             src="/images/treeparkbackground.jpg"
             alt="Tree park background"

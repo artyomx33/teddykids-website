@@ -18,6 +18,11 @@ const config: Config = {
         brand: {
           pink: "var(--brand-pink)",
           yellow: "var(--brand-yellow)",
+          /**
+           * Darker yellow (WCAG-friendly) – improves contrast for text & icons.
+           * Usage: text-brand-yellowDark, bg-brand-yellowDark, border-brand-yellowDark, etc.
+           */
+          yellowDark: "#C9A96A",
           mint: "var(--brand-mint)",
           purple: "var(--brand-purple)",
         },

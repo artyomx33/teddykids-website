@@ -1,0 +1,68 @@
+
+> teddykids-website@0.1.0 dev
+> next dev --turbopack -p 3001
+
+   ▲ Next.js 15.3.5 (Turbopack)
+   - Local:        http://localhost:3001
+   - Network:      http://172.20.10.14:3001
+
+ ✓ Starting...
+ ✓ Ready in 656ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1243ms
+ GET / 200 in 1402ms
+ GET / 200 in 32ms
+ GET / 200 in 20ms
+ ✓ Compiled /about in 402ms
+ GET /about 200 in 425ms
+ GET /about 200 in 22ms
+ ✓ Compiled /about/policy in 406ms
+ GET /about/policy 200 in 427ms
+ GET /about/policy 200 in 20ms
+ ✓ Compiled /programs in 387ms
+ GET /programs 200 in 418ms
+ GET /programs 200 in 21ms
+ ✓ Compiled /programs/after-school in 417ms
+ GET /programs/after-school 200 in 444ms
+ GET /programs/after-school 200 in 25ms
+ ✓ Compiled /programs/nursery in 382ms
+ GET /programs/nursery 200 in 410ms
+ GET /programs/nursery 200 in 40ms
+ ✓ Compiled /team in 404ms
+ GET /team 200 in 433ms
+ GET /team 200 in 22ms
+ ✓ Compiled /locations in 483ms
+ GET /locations 200 in 542ms
+ GET /locations 200 in 31ms
+ ✓ Compiled /learning in 371ms
+ GET /learning 200 in 392ms
+ GET /learning 200 in 22ms
+ ✓ Compiled /contact in 400ms
+ GET /contact 200 in 419ms
+ GET /contact 200 in 23ms
+ ✓ Compiled /apply in 439ms
+ GET /apply 200 in 459ms
+ GET /apply 200 in 18ms
+ GET /about 200 in 27ms
+ GET /about 200 in 34ms
+ ✓ Compiled in 1861ms
+SyntaxError: /Users/artyomx/projects/teddykids-website/package.json (directory description file): SyntaxError: Expected ',' or '}' after property value in JSON at position 253 (line 11 column 5)
+    at JSON.parse (<anonymous>)
+    [2m[at Object.<anonymous> (/Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:624:26)][0m
+    [2m[at CacheBackend.provideSync (/Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:343:67)][0m
+    [2m[at SyncAsyncFileSystemDecorator.readJson (/Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/SyncAsyncFileSystemDecorator.js:197:29)][0m
+    [2m[at /Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:104:26][0m
+    [2m[at next (/Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/forEachBail.js:35:3)][0m
+    [2m[at forEachBail (/Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/forEachBail.js:49:9)][0m
+    [2m[at findDescriptionFile (/Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:70:3)][0m
+    [2m[at /Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/DescriptionFileUtils.js:167:12][0m
+    [2m[at /Users/artyomx/projects/teddykids-website/node_modules/enhanced-resolve/lib/forEachBail.js:39:13][0m
+ ✓ Compiled in 502ms
+
+-----
+[1m[31mFATAL[39m[0m: An unexpected Turbopack error occurred. A panic log has been written to /var/folders/y2/6df8f47x0z13b5_kvs060_4r0000gn/T/next-panic-546a6b1e1fb2aaf84f9a31930b9b489b.log.
+
+To help make Turbopack better, report this error by clicking here: https://github.com/vercel/next.js/discussions/new?category=turbopack-error-report&title=Turbopack%20Error%3A%20%5Bproject%5D%2Fapp%2Fglobals.css%20%5Bapp-client%5D%20%28css%29&body=Turbopack%20version%3A%20%60v15.3.5%60%0A%0AError%20message%3A%0A%60%60%60%0ATurbopack%20Error%3A%20%5Bproject%5D%2Fapp%2Fglobals.css%20%5Bapp-client%5D%20%28css%29%0A%60%60%60&labels=Turbopack,Turbopack%20Panic%20Backtrace
+-----
+
+ ✓ Compiled in 18.4s

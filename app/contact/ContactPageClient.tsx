@@ -32,6 +32,8 @@ export default function ContactPageClient() {
           src="/images/heroes/journey-starts-here.png"
           alt="Lighthouse guiding families to Teddy Kids"
           fill
+          /* Explicit responsive sizes for optimal LCP */
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
           priority
           className="object-cover"
         />

@@ -95,7 +95,28 @@ const timeline = [
 ];
 
 // ──────────────────────────────────────────────────────────
-// (Timeline array removed – no longer used)
+//  Mapping brand colours → Tailwind utility classes
+// ──────────────────────────────────────────────────────────
+const colorClassMap: Record<string, { border: string; text: string }> = {
+  'brand-pink': {
+    border: 'border-brand-pink',
+    text: 'text-brand-pink',
+  },
+  'brand-yellow': {
+    border: 'border-brand-yellow',
+    text: 'text-brand-yellow',
+  },
+  'brand-mint': {
+    border: 'border-brand-mint',
+    text: 'text-brand-mint',
+  },
+  'brand-purple': {
+    border: 'border-brand-purple',
+    text: 'text-brand-purple',
+  },
+};
+
+// (TimelineItem component removed – not used)
 // Team preview item component
 const TeamPreviewItem = (
   {
@@ -283,7 +304,26 @@ export default function AboutPageClient() {
           </div>
 
           {/* Legacy Timeline */}
-          {/* (Legacy timeline removed per specification) */}
+          <div className="max-w-4xl mx-auto mb-20 space-y-8">
+            {t('about.legacy.timeline').map((item: { year: string; text: string; color: string }) => (
+              <div
+                key={item.year}
+                className={`border-l-4 pl-6 ${
+                  colorClassMap[item.color]?.border ?? 'border-brand-pink'
+                }`}
+              >
+                <h3
+                  className={`text-lg font-bold ${
+                    colorClassMap[item.color]?.text ?? 'text-brand-pink'
+                  }`}
+                >
+                  {item.year}
+                </h3>
+                <p className="text-gray-700">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
 
           {/* Future Vision */}
           <div className="max-w-4xl mx-auto text-center">

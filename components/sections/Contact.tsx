@@ -183,7 +183,9 @@ const Contact: React.FC = () => {
                       placeholder={t('contact.namePlaceholder')}
                     />
                     {errors.name && (
-                      <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                      <p className="mt-1 text-sm text-red-600" role="alert">
+                        {errors.name}
+                      </p>
                     )}
                   </div>
                   
@@ -203,7 +205,9 @@ const Contact: React.FC = () => {
                       placeholder={t('contact.emailPlaceholder')}
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                      <p className="mt-1 text-sm text-red-600" role="alert">
+                        {errors.email}
+                      </p>
                     )}
                   </div>
                   
@@ -238,7 +242,9 @@ const Contact: React.FC = () => {
                       placeholder={t('contact.messagePlaceholder')}
                     />
                     {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                      <p className="mt-1 text-sm text-red-600" role="alert">
+                        {errors.message}
+                      </p>
                     )}
                   </div>
                   

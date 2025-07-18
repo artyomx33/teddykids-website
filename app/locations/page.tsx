@@ -96,7 +96,7 @@ export default function LocationsPage() {
             <div className="rounded-xl overflow-hidden shadow-md bg-white">
               {/* Explicit height to ensure map renders on all devices */}
               <iframe
-                src="https://www.google.com/maps/d/embed?mid=1dP3Q0UF6NPHY00haFSGZ6xHk87typtw"
+                src="https://www.google.com/maps/d/embed?mid=1WIFH-wxKSygh11OOt9bEIGO_WXwL3SY"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"

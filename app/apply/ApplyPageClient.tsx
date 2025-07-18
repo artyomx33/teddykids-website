@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 // Progress step component
 interface ProgressStepProps {
@@ -467,66 +468,143 @@ function ApplyPageContent() {
       icon: "5️⃣"
     }
   ];
+
+  // Benefits data for Why Teddy section
+  const teddyBenefits = [
+    {
+      icon: "🌍",
+      title: "Bilingual Brilliance",
+      description: "Two languages from day one, taught naturally through play and daily routines."
+    },
+    {
+      icon: "🧸",
+      title: "Play-Based Learning",
+      description: "Children learn best when they're having fun. Our curriculum is built on joy."
+    },
+    {
+      icon: "👩‍👧‍👦",
+      title: "Small Groups",
+      description: "More attention, more care, more personalized development for your child."
+    },
+    {
+      icon: "🏆",
+      title: "20 Years Experience",
+      description: "Two decades of childhood expertise and thousands of happy families."
+    }
+  ];
   
   return (
     <main>
-      {/* Hero Section – Luna Makeover */}
-      <section className="hero-apply">
-        <div className="hero-overlay">
-          <h1 className="text-5xl font-display font-bold mb-4">
-            Welcome to the Teddy Kids Family!
+      {/* 1. Hero Section – with added tagline */}
+      <section className="hero-apply relative">
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="container mx-auto px-4 py-20 relative z-10 text-center text-white">
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
+            Your journey with Teddy Kids begins here
           </h1>
-          <p className="text-xl mb-6">
-            Ready to begin your child's bilingual adventure? We're here to guide you every step of the way.
-          </p>
-          <div className="hero-ctas">
-            <a href="/apply" className="btn-primary">Apply Now</a>
-            <a href="/book-tour" className="btn-secondary">Book a Tour</a>
-          </div>
-          {/* Micro-copy under CTAs */}
-          <p className="text-sm italic mt-4 text-white">
-            *No application fee. We tour with heart.*
+          <p className="text-xl mb-6 max-w-2xl mx-auto">
+            Start your journey with Teddy Kids – where bilingual care meets big hearts.
           </p>
         </div>
       </section>
 
-      {/* What Happens Next – three-step flow */}
+      {/* 2. Why Teddy Section - NEW SECTION */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-display font-bold mb-6">Why Teddy Kids Exists</h2>
+            <p className="text-lg text-gray-700 mb-10">
+              We didn't build another daycare. We built what we wish we had as kids.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {teddyBenefits.map((benefit, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-xl">
+                  <div className="text-4xl mb-3">{benefit.icon}</div>
+                  <h3 className="text-xl font-display font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-gray-600">{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Timeline / How It Works Section */}
       <section className="py-16 bg-gray-50 text-center">
-        <h2 className="text-3xl font-display font-bold mb-8">What Happens Next</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
-          <div>
-            <div className="text-4xl mb-2">📍</div>
-            <h3 className="font-medium mb-1">Book a Tour</h3>
-            <p className="text-gray-600 text-sm">Meet our team and see our spaces in person.</p>
-          </div>
-          <div>
-            <div className="text-4xl mb-2">📝</div>
-            <h3 className="font-medium mb-1">Complete Application</h3>
-            <p className="text-gray-600 text-sm">Fill out a quick form—we'll guide you all the way.</p>
-          </div>
-          <div>
-            <div className="text-4xl mb-2">🎉</div>
-            <h3 className="font-medium mb-1">Start the Adventure</h3>
-            <p className="text-gray-600 text-sm">Join the Teddy family and begin the fun.</p>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-8">How It Works</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="text-4xl mb-4">📍</div>
+                <h3 className="font-medium text-xl mb-2">Book a Tour</h3>
+                <p className="text-gray-600">Meet our team and see our spaces in person.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="text-4xl mb-4">📝</div>
+                <h3 className="font-medium text-xl mb-2">Complete Application</h3>
+                <p className="text-gray-600">Fill out a quick form—we'll guide you all the way.</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <div className="text-4xl mb-4">🎉</div>
+                <h3 className="font-medium text-xl mb-2">Start the Adventure</h3>
+                <p className="text-gray-600">Join the Teddy family and begin the fun.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Sound Recording Section */}
-      <section className="sound-snippet">
-        <h2 className="text-2xl font-display font-bold mb-4">Hear the Teddy Magic</h2>
-        <p className="text-gray-700 mb-6">
-          Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
-        </p>
-        <div className="audio-player-wrapper">
-          <audio src="/audio/appies-welcome.mp3" controls />
+      {/* 4. Main CTA Buttons - NEW POSITION */}
+      <section className="py-12 bg-brand-pink bg-opacity-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-display font-bold mb-6">Ready to Take the Next Step?</h2>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button 
+                variant="primary" 
+                size="lg"
+                href="#application-form"
+              >
+                Apply Now
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                href="/contact?subject=Tour Request"
+              >
+                Book a Tour
+              </Button>
+            </div>
+            <p className="text-sm mt-4 text-gray-600">
+              No application fee. We tour with heart.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Audio Section - Keep but move below CTAs */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-display font-bold mb-4">Hear the Teddy Magic</h2>
+            <p className="text-gray-700 mb-6">
+              Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
+            </p>
+            <div className="bg-gray-50 p-6 rounded-xl inline-block">
+              <audio src="/audio/appies-welcome.mp3" controls className="mx-auto" />
+            </div>
+          </div>
         </div>
       </section>
       
-      {/* Application Form */}
-      <section className="py-16">
+      {/* 5. Application Form - AFTER CTAs */}
+      <section id="application-form" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-6 text-center">Begin Your Application</h2>
+            
             {/* Progress Steps */}
             <div className="mb-12">
               <div className="hidden md:flex justify-between items-center">
@@ -942,75 +1020,53 @@ function ApplyPageContent() {
           </div>
         </div>
       </section>
-      
-      {/* Final CTA Footer */}
-      {currentStep === 1 && (
-        <section className="py-16 bg-brand-mint bg-opacity-10">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-display font-bold mb-6">
-                {"You don't need to have it all figured out. Just let us know you're interested."}
-              </h2>
-              <p className="text-lg text-gray-700 mb-8">
-                {"We'll take care of the rest—with care, clarity, and a little Teddy magic."}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  variant="primary"
-                  href="#"
-                  size="lg"
-                  onClick={handleNextStep}
-                >
-                  {"Begin My Teddy Journey"}
-                </Button>
-                <Button 
-                  variant="outline"
-                  href="/contact"
-                  size="lg"
-                >
-                  {"Talk to a Teddicated Human"}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
-      {/* FAQ Section */}
-      <section className="py-16">
+      {/* 6. FAQ Section - MOVED BELOW FORM */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-display font-bold mb-6 text-center">
+          <h2 className="text-3xl font-display font-bold mb-10 text-center">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-6 text-left">
-            <div>
-              <h3 className="font-medium">Do I need to pay a fee?</h3>
-              <p>No application fee—your tour and our guidance are on us.</p>
+          <div className="space-y-8">
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <h3 className="font-medium text-xl mb-2">Do I need to pay a fee?</h3>
+              <p className="text-gray-600">No application fee—your tour and our guidance are on us.</p>
             </div>
-            <div>
-              <h3 className="font-medium">Can I schedule a tour first?</h3>
-              <p>Absolutely—choose &quot;Book a Tour&quot; above and we'll find a time that works.</p>
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <h3 className="font-medium text-xl mb-2">Can I schedule a tour first?</h3>
+              <p className="text-gray-600">Absolutely—choose &quot;Book a Tour&quot; above and we'll find a time that works.</p>
             </div>
-            <div>
-              <h3 className="font-medium">Is Teddy Kids bilingual?</h3>
-              <p>Yes! All our programs are fully bilingual in Dutch and English.</p>
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <h3 className="font-medium text-xl mb-2">Is Teddy Kids bilingual?</h3>
+              <p className="text-gray-600">Yes! All our programs are fully bilingual in Dutch and English.</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <h3 className="font-medium text-xl mb-2">How long does the application process take?</h3>
+              <p className="text-gray-600">From application to enrollment typically takes 1-2 weeks, depending on availability.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Closing CTA */}
+      {/* 7. Emotional Closing Text - NEW SECTION */}
       <section className="py-16 bg-brand-mint bg-opacity-20 text-center">
-        <h2 className="text-3xl font-display font-bold mb-4">
-          Apply now and let&apos;s start this journey together.
-        </h2>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button variant="primary" href="/apply#apply-form">
-            Apply Now
-          </Button>
-          <Button variant="outline" href="/book-tour">
-            Book a Tour
-          </Button>
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-display font-bold mb-6">
+              Not sure yet? That's completely okay.
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              There's no rush — just readiness. We're happy to chat or send you more information about our programs and approach.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button variant="outline" href="/contact">
+                Contact Us
+              </Button>
+              <Button variant="outline" href="/downloads/welcome-guide.pdf">
+                Download Welcome Guide
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -1022,7 +1078,7 @@ export default function ApplyPageClient() {
     Heavy multi-step form & validation logic are wrapped in a
     dynamic import so the initial JS bundle for the Apply page
     is smaller.  The form is only needed once the user lands on
-    /apply, so it’s safe to load it on the client after page
+    /apply, so it's safe to load it on the client after page
     shell has rendered.
   */
   const DynamicApplyPageContent = dynamic(

@@ -112,6 +112,31 @@ export const translations = {
         subtitle:
           "Discover how every Teddy Kids program grows with your child—through love, language, and purposeful play."
       },
+      /* ---------- OVERVIEW GRID ---------- */
+      overview: {
+        title: "Kies het traject dat past bij jouw gezin",
+        ageRange: "Leeftijdsgroep",
+        learnMore: "Lees meer",
+        visitWebsite: "Bezoek website"
+      },
+
+      /* ---------- PROGRAM CARD SHORT COPIES ---------- */
+      nursery: {
+        title: "Teddy Baby",
+        shortDescription: "Zachte start, warme zorg. Tweetalig vanaf dag één."
+      },
+      preschool: {
+        title: "Teddy Learners",
+        shortDescription: "Verhalen, STEM en liedjes laten elke dag verwonderen."
+      },
+      afterSchool: {
+        title: "BSO",
+        shortDescription: "Creatieve clubs en avonturen vol zelfvertrouwen."
+      },
+      tisa: {
+        title: "TISA",
+        shortDescription: "Onze tweetalige internationale basisschool."
+      },
 
       /* ---------- OVERVIEW GRID ---------- */
       overview: {
@@ -154,6 +179,67 @@ export const translations = {
             { day: "School holidays", hours: "7:30 - 18:30 (full day)" },
             { day: "Study days", hours: "7:30 - 18:30 (full day)" }
           ]
+        }
+      },
+
+      /* ---------- CURRICULUM SECTION ---------- */
+      curriculum: {
+        title: "Onze onderwijsaanpak",
+        approach: {
+          title: "Leren via Taal & Spel",
+          description:
+            "Onderzoek + spelpedagogiek + volledige taalonderdompeling: zo denken, dromen en creëren kinderen in twee talen."
+        },
+        bilingual: {
+          title: "Zo bloeit een tweetalig brein",
+          description:
+            "Taal zit in elke hoek van de dag — niet opgesloten in een lesblok.",
+          immersion: {
+            title: "Hele-dag onderdompeling",
+            description: "Native Engels & Nederlands begeleiden elke routine."
+          },
+          consistency: {
+            title: "One Teacher – One Language",
+            description: "Consistente input bouwt zelfverzekerde sprekers."
+          },
+          cultural: {
+            title: "Cultuur in elke hoek",
+            description: "Liedjes, verhalen & vieringen van over de hele wereld."
+          }
+        }
+      },
+
+      /* ---------- SCHEDULE & FEES ---------- */
+      schedule: {
+        title: "Openingstijden & Kosten",
+        hours: {
+          title: "Openingstijden",
+          nursery: { title: "Teddy Baby" },
+          afterSchool: { title: "BSO" }
+        },
+        fees: {
+          title: "Tarieven",
+          description: "Heldere prijzen, geen verborgen kosten.",
+          nursery: {
+            title: "Teddy Baby",
+            price: "€125 per dag",
+            details: "Inclusief maaltijden, luiers & activiteiten"
+          },
+          preschool: {
+            title: "Teddy Learners",
+            price: "€115 per dag",
+            details: "Halve dag opties beschikbaar"
+          },
+          afterSchool: {
+            title: "BSO",
+            price: "€9 per uur",
+            details: "Vakantiekampen apart gefactureerd"
+          },
+          subsidies: {
+            description:
+              "Kinderopvangtoeslag kan tot 90% van de kosten dekken.",
+            button: "Vraag ons hoe"
+          }
         }
       },
 
@@ -245,7 +331,6 @@ export const translations = {
       },
       map: {
         title: "Map of Teddy Kids Locations",
-        description: "Explore our cozy corners of the world where little hearts learn, play, and grow together.",
         locationsCount: "5 Locations Worldwide",
         interactiveMapComing: "Interactive Map Coming Soon"
       },
@@ -858,40 +943,11 @@ export const translations = {
      *  VOLLEDIGE PROGRAMMA-PAGINA ( /programs )
      * ────────────────────────────────────────────────────────── */
     programsPage: {
-      /* ---------- HERO ---------- */
       hero: {
         title: "Van Eerste Stapjes tot Grote Sprongen",
         subtitle:
           "Ontdek hoe elk Teddy Kids programma meegroeit met je kind — door liefde, taal en betekenisvol spel."
       },
-      
-      /* ---------- OVERVIEW GRID ---------- */
-      overview: {
-        title: "Kies het traject dat past bij jouw gezin",
-        ageRange: "Leeftijdsgroep",
-        learnMore: "Lees meer",
-        visitWebsite: "Bezoek website"
-      },
-
-      /* ---------- PROGRAM CARD SHORT COPIES ---------- */
-      nursery: {
-        title: "Teddy Baby",
-        shortDescription: "Zachte start, warme zorg. Tweetalig vanaf dag één."
-      },
-      preschool: {
-        title: "Teddy Learners",
-        shortDescription: "Verhalen, STEM en liedjes laten elke dag verwonderen."
-      },
-      afterSchool: {
-        title: "BSO",
-        shortDescription: "Creatieve clubs en avonturen vol zelfvertrouwen."
-      },
-      tisa: {
-        title: "TISA",
-        shortDescription: "Onze tweetalige internationale basisschool."
-      },
-      
-      /* ---------- PROGRAM SECTIONS (detailed data) ---------- */
       sections: {
         nursery: {
           title: "Teddy Baby",
@@ -966,166 +1022,6 @@ export const translations = {
           button: "Stap binnen in onze tweetalige internationale school"
         }
       },
-      
-      /* ---------- CURRICULUM SECTION ---------- */
-      curriculum: {
-        title: "Onze onderwijsaanpak",
-        approach: {
-          title: "Leren via Taal & Spel",
-          description:
-            "Onderzoek + spelpedagogiek + volledige taalonderdompeling: zo denken, dromen en creëren kinderen in twee talen."
-        },
-        bilingual: {
-          title: "Zo bloeit een tweetalig brein",
-          description:
-            "Taal zit in elke hoek van de dag — niet opgesloten in een lesblok.",
-          immersion: {
-            title: "Hele-dag onderdompeling",
-            description: "Native Engels & Nederlands begeleiden elke routine."
-          },
-          consistency: {
-            title: "One Teacher – One Language",
-            description: "Consistente input bouwt zelfverzekerde sprekers."
-          },
-          cultural: {
-            title: "Cultuur in elke hoek",
-            description: "Liedjes, verhalen & vieringen van over de hele wereld."
-          }
-        }
-      },
-      vision: {
-        title: "Onze Visie",
-        subtitle:
-          "We zijn hier niet om middelmatigheid te schalen. We zijn hier om te beschermen wat onvervangbaar is — want de kindertijd gebeurt maar één keer.",
-        promises: [
-          { icon: "🕯️", text: "We beschermen nieuwsgierigheid als een vlammetje." },
-          { icon: "✨", text: "We bewaren magie op plekken waar schermen het willen stelen." },
-          { icon: "🌍", text: "We onderwijzen taal niet als vak — maar als paspoort voor de ziel." },
-          { icon: "🏡", text: "We bouwen ruimtes die aanvoelen als thuis, maar denken als een school." },
-          { icon: "🎯", text: "We houden onze standaarden onmogelijk hoog — omdat jouw kind dat waard is." }
-        ],
-        closing: "Jij bracht een kind in deze wereld. Wij zijn er om dat kind te laten bloeien."
-      },
-      team: {
-        title: "De Mensen Achter Teddy Kids",
-        subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
-        buttonText: "Ontmoet Ons Volledige Team"
-      },
-      policyReports: {
-        title: "Beleid & Rapporten",
-        description: "Onze toewijding aan transparantie en verantwoordelijkheid komt tot uiting in onze uitgebreide documentatie.",
-        buttonText: "Bekijk alle documenten"
-      },
-      policy: {
-        hero: {
-          title: "Onze beleidsdocumenten & rapporten",
-          subtitle: "Transparantie, verantwoordelijkheid en voortdurende verbetering leiden alles wat we doen.",
-          imageAlt: "Beleidsdocumenten en rapporten"
-        },
-        intro: {
-          title: "Uw vertrouwen, onze verantwoordelijkheid",
-          description: "Bij Teddy Kids begint uitstekende kinderopvang met duidelijke beleidslijnen en open communicatie. Hier vindt u al onze officiële documenten, inspectierapporten en richtlijnen die de veiligheid, ontwikkeling en het geluk van uw kind waarborgen."
-        },
-        documents: {
-          title: "Beleidsdocumenten",
-          description: "Onze uitgebreide beleidsstukken die alle aspecten van zorg en educatie behandelen."
-        },
-        ggdReports: {
-          title: "GGD Inspectierapporten",
-          description: "Officiële inspectierapporten van de GGD.",
-          downloadReport: "Download GGD-rapport"
-        },
-        quality: {
-          title: "Kwaliteit & Veiligheid",
-          description: "Protocollen en procedures die de hoogste kwaliteitsnormen garanderen."
-        },
-        privacy: {
-          title: "Privacy & AVG",
-          description: "Hoe wij persoonsgegevens beschermen en verwerken in overeenstemming met de AVG.",
-          comingSoon: "Privacybeleid binnenkort beschikbaar — het volledige document kan hier worden gedownload.",
-          downloadLink: "Download Privacybeleid (NL/EN)"
-        },
-        additional: {
-          title: "Overige Documenten",
-          incidentForm: "Incidentenmeldingsformulier (NL)",
-          vogSample: "Voorbeeld VOG (NL)"
-        },
-        helpTitle: "Hulp nodig bij het vinden van iets?",
-        helpCta: "Kunt u niet vinden wat u zoekt? Stuur ons een bericht.",
-        downloadReport: "Download Rapport"
-      }
-    } // end of about
-  } // end of nl
-}; // end of translations
-
-/**
- * Hook that returns a translation helper `t`.
- *
- * Usage:
- * const { t } = useTranslation('en');
- * t('hero.title') -> "From Baby Steps to Global Citizens"
- */
-export const useTranslation = (language: Language = 'en') => {
-  const t = useCallback(
-    (key: string): any => {
-      const keys = key.split('.');
-      let value: any = translations[language];
-
-      for (const k of keys) {
-        if (value && typeof value === 'object' && k in value) {
-          value = value[k];
-        } else {
-          // Return the key itself if translation is missing to avoid runtime errors
-          return key;
-        }
-      }
-
-      return value;
-    },
-    [language]
-  );
-
-  return { t, language };
-};
-            description: "Liedjes, verhalen & vieringen van over de hele wereld."
-          }
-        }
-      },
-
-      /* ---------- SCHEDULE & FEES ---------- */
-      schedule: {
-        title: "Openingstijden & Kosten",
-        hours: {
-          title: "Openingstijden",
-          nursery: { title: "Teddy Baby" },
-          afterSchool: { title: "BSO" }
-        },
-        fees: {
-          title: "Tarieven",
-          description: "Heldere prijzen, geen verborgen kosten.",
-          nursery: {
-            title: "Teddy Baby",
-            price: "€125 per dag",
-            details: "Inclusief maaltijden, luiers & activiteiten"
-          },
-          preschool: {
-            title: "Teddy Learners",
-            price: "€115 per dag",
-            details: "Halve dag opties beschikbaar"
-          },
-          afterSchool: {
-            title: "BSO",
-            price: "€9 per uur",
-            details: "Vakantiekampen apart gefactureerd"
-          },
-          subsidies: {
-            description:
-              "Kinderopvangtoeslag kan tot 90% van de kosten dekken.",
-            button: "Vraag ons hoe"
-          }
-        }
-      },
-      
       comparison: {
         title: "Vergelijk onze programma's",
         feature: "Kenmerk",
@@ -1147,8 +1043,6 @@ export const useTranslation = (language: Language = 'en') => {
           international: "Internationaal IPC/IB"
         }
       },
-      
-      /* ---------- CTA ---------- */
       cta: {
         title: "Laten we samen de perfecte match vinden.",
         subtitle:
@@ -1156,8 +1050,6 @@ export const useTranslation = (language: Language = 'en') => {
         bookTour: "Plan een rondleiding",
         applyNow: "Aanmelden"
       },
-      
-      /* ---------- SEO ---------- */
       metadata: {
         title: "Onze Programma's | Teddy Kids",
         description:
@@ -1700,3 +1592,102 @@ export const useTranslation = (language: Language = 'en') => {
           },
           {
             year: "2025",
+            text: "10.000 kinderen. 10.000 gezinnen. 10.000 momenten waarin de wereld even stil stond… en koos voor verbinding.",
+            color: "brand-pink"
+          }
+        ]
+      },
+      vision: {
+        title: "Onze Toekomst",
+        subtitle:
+          "We zijn hier niet om middelmatigheid te schalen. We zijn hier om te beschermen wat onvervangbaar is — want de kindertijd gebeurt maar één keer.",
+        promises: [
+          { icon: "🕯️", text: "We beschermen nieuwsgierigheid als een vlammetje." },
+          { icon: "✨", text: "We bewaren magie op plekken waar schermen het willen stelen." },
+          { icon: "🌍", text: "We onderwijzen taal niet als vak — maar als paspoort voor de ziel." },
+          { icon: "🏡", text: "We bouwen ruimtes die aanvoelen als thuis, maar denken als een school." },
+          { icon: "🎯", text: "We houden onze standaarden onmogelijk hoog — omdat jouw kind dat waard is." }
+        ],
+        closing: "Jij bracht een kind in deze wereld. Wij zijn er om dat kind te laten bloeien."
+      },
+      team: {
+        title: "De Mensen Achter Teddy Kids",
+        subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
+        buttonText: "Ontmoet Ons Volledige Team"
+      },
+      policyReports: {
+        title: "Beleid & Rapporten",
+        description: "Onze toewijding aan transparantie en verantwoordelijkheid komt tot uiting in onze uitgebreide documentatie.",
+        buttonText: "Bekijk alle documenten"
+      },
+      policy: {
+        hero: {
+          title: "Onze beleidsdocumenten & rapporten",
+          subtitle: "Transparantie, verantwoordelijkheid en voortdurende verbetering leiden alles wat we doen.",
+          imageAlt: "Beleidsdocumenten en rapporten"
+        },
+        intro: {
+          title: "Uw vertrouwen, onze verantwoordelijkheid",
+          description: "Bij Teddy Kids begint uitstekende kinderopvang met duidelijke beleidslijnen en open communicatie. Hier vindt u al onze officiële documenten, inspectierapporten en richtlijnen die de veiligheid, ontwikkeling en het geluk van uw kind waarborgen."
+        },
+        documents: {
+          title: "Beleidsdocumenten",
+          description: "Onze uitgebreide beleidsstukken die alle aspecten van zorg en educatie behandelen."
+        },
+        ggdReports: {
+          title: "GGD Inspectierapporten",
+          description: "Officiële inspectierapporten van de GGD.",
+          downloadReport: "Download GGD-rapport"
+        },
+        quality: {
+          title: "Kwaliteit & Veiligheid",
+          description: "Protocollen en procedures die de hoogste kwaliteitsnormen garanderen."
+        },
+        privacy: {
+          title: "Privacy & AVG",
+          description: "Hoe wij persoonsgegevens beschermen en verwerken in overeenstemming met de AVG.",
+          comingSoon: "Privacybeleid binnenkort beschikbaar — het volledige document kan hier worden gedownload.",
+          downloadLink: "Download Privacybeleid (NL/EN)"
+        },
+        additional: {
+          title: "Overige Documenten",
+          incidentForm: "Incidentenmeldingsformulier (NL)",
+          vogSample: "Voorbeeld VOG (NL)"
+        },
+        helpTitle: "Hulp nodig bij het vinden van iets?",
+        helpCta: "Kunt u niet vinden wat u zoekt? Stuur ons een bericht.",
+        downloadReport: "Download Rapport"
+      }
+    }
+  }
+};
+
+/**
+ * Hook that returns a translation helper `t`.
+ *
+ * Usage:
+ * const { t } = useTranslation('en');
+ * t('hero.title') -> "From Baby Steps to Global Citizens"
+ */
+export const useTranslation = (language: Language = 'en') => {
+  const t = useCallback(
+    (key: string): any => {
+      const keys = key.split('.');
+      let value: any = translations[language];
+
+      for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+          value = value[k];
+        } else {
+          // Return the key itself if translation is missing
+          return key;
+        }
+      }
+
+      return value;
+    },
+    [language]
+  );
+
+  return { t, language };
+};

@@ -377,7 +377,8 @@ export const translations = {
         },
         form: {
           programSection: {
-            heading: "Where would your child feel most at home?",
+            // Updated copy per latest Apply-page spec (Luna suggestion)
+            heading: "Which program interests you?",
             options: {
               nursery: { title: "Nursery", ages: "Ages: 3 months - 2.5 years" },
               preschool: { title: "Teddy Learners", ages: "Ages: 2 - 4 years" },
@@ -1329,7 +1330,8 @@ export const translations = {
         },
         form: {
           programSection: {
-            heading: "Waar zou jouw kind zich het meest thuis voelen?",
+            // Bijgewerkt volgens nieuwe Apply-pagina specificatie
+            heading: "Welk programma interesseert je?",
             options: {
               nursery: { title: "Teddy Baby", ages: "Leeftijd: 3 maanden – 2,5 jaar" },
               preschool: { title: "Teddy Learners", ages: "Leeftijd: 2 – 4 jaar" },

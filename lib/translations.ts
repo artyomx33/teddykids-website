@@ -106,111 +106,204 @@ export const translations = {
      *  FULL PROGRAMS PAGE ( /programs )
      * ────────────────────────────────────────────────────────── */
     programsPage: {
+      /* ---------- HERO ---------- */
       hero: {
-        /* Luna upgrade */
         title: "From First Steps to Big Leaps",
         subtitle:
-          "Discover how each Teddy Kids program grows with your child — through love, language, and purposeful play."
+          "Discover how every Teddy Kids program grows with your child—through love, language, and purposeful play."
       },
+      /* ---------- OVERVIEW GRID ---------- */
+      overview: {
+        title: "Kies het traject dat past bij jouw gezin",
+        ageRange: "Leeftijdsgroep",
+        learnMore: "Lees meer",
+        visitWebsite: "Bezoek website"
+      },
+
+      /* ---------- PROGRAM CARD SHORT COPIES ---------- */
+      nursery: {
+        title: "Teddy Baby",
+        shortDescription: "Zachte start, warme zorg. Tweetalig vanaf dag één."
+      },
+      preschool: {
+        title: "Teddy Learners",
+        shortDescription: "Verhalen, STEM en liedjes laten elke dag verwonderen."
+      },
+      afterSchool: {
+        title: "BSO",
+        shortDescription: "Creatieve clubs en avonturen vol zelfvertrouwen."
+      },
+      tisa: {
+        title: "TISA",
+        shortDescription: "Onze tweetalige internationale basisschool."
+      },
+
+      /* ---------- OVERVIEW GRID ---------- */
+      overview: {
+        title: "Choose the journey that fits your family",
+        ageRange: "Age Range",
+        learnMore: "Learn More",
+        visitWebsite: "Visit Website"
+      },
+
+      /* ---------- PROGRAM CARD SHORT COPIES ---------- */
+      nursery: {
+        title: "Nursery",
+        shortDescription: "Soft spaces. Gentle care. Two languages from day one."
+      },
+      preschool: {
+        title: "Preschool",
+        shortDescription: "Where stories, STEM and songs spark daily wonder."
+      },
+      afterSchool: {
+        title: "After School",
+        shortDescription: "Creative clubs and confidence-building adventures."
+      },
+      tisa: {
+        title: "TISA",
+        shortDescription: "Our bilingual international primary school."
+      },
+
+      /* ---------- PROGRAM SECTIONS (detailed data) ---------- */
       sections: {
         nursery: {
-          title: "Nursery",
-          tagline: "Safe, soft beginnings",
-          blurb:
-            "From tiny snoozes to big first steps—our littlest ones are held, heard, and loved in two languages.",
-          agesLabel: "Ages",
-          ages: "3 months – 2.5 years",
-          scheduleTitle: "Weekly Schedule",
           scheduleItems: [
             { day: "Monday - Friday", hours: "7:30 - 18:30" },
             { day: "Half days available", hours: "7:30 - 13:00 or 13:00 - 18:30" },
             { day: "Minimum days", hours: "2 days per week" }
-          ],
-          quote:
-            "Our daughter has been thriving at the nursery. The bilingual approach is amazing – she's already using words in both languages!",
-          quoteAuthor: "Emma & James, Parents",
-          /* Luna upgrade */
-          button: "See how we welcome our littlest ones"
-        },
-        preschool: {
-          title: "Teddy Learners",
-          tagline: "Play + Learn",
-          blurb:
-            "Where stories, songs, and science spark wonder every day.",
-          agesLabel: "Ages",
-          ages: "2.5 – 4 years",
-          scheduleTitle: "Weekly Schedule",
-          scheduleItems: [
-            { day: "Monday - Friday", hours: "7:30 - 18:30" },
-            { day: "Half days available", hours: "7:30 - 13:00 or 13:00 - 18:30" },
-            { day: "Minimum days", hours: "2 days per week" }
-          ],
-          quote:
-            "The preschool program has given our son such confidence. He's speaking both Dutch and English, and his social skills have blossomed.",
-          quoteAuthor: "Sophia K., Mother",
-          /* Luna upgrade */
-          button: "Explore how play becomes purpose"
+          ]
         },
         afterSchool: {
-          title: "Teddy BSO Explorers",
-          tagline: "Adventures after the bell",
-          blurb:
-            "Adventures continue long after the bell. Our clubs inspire confidence, creativity, and community.",
-          agesLabel: "Ages",
-          ages: "4 – 12 years",
-          scheduleTitle: "Weekly Schedule",
           scheduleItems: [
             { day: "Monday - Friday", hours: "After school - 18:30" },
             { day: "School holidays", hours: "7:30 - 18:30 (full day)" },
             { day: "Study days", hours: "7:30 - 18:30 (full day)" }
-          ],
-          quote:
-            "The after-school program has been a lifesaver for our family. Our children get to continue their bilingual journey while having fun with friends.",
-          quoteAuthor: "Thomas & Julie, Parents of twins",
-          /* Luna upgrade */
-          button: "Discover our afternoon adventures"
-        },
-        tisa: {
-          title: "TISA",
-          tagline: "International education close to home",
-          blurb:
-            "An international education—right around the corner. Small classes, big hearts, bilingual minds.",
-          agesLabel: "Ages",
-          ages: "4 – 12 years (Primary education)",
-          scheduleTitle: "Weekly Schedule",
-          scheduleItems: [
-            { day: "Monday - Friday", hours: "8:30 - 15:00" },
-            { day: "After school care", hours: "15:00 - 18:30 (optional)" },
-            { day: "Early drop-off", hours: "From 7:30 (optional)" }
-          ],
-          quote:
-            "TISA has been transformational for our children. The international curriculum and caring teachers make this place special.",
-          quoteAuthor: "Miguel & Ling, TISA Parents",
-          /* Luna upgrade */
-          button: "Step into our bilingual international school"
+          ]
         }
       },
-      comparison: {
-        title: "Compare Our Programs",
-        feature: "Feature",
-        columns: {
-          nursery: "Nursery",
-          preschool: "Preschool",
-          afterSchool: "After School",
-          tisa: "TISA"
+
+      /* ---------- CURRICULUM SECTION ---------- */
+      curriculum: {
+        title: "Onze onderwijsaanpak",
+        approach: {
+          title: "Leren via Taal & Spel",
+          description:
+            "Onderzoek + spelpedagogiek + volledige taalonderdompeling: zo denken, dromen en creëren kinderen in twee talen."
         },
-        rows: {
-          bilingual: "Bilingual",
-          meals: "Meals Included",
-          openYear: "Open Year-Round",
-          groupSize: "Group Size",
-          curriculum: "Curriculum",
-          sensoryPlay: "Sensory Play",
-          thematicInquiry: "Thematic Inquiry",
-          creativeClubs: "Creative Clubs",
-          international: "International IPC/IB"
+        bilingual: {
+          title: "Zo bloeit een tweetalig brein",
+          description:
+            "Taal zit in elke hoek van de dag — niet opgesloten in een lesblok.",
+          immersion: {
+            title: "Hele-dag onderdompeling",
+            description: "Native Engels & Nederlands begeleiden elke routine."
+          },
+          consistency: {
+            title: "One Teacher – One Language",
+            description: "Consistente input bouwt zelfverzekerde sprekers."
+          },
+          cultural: {
+            title: "Cultuur in elke hoek",
+            description: "Liedjes, verhalen & vieringen van over de hele wereld."
+          }
         }
       },
+
+      /* ---------- SCHEDULE & FEES ---------- */
+      schedule: {
+        title: "Openingstijden & Kosten",
+        hours: {
+          title: "Openingstijden",
+          nursery: { title: "Teddy Baby" },
+          afterSchool: { title: "BSO" }
+        },
+        fees: {
+          title: "Tarieven",
+          description: "Heldere prijzen, geen verborgen kosten.",
+          nursery: {
+            title: "Teddy Baby",
+            price: "€125 per dag",
+            details: "Inclusief maaltijden, luiers & activiteiten"
+          },
+          preschool: {
+            title: "Teddy Learners",
+            price: "€115 per dag",
+            details: "Halve dag opties beschikbaar"
+          },
+          afterSchool: {
+            title: "BSO",
+            price: "€9 per uur",
+            details: "Vakantiekampen apart gefactureerd"
+          },
+          subsidies: {
+            description:
+              "Kinderopvangtoeslag kan tot 90% van de kosten dekken.",
+            button: "Vraag ons hoe"
+          }
+        }
+      },
+
+      /* ---------- CURRICULUM SECTION ---------- */
+      curriculum: {
+        title: "Our Curriculum Approach",
+        approach: {
+          title: "Learning through Language & Play",
+          description:
+            "We blend research-backed play pedagogy with immersive bilingual exposure so children think, dream and create in two languages."
+        },
+        bilingual: {
+          title: "How Bilingual Brains Bloom",
+          description:
+            "Language is woven into every corner of the day — not confined to a lesson block.",
+          immersion: {
+            title: "Full-day Immersion",
+            description: "Native English & Dutch educators guide every routine."
+          },
+          consistency: {
+            title: "One-Teacher–One-Language",
+            description: "Clear, consistent input builds confident speakers."
+          },
+          cultural: {
+            title: "Culture in Every Corner",
+            description: "Songs, stories & celebrations from around the world."
+          }
+        }
+      },
+
+      /* ---------- SCHEDULE & FEES ---------- */
+      schedule: {
+        title: "Schedules & Fees",
+        hours: {
+          title: "Opening Hours",
+          nursery: { title: "Nursery" },
+          afterSchool: { title: "After School" }
+        },
+        fees: {
+          title: "Fees",
+          description: "Transparent pricing, no hidden surprises.",
+          nursery: {
+            title: "Nursery",
+            price: "€125 per day",
+            details: "Includes meals, nappies & activities"
+          },
+          preschool: {
+            title: "Preschool",
+            price: "€115 per day",
+            details: "Half-day options available"
+          },
+          afterSchool: {
+            title: "After School",
+            price: "€9 per hour",
+            details: "Holiday camps billed separately"
+          },
+          subsidies: {
+            description: "Childcare benefit (kinderopvangtoeslag) may cover up to 90% of fees.",
+            button: "Ask us how"
+          }
+        }
+      },
+
+      /* ---------- CTA ---------- */
       cta: {
         title: "Let's find the perfect fit—together.",
         subtitle:
@@ -218,10 +311,12 @@ export const translations = {
         bookTour: "Book a Tour",
         applyNow: "Apply Now"
       },
+
+      /* ---------- SEO ---------- */
       metadata: {
         title: "Our Programs | Teddy Kids",
         description:
-          "From diapers to diplomas, our programs are designed for joy, growth, and global thinking. Discover our nursery, preschool, after school, and TISA programs.",
+          "From diapers to diplomas, explore nursery, preschool, after-school and TISA — programs designed for joy, growth and global thinking.",
         keywords:
           "teddy kids programs, nursery, preschool, after school, TISA, international school, bilingual education, leiden"
       }

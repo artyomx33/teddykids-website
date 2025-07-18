@@ -82,6 +82,39 @@ export default function LocationsPage() {
         </div>
       </section>
       
+      {/* Interactive Map Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-display font-bold mb-4">
+              {t('locationsPage.map.title') || 'Interactive Map'}
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              {t('locationsPage.map.description') || 'Explore all our locations across Leiden and beyond.'}
+            </p>
+            
+            <div className="rounded-xl overflow-hidden shadow-md bg-white">
+              <div className="aspect-w-16 aspect-h-9 w-full">
+                <iframe 
+                  src="https://www.google.com/maps/d/embed?mid=1dP3Q0UF6NPHY00haFSGZ6xHk87typtw&ehbc=2E312F" 
+                  width="100%" 
+                  height="480" 
+                  style={{ border: 0 }}
+                  allowFullScreen 
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Teddy Kids Locations Map"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              <div className="p-4 text-sm text-gray-500 italic">
+                {t('locationsPage.map.interactive') || 'Click on markers to see details about each location.'}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Full Locations Component */}
       {/* Wrap in relative container so characters can be absolutely positioned */}
       <div className="relative">
@@ -138,7 +171,7 @@ export default function LocationsPage() {
               <div className="bg-brand-yellow bg-opacity-10 p-8 rounded-xl shadow-sm flex flex-col items-center">
                 <div className="h-20 w-40 mb-4 relative">
                   <Image
-                    src="/images/logos/tisa-pt-logo-placeholder.png"
+                    src="/images/logos/tisa-logo-placeholder.png"
                     alt="TISA Portugal Logo"
                     fill
                     className="object-contain"
@@ -207,30 +240,36 @@ export default function LocationsPage() {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-16 bg-brand-yellow bg-opacity-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold mb-6">
-            {t('locationsPage.cta.title')}
+      {/* CTA Section - Luna's Enhanced Version */}
+      <section className="bg-yellow-50 py-12 mt-16 border-t border-yellow-200">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-yellow-900 mb-4">
+            {language === 'nl' 
+              ? t('locationsPage.cta.title') 
+              : "Ready to Step Inside the Teddy World?"}
           </h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            {t('locationsPage.cta.subtitle')}
+          <p className="text-lg text-gray-800 mb-8">
+            {language === 'nl' 
+              ? t('locationsPage.cta.subtitle') 
+              : "Come walk the halls, meet our team, and feel the warmth for yourself. It's not just a tour — it's your child's future in motion."}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="primary"
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
               href="/contact"
-              size="lg"
+              className="bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-700 transition"
             >
-              {t('locationsPage.cta.bookTour')}
-            </Button>
-            <Button 
-              variant="outline"
+              {language === 'nl' 
+                ? "Plan een Bezoek" 
+                : "Book a Visit"}
+            </a>
+            <a
               href="/apply"
-              size="lg"
+              className="border border-yellow-600 text-yellow-700 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-100 transition"
             >
-              {t('locationsPage.cta.applyNow')}
-            </Button>
+              {language === 'nl' 
+                ? "Schrijf je In" 
+                : "Apply Now"}
+            </a>
           </div>
         </div>
       </section>

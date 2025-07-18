@@ -127,36 +127,6 @@ export default function LocationsPage() {
         />
       </div>
       
-      {/* Interactive Map Section - MOVED HERE */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-display font-bold mb-4">
-              {t('locationsPage.map.title') || 'Interactive Map'}
-            </h2>
-            <p className="text-lg text-gray-700 mb-8">
-              {t('locationsPage.map.description') || 'Explore our cozy corners of the world where little hearts learn, play, and grow together.'}
-            </p>
-            
-            <div className="rounded-xl overflow-hidden shadow-md bg-white">
-              {/* Explicit height to ensure map renders on all devices */}
-              <iframe
-                src="https://www.google.com/maps/d/embed?mid=1WIFH-wxKSygh11OOt9bEIGO_WXwL3SY"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Teddy Kids Locations Map"
-                className="w-full h-[500px]"
-              ></iframe>
-              <div className="p-4 text-sm text-gray-500 italic">
-                {t('locationsPage.map.interactive') || 'Click on markers to see details about each location.'}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       {/* TISA Schools Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -256,6 +226,36 @@ export default function LocationsPage() {
                 >
                   {t('locationsPage.transportation.specialServices.button')}
                 </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Map Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-display font-bold mb-4">
+              {t('locationsPage.map.title') || 'Interactive Map'}
+            </h2>
+            <p className="text-lg text-gray-700 mb-8">
+              {t('locationsPage.map.description') || 'Explore our cozy corners of the world where little hearts learn, play, and grow together.'}
+            </p>
+            
+            <div className="rounded-xl overflow-hidden shadow-md bg-white">
+              {/* Explicit height to ensure map renders on all devices */}
+              <iframe
+                src="https://www.google.com/maps/d/embed?mid=1WIFH-wxKSygh11OOt9bEIGO_WXwL3SY"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Teddy Kids Locations Map"
+                className="w-full h-[500px]"
+              ></iframe>
+              <div className="p-4 text-sm text-gray-500 italic">
+                {t('locationsPage.map.interactive') || 'Click on markers to see details about each location.'}
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ export default function ContactPageClient() {
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/teddylighthousebackground.jpg"
+          src="/images/heroes/journey-starts-here.png"
           alt="Lighthouse guiding families to Teddy Kids"
           fill
           priority

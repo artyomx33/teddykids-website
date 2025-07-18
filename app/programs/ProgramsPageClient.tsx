@@ -18,6 +18,8 @@ export default function ProgramsPageClient() {
           src="/images/heroes/programs-hero.png"
           alt="Children engaged in various programs at Teddy Kids"
           fill
+          /* Provide explicit responsive sizes for better LCP */
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
           priority
           className="object-cover"
         />

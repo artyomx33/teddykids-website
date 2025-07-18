@@ -157,7 +157,7 @@ export default function LearningPageClient() {
               Where brilliance hides in everyday moments
             </h1>
             <p className="text-xl md:text-2xl text-white">
-              Peek inside to see how your child learns when they think they're just playing.
+              Peek inside to see how your child learns when they think they&apos;re just playing.
             </p>
           </div>
         </div>

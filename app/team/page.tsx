@@ -130,7 +130,7 @@ export default function TeamPage() {
               <div className="bg-brand-yellow bg-opacity-5 rounded-xl overflow-hidden">
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/images/locations/rb3-rb5-entrance.jpg"
+                    src="/images/team/team-rb3rb5.jpg"
                     alt="RB3/RB5 Team"
                     fill
                     className="object-cover object-top"
@@ -150,7 +150,7 @@ export default function TeamPage() {
               <div className="bg-brand-mint bg-opacity-5 rounded-xl overflow-hidden">
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/images/locations/lrz-building.jpg"
+                    src="/images/team/team-lrz.jpg"
                     alt="LRZ Team"
                     fill
                     className="object-cover object-top"
@@ -170,7 +170,7 @@ export default function TeamPage() {
               <div className="bg-brand-purple bg-opacity-5 rounded-xl overflow-hidden">
                 <div className="relative h-64 w-full">
                   <Image
-                    src="/images/locations/zml-exterior.jpg"
+                    src="/images/team/team-zml.jpg"
                     alt="ZML Team"
                     fill
                     className="object-cover object-top"

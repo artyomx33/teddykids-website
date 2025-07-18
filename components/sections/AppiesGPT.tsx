@@ -27,7 +27,10 @@ const AppiesGPT = () => {
                 className="object-contain transition-transform duration-300"
                 onMouseOver={() => setHovered(true)}
                 onMouseOut={() => setHovered(false)}
-                priority={false}
+                /* Below-the-fold optimisation */
+                loading="lazy"
+                fetchPriority="low"
+                sizes="96px"
               />
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">

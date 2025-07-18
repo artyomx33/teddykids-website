@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Button from '@/components/Button';
 import { useTranslation } from '@/lib/translations';
@@ -49,34 +50,61 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-brand-pink">
+      {/* Preload critical assets for LCP */}
+      <Head>
+        {/* Preload hero video for desktop only */}
+        {!isMobile && (
+          <link
+            rel="preload"
+            as="video"
+            href={videoSrc}
+            crossOrigin="anonymous"
+          />
+        )}
+        {/* Preload hero poster / fallback image */}
+        <link
+          rel="preload"
+          as="image"
+          href={fallbackImageSrc}
+          fetchPriority="high"
+        />
+      </Head>
       {/* Video Background with Fallback */}
       {!videoLoaded && (
         <div className="absolute inset-0 z-0">
           <Image
             src={fallbackImageSrc}
             alt="Teddy Kids children playing"
-            fill
             priority
+            fetchPriority="high"
+            sizes="100vw"
+            width={1920}
+            height={1080}
             className="object-cover object-center"
+            /* keep `fill` for responsive while still providing intrinsic size */
+            fill
           />
           <div className="absolute inset-0 bg-black bg-opacity-30" />
         </div>
       )}
-      
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
-          videoLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        onLoadedData={() => setVideoLoaded(true)}
-        poster={fallbackImageSrc}
-      >
-        <source src={videoSrc} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {/* Render video only on non-mobile to save bandwidth & improve LCP */}
+      {!isMobile && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
+            videoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          onLoadedData={() => setVideoLoaded(true)}
+          poster={fallbackImageSrc}
+        >
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
       
       {/* Overlay gradient for better text contrast */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10" />

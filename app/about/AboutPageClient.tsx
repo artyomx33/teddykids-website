@@ -122,48 +122,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Timeline / History */}
-      <section className="py-16 bg-brand-yellow bg-opacity-10">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-display font-bold mb-12 text-center">{t('about.journey.title')}</h2>
-          
-          <div className="relative flex flex-col space-y-8">
-            <TimelineItem 
-              year={t('about.journey.timeline.item2004.year')}
-              title={t('about.journey.timeline.item2004.title')}
-              description={t('about.journey.timeline.item2004.description')}
-              isLeft={true}
-            />
-            
-            <TimelineItem 
-              year={t('about.journey.timeline.item2010.year')}
-              title={t('about.journey.timeline.item2010.title')}
-              description={t('about.journey.timeline.item2010.description')}
-              isLeft={false}
-            />
-            
-            <TimelineItem 
-              year={t('about.journey.timeline.item2022.year')}
-              title={t('about.journey.timeline.item2022.title')}
-              description={t('about.journey.timeline.item2022.description')}
-              isLeft={true}
-            />
-            
-            <TimelineItem 
-              year={t('about.journey.timeline.item2023.year')}
-              title={t('about.journey.timeline.item2023.title')}
-              description={t('about.journey.timeline.item2023.description')}
-              isLeft={false}
-            />
-            
-            <TimelineItem 
-              year={t('about.journey.timeline.item2024.year')}
-              title={t('about.journey.timeline.item2024.title')}
-              description={t('about.journey.timeline.item2024.description')}
-              isLeft={true}
-            />
-          </div>
-        </div>
-      </section>
+      {/* (Removed duplicate “Our Journey” timeline to prevent redundancy) */}
 
       {/* ---------------------------------------------------------------- */}
       {/*  Legacy & Vision (Luna Brutal Upgrade™)                          */}

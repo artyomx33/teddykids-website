@@ -46,14 +46,14 @@ export default function TeamPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-xl shadow-sm">
               <h2 className="text-3xl font-display font-bold mb-6 text-center">
-                {t('teamPage.philosophy.title')}
+                The People Who Make Magic Happen
               </h2>
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/3">
                   <div className="relative h-64 w-full rounded-xl overflow-hidden">
                     <Image
-                      src="/images/team/team-group.jpg"
-                      alt="Teddy Kids Team"
+                      src="/images/team/team-philosophy.jpg"
+                      alt="Teddy Kids Team Philosophy"
                       fill
                       className="object-cover object-top"
                     />
@@ -61,10 +61,19 @@ export default function TeamPage() {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-lg mb-4">
-                    {t('teamPage.philosophy.paragraph1')}
+                    At Teddy Kids, our team is more than qualified — they&apos;re full-hearted,
+                    silly-serious, and endlessly curious. From comforting wobbly first steps to
+                    decoding deep toddler questions like “Why is the sky shy?”, our educators bring
+                    bilingual love and care to every moment.
                   </p>
                   <p className="text-lg mb-4">
-                    {t('teamPage.philosophy.paragraph2')}
+                    They come from all over the world — but share one thing: a belief that early
+                    childhood isn&apos;t just preparation for life… it <em>is</em> life. That&apos;s why we
+                    support our team with ongoing training, hugs, and maybe a surprise pizza now and
+                    then.
+                  </p>
+                  <p className="text-lg font-medium text-brand-pink">
+                    We don&apos;t just hire teachers. We grow a family.
                   </p>
                 </div>
               </div>

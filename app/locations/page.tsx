@@ -17,31 +17,28 @@ export default function LocationsPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="py-20 bg-brand-yellow bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
+      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/heroes/locations-hero.png"
+          alt={t('locationsPage.hero.alt') || 'Happy children and educators at Teddy Kids locations'}
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
               {t('locationsPage.hero.title')}
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl md:text-2xl text-white">
               {t('locationsPage.hero.subtitle')}
             </p>
-            <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
-              <Image
-                src="/images/locations/map-hero.jpg"
-                alt={t('locationsPage.map.title')}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                <span className="text-white text-2xl font-display font-bold">
-                  {t('locationsPage.map.locationsCount')}
-                </span>
-              </div>
-            </div>
-            <div className="mt-4 text-gray-500 italic">
-              {t('locationsPage.map.interactiveMapComing')}
-            </div>
           </div>
         </div>
       </section>

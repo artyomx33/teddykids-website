@@ -1,3 +1,17 @@
+## 🚨 **IMPORTANT: READ FIRST!** 🚨
+
+Before touching any code in this repository **you _must_ review the two guides below**.  
+They document the performance, SEO and accessibility standards that keep the site at **87/100 Performance** and **100/100 SEO** on Lighthouse.
+
+| 📚 Guide | Purpose |
+|----------|---------|
+| [DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md) | Full architecture & best-practice reference |
+| [QUICK_CHECKLIST.md](./QUICK_CHECKLIST.md) | Pre-commit checklist (images, GPT code, perf, deploy) |
+
+_Failure to follow these guides risks breaking our scores and user experience._
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

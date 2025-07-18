@@ -34,9 +34,13 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           src={imageSrc}
           alt={title}
           fill
-          sizes="(max-width: 640px) 100vw, 50vw"
+          /* Optimised responsive sizes */
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          /* Below-the-fold → lazy-load */
+          loading="lazy"
+          /* Hint to browser this is low priority for fetch */
+          fetchPriority="low"
           className="object-cover"
-          priority
         />
         {/* White/cream overlay for readability */}
         <div className="absolute inset-0 bg-white/60" />

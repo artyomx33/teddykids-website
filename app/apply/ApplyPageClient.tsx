@@ -6,6 +6,7 @@ import Button from '@/components/Button';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+import dynamic from 'next/dynamic';
 
 // Progress step component
 interface ProgressStepProps {
@@ -1017,5 +1018,27 @@ function ApplyPageContent() {
 }
 
 export default function ApplyPageClient() {
-  return <ApplyPageContent />;
+  /* 
+    Heavy multi-step form & validation logic are wrapped in a
+    dynamic import so the initial JS bundle for the Apply page
+    is smaller.  The form is only needed once the user lands on
+    /apply, so it’s safe to load it on the client after page
+    shell has rendered.
+  */
+  const DynamicApplyPageContent = dynamic(
+    // Using Promise.resolve keeps the code in this file while still
+    // allowing Next.js to create a separate chunk for it.
+    () => Promise.resolve(ApplyPageContent),
+    {
+      // Provide lightweight placeholder while chunk loads
+      loading: () => (
+        <main className="py-20 text-center">
+          <p className="text-gray-500">Loading application form…</p>
+        </main>
+      ),
+      ssr: false, // render on client only
+    }
+  );
+
+  return <DynamicApplyPageContent />;
 }

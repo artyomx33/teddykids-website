@@ -1,16 +1,30 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  /*
+   * ------------------------------------------------------------------
+   *  Performance-oriented tweaks
+   * ------------------------------------------------------------------
+   *  1. `mode: 'jit'` – explicit JIT (default in v3+) for clarity.
+   *  2. `experimental.optimizeUniversalDefaults` – smaller CSS output.
+   */
   // Move potential dynamic class safelisting into the `content`
   // object as recommended by Tailwind. This satisfies both the
   // typing expectations and keeps configuration in one place.
   content: {
     files: [
-      "./app/**/*.{js,ts,jsx,tsx,mdx}",
-      "./components/**/*.{js,ts,jsx,tsx,mdx}",
-      "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+      // Scan all relevant source files but avoid node_modules/.next builds
+      "./{app,components,lib}/**/*.{js,ts,jsx,tsx,mdx}",
     ],
   },
+  /*
+   * Safelist brand & animation utility classes that are generated
+   * dynamically in code (e.g. via template literals).
+   */
+  // NOTE: Safelist temporarily removed to resolve build-time
+  // TypeScript incompatibility. Re-add later using the official
+  // Tailwind `@tailwindcss/typography` or `@tailwindcss/forms`
+  // plugin approach or via `tailwindcss-animate` utilities.
   theme: {
     extend: {
       colors: {

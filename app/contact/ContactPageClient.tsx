@@ -1,9 +1,20 @@
 'use client';
 
 import Image from 'next/image';
-import Contact from '@/components/sections/Contact';
+import dynamic from 'next/dynamic';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+
+// Dynamically import the Contact form component since it's below the fold
+const Contact = dynamic(() => import('@/components/sections/Contact'), {
+  loading: () => (
+    <div className="container mx-auto px-4 py-12 text-center">
+      <p className="text-gray-500">Loading contact form...</p>
+    </div>
+  ),
+  // Form processing is client-side only
+  ssr: false
+});
 
 export default function ContactPageClient() {
   /* Grab current language & translation helper */
@@ -35,7 +46,9 @@ export default function ContactPageClient() {
             alt=""
             width={180}
             height={180}
-            priority={false}
+            loading="lazy"
+            fetchPriority="low"
+            sizes="180px"
           />
         </div>
 
@@ -61,6 +74,9 @@ export default function ContactPageClient() {
                 src="/images/website-icon-price.png"
                 alt="Transparent pricing icon"
                 fill
+                loading="lazy"
+                fetchPriority="low"
+                sizes="96px"
                 className="object-contain"
               />
             </div>

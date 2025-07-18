@@ -4,8 +4,27 @@ import Hero from '@/components/sections/Hero';
 import Pillars from '@/components/sections/Pillars';
 import SocialProof from '@/components/sections/SocialProof';
 import Programs from '@/components/sections/Programs';
-import LocationsPreview from '@/components/sections/LocationsPreview';
-import AppiesGPT from '@/components/sections/AppiesGPT';
+import dynamic from 'next/dynamic';
+// Dynamically load below-the-fold sections to shrink initial JS bundle
+const AppiesGPT = dynamic(() => import('@/components/sections/AppiesGPT'), {
+  loading: () => (
+    <section className="py-16 text-center">
+      <p className="text-gray-500">Loading chat assistant…</p>
+    </section>
+  ),
+  ssr: false, // purely client-side interactive widget
+});
+
+const LocationsPreview = dynamic(
+  () => import('@/components/sections/LocationsPreview'),
+  {
+    loading: () => (
+      <section className="py-16 text-center">
+        <p className="text-gray-500">Loading locations…</p>
+      </section>
+    ),
+  }
+);
 import Image from 'next/image';
 
 export default function HomePageClient() {
@@ -24,6 +43,9 @@ export default function HomePageClient() {
           aria-hidden="true"
           width={200}
           height={200}
+          loading="lazy"
+          fetchPriority="low"
+          sizes="200px"
           className="character character-bottom-left"
         />
       </div>
@@ -44,6 +66,9 @@ export default function HomePageClient() {
           aria-hidden="true"
           width={200}
           height={200}
+          loading="lazy"
+          fetchPriority="low"
+          sizes="200px"
           className="character character-floating character-delay-1"
         />
         <SocialProof />

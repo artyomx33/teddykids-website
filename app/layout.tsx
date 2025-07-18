@@ -10,17 +10,20 @@ import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const balooDisplay = Baloo_2({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const GTM_ID = "GTM-NQN5S9KF";
@@ -205,6 +208,10 @@ export default function RootLayout({
               aria-hidden="true"
               width={200}
               height={200}
+              /* Footer image is below-the-fold → lazy & low priority */
+              loading="lazy"
+              fetchPriority="low"
+              sizes="200px"
               className="character character-footer-waver"
             />
           </footer>

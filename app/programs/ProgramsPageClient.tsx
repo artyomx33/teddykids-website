@@ -52,7 +52,7 @@ export default function ProgramsPageClient() {
               <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                 <div className="relative h-48 w-full">
                   <Image
-                    src="/images/programs/nursery-program.jpg"
+                    src="/images/programs/nursery.jpg"
                     alt="Nursery Program at Teddy Kids"
                     fill
                     className="object-cover"
@@ -80,7 +80,7 @@ export default function ProgramsPageClient() {
               <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                 <div className="relative h-48 w-full">
                   <Image
-                    src="/images/programs/preschool-program.jpg"
+                    src="/images/programs/preschool.jpg"
                     alt="Preschool Program at Teddy Kids"
                     fill
                     className="object-cover"
@@ -108,7 +108,7 @@ export default function ProgramsPageClient() {
               <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                 <div className="relative h-48 w-full">
                   <Image
-                    src="/images/programs/after-school-program.jpg"
+                    src="/images/programs/afterschool.jpg"
                     alt="After-School Care at Teddy Kids"
                     fill
                     className="object-cover"
@@ -136,7 +136,7 @@ export default function ProgramsPageClient() {
               <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
                 <div className="relative h-48 w-full">
                   <Image
-                    src="/images/programs/tisa-program.jpg"
+                    src="/images/programs/tisa.jpg"
                     alt="TISA Primary School"
                     fill
                     className="object-cover"
@@ -201,7 +201,7 @@ export default function ProgramsPageClient() {
                 </div>
                 <div className="relative h-64 rounded-xl overflow-hidden">
                   <Image
-                    src="/images/programs/curriculum-approach.jpg"
+                    src="/images/programs/nursery.jpg"
                     alt="Teddy Kids curriculum in action"
                     fill
                     className="object-cover"

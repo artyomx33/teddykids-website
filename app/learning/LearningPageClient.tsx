@@ -256,10 +256,10 @@ export default function LearningPageClient() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold mb-4">
-              {t('learningMoments.ctaTitle')}
+              What if your child's most powerful learning moment… was happening today—and you didn't see it?
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              {t('learningMoments.ctaSubtitle')}
+              Let us show you how brilliance hides in snack time, sandboxes, and squishy socks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -267,14 +267,14 @@ export default function LearningPageClient() {
                 href="/contact"
                 size="lg"
               >
-                {t('learningMoments.ctaPrimary')}
+                See It Firsthand
               </Button>
               <Button 
                 variant="outline"
                 href="/contact?tour=true"
                 size="lg"
               >
-                {t('learningMoments.ctaSecondary')}
+                Book a 20-Minute Tour That Might Change Everything
               </Button>
             </div>
           </div>

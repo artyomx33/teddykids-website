@@ -137,24 +137,28 @@ export default function LearningPageClient() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="py-20 bg-brand-mint bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              {"Where brilliance hides in everyday moments"}
+      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/hero-learning-moments.png"
+          alt="Teddy Kids children discovering through play in a bilingual setting"
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
+              Where brilliance hides in everyday moments
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
-              {"Peek inside to see how your child learns when they think they're just playing."}
+            <p className="text-xl md:text-2xl text-white">
+              Peek inside to see how your child learns when they think they're just playing.
             </p>
-            <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
-              <Image
-                src="/images/learning/learning-hero.jpg"
-                alt="Children engaged in learning activities at Teddy Kids"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
           </div>
         </div>
       </section>

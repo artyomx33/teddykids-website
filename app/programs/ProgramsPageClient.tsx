@@ -191,14 +191,17 @@ export default function ProgramsPageClient() {
                     {t('programsPage.curriculum.approach.description')}
                   </p>
                   <ul className="space-y-2">
-                    {t('programsPage.curriculum.approach.points').map(
-                      (point: string, index: number) => (
-                        <li key={index} className="flex items-start">
-                          <span className="text-brand-pink mr-2">●</span>
-                          <span>{point}</span>
-                        </li>
-                      )
-                    )}
+                    {[
+                      'Play-based learning methodology',
+                      'Bilingual language development',
+                      'Social-emotional skill building',
+                      'STEM exploration through hands-on activities',
+                    ].map((point: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-brand-pink mr-2">●</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="relative h-64 rounded-xl overflow-hidden">
@@ -268,11 +271,13 @@ export default function ProgramsPageClient() {
                     {t('programsPage.schedule.hours.nursery.title')}
                   </h4>
                   <ul className="space-y-2">
-                    {t('programsPage.schedule.hours.nursery.schedule').map(
-                      (item: string, index: number) => (
+                    {t('programsPage.sections.nursery.scheduleItems').map(
+                      (item: { day: string; hours: string }, index: number) => (
                         <li key={index} className="flex items-start">
                           <span className="text-brand-pink mr-2">●</span>
-                          <span>{item}</span>
+                          <span>
+                            {item.day}: {item.hours}
+                          </span>
                         </li>
                       )
                     )}
@@ -283,11 +288,13 @@ export default function ProgramsPageClient() {
                     {t('programsPage.schedule.hours.afterSchool.title')}
                   </h4>
                   <ul className="space-y-2">
-                    {t('programsPage.schedule.hours.afterSchool.schedule').map(
-                      (item: string, index: number) => (
+                    {t('programsPage.sections.afterSchool.scheduleItems').map(
+                      (item: { day: string; hours: string }, index: number) => (
                         <li key={index} className="flex items-start">
                           <span className="text-brand-pink mr-2">●</span>
-                          <span>{item}</span>
+                          <span>
+                            {item.day}: {item.hours}
+                          </span>
                         </li>
                       )
                     )}

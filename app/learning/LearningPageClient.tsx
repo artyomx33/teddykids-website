@@ -141,10 +141,10 @@ export default function LearningPageClient() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              {t('learningPage.hero.title')}
+              {"Where brilliance hides in everyday moments"}
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              {t('learningPage.hero.subtitle')}
+              {"Peek inside to see how your child learns when they think they're just playing."}
             </p>
             <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
               <Image
@@ -154,13 +154,21 @@ export default function LearningPageClient() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent flex items-center">
-                <div className="ml-8 text-white max-w-md">
-                  <h2 className="text-3xl font-display font-bold mb-2">Learning in Action</h2>
-                  <p className="text-lg">Witness the magic of discovery in our bilingual environment</p>
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Learning in Action Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-display font-bold mb-4">
+              Learning in Action
+            </h2>
+            <p className="text-lg text-gray-700">
+              Witness the magic of discovery in our bilingual environment
+            </p>
           </div>
         </div>
       </section>
@@ -170,10 +178,10 @@ export default function LearningPageClient() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-2 text-center">
-              {t('learningMoments.title')}
+              {"Learning Moments"}
             </h2>
             <p className="text-center text-gray-600 mb-8">
-              {t('learningMoments.subtitle')}
+              {"Short bursts of insight from inside TK"}
             </p>
             
             {/* Category Filters */}

@@ -78,8 +78,6 @@ const Hero: React.FC<HeroProps> = ({
             priority
             fetchPriority="high"
             sizes="100vw"
-            width={1920}
-            height={1080}
             className="object-cover object-center"
             /* keep `fill` for responsive while still providing intrinsic size */
             fill

@@ -13,6 +13,8 @@ A lightning-fast reference for every dev before committing changes.
 - [ ] **Use next/image** – add `priority` + `sizes` for above-the-fold.
 - [ ] **Include descriptive `alt` text** (keyword + context).
 - [ ] **Decorative?** add `aria-hidden` and `loading="lazy" fetchPriority="low"`.
+- [ ] **Visual match** – ensure artwork follows current branding guidelines  
+      (see `/public/images/branding/` or confirm with design lead).
 
 ---
 
@@ -20,8 +22,19 @@ A lightning-fast reference for every dev before committing changes.
 - [ ] Is it **stateful / interactive**? → mark `'use client'`. Otherwise keep server.
 - [ ] Keep components **atomic** (UI) or **section** (page block) – place accordingly.
 - [ ] Export **Prop types** with strict TypeScript (`no any`).
-- [ ] Add **unit test** in `__tests__/` if logic > trivial.
+- [ ] Add **unit test** in `__tests__/` if logic > trivial  
+      (e.g., `ComponentName.test.tsx`, `myFunction.test.ts`).
 - [ ] Ensure **a11y**: labels, keyboard focus, color contrast ≥ 4.5 : 1.
+
+---
+
+## ✅ BEFORE SUBMITTING GPT-GENERATED CODE
+- [ ] `npm run check` – zero type, lint, and test errors.
+- [ ] Choose correct component type: **server by default**, add `'use client'` only when needed.
+- [ ] Use **`next/image`** (never raw `<img>`); follow image rules above.
+- [ ] Avoid new heavy dependencies – prefer built-ins or existing utilities.
+- [ ] All text must use **`useTranslation()`** keys (no hard-coded copy).
+- [ ] Style via Tailwind or shared components – no inline CSS unless utility.
 
 ---
 
@@ -41,3 +54,5 @@ A lightning-fast reference for every dev before committing changes.
 - [ ] Review **DEV GUIDE** for structural compliance.
 - [ ] Push to branch → **Preview deploy** passes.
 - [ ] Merge to `main` → watch Vercel build until **● Ready**.
+- [ ] Commit messages: present-tense, conventional prefix  
+      (e.g., `feat: add lazy load`, `fix: update hero alt text`).

@@ -7,39 +7,6 @@ import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation, translations } from '@/lib/translations';
 
-// Timeline item component
-const TimelineItem = (
-  {
-    year,
-    title,
-    description,
-    isLeft = true,
-  }: {
-    year: string;
-    title: string;
-    description: string;
-    isLeft?: boolean;
-  },
-) => {
-  return (
-    <div className={`flex items-center w-full ${isLeft ? 'justify-start' : 'justify-end'}`}>
-      <div className={`w-full md:w-5/12 ${!isLeft && 'order-1'}`}>
-        <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-          <div className="flex justify-between items-center">
-            <h3 className="font-display font-bold text-lg">{title}</h3>
-            <span className="text-brand-pink font-bold text-lg">{year}</span>
-          </div>
-          <p className="text-gray-600 mt-3">{description}</p>
-        </div>
-      </div>
-      <div className="hidden md:block w-2/12 flex justify-center">
-        <div className="w-4 h-4 bg-brand-pink rounded-full"></div>
-        <div className="w-0.5 h-full bg-brand-pink"></div>
-      </div>
-    </div>
-  );
-};
-
 // Team preview item component
 const TeamPreviewItem = (
   {

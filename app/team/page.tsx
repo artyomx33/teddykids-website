@@ -6,8 +6,6 @@ import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 
-// Metadata is handled in a separate layout file since this is now a client component
-
 export default function TeamPage() {
   const { language } = useLanguage();
   const { t } = useTranslation(language);

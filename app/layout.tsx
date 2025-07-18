@@ -28,8 +28,9 @@ const GTM_ID = "GTM-NQN5S9KF";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.teddykids.nl"),
   title: "Teddy Kids | From Baby Steps to Global Citizens",
+  // Home-page meta description – expanded for richer SEO keywords
   description:
-    "Bilingual childcare & international school nurturing global citizens from their very first steps.",
+    "Teddy Kids is a bilingual daycare and international childcare provider in Leiden offering high-quality early childhood education, nursery, preschool, and after-school programs that nurture confident global citizens.",
   openGraph: {
     title: "Teddy Kids | From Baby Steps to Global Citizens",
     description:
@@ -54,6 +55,13 @@ export const metadata: Metadata = {
       "Bilingual childcare & international school nurturing global citizens from their very first steps.",
     images: ["/images/og-image.jpg"],
   },
+  // ------------------------------------------------------------------
+  //  Additional link hints (Lighthouse “Preconnect” recommendation)
+  // ------------------------------------------------------------------
+  other: {
+    "preconnect-fonts": "https://fonts.gstatic.com",
+    "preconnect-gtm": "https://www.googletagmanager.com",
+  },
 };
 
 export default function RootLayout({
@@ -63,6 +71,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* Preconnect for critical third-party origins (performance) */}
+      <head>
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin=""
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${balooDisplay.variable} antialiased`}
       >

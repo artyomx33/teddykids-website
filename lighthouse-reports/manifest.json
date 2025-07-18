@@ -1,0 +1,146 @@
+[
+  {
+    "url": "http://localhost:3000/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/-2025_07_18_04_40_17-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/-2025_07_18_04_40_17-report.json",
+    "summary": {
+      "performance": 0.82,
+      "accessibility": 0.96,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/about",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/about-2025_07_18_04_40_31-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/about-2025_07_18_04_40_31-report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.94,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/about/policy",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/about_policy-2025_07_18_04_40_45-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/about_policy-2025_07_18_04_40_45-report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.94,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/programs",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/programs-2025_07_18_04_40_57-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/programs-2025_07_18_04_40_57-report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.96,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/programs/after-school",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/programs_after_school-2025_07_18_04_41_13-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/programs_after_school-2025_07_18_04_41_13-report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.88,
+      "best-practices": 0.93,
+      "seo": 0.91
+    }
+  },
+  {
+    "url": "http://localhost:3000/programs/nursery",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/programs_nursery-2025_07_18_04_41_26-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/programs_nursery-2025_07_18_04_41_26-report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.88,
+      "best-practices": 0.93,
+      "seo": 0.91
+    }
+  },
+  {
+    "url": "http://localhost:3000/team",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/team-2025_07_18_04_41_39-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/team-2025_07_18_04_41_39-report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/locations",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/locations-2025_07_18_04_41_52-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/locations-2025_07_18_04_41_52-report.json",
+    "summary": {
+      "performance": 0.95,
+      "accessibility": 0.92,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/learning",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/learning-2025_07_18_04_42_08-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/learning-2025_07_18_04_42_08-report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.96,
+      "best-practices": 0.96,
+      "seo": 0.83
+    }
+  },
+  {
+    "url": "http://localhost:3000/contact",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/contact-2025_07_18_04_42_22-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/contact-2025_07_18_04_42_22-report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/apply",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/apply-2025_07_18_04_42_35-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/apply-2025_07_18_04_42_35-report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.96,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  },
+  {
+    "url": "http://localhost:3000/accepted",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/accepted-2025_07_18_04_42_48-report.html",
+    "jsonPath": "/Users/artyomx/projects/teddykids-website/lighthouse-reports/accepted-2025_07_18_04_42_48-report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.94,
+      "best-practices": 0.96,
+      "seo": 0.92
+    }
+  }
+]

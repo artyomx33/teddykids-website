@@ -6,7 +6,9 @@ import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 
-// Metadata is handled in a separate layout file since this is now a client component
+// ──────────────────────────────────────────────────────────
+//  Static page metadata (SEO & social sharing)
+// ──────────────────────────────────────────────────────────
 
 export default function LocationsPage() {
   const { language } = useLanguage();

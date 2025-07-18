@@ -10,6 +10,11 @@
   --brand-yellow: #fff6d6;
   --brand-mint: #e9faf1;
   --brand-purple: #f2e8ff;
+  /* Darker brand variants (text-safe, WCAG AA) */
+  --brand-pink-dark:   #d6336c; /* ~4.9:1 on white */
+  --brand-yellow-dark: #c9a96a; /* matches tailwind yellowDark */
+  --brand-mint-dark:   #299a6b; /* ~4.6:1 on white */
+  --brand-purple-dark: #6b4fa1; /* ~5.1:1 on white */
 
   /* Typography */
   --font-sans: var(--font-geist-sans); /* default imported from next/font */
@@ -37,6 +42,11 @@ html {
 /* ---------- Custom utility classes (light weight) ---------- */
 .bg-brand-pink   { background-color: var(--brand-pink); }
 .text-brand-pink { color: var(--brand-pink); }
+/* Dark text colours (satisfy contrast on white) */
+.text-brand-pink-dark   { color: var(--brand-pink-dark); }
+.text-brand-yellow-dark { color: var(--brand-yellow-dark); }
+.text-brand-mint-dark   { color: var(--brand-mint-dark); }
+.text-brand-purple-dark { color: var(--brand-purple-dark); }
 
 /* Floating WhatsApp button */
 .btn-whatsapp {

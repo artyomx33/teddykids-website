@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
@@ -22,6 +23,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@lhci/cli": "^0.15.1",
+    "lighthouse": "^12.8.0",
+    "chrome-launcher": "^1.2.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
     "tailwindcss": "^4",

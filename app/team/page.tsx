@@ -108,15 +108,29 @@ export default function TeamPage() {
             {/* RBW Location */}
             <div className="mb-16">
               <h3 className="text-2xl font-display font-semibold mb-6">RBW – Rijnsburgerweg 35 (KDV)</h3>
-              <div className="bg-brand-pink bg-opacity-5 rounded-xl overflow-hidden">
-                <div className="relative h-64 w-full">
-                  <Image
-                    src="/images/team/team-rbw.jpg"
-                    alt="RBW Team"
-                    fill
-                    className="object-cover object-top"
-                  />
+              <div className="bg-brand-pink bg-opacity-5 rounded-xl overflow-hidden p-4">
+                {/* Image Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Team photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/team/team-rbw.jpg"
+                      alt="RBW Team"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  {/* Location photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/locations/rbw_1.jpg"
+                      alt="RBW Location"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
                 </div>
+                {/* Description */}
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
                     {t('teamPage.locations.rbw')}
@@ -128,14 +142,26 @@ export default function TeamPage() {
             {/* RB3/RB5 Location */}
             <div className="mb-16">
               <h3 className="text-2xl font-display font-semibold mb-6">RB3/RB5 – Rijnsburgerweg 3 & 5 (KDV + BSO)</h3>
-              <div className="bg-brand-yellow bg-opacity-5 rounded-xl overflow-hidden">
-                <div className="relative h-64 w-full">
-                  <Image
-                    src="/images/team/team-rb3rb5.jpg"
-                    alt="RB3/RB5 Team"
-                    fill
-                    className="object-cover object-top"
-                  />
+              <div className="bg-brand-yellow bg-opacity-5 rounded-xl overflow-hidden p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Team photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/team/team-rb3rb5.jpg"
+                      alt="RB3/RB5 Team"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  {/* Location photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/locations/rb3rb5_1.jpg"
+                      alt="RB3/RB5 Location"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
@@ -148,14 +174,26 @@ export default function TeamPage() {
             {/* LRZ Location */}
             <div className="mb-16">
               <h3 className="text-2xl font-display font-semibold mb-6">LRZ – Lorentzkade 15a (BSO + TISA)</h3>
-              <div className="bg-brand-mint bg-opacity-5 rounded-xl overflow-hidden">
-                <div className="relative h-64 w-full">
-                  <Image
-                    src="/images/team/team-lrz.jpg"
-                    alt="LRZ Team"
-                    fill
-                    className="object-cover object-top"
-                  />
+              <div className="bg-brand-mint bg-opacity-5 rounded-xl overflow-hidden p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Team photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/team/team-lrz.jpg"
+                      alt="LRZ Team"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  {/* Location photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/locations/lrz_1.jpg"
+                      alt="LRZ Location"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">
@@ -168,14 +206,26 @@ export default function TeamPage() {
             {/* ZML Location */}
             <div className="mb-8">
               <h3 className="text-2xl font-display font-semibold mb-6">ZML – Zeemanlaan 22a (KDV)</h3>
-              <div className="bg-brand-purple bg-opacity-5 rounded-xl overflow-hidden">
-                <div className="relative h-64 w-full">
-                  <Image
-                    src="/images/team/team-zml.jpg"
-                    alt="ZML Team"
-                    fill
-                    className="object-cover object-top"
-                  />
+              <div className="bg-brand-purple bg-opacity-5 rounded-xl overflow-hidden p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Team photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/team/team-zml.jpg"
+                      alt="ZML Team"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  {/* Location photo */}
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src="/images/locations/zml_1.jpg"
+                      alt="ZML Location"
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <p className="text-lg text-gray-700">

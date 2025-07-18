@@ -75,17 +75,19 @@ export default function AboutPageClient() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+      {/* Updated hero: remove hero-parallax, use Image + dark gradient overlay */}
+      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         {/* Background image */}
         <Image
           src="/images/heroes/about-hero.png"
           alt="Teddy Kids families and children - our story from baby steps to global citizens"
           fill
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
           className="object-cover"
         />
 
-        {/* Gradient overlay for readability */}
+        {/* Dark gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
 
         {/* Hero content */}
@@ -94,7 +96,7 @@ export default function AboutPageClient() {
             <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
               {t('about.hero.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-white">
+            <p className="text-xl md:text-2xl text-white mb-6">
               {t('about.hero.subtitle')}
             </p>
           </div>

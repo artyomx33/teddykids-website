@@ -75,21 +75,28 @@ export default function AboutPageClient() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="py-20 bg-brand-pink bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">{t('about.hero.title')}</h1>
-            <p className="text-xl text-gray-700 mb-8">
+      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/heroes/about-hero.png"
+          alt="Teddy Kids families and children - our story from baby steps to global citizens"
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
+              {t('about.hero.title')}
+            </h1>
+            <p className="text-xl md:text-2xl text-white">
               {t('about.hero.subtitle')}
             </p>
-            <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
-              <Image
-                src="/images/about/mission-placeholder.jpg"
-                alt={t('about.hero.imageAlt')}
-                fill
-                className="object-cover"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -154,6 +161,123 @@ export default function AboutPageClient() {
               description={t('about.journey.timeline.item2024.description')}
               isLeft={true}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/*  Legacy & Vision (Luna Brutal Upgrade™)                          */}
+      {/* ---------------------------------------------------------------- */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          {/* Legacy Header */}
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-display font-bold mb-4">
+              Two decades of honoring childhood as a sacred chapter
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              In a world rushing to speed kids up, we chose to slow time down. Teddy Kids was never
+              just a daycare. It was a declaration: that childhood is sacred, care can be intelligent,
+              and wonder belongs in every day.
+            </p>
+          </div>
+
+          {/* Legacy Timeline */}
+          <div className="max-w-4xl mx-auto mb-20 space-y-8">
+            {[
+              {
+                year: '2004–2008',
+                text: 'Three groups. One mission. To build a place where children are seen, heard, and held. No tech, no shortcuts—just presence.',
+                color: 'brand-pink',
+              },
+              {
+                year: '2010',
+                text: 'ZML opens—our cozy sanctuary where the youngest explorers discover their voices in two languages.',
+                color: 'brand-yellow',
+              },
+              {
+                year: '2014',
+                text: 'RBW blooms into our international hub. The elephant in the garden becomes our symbol—gentle giants nurturing little ones.',
+                color: 'brand-mint',
+              },
+              {
+                year: '2018',
+                text: 'Teddy Café opens—where parents connect over coffee while children create magic next door.',
+                color: 'brand-purple',
+              },
+              {
+                year: '2020',
+                text: 'RB3 launches during a pandemic—proving that community and care can&apos;t be quarantined.',
+                color: 'brand-pink',
+              },
+              {
+                year: '2022',
+                text: 'TISA is born—our bilingual international school where primary education meets Teddy heart.',
+                color: 'brand-yellow',
+              },
+              {
+                year: '2023',
+                text: 'TISA Portugal opens—bringing our sunny approach to international families in Lisbon.',
+                color: 'brand-mint',
+              },
+              {
+                year: '2024',
+                text: 'RB5 expands our family—20 years strong, still growing with purpose.',
+                color: 'brand-purple',
+              },
+              {
+                year: '2025',
+                text: '10,000 families served—each child a story, each family a testament to what&apos;s possible.',
+                color: 'brand-pink',
+              },
+            ].map(({ year, text, color }) => (
+              <div key={year} className={`border-l-4 border-${color} pl-6`}>
+                <h3 className={`text-lg font-bold text-${color}`}>{year}</h3>
+                <p className="text-gray-700">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Future Vision */}
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-display font-bold mb-6">
+              Our Promise for the Future
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+              We&apos;re not here to scale mediocrity. We&apos;re here to protect what&apos;s
+              irreplaceable—because childhood only happens once.
+            </p>
+
+            <ul className="space-y-4 max-w-3xl mx-auto text-gray-700 text-lg text-left">
+              <li className="flex items-start">
+                <span className="text-2xl mr-3">🕯️</span>
+                <span>We will protect curiosity like a flame.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-2xl mr-3">🪄</span>
+                <span>We will preserve magic where screens try to steal it.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-2xl mr-3">🌍</span>
+                <span>
+                  We will teach language not as a subject—but as a passport to the soul.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-2xl mr-3">🏡</span>
+                <span>We will build spaces that feel like home but think like schools.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-2xl mr-3">🎯</span>
+                <span>
+                  We will keep our standards impossibly high—because your child is worth it.
+                </span>
+              </li>
+            </ul>
+
+            <p className="text-xl font-semibold mt-10 text-brand-pink">
+              You brought a child into this world. We&apos;re here to help them thrive in it.
+            </p>
           </div>
         </div>
       </section>

@@ -15,7 +15,7 @@ export default function ProgramsPageClient() {
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/heroes/programs-hero.jpg"
+          src="/images/heroes/programs-hero.png"
           alt="Children engaged in various programs at Teddy Kids"
           fill
           priority

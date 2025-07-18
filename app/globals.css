@@ -195,7 +195,7 @@ html {
  *  Apply Page - Luna Makeover Styles
  * ------------------------------------------------------------------ */
 .hero-apply {
-  background: url('/assets/lighthouse-dino-hero.jpg') center/cover no-repeat;
+  background: url('/images/heroes/journey-starts-here.png') center/cover no-repeat;
   position: relative;
   padding: 100px 20px;
   text-align: center;

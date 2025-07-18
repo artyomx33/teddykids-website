@@ -5,10 +5,22 @@ import Image from 'next/image';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+import type { Metadata } from 'next';
 
 /* -------------------------------------------------------------------------- */
 /*  Types & Shared Components                                                  */
 /* -------------------------------------------------------------------------- */
+
+// ──────────────────────────────────────────────────────────
+//  Static page metadata (SEO & social sharing)
+// ──────────────────────────────────────────────────────────
+export const metadata: Metadata = {
+  title: 'Learning Moments | Teddy Kids Child Development & Bilingual Growth',
+  description:
+    'Discover real stories and videos of bilingual milestones, STEM curiosity, empathy building, and creativity at Teddy Kids. See how play-based learning nurtures global citizens.',
+  keywords:
+    'teddy kids learning, bilingual development, stem activities preschool, empathy in early childhood, creative childcare netherlands',
+};
 
 interface LearningMoment {
   id: number;

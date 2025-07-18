@@ -5,8 +5,18 @@ import Team from '@/components/sections/Team';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+import type { Metadata } from 'next';
 
-// Metadata is handled in a separate layout file since this is now a client component
+// ──────────────────────────────────────────────────────────
+//  Static page metadata (SEO & social sharing)
+// ──────────────────────────────────────────────────────────
+export const metadata: Metadata = {
+  title: 'Our Educators | Teddy Kids Childcare & International School',
+  description:
+    'Meet the passionate Teddy Kids team—early-years specialists, bilingual teachers, and international educators dedicated to nurturing confident global citizens.',
+  keywords:
+    'teddy kids team, childcare educators leiden, bilingual teachers netherlands, international school staff, early childhood specialists',
+};
 
 export default function TeamPage() {
   const { language } = useLanguage();

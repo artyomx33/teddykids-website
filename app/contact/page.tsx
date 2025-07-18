@@ -1,30 +1,29 @@
 'use client';
-
-import Head from 'next/head';
 import Contact from '@/components/sections/Contact';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import Image from 'next/image';
 
+import type { Metadata } from 'next';
+
+// ──────────────────────────────────────────────────────────
+//  Static page metadata (SEO & social sharing)
+// ──────────────────────────────────────────────────────────
+export const metadata: Metadata = {
+  title: 'Contact | Teddy Kids Childcare & International School',
+  description:
+    'Get in touch with Teddy Kids to book a tour, ask questions, or enrol your child in our bilingual childcare and international school programs.',
+  keywords:
+    'teddy kids contact, book a tour, childcare enquiry, bilingual daycare leiden, international school netherlands',
+};
 export default function ContactPage() {
   /* Grab current language & translation helper */
   const { language } = useLanguage();
   const { t } = useTranslation(language);
 
   /* Dynamic metadata */
-  const metaTitle = `${t('contact.title')} | Teddy Kids`;
-  const metaDescription = t('contact.subtitle');
-
   return (
     <main>
-      <Head>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-      </Head>
-
-      {/* ──────────────────────────────────────────────────────────
-       *  Hero Section – Lighthouse + Purple Dino
-       * ────────────────────────────────────────────────────────── */}
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
         {/* Background image */}
         <Image

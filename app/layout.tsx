@@ -28,8 +28,9 @@ const GTM_ID = "GTM-NQN5S9KF";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.teddykids.nl"),
   title: "Teddy Kids | From Baby Steps to Global Citizens",
+  // Home-page meta description – expanded for richer SEO keywords
   description:
-    "Bilingual childcare & international school nurturing global citizens from their very first steps.",
+    "Teddy Kids is a bilingual daycare and international childcare provider in Leiden offering high-quality early childhood education, nursery, preschool, and after-school programs that nurture confident global citizens.",
   openGraph: {
     title: "Teddy Kids | From Baby Steps to Global Citizens",
     description:

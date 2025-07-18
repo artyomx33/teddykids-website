@@ -16,10 +16,11 @@ export default function TeamPage() {
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/team/team-hero.jpg"
-          alt="Meet the Teddy Kids Team in garden setting"
+          src="/images/heroes/team-hero.png"
+          alt="Teddy Kids staff smiling together in the garden"
           fill
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
           className="object-cover"
         />
 

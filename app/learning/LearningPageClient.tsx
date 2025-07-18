@@ -140,10 +140,11 @@ export default function LearningPageClient() {
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/hero-learning-moments.png"
+          src="/images/heroes/learning-hero.png"
           alt="Teddy Kids children discovering through play in a bilingual setting"
           fill
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
           className="object-cover"
         />
 

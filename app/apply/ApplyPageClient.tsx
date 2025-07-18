@@ -657,7 +657,20 @@ function ApplyPageContent() {
               Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
             </p>
             <div className="bg-gray-50 p-6 rounded-xl inline-block">
-              <audio src="/audio/appies-welcome.mp3" controls className="mx-auto" />
+              <audio
+                controls
+                className="mx-auto w-full max-w-md"
+                preload="metadata"
+              >
+                <source
+                  src="/audio/appies-welcome.mp3"
+                  type="audio/mpeg"
+                />
+                <p className="text-red-500">
+                  Your browser does not support the audio element. Please try a
+                  different browser.
+                </p>
+              </audio>
             </div>
           </div>
         </div>

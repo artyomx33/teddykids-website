@@ -163,14 +163,7 @@ export default function AboutPageClient() {
           </div>
 
           {/* Legacy Timeline */}
-          <div className="max-w-4xl mx-auto mb-20 space-y-8">
-            {t('about.legacy.timeline').map((item: { year: string; text: string; color: string }) => (
-              <div key={item.year} className={`border-l-4 border-${item.color} pl-6`}>
-                <h3 className={`text-lg font-bold text-${item.color}`}>{item.year}</h3>
-                <p className="text-gray-700">{item.text}</p>
-              </div>
-            ))}
-          </div>
+          {/* (Legacy timeline removed per specification) */}
 
           {/* Future Vision */}
           <div className="max-w-4xl mx-auto text-center">

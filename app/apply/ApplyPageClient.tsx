@@ -1,13 +1,14 @@
 'use client';
 
 /* eslint-disable @typescript-eslint/no-unused-vars, react/no-unescaped-entities */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@/components/Button';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import Head from 'next/head';
 
 // Progress step component
 interface ProgressStepProps {
@@ -493,25 +494,73 @@ function ApplyPageContent() {
     }
   ];
   
+  /* ──────────────────────────────────────────────────────────
+   *  Hero video handling
+   * ────────────────────────────────────────────────────────── */
+  const fallbackImageSrc = '/images/heroes/journey-starts-here.png';
+  const videoSrc = '/images/heroes/journey-starts-here-video.mp4';
+  const [isMobile, setIsMobile] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   return (
     <main>
       {/* 1. Hero Section - Updated to use Next.js Image component */}
-      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/images/heroes/journey-starts-here.png"
-          alt="Your journey with Teddy Kids begins here"
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
-          className="object-cover"
-        />
+      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden bg-brand-pink">
+        {/* Preload assets */}
+        <Head>
+          {!isMobile && (
+            <link rel="preload" as="video" href={videoSrc} crossOrigin="anonymous" />
+          )}
+          <link rel="preload" as="image" href={fallbackImageSrc} fetchPriority="high" />
+        </Head>
+
+        {/* Fallback image until video loads / on mobile */}
+        {!videoLoaded && (
+          <div className="absolute inset-0">
+            <Image
+              src={fallbackImageSrc}
+              alt="Your journey with Teddy Kids begins here"
+              fill
+              priority
+              fetchPriority="high"
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        )}
+
+        {/* Desktop video background */}
+        {!isMobile && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={fallbackImageSrc}
+            onLoadedData={() => setVideoLoaded(true)}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              videoLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <source src={videoSrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
 
         {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 z-10" />
 
         {/* Hero content */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+        <div className="relative z-20 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
               Your journey with Teddy Kids begins here

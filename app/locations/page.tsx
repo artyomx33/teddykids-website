@@ -17,7 +17,7 @@ export default function LocationsPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         {/* Background image */}
         <Image
           src="/images/heroes/locations-hero.png"
@@ -96,7 +96,7 @@ export default function LocationsPage() {
             <div className="rounded-xl overflow-hidden shadow-md">
               <div className="relative h-[400px] w-full">
                 <Image
-                  src="/images/heroes/locations-overview.png"
+                  src="/images/heroes/locations-hero.jpg"
                   alt="Overview of Teddy Kids locations"
                   fill
                   className="object-cover"

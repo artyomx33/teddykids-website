@@ -495,16 +495,31 @@ function ApplyPageContent() {
   
   return (
     <main>
-      {/* 1. Hero Section – with added tagline */}
-      <section className="hero-apply relative">
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="container mx-auto px-4 py-20 relative z-10 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Your journey with Teddy Kids begins here
-          </h1>
-          <p className="text-xl mb-6 max-w-2xl mx-auto">
-            Start your journey with Teddy Kids – where bilingual care meets big hearts.
-          </p>
+      {/* 1. Hero Section - Updated to use Next.js Image component */}
+      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/heroes/journey-starts-here.png"
+          alt="Your journey with Teddy Kids begins here"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              Your journey with Teddy Kids begins here
+            </h1>
+            <p className="text-xl md:text-2xl text-white mb-6 max-w-2xl mx-auto">
+              Start your journey with Teddy Kids – where bilingual care meets big hearts.
+            </p>
+          </div>
         </div>
       </section>
 

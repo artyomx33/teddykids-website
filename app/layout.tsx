@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Baloo_2 } from "next/font/google";
 import Navigation from "@/components/Navigation"; // actual navigation component
+import ErrorBoundary from "@/components/ErrorBoundary";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -160,10 +161,12 @@ export default function RootLayout({
           />
 
           {/* Site Navigation */}
-          <Navigation />
+          <ErrorBoundary>
+            <Navigation />
 
           {/* Main content with padding to offset fixed nav height */}
-          <div className="pt-20">{children}</div>
+            <div className="pt-20">{children}</div>
+          </ErrorBoundary>
 
           {/* Floating WhatsApp Button */}
           <a

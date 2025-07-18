@@ -167,21 +167,6 @@ export default function PolicyPage() {
               </div>
             </Accordion>
 
-            {/* Other Documents */}
-            <Accordion title={t('about.policy.additional.title')} icon="📄">
-              <div className="space-y-3">
-                <DocumentLink 
-                  title={t('about.policy.additional.incidentForm') || "Incident Reporting Form"}
-                  href="/docs/IncidentenMeldingenFormulier.pdf"
-                  language="Nederlands"
-                />
-                <DocumentLink 
-                  title={t('about.policy.additional.vogSample') || "VOG Sample"}
-                  href="/docs/VerklaringOmtrentGedragVoorbeeld.pdf"
-                  language="Nederlands"
-                />
-              </div>
-            </Accordion>
           </div>
         </div>
       </section>

@@ -148,11 +148,12 @@ export default function LearningPageClient() {
             </p>
             <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
               <Image
-                src="/images/learning/learning-hero.jpg"
-                alt="Children engaged in learning activities at Teddy Kids"
+                src="/images/hero-learning-moments.png"
+                alt="Teddy Kids children discovering through play in a bilingual setting"
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
               />
             </div>
           </div>

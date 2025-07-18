@@ -13,14 +13,27 @@ export default function TeamPage() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="py-20 bg-brand-purple bg-opacity-10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              {t('teamPage.hero.title')}
+      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/team/team-hero.jpg"
+          alt="Meet the Teddy Kids Team in garden setting"
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
+              Meet Our Team
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
-              {t('teamPage.hero.subtitle')}
+            <p className="text-xl md:text-2xl text-white">
+              Passionate caregivers, bilingual hearts, one big Teddy family.
             </p>
           </div>
         </div>

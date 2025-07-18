@@ -25,21 +25,58 @@ const TeamMember: React.FC<TeamMemberProps> = ({
   // Determine if we should show a real image or a placeholder block
   const isPlaceholder =
     !imageSrc || imageSrc.includes('placeholder');
+
+  /* ------------------------------------------------------------------
+   * Hover-to-swap photo logic
+   * ------------------------------------------------------------------
+   * 1. Map main image → alternate “2” image
+   * 2. When user hovers, fade primary out & alternate in.
+   *    (opacity transition handled by Tailwind classes)
+   */
+  const hoverMap: Record<string, string> = {
+    '/images/team/antonela.jpg': '/images/team/antonela 2.jpeg',
+    '/images/team/artem.jpg': '/images/team/artem 2.jpeg',
+    '/images/team/els.jpg': '/images/team/els 2.jpeg',
+    '/images/team/meral.jpg': '/images/team/meral 2.jpeg',
+    '/images/team/svetlana.jpg': '/images/team/svetlana 2.jpeg',
+    '/images/team/tess.jpg': '/images/team/tess 2.jpeg',
+  };
+
+  const hoverImage = imageSrc ? hoverMap[imageSrc] : undefined;
+  const [isHovered, setIsHovered] = useState(false);
   
   return (
     <div 
       className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden cursor-pointer"
       onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Taller container to achieve roughly 2:3 (w:h) portrait ratio */}
       <div className="relative h-72 w-full">
         {!isPlaceholder ? (
-          <Image
-            src={imageSrc}
-            alt={`${name} - ${role} at Teddy Kids`}
-            fill
-            className="object-cover object-top"
-          />
+          <>
+            {/* Primary image */}
+            <Image
+              src={imageSrc}
+              alt={`${name} - ${role} at Teddy Kids`}
+              fill
+              className={`object-cover object-top transition-opacity duration-300 ${
+                isHovered && hoverImage ? 'opacity-0' : 'opacity-100'
+              }`}
+            />
+            {/* Hover image (render only if we have one) */}
+            {hoverImage && (
+              <Image
+                src={hoverImage}
+                alt={`${name} alternate portrait`}
+                fill
+                className={`object-cover object-top absolute inset-0 transition-opacity duration-300 ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            )}
+          </>
         ) : (
           <div className="flex flex-col items-center justify-center h-full w-full bg-brand-pink bg-opacity-10">
             {/* Friendly Appies fallback illustration */}

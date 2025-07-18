@@ -173,67 +173,19 @@ export default function AboutPageClient() {
           {/* Legacy Header */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4">
-              Two decades of honoring childhood as a sacred chapter
+              {t('about.legacy.title')}
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              In a world rushing to speed kids up, we chose to slow time down. Teddy Kids was never
-              just a daycare. It was a declaration: that childhood is sacred, care can be intelligent,
-              and wonder belongs in every day.
+              {t('about.legacy.subtitle')}
             </p>
           </div>
 
           {/* Legacy Timeline */}
           <div className="max-w-4xl mx-auto mb-20 space-y-8">
-            {[
-              {
-                year: '2004–2008',
-                text: 'Three groups. One mission. To build a place where children are seen, heard, and held. No tech, no shortcuts—just presence.',
-                color: 'brand-pink',
-              },
-              {
-                year: '2010',
-                text: 'ZML opens—our cozy sanctuary where the youngest explorers discover their voices in two languages.',
-                color: 'brand-yellow',
-              },
-              {
-                year: '2014',
-                text: 'RBW blooms into our international hub. The elephant in the garden becomes our symbol—gentle giants nurturing little ones.',
-                color: 'brand-mint',
-              },
-              {
-                year: '2018',
-                text: 'Teddy Café opens—where parents connect over coffee while children create magic next door.',
-                color: 'brand-purple',
-              },
-              {
-                year: '2020',
-                text: 'RB3 launches during a pandemic—proving that community and care can&apos;t be quarantined.',
-                color: 'brand-pink',
-              },
-              {
-                year: '2022',
-                text: 'TISA is born—our bilingual international school where primary education meets Teddy heart.',
-                color: 'brand-yellow',
-              },
-              {
-                year: '2023',
-                text: 'TISA Portugal opens—bringing our sunny approach to international families in Lisbon.',
-                color: 'brand-mint',
-              },
-              {
-                year: '2024',
-                text: 'RB5 expands our family—20 years strong, still growing with purpose.',
-                color: 'brand-purple',
-              },
-              {
-                year: '2025',
-                text: '10,000 families served—each child a story, each family a testament to what&apos;s possible.',
-                color: 'brand-pink',
-              },
-            ].map(({ year, text, color }) => (
-              <div key={year} className={`border-l-4 border-${color} pl-6`}>
-                <h3 className={`text-lg font-bold text-${color}`}>{year}</h3>
-                <p className="text-gray-700">{text}</p>
+            {t('about.legacy.timeline').map((item: { year: string; text: string; color: string }) => (
+              <div key={item.year} className={`border-l-4 border-${item.color} pl-6`}>
+                <h3 className={`text-lg font-bold text-${item.color}`}>{item.year}</h3>
+                <p className="text-gray-700">{item.text}</p>
               </div>
             ))}
           </div>
@@ -241,42 +193,23 @@ export default function AboutPageClient() {
           {/* Future Vision */}
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold mb-6">
-              Our Promise for the Future
+              {t('about.vision.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
-              We&apos;re not here to scale mediocrity. We&apos;re here to protect what&apos;s
-              irreplaceable—because childhood only happens once.
+              {t('about.vision.subtitle')}
             </p>
 
             <ul className="space-y-4 max-w-3xl mx-auto text-gray-700 text-lg text-left">
-              <li className="flex items-start">
-                <span className="text-2xl mr-3">🕯️</span>
-                <span>We will protect curiosity like a flame.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-2xl mr-3">🪄</span>
-                <span>We will preserve magic where screens try to steal it.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-2xl mr-3">🌍</span>
-                <span>
-                  We will teach language not as a subject—but as a passport to the soul.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-2xl mr-3">🏡</span>
-                <span>We will build spaces that feel like home but think like schools.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-2xl mr-3">🎯</span>
-                <span>
-                  We will keep our standards impossibly high—because your child is worth it.
-                </span>
-              </li>
+              {t('about.vision.promises').map((promise: { icon: string; text: string }, index: number) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-2xl mr-3">{promise.icon}</span>
+                  <span>{promise.text}</span>
+                </li>
+              ))}
             </ul>
 
             <p className="text-xl font-semibold mt-10 text-brand-pink">
-              You brought a child into this world. We&apos;re here to help them thrive in it.
+              {t('about.vision.closing')}
             </p>
           </div>
         </div>

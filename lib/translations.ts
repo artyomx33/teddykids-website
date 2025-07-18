@@ -1447,6 +1447,74 @@ export const translations = {
         ],
         paragraph4: "Samen met families, opvoeders en gemeenschappen vormen we een toekomst waarin elk kind de kans heeft om zijn beste zelf te worden."
       },
+      /* ──────────────────────────────────────────────────────────
+       *  NALATENSCHAP & VISIE  (Luna Brutal Upgrade™)
+       * ────────────────────────────────────────────────────────── */
+      legacy: {
+        title: "Twee decennia waarin we de kindertijd behandelen als iets heiligs",
+        subtitle:
+          "In een wereld die kinderen steeds sneller wil maken, kozen wij ervoor om de tijd te vertragen. Teddy Kids was nooit zomaar een opvang. Het was vanaf dag één een verklaring: Dat de kindertijd heilig is. Dat zorg ook slim en doordacht kan zijn. Dat tweetaligheid geen trucje is — maar een sleutel. En dat kinderen meer verdienen dan alleen veiligheid — ze verdienen verwondering.",
+        timeline: [
+          {
+            year: "2004–2008",
+            text: "Drie groepen. Eén missie. Een plek bouwen waar kinderen gezien, gehoord en gekoesterd worden. Geen schermen. Geen haast. Alleen oprechte aandacht.",
+            color: "brand-pink"
+          },
+          {
+            year: "2010",
+            text: "Onze tweede locatie opende, met focus op ZML. Niet omdat het makkelijk was. Maar omdat het belangrijk was.",
+            color: "brand-yellow"
+          },
+          {
+            year: "2014",
+            text: "RBW ging open… met een olifant. Letterlijk. Want magie bestaat echt als je vier jaar oud bent. (En ja — de gemeente zei: 'nooit meer.')",
+            color: "brand-mint"
+          },
+          {
+            year: "2018",
+            text: "We droomden van een kindercafé. De vergunning was binnen, de ideeën leefden… Toen kwam COVID. Maar zelfs stilgezette dromen laten sporen na.",
+            color: "brand-purple"
+          },
+          {
+            year: "2020",
+            text: "RB3 opende — midden in wereldwijde onzekerheid. Want de kindertijd wacht niet.",
+            color: "brand-pink"
+          },
+          {
+            year: "2022",
+            text: "TISA werd geboren. Teddy groeide op — en kreeg een school die bij zijn waarden past: Theodore International Start-up Academy. Niet zomaar onderwijs. Verheffing.",
+            color: "brand-yellow"
+          },
+          {
+            year: "2023",
+            text: "TISA Portugal opende. Eén stempel dichter bij het opvoeden van écht wereldburgers.",
+            color: "brand-mint"
+          },
+          {
+            year: "2024",
+            text: "20 jaar Teddy. RB5 opende zijn deuren. En één waarheid klinkt luider dan ooit: Je kunt de kindertijd niet uitbesteden. Je moet haar zelf bouwen.",
+            color: "brand-purple"
+          },
+          {
+            year: "2025",
+            text: "10.000 kinderen. 10.000 gezinnen. 10.000 momenten waarin de wereld even stil stond… en koos voor verbinding.",
+            color: "brand-pink"
+          }
+        ]
+      },
+      vision: {
+        title: "Onze Toekomst",
+        subtitle:
+          "We zijn hier niet om middelmatigheid te schalen. We zijn hier om te beschermen wat onvervangbaar is — want de kindertijd gebeurt maar één keer.",
+        promises: [
+          { icon: "🕯️", text: "We beschermen nieuwsgierigheid als een vlammetje." },
+          { icon: "✨", text: "We bewaren magie op plekken waar schermen het willen stelen." },
+          { icon: "🌍", text: "We onderwijzen taal niet als vak — maar als paspoort voor de ziel." },
+          { icon: "🏡", text: "We bouwen ruimtes die aanvoelen als thuis, maar denken als een school." },
+          { icon: "🎯", text: "We houden onze standaarden onmogelijk hoog — omdat jouw kind dat waard is." }
+        ],
+        closing: "Jij bracht een kind in deze wereld. Wij zijn er om dat kind te laten bloeien."
+      },
       team: {
         title: "De Mensen Achter Teddy Kids",
         subtitle: "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",

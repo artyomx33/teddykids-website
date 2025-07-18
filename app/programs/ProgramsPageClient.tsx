@@ -12,33 +12,28 @@ export default function ProgramsPageClient() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="py-20 bg-brand-yellow bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
+      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/heroes/programs-hero.jpg"
+          alt="Children engaged in various programs at Teddy Kids"
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
               {t('programsPage.hero.title')}
             </h1>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-xl md:text-2xl text-white">
               {t('programsPage.hero.subtitle')}
             </p>
-            <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
-              <Image
-                src="/images/programs/programs-hero.jpg"
-                alt="Children engaged in various programs at Teddy Kids"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent flex items-center">
-                <div className="ml-8 text-white max-w-md">
-                  <h2 className="text-3xl font-display font-bold mb-2">
-                    {t('programsPage.hero.overlayTitle')}
-                  </h2>
-                  <p className="text-lg">
-                    {t('programsPage.hero.overlaySubtitle')}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

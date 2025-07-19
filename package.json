@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lhci": "lhci autorun"
+    "lint:fix": "next lint --fix",
+    "lhci": "lhci autorun",
+    "prepare": "husky"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
@@ -27,7 +29,9 @@
     "chrome-launcher": "^1.2.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
+    "husky": "^9.1.7",
     "lighthouse": "^12.8.0",
+    "lint-staged": "^16.1.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

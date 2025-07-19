@@ -304,110 +304,64 @@ export default function ProgramsPageClient() {
       </section>
 
       {/* Schedule & Fees */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">
-              {t('programsPage.schedule.title')}
-            </h2>
+      <section className="py-16 bg-white px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-10">
+            Schedules & Fees
+          </h2>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm mb-8">
-              <h3 className="text-2xl font-display font-bold mb-4">
-                {t('programsPage.schedule.hours.title')}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-bold mb-2">
-                    {t('programsPage.schedule.hours.nursery.title')}
-                  </h4>
-                  <ul className="space-y-2">
-                    {t('programsPage.sections.nursery.scheduleItems').map(
-                      (item: { day: string; hours: string }, index: number) => (
-                        <li key={index} className="flex items-start">
-                          <span className="text-brand-pink mr-2">●</span>
-                          <span>
-                            {item.day}: {item.hours}
-                          </span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold mb-2">
-                    {t('programsPage.schedule.hours.afterSchool.title')}
-                  </h4>
-                  <ul className="space-y-2">
-                    {t('programsPage.sections.afterSchool.scheduleItems').map(
-                      (item: { day: string; hours: string }, index: number) => (
-                        <li key={index} className="flex items-start">
-                          <span className="text-brand-pink mr-2">●</span>
-                          <span>
-                            {item.day}: {item.hours}
-                          </span>
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
+          {/* Opening Hours */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Opening Hours – Nursery</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-1">
+                <li>Monday – Friday: 07:30 – 18:30</li>
+                <li>Half days: 07:30 – 13:00 or 13:00 – 18:30</li>
+                <li>Minimum: 2 days per week</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Opening Hours – After School</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-1">
+                <li>Monday – Friday: After school – 18:30</li>
+                <li>School holidays: 07:30 – 18:30</li>
+                <li>Study days: 07:30 – 18:30</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Fees */}
+          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm">
+            <h3 className="text-2xl font-semibold text-center mb-6">
+              Fees
+            </h3>
+            <p className="text-center text-gray-600 mb-10">
+              Transparent pricing. No hidden fees. Meals, nappies, updates, and extras like dance & music — all included.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div className="bg-white p-6 rounded-lg shadow border">
+                <h4 className="text-lg font-semibold text-pink-600 mb-1">Nursery</h4>
+                <p className="text-2xl font-bold text-pink-700 mb-2">€11.72 / hour</p>
+                <p className="text-gray-600 text-sm">Includes full care, meals, nappies & activities</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow border">
+                <h4 className="text-lg font-semibold text-pink-600 mb-1">Preschool</h4>
+                <p className="text-2xl font-bold text-pink-700 mb-2">€11.72 / hour</p>
+                <p className="text-gray-600 text-sm">Half-day options available</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow border">
+                <h4 className="text-lg font-semibold text-pink-600 mb-1">After School</h4>
+                <p className="text-2xl font-bold text-pink-700 mb-2">€11.16 / hour</p>
+                <p className="text-gray-600 text-sm">Holiday camps and extras billed separately</p>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <h3 className="text-2xl font-display font-bold mb-4">
-                {t('programsPage.schedule.fees.title')}
-              </h3>
-              <p className="text-gray-700 mb-4">
-                {t('programsPage.schedule.fees.description')}
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div className="border border-gray-200 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">
-                    {t('programsPage.schedule.fees.nursery.title')}
-                  </h4>
-                  <p className="text-brand-pink font-bold text-xl mb-2">
-                    {t('programsPage.schedule.fees.nursery.price')}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {t('programsPage.schedule.fees.nursery.details')}
-                  </p>
-                </div>
-                <div className="border border-gray-200 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">
-                    {t('programsPage.schedule.fees.preschool.title')}
-                  </h4>
-                  <p className="text-brand-pink font-bold text-xl mb-2">
-                    {t('programsPage.schedule.fees.preschool.price')}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {t('programsPage.schedule.fees.preschool.details')}
-                  </p>
-                </div>
-                <div className="border border-gray-200 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">
-                    {t('programsPage.schedule.fees.afterSchool.title')}
-                  </h4>
-                  <p className="text-brand-pink font-bold text-xl mb-2">
-                    {t('programsPage.schedule.fees.afterSchool.price')}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {t('programsPage.schedule.fees.afterSchool.details')}
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-                <p className="text-gray-700 mb-4">
-                  {t('programsPage.schedule.fees.subsidies.description')}
-                </p>
-                <Button
-                  variant="text"
-                  href="/contact?subject=Fee%20Information"
-                  className="text-brand-pink hover:underline"
-                >
-                  {t('programsPage.schedule.fees.subsidies.button')}
-                </Button>
-              </div>
-            </div>
+            <p className="mt-10 text-center text-sm text-gray-500">
+              Childcare benefit (kinderopvangtoeslag) may cover up to 90% of fees.
+              <br />
+              <span className="text-pink-600 font-semibold">Ask us how</span>
+            </p>
           </div>
         </div>
       </section>

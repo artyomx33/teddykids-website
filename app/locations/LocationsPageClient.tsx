@@ -22,21 +22,19 @@ export default function LocationsPageClient() {
             <p className="text-xl text-gray-700 mb-8">
               {t('locationsPage.hero.subtitle')}
             </p>
-            <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
+            {/* Map Image */}
+            <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-md">
               <Image
-                src="/images/locations/map-hero.jpg"
+                src="/images/tk-map.png"
                 alt={t('locationsPage.map.title')}
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                <span className="text-white text-2xl font-display font-bold">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                <span className="text-white text-lg font-medium">
                   {t('locationsPage.map.locationsCount')}
                 </span>
               </div>
-            </div>
-            <div className="mt-4 text-gray-500 italic">
-              {t('locationsPage.map.interactiveMapComing')}
             </div>
           </div>
         </div>
@@ -113,44 +111,62 @@ export default function LocationsPageClient() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* TISA Netherlands */}
-              <div className="bg-brand-mint bg-opacity-10 p-8 rounded-xl shadow-sm flex flex-col items-center">
-                <div className="h-20 w-40 mb-4 relative">
+              {/* TISA Leiden */}
+              <div className="bg-brand-mint bg-opacity-10 p-6 rounded-xl shadow-sm flex flex-col">
+                <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden">
                   <Image
-                    src="/images/logos/tisa-logo-placeholder.png"
-                    alt="TISA Netherlands Logo"
+                    src="/images/tisa/leiden.png"
+                    alt="TISA Leiden Campus"
                     fill
-                    className="object-contain"
+                    className="object-cover"
                   />
                 </div>
-                <p className="text-gray-700 mb-6">{t('locationsPage.tisa.netherlands.description')}</p>
-                <Button
-                  variant="primary"
-                  href="https://www.tisaschool.com"
-                  isExternal={true}
-                >
-                  {t('locationsPage.tisa.netherlands.button')}
-                </Button>
+                <h3 className="text-xl font-semibold mb-2">TISA Leiden</h3>
+                <p className="text-gray-700 mb-auto">
+                  Our flagship international school in the heart of Leiden.
+                </p>
+                <div className="mt-4">
+                  <p className="text-sm font-medium text-gray-900 mb-1">Address:</p>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Lorentzkade 15a, 2313 GB Leiden
+                  </p>
+                  <Button
+                    variant="primary"
+                    href="https://www.tisaschool.com"
+                    isExternal
+                  >
+                    {t('locationsPage.tisa.netherlands.button')}
+                  </Button>
+                </div>
               </div>
 
               {/* TISA Portugal */}
-              <div className="bg-brand-yellow bg-opacity-10 p-8 rounded-xl shadow-sm flex flex-col items-center">
-                <div className="h-20 w-40 mb-4 relative">
+              <div className="bg-brand-yellow bg-opacity-10 p-6 rounded-xl shadow-sm flex flex-col">
+                <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden">
                   <Image
-                    src="/images/logos/tisa-pt-logo-placeholder.png"
-                    alt="TISA Portugal Logo"
+                    src="/images/tisa/portugal.png"
+                    alt="TISA Portugal Campus"
                     fill
-                    className="object-contain"
+                    className="object-cover"
                   />
                 </div>
-                <p className="text-gray-700 mb-6">{t('locationsPage.tisa.portugal.description')}</p>
-                <Button
-                  variant="primary"
-                  href="https://www.tisaschool.com/portugal"
-                  isExternal={true}
-                >
-                  {t('locationsPage.tisa.portugal.button')}
-                </Button>
+                <h3 className="text-xl font-semibold mb-2">TISA Portugal</h3>
+                <p className="text-gray-700 mb-auto">
+                  Our international campus in sunny Portugal.
+                </p>
+                <div className="mt-4">
+                  <p className="text-sm font-medium text-gray-900 mb-1">Address:</p>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Rua Principal 42, 2710-001 Lisbon
+                  </p>
+                  <Button
+                    variant="primary"
+                    href="https://www.tisaschool.com/portugal"
+                    isExternal
+                  >
+                    {t('locationsPage.tisa.portugal.button')}
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

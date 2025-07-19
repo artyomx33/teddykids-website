@@ -113,7 +113,9 @@ const TeamPreviewItem = (
           src={imageSrc}
           alt={name}
           fill
-          className="object-cover object-top"
+          /* Center image vertically a bit lower so faces stay visible */
+          className="object-cover object-center object-[center_20%]"
+          style={{ objectPosition: 'center 25%' }}
         />
       </div>
       <h4 className="font-medium text-center">{name}</h4>

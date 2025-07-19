@@ -277,6 +277,8 @@ function ApplyPageContent() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   // Ref to the multi-step form container for smooth scrolling
   const formRef = React.useRef<HTMLDivElement>(null);
+  // Controls fade-in of mafia confirmation content after seal video ends
+  const [sealVideoEnded, setSealVideoEnded] = useState(false);
   
   // Handle form input changes
   const handleChange = (
@@ -1058,75 +1060,81 @@ function ApplyPageContent() {
                 
                 {/* Step 6: Teddy Mafia Welcome */}
                 {currentStep === 6 && (
-                  <div className="text-center py-8 bg-black text-white rounded-xl relative overflow-hidden">
-                    {/* Audio welcome message */}
-                    <div className="mb-6">
-                      <button
-                        onClick={() => {
-                          const audio = new Audio('/audio/welcome-to-the-family.mp3');
-                          audio.play().catch(console.error);
-                        }}
-                        className="bg-brand-pink hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center mx-auto mb-4"
-                      >
-                        <span className="mr-2">🔊</span>
-                        Play Welcome Message
-                      </button>
-                    </div>
+                  <div
+                    className="form-submit-confirmation brutal-mafia mx-auto mt-4 mb-8
+                               max-w-[600px] w-full bg-[#1a1a1a] text-gray-100
+                               border-2 border-[#ffc53d] rounded-lg p-8 md:p-10 text-center
+                               shadow-xl"
+                    style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.5)' }}
+                  >
+                    {/* Seal video placeholder */}
+                    <video
+                      id="applySealVideo"
+                      className="seal-video w-40 md:w-48 mx-auto mb-6 rounded-lg"
+                      autoPlay
+                      muted
+                      playsInline
+                      onEnded={() => setSealVideoEnded(true)}
+                      poster="/images/logos/teddy-mafia-logo.png"
+                    >
+                      <source src="/videos/appies_seal_placeholder.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
 
-                    {/* Teddy Mafia Logo/Icon */}
-                    <div className="w-24 h-24 bg-brand-pink rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-                      <span className="text-4xl">🧸</span>
-                    </div>
+                    {/* Content that fades in after video ends */}
+                    {sealVideoEnded && (
+                      <>
+                        {/* Mafia Logo */}
+                        <Image
+                          src="/images/logos/teddy-mafia-logo.png"
+                          alt="Teddy Mafia Logo"
+                          width={112}
+                          height={112}
+                          className="mafia-logo w-28 mx-auto mb-6 animate-pulse"
+                        />
 
-                    <h2 className="text-3xl font-display font-bold mb-4 text-brand-pink">
-                      🧸💼 Welcome to the Family.
-                    </h2>
+                        <h2 className="seal-header font-display font-bold text-2xl md:text-3xl mb-4 tracking-wide">
+                          Welcome to the Inner Circle.
+                        </h2>
+                        <p className="seal-sub text-lg md:text-xl mb-8">
+                          The pact is sealed.
+                        </p>
 
-                    <p className="text-xl mb-8 font-medium">
-                      Your request has been received. The wheels are already in motion.
-                    </p>
+                        <div className="next-steps mb-6">
+                          <ol className="text-left mx-auto inline-block list-decimal pl-6 space-y-3">
+                            <li>Your application has been received&nbsp;&mdash; stamped and logged.</li>
+                            <li>A location chief will follow up personally.</li>
+                            <li>You&apos;ll be invited for a private tour.</li>
+                            <li>We tailor the perfect start date for your child.</li>
+                            <li>You may qualify for up to 5 free trial days.</li>
+                          </ol>
+                        </div>
 
-                    <div className="text-left max-w-2xl mx-auto bg-gray-900 p-6 rounded-lg mb-8">
-                      <h3 className="text-lg font-semibold mb-4 text-brand-pink">🪶 Here&apos;s what happens next:</h3>
-                      <ol className="space-y-3 text-gray-200">
-                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">1.</span>We process your details — no delays.</li>
-                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">2.</span>One of our location heads will contact you directly.</li>
-                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">3.</span>A personal tour will be arranged — on your terms.</li>
-                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">4.</span>We coordinate a tailored start date for your child.</li>
-                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">5.</span>You may qualify for up to 5 free trial days, depending on age and placement.</li>
-                      </ol>
-                    </div>
+                        <p className="seal-note text-sm leading-relaxed mb-8">
+                          Expect contact within 24&ndash;48&nbsp;hours.<br/>
+                          No silence. No guessing.
+                        </p>
 
-                    <div className="bg-gray-900 p-6 rounded-lg mb-8 text-center">
-                      <h4 className="text-lg font-semibold mb-3 text-brand-pink">💬 Final Note</h4>
-                      <p className="text-gray-200 mb-2">
-                        Our Teddy Mafia doesn&apos;t sleep on family.<br/>
-                        Expect a response within 24–48 hours.<br/>
-                        Didn&apos;t hear from us? We don&apos;t ghost — check your spam or call us directly.
-                      </p>
-                      <p className="text-sm text-gray-400 mt-4">
-                        Confirmation sent to: <span className="text-brand-pink font-medium">{formData.parentEmail}</span>
-                      </p>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Button 
-                        variant="primary"
-                        href="/"
-                        size="lg"
-                        className="bg-brand-pink hover:bg-pink-600"
-                      >
-                        Return Home
-                      </Button>
-                      <Button 
-                        variant="outline"
-                        href="/contact"
-                        size="lg"
-                        className="border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-white"
-                      >
-                        Contact Us
-                      </Button>
-                    </div>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                          <Button 
+                            variant="primary"
+                            href="/"
+                            size="lg"
+                            className="bg-[#ffc53d] text-[#1a1a1a] hover:bg-[#e6ae2e]"
+                          >
+                            Return Home
+                          </Button>
+                          <Button 
+                            variant="outline"
+                            href="/contact"
+                            size="lg"
+                            className="border-[#ffc53d] text-[#ffc53d] hover:bg-[#ffc53d] hover:text-[#1a1a1a]"
+                          >
+                            Contact Us
+                          </Button>
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
                 

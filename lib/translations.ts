@@ -2,11 +2,16 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback } from 'react';
+// eslint-disable-next-line import/extensions
+import nl from './nl.json';
 
 // Supported language codes
 export type Language = 'en' | 'nl';
 
-export const translations = {
+/* ------------------------------------------------------------------
+ *  English translations object
+ * -----------------------------------------------------------------*/
+const enTranslations = {
   en: {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     // NAVIGATION & COMMON
@@ -1842,7 +1847,15 @@ export const translations = {
       }
     }
   } // end of nl
-}; // end of translations
+}; // end of enTranslations
+
+/* ------------------------------------------------------------------
+ *  Aggregate translations object (EN + NL)
+ * -----------------------------------------------------------------*/
+export const translations = {
+  en: enTranslations,
+  nl,
+} as const;
 
 /**
  * Hook that returns a translation helper `t`.

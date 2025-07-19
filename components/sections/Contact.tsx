@@ -114,17 +114,21 @@ const Contact: React.FC = () => {
       </div>
       
       <div className="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 mb-1">Full Name</label>
+        {/* Contact Form - Luna's friendly styling */}
+        <form 
+          onSubmit={handleSubmit} 
+          className="contact-form-container max-w-[500px] mx-auto mb-8 bg-white border border-[#ffe5e5] rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+          style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}
+        >
+          <div className="mb-5">
+            <label htmlFor="name" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Full Name</label>
             <input 
               type="text" 
               id="name" 
               name="name" 
               value={formData.name}
               onChange={handleChange}
-              className={`mt-1 block w-full rounded-md ${errors.name ? 'border-red-500' : 'border-gray-300'} px-4 py-3 focus:ring-2 focus:ring-brand-pink focus:border-transparent`} 
+              className={`w-full text-base px-4 py-3 border ${errors.name ? 'border-red-500' : 'border-[#ddd]'} rounded-md transition-all duration-300 hover:border-[#ffc0b0] focus:border-[#ffcasd] focus:outline-none focus:ring-2 focus:ring-[#ffcasd] focus:ring-opacity-40`}
               required 
               placeholder={t('contact.namePlaceholder')}
             />
@@ -135,15 +139,15 @@ const Contact: React.FC = () => {
             )}
           </div>
           
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-1">Email</label>
+          <div className="mb-5">
+            <label htmlFor="email" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Email</label>
             <input 
               type="email" 
               id="email" 
               name="email" 
               value={formData.email}
               onChange={handleChange}
-              className={`mt-1 block w-full rounded-md ${errors.email ? 'border-red-500' : 'border-gray-300'} px-4 py-3 focus:ring-2 focus:ring-brand-pink focus:border-transparent`} 
+              className={`w-full text-base px-4 py-3 border ${errors.email ? 'border-red-500' : 'border-[#ddd]'} rounded-md transition-all duration-300 hover:border-[#ffc0b0] focus:border-[#ffcasd] focus:outline-none focus:ring-2 focus:ring-[#ffcasd] focus:ring-opacity-40`}
               required 
               placeholder={t('contact.emailPlaceholder')}
             />
@@ -154,28 +158,28 @@ const Contact: React.FC = () => {
             )}
           </div>
           
-          <div className="mb-4">
-            <label htmlFor="childAge" className="block text-gray-700 mb-1">Child's Age (optional)</label>
+          <div className="mb-5">
+            <label htmlFor="childAge" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Child's Age (optional)</label>
             <input 
               type="text" 
               id="childAge" 
               name="childAge" 
               value={formData.childAge}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 px-4 py-3 focus:ring-2 focus:ring-brand-pink focus:border-transparent" 
+              className="w-full text-base px-4 py-3 border border-[#ddd] rounded-md transition-all duration-300 hover:border-[#ffc0b0] focus:border-[#ffcasd] focus:outline-none focus:ring-2 focus:ring-[#ffcasd] focus:ring-opacity-40"
               placeholder={t('contact.agePlaceholder')}
             />
           </div>
           
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-gray-700 mb-1">Message</label>
+          <div className="mb-6">
+            <label htmlFor="message" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Message</label>
             <textarea 
               id="message" 
               name="message" 
               rows={5} 
               value={formData.message}
               onChange={handleChange}
-              className={`mt-1 block w-full rounded-md ${errors.message ? 'border-red-500' : 'border-gray-300'} px-4 py-3 focus:ring-2 focus:ring-brand-pink focus:border-transparent`} 
+              className={`w-full text-base px-4 py-3 border ${errors.message ? 'border-red-500' : 'border-[#ddd]'} rounded-md transition-all duration-300 hover:border-[#ffc0b0] focus:border-[#ffcasd] focus:outline-none focus:ring-2 focus:ring-[#ffcasd] focus:ring-opacity-40`}
               required 
               placeholder={t('contact.messagePlaceholder')}
             />
@@ -186,13 +190,15 @@ const Contact: React.FC = () => {
             )}
           </div>
           
-          <Button
+          {/* Luna's gradient button styling */}
+          <button
             type="submit"
-            variant="primary"
-            fullWidth
-            size="lg"
-            className="mt-2"
             disabled={isSubmitting}
+            className="send-button w-full py-3.5 px-6 rounded-full font-semibold text-white transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-lg"
+            style={{ 
+              background: 'linear-gradient(90deg, #ffa5a2, #ff7f84)',
+              boxShadow: '0 2px 8px rgba(255, 127, 132, 0.3)'
+            }}
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
@@ -205,9 +211,10 @@ const Contact: React.FC = () => {
             ) : (
               'Send Message'
             )}
-          </Button>
+          </button>
           
-          <p className="text-sm text-gray-500 mt-2">
+          {/* Luna's microcopy styling */}
+          <p className="microcopy text-[0.85rem] text-gray-600 mt-3 text-center">
             Expect a reply within ~2 hours (weekdays).
           </p>
         </form>
@@ -288,7 +295,7 @@ const Contact: React.FC = () => {
 
             {/* Small note */}
             <p className="small-note text-sm leading-relaxed mb-6">
-              We don’t ghost.<br />
+              We don't ghost.<br />
               Expect contact within 24–48 hours.<br />
               No reply? Check spam or call us.
             </p>

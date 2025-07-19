@@ -57,7 +57,7 @@ export default function ContactPageClient() {
         </div>
 
         {/* Hero content */}
-        <div className="relative z-10 h-full flex items-center text-center md:text-left px-4">
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
           <div className="container mx-auto">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
@@ -73,7 +73,10 @@ export default function ContactPageClient() {
 
       {/* Contact Form Section */}
       <section className="py-16 bg-white">
-        <Contact />
+        {/* Wrapped for friendly Luna styling */}
+        <div className="contact-form-container">
+          <Contact />
+        </div>
       </section>
 
       {/* AppiesGPT Section (AI assistant) */}

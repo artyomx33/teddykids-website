@@ -1043,28 +1043,77 @@ function ApplyPageContent() {
                   </div>
                 )}
                 
-                {/* Step 6: Success */}
+                {/* Step 6: Teddy Mafia Welcome */}
                 {currentStep === 6 && (
-                  <div className="text-center py-8">
-                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
+                  <div className="text-center py-8 bg-black text-white rounded-xl relative overflow-hidden">
+                    {/* Audio welcome message */}
+                    <div className="mb-6">
+                      <button
+                        onClick={() => {
+                          const audio = new Audio('/audio/welcome-to-the-family.mp3');
+                          audio.play().catch(console.error);
+                        }}
+                        className="bg-brand-pink hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center mx-auto mb-4"
+                      >
+                        <span className="mr-2">🔊</span>
+                        Play Welcome Message
+                      </button>
                     </div>
-                    <h2 className="text-2xl font-display font-bold mb-4">Welcome to the Teddy Family!</h2>
-                    <p className="text-lg text-gray-700 mb-8">
-                      We&apos;ve received your application and a Teddy-teamlid will be in touch within 24 hours.
+
+                    {/* Teddy Mafia Logo/Icon */}
+                    <div className="w-24 h-24 bg-brand-pink rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                      <span className="text-4xl">🧸</span>
+                    </div>
+
+                    <h2 className="text-3xl font-display font-bold mb-4 text-brand-pink">
+                      🧸💼 Welcome to the Family.
+                    </h2>
+
+                    <p className="text-xl mb-8 font-medium">
+                      Your request has been received. The wheels are already in motion.
                     </p>
-                    <p className="text-gray-600 mb-8">
-                      A confirmation email has been sent to {formData.parentEmail}.
-                    </p>
-                    <Button 
-                      variant="primary"
-                      href="/"
-                      size="lg"
-                    >
-                      Return to Home
-                    </Button>
+
+                    <div className="text-left max-w-2xl mx-auto bg-gray-900 p-6 rounded-lg mb-8">
+                      <h3 className="text-lg font-semibold mb-4 text-brand-pink">🪶 Here’s what happens next:</h3>
+                      <ol className="space-y-3 text-gray-200">
+                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">1.</span>We process your details — no delays.</li>
+                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">2.</span>One of our location heads will contact you directly.</li>
+                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">3.</span>A personal tour will be arranged — on your terms.</li>
+                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">4.</span>We coordinate a tailored start date for your child.</li>
+                        <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">5.</span>You may qualify for up to 5 free trial days, depending on age and placement.</li>
+                      </ol>
+                    </div>
+
+                    <div className="bg-gray-900 p-6 rounded-lg mb-8 text-center">
+                      <h4 className="text-lg font-semibold mb-3 text-brand-pink">💬 Final Note</h4>
+                      <p className="text-gray-200 mb-2">
+                        Our Teddy Mafia doesn’t sleep on family.<br/>
+                        Expect a response within 24–48 hours.<br/>
+                        Didn’t hear from us? We don’t ghost — check your spam or call us directly.
+                      </p>
+                      <p className="text-sm text-gray-400 mt-4">
+                        Confirmation sent to: <span className="text-brand-pink font-medium">{formData.parentEmail}</span>
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button 
+                        variant="primary"
+                        href="/"
+                        size="lg"
+                        className="bg-brand-pink hover:bg-pink-600"
+                      >
+                        Return Home
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        href="/contact"
+                        size="lg"
+                        className="border-brand-pink text-brand-pink hover:bg-brand-pink hover:text-white"
+                      >
+                        Contact Us
+                      </Button>
+                    </div>
                   </div>
                 )}
                 

@@ -104,16 +104,16 @@ const Contact: React.FC = () => {
   const whatsappLink = `https://wa.me/31620966405?text=${whatsappMessage}`;
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 text-center max-w-xl">
+    <div className="container mx-auto px-4">
+      <div className="text-center max-w-xl mx-auto mb-10">
         <h2 className="text-3xl font-display font-bold mb-4">Let's Connect</h2>
-        <p className="text-lg text-gray-700 mb-8">
+        <p className="text-lg text-gray-700">
           Got questions or just want to say hello? We're here for you—weekdays from 7:30 to 18:30. 
           Fill in the form, call us, or WhatsApp anytime. Welcome to our Teddy family!
         </p>
       </div>
       
-      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-start max-w-5xl">
+      <div className="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
           <div className="mb-4">
@@ -271,7 +271,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

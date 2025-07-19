@@ -65,8 +65,10 @@ export default function ContactPageClient() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <Contact />
+      {/* Contact Form Section */}
+      <section className="py-16 bg-white">
+        <Contact />
+      </section>
     </main>
   );
 }

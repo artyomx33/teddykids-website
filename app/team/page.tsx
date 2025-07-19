@@ -21,7 +21,7 @@ export default function TeamPage() {
           fill
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
-          className="object-cover"
+          className="object-cover object-top"
         />
 
         {/* Gradient overlay for text readability */}
@@ -303,7 +303,7 @@ export default function TeamPage() {
                 src="/images/team/tisa-theater.jpg"
                 alt="TISA students performing on stage"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           </div>

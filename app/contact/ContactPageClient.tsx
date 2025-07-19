@@ -2,8 +2,6 @@
 
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { useLanguage } from '@/lib/LanguageContext';
-import { useTranslation } from '@/lib/translations';
 
 // Dynamically import the Contact form component
 const Contact = dynamic(() => import('@/components/sections/Contact'), {
@@ -17,10 +15,6 @@ const Contact = dynamic(() => import('@/components/sections/Contact'), {
 });
 
 export default function ContactPageClient() {
-  /* Grab current language & translation helper */
-  const { language } = useLanguage();
-  const { t } = useTranslation(language);
-
   return (
     <main>
       {/* ──────────────────────────────────────────────────────────

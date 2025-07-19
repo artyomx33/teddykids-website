@@ -1,6 +1,4 @@
 'use client';
-
-/* eslint-disable @typescript-eslint/no-unused-vars, react/no-unescaped-entities */
 import React, { useState, useEffect } from 'react';
 import Button from '@/components/Button';
 import { useSearchParams } from 'next/navigation';
@@ -1087,9 +1085,9 @@ function ApplyPageContent() {
                     <div className="bg-gray-900 p-6 rounded-lg mb-8 text-center">
                       <h4 className="text-lg font-semibold mb-3 text-brand-pink">💬 Final Note</h4>
                       <p className="text-gray-200 mb-2">
-                        Our Teddy Mafia doesn’t sleep on family.<br/>
+                        Our Teddy Mafia doesn&apos;t sleep on family.<br/>
                         Expect a response within 24–48 hours.<br/>
-                        Didn’t hear from us? We don’t ghost — check your spam or call us directly.
+                        Didn&apos;t hear from us? We don&apos;t ghost — check your spam or call us directly.
                       </p>
                       <p className="text-sm text-gray-400 mt-4">
                         Confirmation sent to: <span className="text-brand-pink font-medium">{formData.parentEmail}</span>

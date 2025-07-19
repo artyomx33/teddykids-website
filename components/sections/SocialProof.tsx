@@ -120,24 +120,29 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
           {t('socialProof.subtitle')}
         </p>
         
+        {/* Trusted headline */}
+        <h3 className="text-xl font-semibold text-center mb-8">
+          Trusted by&nbsp;<span className="text-brand-pink font-display font-bold">10,000+ families</span>&nbsp;since&nbsp;2004
+        </h3>
+
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
-          <ReviewCard 
-            quote={t('socialProof.review1.quote')}
-            author={t('socialProof.review1.author')}
-            audioSrc="/audio/review1.mp3"
+          <ReviewCard
+            quote="Teddy Kids didn't just care for our daughter—they shaped her."
+            author="Emma & James, Parents since 2018"
+            audioSrc="/audio/Emma%20%26%20James%2C%20Parents%20since%202018.mp3"
           />
           
-          <ReviewCard 
-            quote={t('socialProof.review2.quote')}
-            author={t('socialProof.review2.author')}
-            audioSrc="/audio/review2.mp3"
+          <ReviewCard
+            quote="The bilingual environment gave our son confidence we never expected."
+            author="Sophia, Mother of two"
+            audioSrc="/audio/Sophia%20Mother%20of%20two.mp3"
           />
           
-          <ReviewCard 
-            quote={t('socialProof.review3.quote')}
-            author={t('socialProof.review3.author')}
-            audioSrc="/audio/review3.mp3"
+          <ReviewCard
+            quote="As international parents, we found a second home at Teddy Kids."
+            author="Miguel & Ling, TISA Parents"
+            audioSrc="/audio/Miguel%20%26%20Ling%2C%20TISA%20Parents.mp3"
           />
         </div>
         

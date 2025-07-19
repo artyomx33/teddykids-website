@@ -163,7 +163,16 @@ export default function LearningPageClient() {
         </div>
       </section>
 
-      {/* Learning in Action Section */}
+      {/* ----------------------------------------------------------------
+          “Learning in Action” section temporarily removed
+
+          This block currently contains only a heading + subtitle
+          with no actual content behind it, which creates empty
+          visual space on the page.  The client requested that we
+          hide it for now, but keep the markup easily restorable.
+          Simply remove the surrounding comment tags to re-enable.
+      ---------------------------------------------------------------- */}
+      {/*
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -176,6 +185,7 @@ export default function LearningPageClient() {
           </div>
         </div>
       </section>
+      */}
       
       {/* Learning Moments Gallery */}
       <section className="py-16">

@@ -514,71 +514,62 @@ function ApplyPageContent() {
   ];
   
   /* ──────────────────────────────────────────────────────────
-   *  Hero video handling
+   *  Hero video handling - FIXED to prevent flash of content
    * ────────────────────────────────────────────────────────── */
   const fallbackImageSrc = '/images/heroes/journey-starts-here.png';
   const videoSrc = '/images/heroes/journey-starts-here-video.mp4';
-  const [isMobile, setIsMobile] = useState(true);
-  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // Detect screen size for video
 
   useEffect(() => {
+    // Check for mobile on client-side only
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize(); // initial check
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
   
   return (
     <main>
-      {/* 1. Hero Section - Updated to use Next.js Image component */}
+      {/* 1. Hero Section - FIXED to prevent flash of content */}
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden bg-brand-pink">
-        {/* Preload assets */}
+        {/* Preload critical assets */}
         <Head>
-          {!isMobile && (
-            <link rel="preload" as="video" href={videoSrc} crossOrigin="anonymous" />
-          )}
-          <link rel="preload" as="image" href={fallbackImageSrc} fetchPriority="high" />
+          <link rel="preload" as="image" href={fallbackImageSrc} />
+          {!isMobile && <link rel="preload" as="video" href={videoSrc} />}
         </Head>
 
-        {/* Fallback image until video loads / on mobile */}
-        {!videoLoaded && (
-          <div className="absolute inset-0">
-            <Image
-              src={fallbackImageSrc}
-              alt="Your journey with Teddy Kids begins here"
-              fill
-              priority
-              fetchPriority="high"
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-        )}
+        {/* Hero background - single image that's always visible */}
+        <div className="absolute inset-0">
+          <Image
+            src={fallbackImageSrc}
+            alt="Your journey with Teddy Kids begins here"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
 
-        {/* Desktop video background */}
+        {/* Desktop video background - only loaded after initial render */}
         {!isMobile && (
           <video
             autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
-            poster={fallbackImageSrc}
-            onLoadedData={() => setVideoLoaded(true)}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              videoLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
+            className="absolute inset-0 w-full h-full object-cover"
           >
             <source src={videoSrc} type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         )}
 
-        {/* Gradient overlay for text readability */}
+        {/* Gradient overlay for text readability - always present */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 z-10" />
 
-        {/* Hero content */}
+        {/* Hero content - always visible */}
         <div className="relative z-20 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">

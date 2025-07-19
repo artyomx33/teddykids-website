@@ -8,6 +8,7 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 
 // ──────────────────────────────────────────────────────────
+// 2024-07-19: Audio + Timeline working perfectly – Force fresh deployment
 //  Luna-style alternating timeline data (images will be added
 //  later under /public/timeline/)
 // ──────────────────────────────────────────────────────────

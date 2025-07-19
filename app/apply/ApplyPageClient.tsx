@@ -663,15 +663,14 @@ function ApplyPageContent() {
               <audio
                 controls
                 preload="metadata"
-                className="mx-auto w-full max-w-sm h-12 rounded-lg"
+                className="mx-auto w-full max-w-sm"
                 style={{
-                  filter: 'sepia(1) saturate(2) hue-rotate(315deg)',
-                  backgroundColor: '#EC4899'
+                  accentColor: '#EC4899',
                 }}
               >
                 <source src="/audio/appies-welcome.mp3" type="audio/mpeg" />
-                <p className="text-red-500">
-                  Your browser does not support the audio element. Please try a different browser.
+                <p className="text-red-500 text-sm">
+                  Your browser does not support the audio element.
                 </p>
               </audio>
             </div>

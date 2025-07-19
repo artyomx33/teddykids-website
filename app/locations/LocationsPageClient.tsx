@@ -24,8 +24,8 @@ export default function LocationsPageClient() {
             </p>
             <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden">
               <Image
-                src="/images/locations/map-hero.jpg"
-                alt={t('locationsPage.map.title')}
+                src="/images/heroes/locations-hero2.png"
+                alt="Our Teddy Kids Locations across Leiden"
                 fill
                 className="object-cover"
               />

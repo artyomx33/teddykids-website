@@ -35,6 +35,20 @@ const timeline = [
       "RBW opened with an elephant. Literally. Because magic is real when you're four. (And yes, the city said never again.)",
   },
   {
+    year: '2015',
+    img: '/timeline/2015.jpg',
+    alt: '10-year milestone & Teddy Perfume launch',
+    text:
+      '10 years of Teddy Kids! We marked the milestone with our first fragrance, TEDDY PERFUME — Maelyn. “Blush With Every Breath” became a joyful tribute to our journey, inspired by the laughter and love of every child in our care.',
+  },
+  {
+    year: '2016',
+    img: '/timeline/2016.jpg',
+    alt: 'Maelyn perfume line becomes signature',
+    text:
+      'The Maelyn perfume line blossomed into a signature offering — a gentle reminder that childhood memories linger in every sense.',
+  },
+  {
     year: '2018',
     img: '/timeline/2018.jpg',
     alt: 'Teddy Café dream',

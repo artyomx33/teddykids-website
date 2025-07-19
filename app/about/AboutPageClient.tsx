@@ -33,6 +33,7 @@ const timeline = [
     alt: 'RBW elephant moment',
     text:
       "RBW opened with an elephant. Literally. Because magic is real when you're four. (And yes, the city said never again.)",
+    link: 'https://sleutelstad.nl/2014/05/19/olifant-bij-opening-teddy-kids-niet-voor-herhaling-vatbaar/',
   },
   {
     year: '2015',
@@ -54,6 +55,7 @@ const timeline = [
     alt: 'Teddy Café dream',
     text:
       'We dreamed of a café for kids. Permits granted, vision alive… Then came COVID. Even paused dreams leave footprints.',
+    link: 'https://indebuurt.nl/leiden/nieuws/nieuw-in/nieuwe-spot-voor-ouders-teddy-kids-heeft-nu-ook-een-cafe~92330/',
   },
   {
     year: '2020',
@@ -331,10 +333,44 @@ export default function AboutPageClient() {
                 <h3 className="text-xl font-semibold text-brand-pink mb-2">
                   {item.year}
                 </h3>
-                <p className="text-gray-700 text-lg">{item.text}</p>
+                {item.link ? (
+                  <p className="text-gray-700 text-lg">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-brand-pink/60 hover:text-brand-pink transition-colors"
+                    >
+                      {item.text}
+                    </a>
+                  </p>
+                ) : (
+                  <p className="text-gray-700 text-lg">{item.text}</p>
+                )}
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------- */}
+      {/*  TISA Call-out                                                   */}
+      {/* ---------------------------------------------------------------- */}
+      <section className="py-12 bg-brand-pink bg-opacity-5">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto bg-white border border-brand-pink rounded-xl p-8 shadow-sm">
+            <h3 className="text-2xl md:text-3xl font-display font-bold mb-4 text-brand-pink">
+              Looking for international primary school?
+            </h3>
+            <a
+              href="https://www.tisaschool.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-pink hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-full transition-colors"
+            >
+              Visit TISA&nbsp;➝
+            </a>
+          </div>
         </div>
       </section>
 

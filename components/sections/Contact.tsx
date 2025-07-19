@@ -4,7 +4,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from '@/lib/translations';
 import { useLanguage } from '@/lib/LanguageContext';
-import Button from '@/components/Button';
 
 interface FormData {
   name: string;
@@ -106,9 +105,9 @@ const Contact: React.FC = () => {
   return (
     <div className="container mx-auto px-4">
       <div className="text-center max-w-xl mx-auto mb-10">
-        <h2 className="text-3xl font-display font-bold mb-4">Let's Connect</h2>
+        <h2 className="text-3xl font-display font-bold mb-4">Let&apos;s Connect</h2>
         <p className="text-lg text-gray-700">
-          Got questions or just want to say hello? We're here for you—weekdays from 7:30 to 18:30. 
+          Got questions or just want to say hello? We&apos;re here for you&mdash;weekdays from 7:30 to 18:30. 
           Fill in the form, call us, or WhatsApp anytime. Welcome to our Teddy family!
         </p>
       </div>
@@ -159,7 +158,7 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="mb-5">
-            <label htmlFor="childAge" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Child's Age (optional)</label>
+            <label htmlFor="childAge" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Child&apos;s Age (optional)</label>
             <input 
               type="text" 
               id="childAge" 
@@ -244,13 +243,13 @@ const Contact: React.FC = () => {
           
           <div className="bg-brand-pink bg-opacity-10 p-4 rounded-lg">
             <p className="text-gray-700 italic">
-              "All messages are read daily by our caregiving team—no bots, no waitlists."
+              &quot;All messages are read daily by our caregiving team&mdash;no bots, no waitlists.&quot;
             </p>
           </div>
           
           <div className="mt-4">
             <p className="text-gray-600 italic">
-              "Teddy Kids feels like home from the first click." – Parent testimonial
+              &quot;Teddy Kids feels like home from the first click.&quot; – Parent testimonial
             </p>
           </div>
         </div>

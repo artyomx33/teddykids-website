@@ -32,15 +32,29 @@ export default function ContactPageClient() {
        *  Hero Section - Warmer, more welcoming
        * ────────────────────────────────────────────────────────── */}
       <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/images/heroes/journey-starts-here.png"
-          alt="Reach out to Teddy Kids - we're here to help"
-          fill
-          sizes="100vw"
-          priority
-          className="object-cover object-center"
-        />
+        {/* Background video with image fallback */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/heroes/journey-starts-here.png"
+        >
+          <source
+            src="/images/heroes/journey-starts-here-video.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback image for very old browsers */}
+          <Image
+            src="/images/heroes/journey-starts-here.png"
+            alt="Reach out to Teddy Kids"
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover object-center"
+          />
+        </video>
 
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
@@ -64,7 +78,7 @@ export default function ContactPageClient() {
                 Contact Us
               </h1>
               <p className="text-xl md:text-2xl text-white">
-                We're here to answer your questions and welcome you to our Teddy family
+                We&apos;re here to answer your questions and welcome you to our Teddy family
               </p>
             </div>
           </div>

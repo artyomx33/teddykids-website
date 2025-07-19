@@ -9,7 +9,8 @@ import { useTranslation } from '@/lib/translations';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Head from 'next/head';
-import { AudioPlayer } from 'react-audio-player-component';
+// NOTE: react-audio-player-component was removed due to React 19 compatibility issues.
+// We fall back to a styled native <audio> element instead.
 
 // Progress step component
 interface ProgressStepProps {
@@ -658,18 +659,21 @@ function ApplyPageContent() {
               Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
             </p>
             <div className="bg-gray-50 p-6 rounded-xl inline-block">
-              <AudioPlayer
-                src="/audio/appies-welcome.mp3"
-                minimal={true}
-                width={300}
-                trackHeight={75}
-                barPlayedColor="#EC4899"      /* brand pink */
-                barUnplayedColor="#F3F4F6"    /* gray-100 */
-                barHoverColor="#BE185D"       /* darker pink */
-                skipDuration={2}
-                showLoopOption={false}
-                showVolumeControl={true}
-              />
+              {/* Styled HTML5 audio element (pink accent) */}
+              <audio
+                controls
+                preload="metadata"
+                className="mx-auto w-full max-w-sm h-12 rounded-lg"
+                style={{
+                  filter: 'sepia(1) saturate(2) hue-rotate(315deg)',
+                  backgroundColor: '#EC4899'
+                }}
+              >
+                <source src="/audio/appies-welcome.mp3" type="audio/mpeg" />
+                <p className="text-red-500">
+                  Your browser does not support the audio element. Please try a different browser.
+                </p>
+              </audio>
             </div>
           </div>
         </div>

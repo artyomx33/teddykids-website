@@ -96,7 +96,7 @@ export default function LocationsPage() {
             <div className="rounded-xl overflow-hidden shadow-md">
               <div className="relative h-[400px] w-full">
                 <Image
-                  src="/images/heroes/locations-hero.jpg"
+                  src="/images/heroes/locations-hero.png"
                   alt="Overview of Teddy Kids locations"
                   fill
                   className="object-cover"

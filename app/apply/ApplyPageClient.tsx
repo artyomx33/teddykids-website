@@ -480,7 +480,7 @@ function ApplyPageContent() {
     {
       icon: "🧸",
       title: "Play-Based Learning",
-      description: "Children learn best when they're having fun. Our curriculum is built on joy."
+      description: "Children learn best when they&apos;re having fun. Our curriculum is built on joy."
     },
     {
       icon: "👩‍👧‍👦",
@@ -578,7 +578,7 @@ function ApplyPageContent() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold mb-6">Why Teddy Kids Exists</h2>
             <p className="text-lg text-gray-700 mb-10">
-              We didn't build another daycare. We built what we wish we had as kids.
+              We didn&apos;t build another daycare. We built what we wish we had as kids.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -608,7 +608,7 @@ function ApplyPageContent() {
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-4xl mb-4">📝</div>
                 <h3 className="font-medium text-xl mb-2">Complete Application</h3>
-                <p className="text-gray-600">Fill out a quick form—we'll guide you all the way.</p>
+                <p className="text-gray-600">Fill out a quick form—we&apos;ll guide you all the way.</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-4xl mb-4">🎉</div>
@@ -1072,7 +1072,7 @@ function ApplyPageContent() {
                     </p>
 
                     <div className="text-left max-w-2xl mx-auto bg-gray-900 p-6 rounded-lg mb-8">
-                      <h3 className="text-lg font-semibold mb-4 text-brand-pink">🪶 Here’s what happens next:</h3>
+                      <h3 className="text-lg font-semibold mb-4 text-brand-pink">🪶 Here&apos;s what happens next:</h3>
                       <ol className="space-y-3 text-gray-200">
                         <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">1.</span>We process your details — no delays.</li>
                         <li className="flex items-start"><span className="text-brand-pink font-bold mr-3">2.</span>One of our location heads will contact you directly.</li>
@@ -1167,7 +1167,7 @@ function ApplyPageContent() {
             </div>
             <div className="bg-gray-50 p-6 rounded-xl">
               <h3 className="font-medium text-xl mb-2">Can I schedule a tour first?</h3>
-              <p className="text-gray-600">Absolutely—choose &quot;Book a Tour&quot; above and we'll find a time that works.</p>
+              <p className="text-gray-600">Absolutely—choose &quot;Book a Tour&quot; above and we&apos;ll find a time that works.</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-xl">
               <h3 className="font-medium text-xl mb-2">Is Teddy Kids bilingual?</h3>
@@ -1186,10 +1186,10 @@ function ApplyPageContent() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-6">
-              Not sure yet? That's completely okay.
+              Not sure yet? That&apos;s completely okay.
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              There's no rush — just readiness. We're happy to chat or send you more information about our programs and approach.
+              There&apos;s no rush — just readiness. We&apos;re happy to chat or send you more information about our programs and approach.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button variant="outline" href="/contact">

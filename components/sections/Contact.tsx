@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from '@/lib/translations';
 import { useLanguage } from '@/lib/LanguageContext';
+import Image from 'next/image';
 
 interface FormData {
   name: string;
@@ -266,9 +267,11 @@ const Contact: React.FC = () => {
             style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.5)' }}
           >
             {/* Mafia Logo */}
-            <img
+            <Image
               src="/images/logos/teddy-mafia-logo.png"
               alt="Teddy Mafia Logo"
+              width={112}
+              height={112}
               className="mafia-logo w-28 mx-auto mb-6 animate-pulse"
             />
 

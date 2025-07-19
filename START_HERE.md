@@ -17,6 +17,7 @@ These numbers are hard-won. Ignoring the guides will tank them.
 
 | File | Why you need it |
 |------|-----------------|
+| **[CONTRIBUTING.md](./CONTRIBUTING.md)** | Setup, code-quality rules, pre-commit hooks & Husky instructions that keep builds green. |
 | **[DEVELOPMENT_GUIDE.md](./DEVELOPMENT_GUIDE.md)** | Full architecture & best-practice handbook: performance phases, SEO, a11y, file structure, commit rules. |
 | **[QUICK_CHECKLIST.md](./QUICK_CHECKLIST.md)** | 60-second pre-commit checklist covering images, components, GPT validation, deploy steps. |
 

@@ -52,7 +52,7 @@ export default function TeamPage() {
                 <div className="md:w-1/3">
                   <div className="relative h-64 w-full rounded-xl overflow-hidden">
                     <Image
-                      src="/images/heroes/team-hero.png"
+                      src="/images/heroes/programs-hero.jpg"
                       alt="Teddy Kids Team Philosophy"
                       fill
                       className="object-cover object-top"

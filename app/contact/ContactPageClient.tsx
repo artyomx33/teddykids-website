@@ -42,7 +42,7 @@ export default function ContactPageClient() {
         {/* Teddy character - friendly mascot */}
         <div className="absolute bottom-0 right-0 md:right-[10%] z-10 hidden md:block">
           <Image
-            src="/images/characters/teddy-character-1.png"
+            src="/images/characters/teddy-character-1.jpg"
             alt=""
             width={220}
             height={220}

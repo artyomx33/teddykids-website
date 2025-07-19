@@ -9,6 +9,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "lhci": "lhci autorun",
+    "bundle:analyze": "ANALYZE=true npm run build",
     "prepare": "husky"
   },
   "dependencies": {

@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     images: ["/images/og-image.jpg"],
   },
   // ------------------------------------------------------------------
-  //  Additional link hints (Lighthouse “Preconnect” recommendation)
+  //  Additional link hints (Lighthouse "Preconnect" recommendation)
   // ------------------------------------------------------------------
   other: {
     "preconnect-fonts": "https://fonts.gstatic.com",

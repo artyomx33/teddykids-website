@@ -13,21 +13,22 @@
     "@vercel/analytics": "^1.5.0",
     "next": "15.3.5",
     "react": "^19.0.0",
+    "react-audio-player-component": "^1.2.4",
     "react-confetti": "^6.4.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@lhci/cli": "^0.15.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@lhci/cli": "^0.15.1",
-    "lighthouse": "^12.8.0",
     "chrome-launcher": "^1.2.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
+    "lighthouse": "^12.8.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

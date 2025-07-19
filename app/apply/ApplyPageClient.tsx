@@ -9,6 +9,7 @@ import { useTranslation } from '@/lib/translations';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Head from 'next/head';
+import { AudioPlayer } from 'react-audio-player-component';
 
 // Progress step component
 interface ProgressStepProps {
@@ -657,20 +658,18 @@ function ApplyPageContent() {
               Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
             </p>
             <div className="bg-gray-50 p-6 rounded-xl inline-block">
-              <audio
-                controls
-                className="mx-auto w-full max-w-md"
-                preload="metadata"
-              >
-                <source
-                  src="/audio/appies-welcome.mp3"
-                  type="audio/mpeg"
-                />
-                <p className="text-red-500">
-                  Your browser does not support the audio element. Please try a
-                  different browser.
-                </p>
-              </audio>
+              <AudioPlayer
+                src="/audio/appies-welcome.mp3"
+                minimal={true}
+                width={300}
+                trackHeight={75}
+                barPlayedColor="#EC4899"      /* brand pink */
+                barUnplayedColor="#F3F4F6"    /* gray-100 */
+                barHoverColor="#BE185D"       /* darker pink */
+                skipDuration={2}
+                showLoopOption={false}
+                showVolumeControl={true}
+              />
             </div>
           </div>
         </div>

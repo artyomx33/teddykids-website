@@ -391,7 +391,7 @@ function ApplyPageContent() {
     e.preventDefault();
     
     if (validateStep()) {
-      /* eslint-disable no-console -- explicit debug logging requested */
+       
       console.log('[Apply-Form] ✅ Validation passed. Submitting form …');
       console.table(formData);
       // TODO: send formData to backend / API endpoint here.
@@ -401,7 +401,7 @@ function ApplyPageContent() {
       console.log('[Apply-Form] 🎉 Reached confirmation step (6)');
       // Smooth-scroll to the confirmation card instead of abrupt jump
       scrollToForm();
-      /* eslint-enable no-console */
+       
     }
   };
   

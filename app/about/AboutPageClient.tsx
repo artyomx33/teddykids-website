@@ -324,11 +324,16 @@ export default function AboutPageClient() {
                 idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               } items-center gap-8 mb-16 fade-in`}
             >
-              <img
-                src={item.img}
-                alt={item.alt}
-                className="w-full md:w-1/2 h-72 object-cover rounded-xl shadow-md"
-              />
+              {/* Use next/image for automatic optimization & ESLint compliance */}
+              <div className="relative w-full md:w-1/2 h-72 rounded-xl shadow-md overflow-hidden">
+                <Image
+                  src={item.img}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="md:w-1/2">
                 <h3 className="text-xl font-semibold text-brand-pink mb-2">
                   {item.year}

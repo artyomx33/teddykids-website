@@ -198,6 +198,57 @@ export const locations: Record<string, Location> = {
     featured: true,
   },
   
+  tisa_leiden: {
+    id: 'tisa_leiden',
+    name: 'TISA Leiden',
+    city: 'Leiden',
+    tagline: 'Our flagship bilingual international school where global citizens begin their educational journey.',
+    address: {
+      street: 'Lorentzkade 15a',
+      postalCode: '2313 GB',
+      city: 'Leiden',
+      country: 'Netherlands',
+      googleMapsUrl: 'https://maps.google.com/?q=Lorentzkade+15a+Leiden',
+    },
+    contact: {
+      name: 'Artem',
+      role: 'School Director',
+      email: 'artem@tisaschool.com',
+      phone: '+31 71 567 8901',
+      whatsapp: '+31612345789',
+      whatsappMessage: 'Hi TISA Leiden! I would like to book a tour of the school.',
+    },
+    hours: {
+      monday: '8:30 - 15:00',
+      tuesday: '8:30 - 15:00',
+      wednesday: '8:30 - 15:00',
+      thursday: '8:30 - 15:00',
+      friday: '8:30 - 15:00',
+      weekend: 'Closed',
+    },
+    programs: ['tisa'],
+    images: [
+      '/images/locations/tisa_leiden_1.jpg',
+      '/images/locations/tisa_leiden_2.jpg',
+      '/images/locations/tisa_leiden_3.jpg',
+    ],
+    reviews: [
+      {
+        author: 'International Parents',
+        rating: 5,
+        text: 'TISA Leiden offers an exceptional bilingual education. Our children are developing into true global citizens.',
+        date: '2023-06-15',
+      },
+      {
+        author: 'Dutch Family',
+        rating: 5,
+        text: 'The international curriculum at TISA is outstanding. Our son speaks fluent English after just one year!',
+        date: '2023-09-22',
+      },
+    ],
+    featured: true,
+  },
+  
   zml: {
     id: 'zml',
     name: 'ZML – Zeemanlaan 22a',

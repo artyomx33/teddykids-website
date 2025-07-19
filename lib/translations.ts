@@ -303,6 +303,11 @@ export const translations = {
           description: "Home to bilingual after-school adventures and TISA dreams, all under one inspiring roof.",
           quote: "The staff at Lorentzkade are amazing—our daughter loves both TK and her new TISA class."
         },
+        tisaLeiden: {
+          title: "TISA Leiden",
+          description: "Our flagship bilingual international school where global citizens begin their educational journey.",
+          quote: "TISA Leiden offers an exceptional bilingual education. Our children are developing into true global citizens."
+        },
         zml: {
           title: "ZML – Zeemanlaan 22a",
           description: "A cozy, creative haven where our youngest explorers discover their voices in two languages.",
@@ -1255,6 +1260,11 @@ export const translations = {
           title: "LRZ – Lorentzkade 15a",
           description: "Thuisbasis voor tweetalige naschoolse avonturen en TISA-dromen, allemaal onder één inspirerend dak.",
           quote: "Het team op Lorentzkade is geweldig—onze dochter is dol op zowel TK als haar TISA-klas."
+        },
+        tisaLeiden: {
+          title: "TISA Leiden",
+          description: "Onze vlaggenschip tweetalige internationale school waar wereldburgers hun educatieve reis beginnen.",
+          quote: "TISA Leiden biedt uitzonderlijk tweetalig onderwijs. Onze kinderen ontwikkelen zich tot echte wereldburgers."
         },
         zml: {
           title: "ZML – Zeemanlaan 22a",

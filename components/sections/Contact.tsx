@@ -252,22 +252,64 @@ const Contact: React.FC = () => {
       {/* Success Message (only shown after form submission) */}
       {isSubmitted && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg p-8 max-w-md">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{t('contact.thankYouTitle')}</h3>
-              <p className="text-gray-600 mb-4">{t('contact.thankYou')}</p>
-              <Button 
-                variant="secondary"
-                onClick={() => setIsSubmitted(false)}
-              >
-                {t('contact.sendAnother')}
-              </Button>
+          {/* Brutal Luna Mafia confirmation card */}
+          <div
+            className="form-submit-confirmation brutal-mafia relative max-w-[600px] w-full
+                       bg-[#1a1a1a] text-gray-100 border-2 border-[#ffc53d] rounded-lg
+                       p-8 md:p-10 text-center shadow-xl"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.5)' }}
+          >
+            {/* Mafia Logo */}
+            <img
+              src="/images/logos/teddy-mafia-logo.png"
+              alt="Teddy Mafia Logo"
+              className="mafia-logo w-28 mx-auto mb-6 animate-pulse"
+            />
+
+            {/* Heading */}
+            <h2 className="font-display font-bold text-2xl md:text-3xl mb-4 tracking-wide">
+              Welcome to the Family.
+            </h2>
+
+            {/* Next steps */}
+            <div className="next-steps mb-6">
+              <p className="mb-6">
+                Your request has landed. Now, do me a little favor...
+              </p>
+              <ol className="text-left mx-auto inline-block list-decimal pl-6 space-y-3">
+                <li>Keep your phone close — someone important is calling.</li>
+                <li>We process your details — fast and quiet.</li>
+                <li>A location head reaches out — personally.</li>
+                <li>You get invited for a private tour.</li>
+                <li>We lock in an ideal start date for your child.</li>
+                <li>You may qualify for 5 free trial days.</li>
+              </ol>
             </div>
+
+            {/* Small note */}
+            <p className="small-note text-sm leading-relaxed mb-6">
+              We don’t ghost.<br />
+              Expect contact within 24–48 hours.<br />
+              No reply? Check spam or call us.
+            </p>
+
+            {/* CTA button */}
+            <a
+              href="/contact"
+              className="btn-mafia inline-block bg-[#ffc53d] text-[#1a1a1a] font-semibold
+                         py-3 px-6 rounded hover:bg-[#e6ae2e] transition-colors"
+            >
+              Still got questions? Call us.
+            </a>
+
+            {/* Close button (X) */}
+            <button
+              onClick={() => setIsSubmitted(false)}
+              aria-label="Close"
+              className="absolute top-2 right-3 text-gray-400 hover:text-gray-200 text-xl"
+            >
+              &times;
+            </button>
           </div>
         </div>
       )}

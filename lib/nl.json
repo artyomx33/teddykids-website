@@ -1,0 +1,558 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "Over Ons",
+    "programs": "Programma's",
+    "locations": "Locaties",
+    "team": "Team",
+    "learning": "Leermomenten",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Van Eerste Stapjes naar Wereldburgers",
+    "subtitle": "Waar de eerste woordjes van je kind leiden tot een wereld vol mogelijkheden.",
+    "cta1": "Plan een Bezoek",
+    "cta2": "Nu Aanmelden"
+  },
+  "whyTeddyKids": {
+    "title": "Waarom Teddy Kids Bestaat",
+    "subtitle": "We hebben niet zomaar een kinderdagverblijf gebouwd. We hebben gebouwd wat we zelf als kind hadden willen hebben."
+  },
+  "beginYourJourney": {
+    "title": "Begin Je Reis",
+    "subtitle": "Klaar om de eerste stap te zetten?"
+  },
+  "pillars": {
+    "title": "Onze Belofte aan Elk Kind",
+    "pillar1": {
+      "title": "Tweetalige Briljantie",
+      "description": "Taal opent deuren naar nieuwe werelden."
+    },
+    "pillar2": {
+      "title": "Leren door Spel",
+      "description": "Plezier is de basis van blijvende kennis."
+    },
+    "pillar3": {
+      "title": "Wereldse Harten & Geesten",
+      "description": "Koesteren van de wereldburgers van morgen."
+    },
+    "pillar4": {
+      "title": "20 Jaar Zorg",
+      "description": "Twee decennia expertise in kinderontwikkeling."
+    }
+  },
+  "socialProof": {
+    "title": "Vertrouwd door meer dan 10.000 families sinds 2004",
+    "subtitle": "Wat enkele van onze ouders zeggen:",
+    "review1": {
+      "quote": "Teddy Kids heeft niet alleen voor onze dochter gezorgd—ze hebben haar gevormd.",
+      "author": "Emma & James, Ouders sinds 2018"
+    },
+    "review2": {
+      "quote": "De tweetalige omgeving gaf onze zoon een zelfvertrouwen dat we nooit hadden verwacht.",
+      "author": "Sophia, Moeder van twee"
+    },
+    "review3": {
+      "quote": "Als internationale ouders vonden we een tweede thuis bij Teddy Kids.",
+      "author": "Miguel & Ling, TISA Ouders"
+    },
+    "trustedBy": "Vertrouwd door organisaties zoals:"
+  },
+  "appiesGPT": {
+    "title": "Heb je een vraag?",
+    "description": "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je vragen beantwoorden over programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
+    "buttonText": "Open AppiesGPT Chat"
+  },
+  "programs": {
+    "title": "Wat Wij Bieden",
+    "subtitle": "Programma's ontworpen voor elke fase van de kindertijd",
+    "nursery": {
+      "title": "Baby & Dreumes",
+      "tagline": "Veilige, zachte beginnetjes",
+      "description": "Koesterende zorg voor onze jongste ontdekkers."
+    },
+    "preschool": {
+      "title": "Peutergroep",
+      "tagline": "Waar spel en doel samenkomen",
+      "description": "Bouwen aan fundamenten door begeleide ontdekking."
+    },
+    "afterSchool": {
+      "title": "Buitenschoolse Opvang",
+      "tagline": "Verkenning na schooltijd",
+      "description": "Leren verlengen buiten het klaslokaal."
+    },
+    "tisa": {
+      "title": "TISA",
+      "tagline": "Tweetalige Internationale School",
+      "description": "Onderwijs van wereldklasse met een globaal perspectief."
+    }
+  },
+  "programsPage": {
+    "hero": {
+      "title": "Van Eerste Stapjes naar Grote Sprongen",
+      "subtitle": "Ontdek hoe elk Teddy Kids programma meegroeit met je kind—door liefde, taal en doelgericht spel."
+    },
+    "overview": {
+      "title": "Kies de reis die bij jouw gezin past",
+      "ageRange": "Leeftijdsbereik",
+      "learnMore": "Meer Informatie",
+      "visitWebsite": "Bezoek Website"
+    },
+    "nursery": {
+      "title": "Baby & Dreumes",
+      "shortDescription": "Zachte ruimtes. Liefdevolle zorg. Twee talen vanaf dag één."
+    },
+    "preschool": {
+      "title": "Peutergroep",
+      "shortDescription": "Waar verhalen, STEM en liedjes dagelijks verwondering opwekken."
+    },
+    "afterSchool": {
+      "title": "Buitenschoolse Opvang",
+      "shortDescription": "Creatieve clubs en zelfvertrouwen-opbouwende avonturen."
+    },
+    "tisa": {
+      "title": "TISA",
+      "shortDescription": "Onze tweetalige internationale basisschool."
+    },
+    "sections": {
+      "nursery": {
+        "scheduleItems": [
+          { "day": "Maandag - Vrijdag", "hours": "7:30 - 18:30" },
+          { "day": "Halve dagen mogelijk", "hours": "7:30 - 13:00 of 13:00 - 18:30" },
+          { "day": "Minimum dagen", "hours": "2 dagen per week" }
+        ]
+      },
+      "afterSchool": {
+        "scheduleItems": [
+          { "day": "Maandag - Vrijdag", "hours": "Na school - 18:30" },
+          { "day": "Schoolvakanties", "hours": "7:30 - 18:30 (hele dag)" },
+          { "day": "Studiedagen", "hours": "7:30 - 18:30 (hele dag)" }
+        ]
+      }
+    },
+    "curriculum": {
+      "title": "Onze Curriculum Aanpak",
+      "approach": {
+        "title": "Leren door Taal & Spel",
+        "description": "We combineren onderzoeksgestuurde speelpedagogie met tweetalige onderdompeling zodat kinderen in twee talen denken, dromen en creëren."
+      },
+      "bilingual": {
+        "title": "Hoe Tweetalige Hersenen Bloeien",
+        "description": "Taal is verweven in elke hoek van de dag — niet beperkt tot een lesblok.",
+        "immersion": {
+          "title": "Volledige Onderdompeling",
+          "description": "Engelstalige & Nederlandstalige pedagogen begeleiden elke routine."
+        },
+        "consistency": {
+          "title": "Eén-Pedagoog–Eén-Taal",
+          "description": "Duidelijke, consistente input bouwt zelfverzekerde sprekers."
+        },
+        "cultural": {
+          "title": "Cultuur in Elke Hoek",
+          "description": "Liedjes, verhalen & vieringen van over de hele wereld."
+        }
+      }
+    },
+    "schedule": {
+      "title": "Roosters & Tarieven",
+      "hours": {
+        "title": "Openingstijden",
+        "nursery": { "title": "Baby & Dreumes" },
+        "afterSchool": { "title": "Buitenschoolse Opvang" }
+      },
+      "fees": {
+        "title": "Tarieven",
+        "description": "Transparante prijzen, geen verborgen verrassingen.",
+        "nursery": {
+          "title": "Baby & Dreumes",
+          "price": "€125 per dag",
+          "details": "Inclusief maaltijden, luiers & activiteiten"
+        },
+        "preschool": {
+          "title": "Peutergroep",
+          "price": "€115 per dag",
+          "details": "Halve dag opties beschikbaar"
+        },
+        "afterSchool": {
+          "title": "Buitenschoolse Opvang",
+          "price": "€9 per uur",
+          "details": "Vakantiekampen apart gefactureerd"
+        },
+        "subsidies": {
+          "description": "Kinderopvangtoeslag kan tot 90% van de kosten dekken.",
+          "button": "Vraag ons hoe"
+        }
+      }
+    },
+    "cta": {
+      "title": "Laten we samen de perfecte match vinden.",
+      "subtitle": "Elk gezin heeft andere behoeften. Ons team staat klaar om je te helpen het juiste pad te kiezen.",
+      "bookTour": "Plan een Bezoek",
+      "applyNow": "Nu Aanmelden"
+    },
+    "metadata": {
+      "title": "Onze Programma's | Teddy Kids",
+      "description": "Van luiers tot diploma's, ontdek baby & dreumes, peutergroep, buitenschoolse opvang en TISA — programma's ontworpen voor plezier, groei en globaal denken.",
+      "keywords": "teddy kids programma's, baby & dreumes, peutergroep, buitenschoolse opvang, TISA, internationale school, tweetalig onderwijs, leiden"
+    }
+  },
+  "locationsPage": {
+    "hero": {
+      "title": "Vind Je Dichtstbijzijnde Teddy Thuis",
+      "subtitle": "Elke locatie heeft zijn eigen energie — allemaal gebouwd op liefde, zorg en nieuwsgierigheid."
+    },
+    "map": {
+      "title": "Kaart van Teddy Kids Locaties",
+      "description": "Ontdek onze gezellige plekjes waar kleine hartjes samen leren, spelen en groeien.",
+      "locationsCount": "5 Locaties Wereldwijd",
+      "interactiveMapComing": "Interactieve Kaart Binnenkort Beschikbaar",
+      "interactive": "Klik op markers voor details over elke locatie."
+    },
+    "filters": {
+      "title": "Filter op:",
+      "all": "Alle Locaties",
+      "leiden": "Leiden",
+      "oegstgeest": "Oegstgeest",
+      "international": "Internationaal"
+    },
+    "locations": {
+      "rbw": {
+        "title": "RBW – Rijnsburgerweg 35",
+        "description": "Onze grootste, meest internationale locatie, vol licht en taal.",
+        "address": "Adres:",
+        "openingHours": "Openingstijden:",
+        "days": {
+          "monday": "Maandag:",
+          "tuesday": "Dinsdag:",
+          "wednesday": "Woensdag:",
+          "thursday": "Donderdag:",
+          "friday": "Vrijdag:",
+          "weekend": "Weekend:"
+        },
+        "closed": "Gesloten",
+        "contactPerson": "Contactpersoon:",
+        "siteLeader": "Locatiehoofd",
+        "googleReviews": "Google Reviews:",
+        "quote": "RBW voelt als familie. Ze hebben onze dochter vanaf dag één thuis laten voelen.",
+        "bookTour": "Plan een Bezoek",
+        "applyNow": "Nu Aanmelden"
+      },
+      "rb35": {
+        "title": "RB3/RB5 – Rijnsburgerweg 3 & 5",
+        "description": "Een dynamische, dubbele locatie waar peuters en schoolkinderen allebei hun perfecte ruimte vinden.",
+        "quote": "De naschoolse activiteiten hier zijn zo creatief—onze zoon wil nooit meer weg!"
+      },
+      "lrz": {
+        "title": "LRZ – Lorentzkade 15a",
+        "description": "Thuis van tweetalige naschoolse avonturen en TISA dromen, allemaal onder één inspirerend dak.",
+        "quote": "Het personeel bij Lorentzkade is geweldig—onze dochter houdt van zowel TK als haar nieuwe TISA klas."
+      },
+      "zml": {
+        "title": "ZML – Zeemanlaan 22a",
+        "description": "Een gezellige, creatieve haven waar onze jongste ontdekkers hun stem ontdekken in twee talen.",
+        "quote": "ZML is magisch. De omgeving is rustig, schoon en vol gelach."
+      },
+      "tisaPortugal": {
+        "title": "TISA Portugal",
+        "description": "Onze zonnige internationale campus waar Portugese warmte Teddy-innovatie ontmoet.",
+        "quote": "Verhuizen naar Portugal werd zoveel makkelijker wetende dat onze kinderen een vertrouwde onderwijsomgeving hadden bij TISA."
+      }
+    },
+    "tisa": {
+      "title": "TISA – Onze Internationale Scholen",
+      "description": "Teddy Kids exploiteert ook trots twee tweetalige internationale scholen onder het TISA-merk—ontworpen voor nieuwsgierige geesten die klaar zijn om de wereld te veroveren.",
+      "netherlands": {
+        "description": "Tweetalige internationale basisschool in Leiden.",
+        "button": "Bezoek TISA Nederland"
+      },
+      "portugal": {
+        "description": "Onze zonnige internationale campus in Lissabon.",
+        "button": "Bezoek TISA Portugal"
+      }
+    },
+    "transportation": {
+      "title": "Naar Teddy Kids Komen",
+      "publicTransport": {
+        "title": "Openbaar Vervoer",
+        "items": [
+          "Al onze locaties in Leiden liggen op 10-15 minuten van Leiden Centraal Station met de bus",
+          "Buslijnen 1, 3 en 4 bedienen onze verschillende locaties"
+        ]
+      },
+      "parking": {
+        "title": "Parkeren & Fietsen",
+        "items": [
+          "Alle locaties hebben speciale parkeerplaatsen voor halen/brengen",
+          "Overdekte fietsenstalling beschikbaar bij elke locatie",
+          "Kinderwagenstalling beschikbaar in elk gebouw"
+        ]
+      },
+      "specialServices": {
+        "title": "Speciale Vervoersdiensten",
+        "description": "Voor onze TISA en Buitenschoolse Opvang programma's bieden we vervoersdiensten tussen deelnemende scholen en onze locaties. Informeer naar specifieke routes en beschikbaarheid.",
+        "button": "Vraag naar vervoersopties"
+      }
+    },
+    "cta": {
+      "title": "Klaar om een Locatie te Bezoeken?",
+      "subtitle": "Plan een rondleiding bij je voorkeurslocatie om onze faciliteiten te zien, ons team te ontmoeten en het Teddy Kids verschil uit eerste hand te ervaren.",
+      "bookTour": "Plan een Bezoek",
+      "applyNow": "Nu Aanmelden"
+    },
+    "applyPage": {
+      "hero": {
+        "title": "Je reis met Teddy Kids begint hier.",
+        "subtitle": "We hebben de eerste stap eenvoudig, warm en stressvrij gemaakt—net als alles wat we doen."
+      },
+      "audio": {
+        "label": "Luister naar een ouder die zich net heeft aangemeld",
+        "quote": "Het was eerlijk gezegd makkelijker dan ik dacht. Ze belden me de volgende dag. Het voelde menselijk."
+      },
+      "steps": {
+        "programSelection": "Programmakeuze",
+        "location": "Locatie",
+        "startDate": "Startdatum",
+        "yourDetails": "Jouw Gegevens",
+        "confirm": "Bevestigen"
+      },
+      "form": {
+        "programSection": {
+          "heading": "Welk programma heeft je interesse?",
+          "options": {
+            "nursery": { "title": "Baby & Dreumes", "ages": "Leeftijd: 3 maanden - 2,5 jaar" },
+            "preschool": { "title": "Teddy Learners", "ages": "Leeftijd: 2 - 4 jaar" },
+            "afterschool": { "title": "Teddy BSO Explorers", "ages": "Leeftijd: 4 - 12 jaar" }
+          },
+          "tisaNote": "Op zoek naar internationale basisschool? Bezoek TISA ➝"
+        },
+        "location": "Locatie",
+        "startDate": "Startdatum",
+        "yourDetails": "Jouw Gegevens",
+        "confirm": "Bevestigen"
+      },
+      "ctaFooter": {
+        "line1": "Je hoeft het niet allemaal uitgedacht te hebben. Laat ons gewoon weten dat je geïnteresseerd bent.",
+        "line2": "Wij zorgen voor de rest—met zorg, duidelijkheid en een beetje Teddy-magie.",
+        "begin": "Begin Mijn Teddy Reis",
+        "talk": "Praat met een Teddicated Mens"
+      },
+      "metadata": {
+        "title": "Teddy Kids | Van Eerste Stapjes naar Wereldburgers"
+      }
+    },
+    "metadata": {
+      "title": "Onze Locaties | Teddy Kids",
+      "description": "Vind je dichtstbijzijnde Teddy Kids locatie. Meerdere locaties in Leiden, Oegstgeest en internationale campussen die tweetalige kinderopvang en onderwijs bieden.",
+      "keywords": "teddy kids locaties, kinderopvang leiden, peuterspeelzaal oegstgeest, TISA portugal, internationale school locaties, tweetalige dagopvang nederland",
+      "alt": "Teddy Kids Locaties - Vind je dichtstbijzijnde centrum"
+    }
+  },
+  "teamPage": {
+    "hero": {
+      "title": "Ontmoet de Magie-Makers",
+      "subtitle": "De gepassioneerde pedagogen en medewerkers die de Teddy Kids visie elke dag tot leven brengen."
+    },
+    "philosophy": {
+      "title": "Onze Team Filosofie",
+      "paragraph1": "Bij Teddy Kids geloven we dat ons team onze grootste troef is. We brengen gepassioneerde pedagogen samen met diverse achtergronden die een gemeenschappelijke toewijding delen aan kinderontwikkeling en tweetalig onderwijs.",
+      "paragraph2": "We investeren in continue professionele ontwikkeling, zodat ons team voorop blijft lopen in vroegkinderlijk onderwijs. Deze toewijding aan uitmuntendheid vertaalt zich in innovatieve, responsieve zorg voor elk kind bij Teddy Kids."
+    },
+    "members": {
+      "didYouKnow": "Wist Je Dat?",
+      "artem": {
+        "role": "Oprichter & Visie Architect",
+        "funFact": "Goedemorgen team — onthoud, chaos is gewoon creativiteit in vermomming."
+      },
+      "tess": {
+        "role": "Uitvoerend Kinderopvang Fluisteraar",
+        "funFact": "Ik los problemen niet alleen op... ik voorspel ze."
+      },
+      "jess": {
+        "role": "Chaos Beheersing Officier – RBW",
+        "funFact": "Ik deed inventaris, budgettering en vond een verloren sok. Allemaal voor 9 uur."
+      },
+      "meral": {
+        "role": "SMO – Smile Management Officer – ZML",
+        "funFact": "We zijn weer door de glitters heen. Dat is goed of heel slecht."
+      },
+      "antonela": {
+        "role": "Kantoor & LRZ BSO Commandant-in-Flow",
+        "funFact": "Als iets ontbreekt... staat het al op mijn lijst."
+      },
+      "pamela": {
+        "role": "BSO & Naschoolse Ops",
+        "funFact": "Kinderen luisteren. Volwassenen proberen. Ik glimlach... en ga door."
+      },
+      "svetlana": {
+        "role": "ZML Pediatrisch Hart & Knuffel Coördinator",
+        "funFact": "Ik draag pleisters en glitters. Beide maken magie."
+      },
+      "sofia": {
+        "role": "RBW Locatie Energie Manager",
+        "funFact": "Ik plande een bruiloft en een weekrooster in hetzelfde weekend."
+      },
+      "els": {
+        "role": "Teddy Oma & Poffertjes Koningin",
+        "funFact": "Ik breng de glimlachen, de giechels... en de poffertjes."
+      }
+    },
+    "locations": {
+      "title": "Het Hart van Elke Locatie",
+      "rbw": "Van babygegiechel tot tweetalig spel, het RBW-team is waar Teddy Kids begon—en de liefde stroomt nog steeds sterk.",
+      "rb35": "Dit powerhouse team combineert zorg met nieuwsgierigheid—waar peuters denkers worden en naschoolse kinderen avonturiers.",
+      "lrz": "Van kunsthoeken tot tweetalige wetenschapsgesprekken, het Lorentzkade-team voedt denkers van middagspel tot wereldse dromen.",
+      "zml": "Vrolijk, zacht en vol gelach—Zeemanlaan's jongste sterren krijgen de beste start in de meest zorgzame handen."
+    },
+    "tisa": {
+      "title": "Op zoek naar internationaal onderwijs?",
+      "button": "Bezoek TISA"
+    },
+    "values": {
+      "title": "Onze Gedeelde Waarden",
+      "value1": {
+        "title": "Kind-Gerichte Aanpak",
+        "description": "We plaatsen kinderen in het hart van alles wat we doen, met respect voor hun unieke persoonlijkheden, interesses en ontwikkelingsreizen."
+      },
+      "value2": {
+        "title": "Wereldse Mindset",
+        "description": "We omarmen culturele diversiteit en bevorderen begrip over talen en tradities heen om kinderen voor te bereiden op onze onderling verbonden wereld."
+      },
+      "value3": {
+        "title": "Continu Leren",
+        "description": "We zijn toegewijd aan voortdurende professionele ontwikkeling en innovatie in vroegkinderlijke onderwijspraktijken."
+      },
+      "value4": {
+        "title": "Samenwerkende Geest",
+        "description": "We werken als een verenigd team over alle locaties heen, delen kennis en ondersteunen elkaar om de beste zorg te bieden."
+      },
+      "value5": {
+        "title": "Groeimindset",
+        "description": "We geloven in het potentieel van elk kind en collega, en koesteren ontwikkeling door aanmoediging en positieve feedback."
+      },
+      "value6": {
+        "title": "Uitmuntendheid in Zorg",
+        "description": "We handhaven de hoogste standaarden in alles, van onderwijspraktijken tot veiligheidsprotocollen en faciliteitenbeheer."
+      }
+    },
+    "joinTeam": {
+      "title": "Sluit Je Aan Bij Ons Team",
+      "description": "Gepassioneerd over vroegkinderlijk onderwijs? Geïnteresseerd in werken in een tweetalige, internationale omgeving? We zijn altijd op zoek naar getalenteerde pedagogen om zich bij onze groeiende familie aan te sluiten.",
+      "button": "Bekijk Carrièremogelijkheden"
+    }
+  },
+  "locations": {
+    "title": "Vind Je Dichtstbijzijnde Teddy Kids",
+    "subtitle": "Meerdere locaties in de regio",
+    "viewAll": "Bekijk Alle Locaties",
+    "viewDetails": "Bekijk Details",
+    "bookTour": "Plan een Bezoek",
+    "applyNow": "Nu Aanmelden",
+    "openingHours": "Openingstijden",
+    "contactPerson": "Contactpersoon",
+    "googleReviews": "Google Reviews"
+  },
+  "team": {
+    "title": "Ontmoet de Magie-Makers",
+    "subtitle": "De gepassioneerde pedagogen achter Teddy Kids",
+    "didYouKnow": "Wist Je Dat?",
+    "viewBio": "Lees Volledige Bio",
+    "members": {
+      "artem": {
+        "name": "Artem",
+        "role": "Directeur",
+        "funFact": "Altijd één idee vooruit"
+      },
+      "tess": {
+        "name": "Tess",
+        "role": "Hoofd Operaties",
+        "funFact": "Heeft een spreadsheet voor alles"
+      },
+      "jess": {
+        "name": "Jess",
+        "role": "Onderwijskwaliteit Lead",
+        "funFact": "Heeft ons TK regenlied uitgevonden"
+      },
+      "meral": {
+        "name": "Meral",
+        "role": "Mensen & Cultuur",
+        "funFact": "Bakt prijswinnende koekjes"
+      },
+      "antonela": {
+        "name": "Antonela",
+        "role": "Locatiehoofd",
+        "funFact": "Leerde een kind 4 talen voor z'n 5e"
+      },
+      "pamela": {
+        "name": "Pamela",
+        "role": "HR",
+        "funFact": "Maakt 7 soorten lasagne"
+      },
+      "svetlana": {
+        "name": "Svetlana",
+        "role": "Financiën",
+        "funFact": "Stiekem een puzzelmeester"
+      },
+      "sofia": {
+        "name": "Sofia",
+        "role": "Creatief & Evenementen",
+        "funFact": "Denkt dat glitter een primaire kleur is"
+      }
+    }
+  },
+  "learningMoments": {
+    "title": "Leermomenten",
+    "subtitle": "Korte inzichten van binnen TK",
+    "readMore": "Lees Meer",
+    "watchVideo": "Bekijk Video",
+    "filterBy": "Filter Op:",
+    "categories": {
+      "bilingual": "Tweetalig",
+      "empathy": "Empathie",
+      "stem": "STEM",
+      "creativity": "Creativiteit",
+      "all": "Alle Onderwerpen"
+    },
+    "noResults": "Geen leermomenten gevonden met dit filter. Probeer een andere categorie!",
+    "showAll": "Toon Alle Momenten",
+    "ctaTitle": "Wat als het krachtigste leermoment van je kind... vandaag gebeurde—en je het niet zag?",
+    "ctaSubtitle": "Laat ons je laten zien hoe briljantie verstopt zit in snacktijd, zandbakken en zachte sokken.",
+    "ctaPrimary": "Zie Het Met Eigen Ogen",
+    "ctaSecondary": "Boek een 20-Minuten Rondleiding Die Alles Kan Veranderen"
+  },
+  "learningPage": {
+    "hero": {
+      "title": "Waar briljantie zich verstopt in alledaagse momenten",
+      "subtitle": "Kijk binnen om te zien hoe je kind leert wanneer ze denken dat ze alleen maar spelen."
+    }
+  },
+  "contact": {
+    "title": "Jouw Reis Begint Hier",
+    "subtitle": "We kijken ernaar uit je familie te ontmoeten",
+    "getInTouch": "Neem Contact Op",
+    "loveToHear": "We horen graag van je!",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "quickResponse": "Snelle Reactie?",
+    "responseTime": "We reageren meestal binnen 24 uur op werkdagen.",
+    "thankYouTitle": "Dank Je!",
+    "sendAnother": "Stuur Nog Een Bericht",
+    "namePlaceholder": "Jan Jansen",
+    "emailPlaceholder": "jan@voorbeeld.com",
+    "agePlaceholder": "3 jaar",
+    "messagePlaceholder": "Ik wil graag meer weten over...",
+    "processing": "Verwerken...",
+    "whatsappButton": "Chat op WhatsApp",
+    "whatsappMessage": "Hoi Teddy Kids! Ik wil graag een rondleiding boeken voor mijn kind.",
+    "formName": "Jouw Naam",
+    "formEmail": "E-mailadres",
+    "formChildAge": "Leeftijd Kind",
+    "formMessage": "Jouw Bericht",
+    "formSubmit": "Verstuur Bericht",
+    "thankYou": "Dank je! We nemen snel contact met je op."
+  },
+  "apiePlayground": {
+    "title": "Apie's Speeltuin",
+    "subtitle": "Welkom in Apie's geheime bananenparadijs! Kleur, speel en heb plezier!",
+    "playSound": "Speel Junglegeluiden Af"
+  }
+}

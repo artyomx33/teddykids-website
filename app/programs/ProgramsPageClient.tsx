@@ -11,7 +11,8 @@ export default function ProgramsPageClient() {
   const { language } = useLanguage();
   const { t } = useTranslation(language);
   /* ---------- Hero video handling ---------- */
-  const fallbackImageSrc = '/images/heroes/programs-hero.png';
+  // Use JPEG version for improved compatibility & consistent asset naming
+  const fallbackImageSrc = '/images/heroes/programs-hero.jpg';
   const videoSrc = '/images/heroes/programs-hero-video.mp4';
 
   const [isMobile, setIsMobile] = useState(true);

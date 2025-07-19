@@ -247,64 +247,64 @@ export default function TeamPage() {
         </div>
       </section>
       
-      {/* TISA Partnership Section – pastel makeover */}
-      <section className="py-20" style={{ backgroundColor: '#FCF5EC' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Logos Row */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-10">
-              <div className="relative h-20 w-48">
-                <Image
-                  src="/images/logos/teddy-kids-logo.png"
-                  alt="Teddy Kids Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="relative h-20 w-48">
-                <Image
-                  src="/images/logos/tisa-logo.png"
-                  alt="TISA Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+      {/* TISA Partnership Section - Full Teddy Glory */}
+      <section className="py-20 bg-yellow-50 border-t border-yellow-200">
+        <div className="container mx-auto px-4 max-w-6xl">
+          {/* Logo Row */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-8">
+            <div className="relative h-12 w-32">
+              <Image
+                src="/images/logos/teddy-kids-logo.png"
+                alt="Teddy Kids Logo"
+                fill
+                className="object-contain"
+              />
             </div>
+            <span className="text-2xl font-display font-bold text-yellow-600">+</span>
+            <div className="relative h-12 w-32">
+              <Image
+                src="/images/logos/tisa-logo.png"
+                alt="TISA Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
 
-            {/* Entrepreneurial Copy */}
-            <div className="text-center mb-10 space-y-4">
-              <p className="text-xl font-medium">
-                TISA isn’t just international education&nbsp;— it’s international imagination.
-              </p>
-              <p className="text-lg">
+          {/* Text & Image Row */}
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-yellow-900 mb-4">
+                TISA isn&apos;t just international education — it&apos;s international imagination.
+              </h2>
+              <p className="text-lg text-gray-800 mb-4">
                 Together with Teddy Kids, we grow the next generation of confident thinkers and young entrepreneurs.
               </p>
-              <p className="text-lg">
-                At TISA, kids explore SWOT analysis at five, speed math with joy, and star in theater shows that spark big ideas. 
-                It’s a bold continuation of the Teddy spirit&nbsp;— powered by curiosity, creativity, and courage.
+              <p className="text-lg text-gray-800 mb-6">
+                At TISA, kids explore SWOT analysis at five, speed math with joy, and star in theater shows that spark big ideas. It&apos;s a bold continuation of the Teddy spirit — powered by curiosity, creativity, and courage.
               </p>
+
+              {/* CTA */}
+              <div className="mt-6">
+                <Button
+                  variant="primary"
+                  href="https://www.tisaschool.com"
+                  isExternal
+                  size="lg"
+                  className="bg-yellow-600 hover:bg-yellow-700 text-white"
+                >
+                  Explore TISA →
+                </Button>
+              </div>
             </div>
 
-            {/* Kids Performing Placeholder Image */}
-            <div className="relative h-64 w-full rounded-xl overflow-hidden mb-12 shadow-sm">
+            <div className="relative h-80 w-full rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/programs/after-school-activities.jpg"
-                alt="Kids performing at TISA"
+                src="/images/team/tisa-theater.jpg"
+                alt="TISA students performing on stage"
                 fill
                 className="object-cover"
               />
-            </div>
-
-            {/* CTA */}
-            <div className="text-center">
-              <Button
-                variant="primary"
-                href="https://www.tisaschool.com"
-                isExternal
-                size="lg"
-              >
-                {t('teamPage.tisa.button')}
-              </Button>
             </div>
           </div>
         </div>

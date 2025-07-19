@@ -659,20 +659,27 @@ function ApplyPageContent() {
               Let Appies welcome your little one: hear our soft morning greeting in Dutch &amp; English.
             </p>
             <div className="bg-gray-50 p-6 rounded-xl inline-block">
-              {/* Styled HTML5 audio element (pink accent) */}
-              <audio
-                controls
-                preload="metadata"
-                className="mx-auto w-full max-w-sm"
-                style={{
-                  accentColor: '#EC4899',
-                }}
-              >
-                <source src="/audio/appies-welcome.mp3" type="audio/mpeg" />
-                <p className="text-red-500 text-sm">
-                  Your browser does not support the audio element.
+              {/* Button-triggered audio playback (same approach as About page) */}
+              <div className="text-center">
+                <button
+                  onClick={() => {
+                    const audio = new Audio('/audio/appies-welcome.mp3');
+                    audio.play().catch((error) => {
+                      console.error('Audio play failed:', error);
+                      alert(
+                        'Sorry, audio playback failed. Please check if the file exists or your browser settings.',
+                      );
+                    });
+                  }}
+                  className="bg-brand-pink hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center mx-auto"
+                >
+                  <span className="mr-2">🎵</span>
+                  Play Appies Welcome
+                </button>
+                <p className="text-sm text-gray-500 mt-2">
+                  Click to hear our soft morning greeting
                 </p>
-              </audio>
+              </div>
             </div>
           </div>
         </div>

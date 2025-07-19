@@ -15,29 +15,40 @@ const Contact = dynamic(() => import('@/components/sections/Contact'), {
   ssr: false
 });
 
+// Dynamically load AppiesGPT component
+const AppiesGPT = dynamic(() => import('@/components/sections/AppiesGPT'), {
+  loading: () => (
+    <section className="py-16 text-center">
+      <p className="text-gray-500">Loading chat assistant…</p>
+    </section>
+  ),
+  ssr: false, // purely client-side interactive widget
+});
+
 export default function ContactPageClient() {
   return (
     <main>
       {/* ──────────────────────────────────────────────────────────
        *  Hero Section - Warmer, more welcoming
        * ────────────────────────────────────────────────────────── */}
-      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden bg-brand-pink bg-opacity-10">
+      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
         {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/heroes/journey-starts-here.png"
-            alt="Reach out to Teddy Kids - we're here to help"
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover object-center opacity-60"
-          />
-        </div>
+        <Image
+          src="/images/heroes/journey-starts-here.png"
+          alt="Reach out to Teddy Kids - we're here to help"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover object-center"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
 
         {/* Teddy character - friendly mascot */}
         <div className="absolute bottom-0 right-0 md:right-[10%] z-10 hidden md:block">
           <Image
-            src="/images/characters/teddy-character-1.jpg"
+            src="/images/characters/1karakter-dino-lief.png"
             alt=""
             width={220}
             height={220}
@@ -45,17 +56,17 @@ export default function ContactPageClient() {
           />
         </div>
 
-        {/* Content overlay */}
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
-          <div className="max-w-2xl bg-white bg-opacity-90 p-8 rounded-lg shadow-lg">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-pink mb-4">
-              Let's Chat!
-            </h1>
-            <p className="text-xl text-gray-700">
-              Have a question about our programs? Wondering about availability? 
-              Or just want to say hello? We'd love to hear from you. Our team is 
-              here to help with whatever you need.
-            </p>
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex items-center text-center md:text-left px-4">
+          <div className="container mx-auto">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
+                Contact Us
+              </h1>
+              <p className="text-xl md:text-2xl text-white">
+                We're here to answer your questions and welcome you to our Teddy family
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -64,6 +75,9 @@ export default function ContactPageClient() {
       <section className="py-16 bg-white">
         <Contact />
       </section>
+
+      {/* AppiesGPT Section (AI assistant) */}
+      <AppiesGPT />
     </main>
   );
 }

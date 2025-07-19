@@ -8,6 +8,76 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 
 // ──────────────────────────────────────────────────────────
+//  Luna-style alternating timeline data (images will be added
+//  later under /public/timeline/)
+// ──────────────────────────────────────────────────────────
+const timeline = [
+  {
+    year: '2004–2008',
+    img: '/timeline/2004.jpg',
+    alt: 'Three groups, one mission',
+    text:
+      'Three groups. One mission. To build a place where children are seen, heard, and held. No tech, no shortcuts—just presence.',
+  },
+  {
+    year: '2010',
+    img: '/timeline/2010.jpg',
+    alt: 'Opening of ZML',
+    text:
+      'We opened our second location with a focus on ZML. Not because it was easy. Because it mattered.',
+  },
+  {
+    year: '2014',
+    img: '/timeline/2014.jpg',
+    alt: 'RBW elephant moment',
+    text:
+      "RBW opened with an elephant. Literally. Because magic is real when you're four. (And yes, the city said never again.)",
+  },
+  {
+    year: '2018',
+    img: '/timeline/2018.jpg',
+    alt: 'Teddy Café dream',
+    text:
+      'We dreamed of a café for kids. Permits granted, vision alive… Then came COVID. Even paused dreams leave footprints.',
+  },
+  {
+    year: '2020',
+    img: '/timeline/2020.jpg',
+    alt: 'RB3 in a pandemic',
+    text:
+      "RB3 opened in the middle of a pandemic. Because childhood doesn't pause for the world — and neither do we.",
+  },
+  {
+    year: '2022',
+    img: '/timeline/2022.jpg',
+    alt: 'TISA school launched',
+    text:
+      'TISA was born. Teddy grew up—and we gave him a school worthy of his values. Not just education. Elevation.',
+  },
+  {
+    year: '2023',
+    img: '/timeline/2023.jpg',
+    alt: 'TISA Portugal opens',
+    text:
+      'TISA Portugal opened. One passport stamp closer to raising truly global humans.',
+  },
+  {
+    year: '2024',
+    img: '/timeline/2024.jpg',
+    alt: 'RB5 opens, 20 year anniversary',
+    text:
+      "20 years. RB5 launched. And one truth echoes louder than ever: You can't outsource childhood. You have to build it.",
+  },
+  {
+    year: '2025',
+    img: '/timeline/2025.jpg',
+    alt: '10,000 families served',
+    text:
+      '10,000 children. 10,000 families. 10,000 moments where the world paused — and chose connection instead.',
+  },
+];
+
+// ──────────────────────────────────────────────────────────
 // (Timeline array removed – no longer used)
 // Team preview item component
 const TeamPreviewItem = (
@@ -159,23 +229,27 @@ export default function AboutPageClient() {
               <h3 className="text-lg font-medium mb-3 text-gray-700">
                 Listen: Our Philosophy in Two Languages
               </h3>
-              <audio
-                controls
-                preload="metadata"
-                className="mx-auto w-full max-w-sm"
-                style={{
-                  accentColor: '#EC4899',
-                }}
-              >
-                {/* 2024-07-19  ─ Fixed filename (space ➜ hyphen) */}
-                <source src="/audio/two-languages.mp3" type="audio/mpeg" />
-                <p className="text-red-500 text-sm">
-                  Your browser does not support the audio element.
+              {/* Button-triggered audio playback for broader compatibility */}
+              <div className="text-center">
+                <button
+                  onClick={() => {
+                    const audio = new Audio('/audio/two-languages.mp3');
+                    audio.play().catch((error) => {
+                      console.error('Audio play failed:', error);
+                      alert(
+                        'Sorry, audio playback failed. Please check if the file exists or your browser settings.',
+                      );
+                    });
+                  }}
+                  className="bg-brand-pink hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center mx-auto"
+                >
+                  <span className="mr-2">🎵</span>
+                  Play Audio Message
+                </button>
+                <p className="text-sm text-gray-500 mt-2">
+                  Click to hear our philosophy in two languages
                 </p>
-              </audio>
-              <p className="text-sm text-gray-500 mt-2">
-                Hear about our bilingual approach directly from our team
-              </p>
+              </div>
             </div>
           </div>
 
@@ -217,31 +291,33 @@ export default function AboutPageClient() {
         </div>
       </section>
 
-      {/* Vision / Manifesto */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-brand-mint bg-opacity-20 p-8 md:p-12 rounded-xl">
-            <h2 className="text-3xl font-display font-bold mb-8 text-center">{t('about.future.title')}</h2>
-            <div className="prose prose-lg max-w-none">
-              <p>
-                {t('about.future.paragraph1')}
-              </p>
-              <p>
-                {t('about.future.paragraph2')}
-              </p>
-              <p>
-                {t('about.future.paragraph3')}
-              </p>
-              <ul>
-                {t('about.future.bulletPoints').map((bullet: string, index: number) => (
-                  <li key={index}>{bullet}</li>
-                ))}
-              </ul>
-              <p>
-                {t('about.future.paragraph4')}
-              </p>
+      {/* Luna-style Alternating Timeline */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-4xl font-display font-bold text-center mb-12 fade-in">
+            Our Story, One Magical Step at a Time
+          </h2>
+
+          {timeline.map((item, idx) => (
+            <div
+              key={item.year}
+              className={`flex flex-col ${
+                idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              } items-center gap-8 mb-16 fade-in`}
+            >
+              <img
+                src={item.img}
+                alt={item.alt}
+                className="w-full md:w-1/2 h-72 object-cover rounded-xl shadow-md"
+              />
+              <div className="md:w-1/2">
+                <h3 className="text-xl font-semibold text-brand-pink mb-2">
+                  {item.year}
+                </h3>
+                <p className="text-gray-700 text-lg">{item.text}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 

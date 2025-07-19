@@ -27,7 +27,7 @@ import Programs from '@/components/sections/Programs';
 //   ssr: false,
 // });
 
-/* eslint-disable import/first */
+ 
 import dynamicImport from 'next/dynamic';
 
 const LocationsPreview = dynamicImport(

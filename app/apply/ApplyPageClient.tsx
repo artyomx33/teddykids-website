@@ -275,6 +275,8 @@ function ApplyPageContent() {
   // Form errors
   // Use an index signature so we can safely access errors[key]
   const [errors, setErrors] = useState<Record<string, string>>({});
+  // Ref to the multi-step form container for smooth scrolling
+  const formRef = React.useRef<HTMLDivElement>(null);
   
   // Handle form input changes
   const handleChange = (
@@ -362,14 +364,24 @@ function ApplyPageContent() {
   const handleNextStep = () => {
     if (validateStep()) {
       setCurrentStep(prev => prev + 1);
-      window.scrollTo(0, 0);
+      scrollToForm();
     }
   };
   
   // Handle previous step
   const handlePrevStep = () => {
     setCurrentStep(prev => prev - 1);
-    window.scrollTo(0, 0);
+    scrollToForm();
+  };
+
+  // Smoothly scroll the multi-step form into view
+  const scrollToForm = () => {
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 50); // allow DOM update
   };
   
   // Handle form submission
@@ -779,7 +791,10 @@ function ApplyPageContent() {
             </div>
             
             {/* Form Container */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
+            <div
+              ref={formRef}
+              className="bg-white p-8 rounded-xl shadow-md"
+            >
               <form onSubmit={handleSubmit}>
                 {/* Step 1: Program Selection */}
                 {currentStep === 1 && (

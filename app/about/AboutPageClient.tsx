@@ -113,7 +113,7 @@ const TeamPreviewItem = (
           src={imageSrc}
           alt={name}
           fill
-          className="object-cover"
+          className="object-cover object-top"
         />
       </div>
       <h4 className="font-medium text-center">{name}</h4>

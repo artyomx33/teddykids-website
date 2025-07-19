@@ -152,6 +152,32 @@ export default function AboutPageClient() {
       {/* ---------------------------------------------------------------- */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
+          {/* Audio Fragment - Two Languages */}
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h3 className="text-lg font-medium mb-3 text-gray-700">
+                Listen: Our Philosophy in Two Languages
+              </h3>
+              <audio
+                controls
+                preload="metadata"
+                className="mx-auto w-full max-w-sm h-12 rounded-lg"
+                style={{
+                  filter: 'sepia(1) saturate(2) hue-rotate(315deg)',
+                  backgroundColor: '#EC4899',
+                }}
+              >
+                <source src="/audio/two languages.mp3" type="audio/mpeg" />
+                <p className="text-red-500 text-sm">
+                  Your browser does not support the audio element.
+                </p>
+              </audio>
+              <p className="text-sm text-gray-500 mt-2">
+                Hear about our bilingual approach directly from our team
+              </p>
+            </div>
+          </div>
+
           {/* Legacy Header */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-display font-bold mb-4">

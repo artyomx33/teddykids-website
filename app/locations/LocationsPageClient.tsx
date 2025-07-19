@@ -22,18 +22,18 @@ export default function LocationsPageClient() {
             <p className="text-xl text-gray-700 mb-8">
               {t('locationsPage.hero.subtitle')}
             </p>
-            {/* Interactive Google Map */}
-            <div className="relative w-full rounded-xl overflow-hidden">
-              <div className="aspect-video">
-                <iframe
-                  src="https://www.google.com/maps/d/embed?mid=1dP3Q0UF6NPHY00haFSGZ6xHk87typtw&ehbc=2E312F"
-                  width="100%"
-                  height="100%"
-                  className="border-0"
-                  title="Find Your Nearest Teddy Home"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+            {/* Map Image */}
+            <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden shadow-md">
+              <Image
+                src="/images/tk-map.png"
+                alt={t('locationsPage.map.title')}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                <span className="text-white text-lg font-medium">
+                  {t('locationsPage.map.locationsCount')}
+                </span>
               </div>
             </div>
           </div>

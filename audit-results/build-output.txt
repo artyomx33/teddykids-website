@@ -1,0 +1,45 @@
+
+> teddykids-website@0.1.0 build
+> next build
+
+   ▲ Next.js 15.3.5
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 0ms
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/21) ...
+   Generating static pages (5/21) 
+   Generating static pages (10/21) 
+   Generating static pages (15/21) 
+ ✓ Generating static pages (21/21)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    5.03 kB         143 kB
+├ ○ /_not-found                            139 B         101 kB
+├ ○ /about                               4.37 kB         142 kB
+├ ○ /about/policy                        3.08 kB         141 kB
+├ ○ /accepted                            7.72 kB         126 kB
+├ ○ /apie                                3.29 kB         141 kB
+├ ○ /apply                               8.55 kB         146 kB
+├ ○ /contact                             2.22 kB         109 kB
+├ ○ /learning                            3.38 kB         141 kB
+├ ○ /locations                           8.46 kB         146 kB
+├ ○ /programs                             3.4 kB         141 kB
+├ ○ /programs/after-school               4.83 kB         142 kB
+├ ○ /programs/afterschool                  188 B         110 kB
+├ ○ /programs/nursery                     4.7 kB         142 kB
+├ ○ /programs/preschool                    188 B         110 kB
+├ ○ /programs/tisa                         188 B         110 kB
+├ ○ /sitemap.xml                           139 B         101 kB
+└ ○ /team                                5.26 kB         143 kB
++ First Load JS shared by all             101 kB
+  ├ chunks/4bd1b696-2d48646fa52f1916.js  53.2 kB
+  ├ chunks/684-71c7791463088e8a.js       46.1 kB
+  └ other shared chunks (total)          2.03 kB
+
+
+○  (Static)  prerendered as static content
+

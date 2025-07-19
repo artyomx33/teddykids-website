@@ -391,14 +391,11 @@ function ApplyPageContent() {
     e.preventDefault();
     
     if (validateStep()) {
-       
-      console.log('[Apply-Form] ✅ Validation passed. Submitting form …');
-      console.table(formData);
+      // Validation succeeded – proceed to submit the data
       // TODO: send formData to backend / API endpoint here.
       
       // For now, just go to the success step
       setCurrentStep(6);
-      console.log('[Apply-Form] 🎉 Reached confirmation step (6)');
       // Smooth-scroll to the confirmation card instead of abrupt jump
       scrollToForm();
        

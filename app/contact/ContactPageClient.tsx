@@ -62,7 +62,7 @@ export default function ContactPageClient() {
         <div className="absolute bottom-0 right-0 md:right-[10%] z-10 hidden md:block">
           <Image
             src="/images/characters/1karakter-dino-lief.png"
-            alt=""
+            alt="Friendly Teddy Kids dinosaur character"
             width={220}
             height={220}
             loading="eager"

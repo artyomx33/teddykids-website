@@ -1,7 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { useTranslation } from '@/lib/translations';
 import { useLanguage } from '@/lib/LanguageContext';
 import Button from '@/components/Button';

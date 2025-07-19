@@ -5,77 +5,10 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
-import { useTranslation, translations } from '@/lib/translations';
+import { useTranslation } from '@/lib/translations';
 
 // ──────────────────────────────────────────────────────────
-//  Luna-style alternating timeline data
-// ──────────────────────────────────────────────────────────
-const timeline = [
-  {
-    year: '2004–2008',
-    img: '/timeline/2004.jpg',
-    alt: 'Three groups, one mission',
-    text:
-      'Three groups. One mission. To build a place where children are seen, heard, and held. No tech, no shortcuts—just presence.',
-  },
-  {
-    year: '2010',
-    img: '/timeline/2010.jpg',
-    alt: 'Opening of ZML',
-    text:
-      'We opened our second location with a focus on ZML. Not because it was easy. Because it mattered.',
-  },
-  {
-    year: '2014',
-    img: '/timeline/2014.jpg',
-    alt: 'RBW elephant moment',
-    text:
-      "RBW opened with an elephant. Literally. Because magic is real when you're four. (And yes, the city said never again.)",
-  },
-  {
-    year: '2018',
-    img: '/timeline/2018.jpg',
-    alt: 'Teddy Café dream',
-    text:
-      'We dreamed of a café for kids. Permits granted, vision alive… Then came COVID. Even paused dreams leave footprints.',
-  },
-  {
-    year: '2020',
-    img: '/timeline/2020.jpg',
-    alt: 'RB3 in a pandemic',
-    text:
-      "RB3 opened in the middle of a pandemic. Because childhood doesn't pause for the world — and neither do we.",
-  },
-  {
-    year: '2022',
-    img: '/timeline/2022.jpg',
-    alt: 'TISA school launched',
-    text:
-      'TISA was born. Teddy grew up—and we gave him a school worthy of his values. Not just education. Elevation.',
-  },
-  {
-    year: '2023',
-    img: '/timeline/2023.jpg',
-    alt: 'TISA Portugal opens',
-    text:
-      'TISA Portugal opened. One passport stamp closer to raising truly global humans.',
-  },
-  {
-    year: '2024',
-    img: '/timeline/2024.jpg',
-    alt: 'RB5 opens, 20 year anniversary',
-    text:
-      "20 years. RB5 launched. And one truth echoes louder than ever: You can't outsource childhood. You have to build it.",
-  },
-  {
-    year: '2025',
-    img: '/timeline/2025.jpg',
-    alt: '10,000 families served',
-    text:
-      '10,000 children. 10,000 families. 10,000 moments where the world paused — and chose connection instead.',
-  },
-];
-
+// (Timeline array removed – no longer used)
 // Team preview item component
 const TeamPreviewItem = (
   {
@@ -235,7 +168,8 @@ export default function AboutPageClient() {
                   backgroundColor: '#EC4899',
                 }}
               >
-                <source src="/audio/two languages.mp3" type="audio/mpeg" />
+                {/* 2024-07-19  ─ Fixed filename (space ➜ hyphen) */}
+                <source src="/audio/two-languages.mp3" type="audio/mpeg" />
                 <p className="text-red-500 text-sm">
                   Your browser does not support the audio element.
                 </p>
@@ -300,7 +234,7 @@ export default function AboutPageClient() {
                 {t('about.future.paragraph3')}
               </p>
               <ul>
-                {bulletPoints.map((bullet: string, index: number) => (
+                {t('about.future.bulletPoints').map((bullet: string, index: number) => (
                   <li key={index}>{bullet}</li>
                 ))}
               </ul>

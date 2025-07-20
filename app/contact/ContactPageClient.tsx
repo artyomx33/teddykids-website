@@ -72,7 +72,8 @@ export default function ContactPageClient() {
         {/* Hero content */}
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
           <div className="container mx-auto">
-            <div className="max-w-2xl">
+            {/* Center text block horizontally on all viewports */}
+            <div className="max-w-2xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
                 Contact Us
               </h1>

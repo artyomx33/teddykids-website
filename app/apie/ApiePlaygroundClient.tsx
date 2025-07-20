@@ -379,9 +379,11 @@ const ApiePlaygroundClient = () => {
                 <h3 className="text-xl font-medium mb-2">{t('apiePlayground.bananaDance.title')}</h3>
                 <p className="mb-4">{t('apiePlayground.bananaDance.intro')}</p>
                 <ol className="list-decimal pl-5 space-y-2">
-                  {t('apiePlayground.bananaDance.steps').map((step: string, index: number) => (
-                    <li key={index}>{step}</li>
-                  ))}
+                  {Array.isArray(t('apiePlayground.bananaDance.steps'))
+                    ? t('apiePlayground.bananaDance.steps').map(
+                        (step: string, index: number) => <li key={index}>{step}</li>
+                      )
+                    : null}
                 </ol>
               </div>
               
@@ -389,9 +391,11 @@ const ApiePlaygroundClient = () => {
                 <h3 className="text-xl font-medium mb-2">{t('apiePlayground.monkeySee.title')}</h3>
                 <p className="mb-4">{t('apiePlayground.monkeySee.subtitle')}</p>
                 <ul className="space-y-2">
-                  {t('apiePlayground.monkeySee.animals').map((animal: string, index: number) => (
-                    <li key={index}>{animal}</li>
-                  ))}
+                  {Array.isArray(t('apiePlayground.monkeySee.animals'))
+                    ? t('apiePlayground.monkeySee.animals').map(
+                        (animal: string, index: number) => <li key={index}>{animal}</li>
+                      )
+                    : null}
                 </ul>
               </div>
             </div>

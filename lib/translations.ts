@@ -89,7 +89,8 @@ const enTranslations = {
       title: "Have a question?",
       description:
         "Ask <strong>AppiesGPT</strong> — our playful AI assistant trained on everything Teddy Kids! 🎓<br/>She can answer your questions about programs, age groups, locations, or anything else you'd like to know.",
-      buttonText: "Open AppiesGPT Chat"
+      buttonText: "Open AppiesGPT Chat",
+      note: "Opens in a new tab on ChatGPT"
     },
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -967,7 +968,8 @@ const enTranslations = {
       title: "Heb je een vraag?",
       description:
         "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je vragen beantwoorden over programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
-      buttonText: "Open AppiesGPT Chat"
+      buttonText: "Open AppiesGPT Chat",
+      note: "Opent in een nieuw tabblad op ChatGPT"
     },
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1853,7 +1855,8 @@ const enTranslations = {
  *  Aggregate translations object (EN + NL)
  * -----------------------------------------------------------------*/
 export const translations = {
-  en: enTranslations,
+  // `enTranslations` has an `en` wrapper – expose the inner object directly
+  en: enTranslations.en,
   nl,
 } as const;
 

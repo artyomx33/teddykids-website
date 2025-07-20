@@ -40,7 +40,7 @@ const timeline = [
     img: '/timeline/2015.jpg',
     alt: '10-year milestone & Teddy Perfume launch',
     text:
-      '10 years of Teddy Kids! We marked the milestone with our first fragrance, TEDDY PERFUME — Maelyn. “Blush With Every Breath” became a joyful tribute to our journey, inspired by the laughter and love of every child in our care.',
+      '10 years of Teddy Kids! We marked the milestone with our first fragrance, TEDDY PERFUME — Maelyn. "Blush With Every Breath" became a joyful tribute to our journey, inspired by the laughter and love of every child in our care.',
   },
   {
     year: '2016',
@@ -256,7 +256,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Timeline / History */}
-      {/* (Removed duplicate “Our Journey” timeline to prevent redundancy) */}
+      {/* (Removed duplicate "Our Journey" timeline to prevent redundancy) */}
 
       {/* ---------------------------------------------------------------- */}
       {/*  Legacy & Vision (Luna Brutal Upgrade™)                          */}
@@ -305,7 +305,7 @@ export default function AboutPageClient() {
 
           {/* Legacy Timeline */}
           <div className="max-w-4xl mx-auto mb-20 space-y-8">
-            {t('about.legacy.timeline').map((item: { year: string; text: string; color: string }) => (
+            {Array.isArray(t('about.legacy.timeline')) ? t('about.legacy.timeline').map((item: { year: string; text: string; color: string }) => (
               <div
                 key={item.year}
                 className={`border-l-4 pl-6 ${
@@ -321,7 +321,7 @@ export default function AboutPageClient() {
                 </h3>
                 <p className="text-gray-700">{item.text}</p>
               </div>
-            ))}
+            )) : []}
           </div>
 
 
@@ -335,12 +335,12 @@ export default function AboutPageClient() {
             </p>
 
             <ul className="space-y-4 max-w-3xl mx-auto text-gray-700 text-lg text-left">
-              {t('about.vision.promises').map((promise: { icon: string; text: string }, index: number) => (
+              {Array.isArray(t('about.vision.promises')) ? t('about.vision.promises').map((promise: { icon: string; text: string }, index: number) => (
                 <li key={index} className="flex items-start">
                   <span className="text-2xl mr-3">{promise.icon}</span>
                   <span>{promise.text}</span>
                 </li>
-              ))}
+              )) : []}
             </ul>
 
             <p className="text-xl font-semibold mt-10 text-brand-pink">

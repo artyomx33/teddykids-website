@@ -510,6 +510,11 @@
         "tourButton": "Boek een Rondleiding",
         "note": "Geen aanmeldingskosten. We leiden rond met hart."
       },
+      "brutalLuna": {
+        "title": "Laten we dit echt maken.",
+        "subtitle": "Je hebt gezien wat we doen. Zet nu de eerste stap.",
+        "note": "Duurt 2 minuten. Je kunt altijd pauzeren."
+      },
       "steps": {
         "programSelection": "Programmakeuze",
         "location": "Locatie",

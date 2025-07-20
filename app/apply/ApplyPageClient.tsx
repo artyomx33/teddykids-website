@@ -636,18 +636,26 @@ function ApplyPageContent() {
         </div>
       </section>
 
-      {/* 4. Main CTA Buttons - NEW POSITION */}
-      <section className="py-12 bg-brand-pink bg-opacity-10">
+      {/* 4. BRUTAL LUNA CTA Section - Replaces the previous soft CTA */}
+      <section className="brutal-luna py-12 px-6 rounded-xl mx-auto max-w-4xl my-12" 
+               style={{ 
+                 background: 'linear-gradient(180deg, #fff5f5, #ffefef)',
+                 boxShadow: '0 2px 12px rgba(255, 130, 130, 0.1)'
+               }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-display font-bold mb-6">
-              {t('locationsPage.applyPage.cta.title')}
+            <h2 className="bl-heading text-3xl font-display font-bold mb-3 text-[#1a1a1a]">
+              {t('locationsPage.applyPage.brutalLuna.title')}
             </h2>
+            <p className="bl-subtext text-lg text-gray-700 mb-6">
+              {t('locationsPage.applyPage.brutalLuna.subtitle')}
+            </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button 
                 variant="primary" 
                 size="lg"
                 href="#application-form"
+                className="apply-button transform hover:scale-105 transition-transform duration-200"
               >
                 {t('locationsPage.applyPage.cta.applyButton')}
               </Button>
@@ -659,15 +667,12 @@ function ApplyPageContent() {
                 {t('locationsPage.applyPage.cta.tourButton')}
               </Button>
             </div>
-            <p className="text-sm mt-4 text-gray-600">
-              {t('locationsPage.applyPage.cta.note')}
+            <p className="bl-note text-sm mt-4 text-gray-500">
+              ⏳ {t('locationsPage.applyPage.brutalLuna.note')}
             </p>
           </div>
         </div>
       </section>
-
-      {/* Audio Section - Keep but move below CTAs */}
-      {/* (Removed duplicate audio section) */}
       
       {/* 5. Application Form - AFTER CTAs */}
       <section id="application-form" className="py-16 bg-gray-50">

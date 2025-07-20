@@ -7,6 +7,7 @@ import { useTranslation } from '@/lib/translations';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Head from 'next/head';
+import { initEmailJS, sendApplicationEmail } from '@/lib/emailjs'; // EmailJS helpers
 // NOTE: react-audio-player-component was removed due to React 19 compatibility issues.
 // We fall back to a styled native <audio> element instead.
 
@@ -280,6 +281,13 @@ function ApplyPageContent() {
   // Controls fade-in of mafia confirmation content after seal video ends
   const [sealVideoEnded, setSealVideoEnded] = useState(false);
   
+  /* ──────────────────────────────────────────
+   *  Init EmailJS once (client-side only)
+   * ────────────────────────────────────────── */
+  useEffect(() => {
+    initEmailJS();
+  }, []);
+
   // Handle form input changes
   const handleChange = (
     e: React.ChangeEvent<
@@ -391,13 +399,18 @@ function ApplyPageContent() {
     e.preventDefault();
     
     if (validateStep()) {
-      // Validation succeeded – proceed to submit the data
-      // TODO: send formData to backend / API endpoint here.
-      
-      // For now, just go to the success step
-      setCurrentStep(6);
-      // Smooth-scroll to the confirmation card instead of abrupt jump
-      scrollToForm();
+      /* Validation succeeded – send via EmailJS */
+      (async () => {
+        try {
+          await sendApplicationEmail({ ...formData, language });
+          // Success → show confirmation step
+          setCurrentStep(6);
+          scrollToForm();
+        } catch (err) {
+          console.error('EmailJS apply error:', err);
+          alert('Sorry, something went wrong while sending your application. Please try again later.');
+        }
+      })();
        
     }
   };

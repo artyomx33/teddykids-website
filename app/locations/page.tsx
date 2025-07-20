@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import LocationsPageClient from '@/components/pages/LocationsPageClient';
+import Script from 'next/script'; // JSON-LD injection
 
 // ──────────────────────────────────────────────────────────
 //  Static page configuration for SSG
@@ -16,6 +17,77 @@ export default function LocationsPage() {
   // ──────────────────────────────────────────────────────────
   // Static content for the LocationsPageClient component
   // ──────────────────────────────────────────────────────────
+
+  /* ------------------------------------------------------------------
+   *  JSON-LD LocalBusiness schemas (SEO-rich results)
+   * ------------------------------------------------------------------ */
+  const localBusinessSchemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ChildCare',
+      name: 'Teddy Kids – Rijnsburgerweg 35',
+      url: 'https://www.teddykids.nl/locations#rbw35',
+      telephone: '+31 71 870 05 05',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Rijnsburgerweg 35',
+        addressLocality: 'Leiden',
+        postalCode: '2334 BL',
+        addressCountry: 'NL',
+      },
+      openingHours: 'Mo-Fr 07:30-18:30',
+      image: 'https://www.teddykids.nl/images/locations/rbw_1.jpg',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ChildCare',
+      name: 'Teddy Kids – Rijnsburgerweg 3 & 5',
+      url: 'https://www.teddykids.nl/locations#rb3rb5',
+      telephone: '+31 71 870 05 05',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Rijnsburgerweg 3-5',
+        addressLocality: 'Leiden',
+        postalCode: '2311 JW',
+        addressCountry: 'NL',
+      },
+      openingHours: 'Mo-Fr 07:30-18:30',
+      image: 'https://www.teddykids.nl/images/locations/rb3rb5_1.jpg',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ChildCare',
+      name: 'Teddy Kids – Lorentzkade 15a',
+      url: 'https://www.teddykids.nl/locations#lrz15a',
+      telephone: '+31 71 870 05 05',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Lorentzkade 15a',
+        addressLocality: 'Leiden',
+        postalCode: '2313 BC',
+        addressCountry: 'NL',
+      },
+      openingHours: 'Mo-Fr 07:30-18:30',
+      image: 'https://www.teddykids.nl/images/locations/lrz_1.jpg',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ChildCare',
+      name: 'Teddy Kids – Zeemanlaan 22a',
+      url: 'https://www.teddykids.nl/locations#zml22a',
+      telephone: '+31 71 870 05 05',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Zeemanlaan 22a',
+        addressLocality: 'Leiden',
+        postalCode: '2313 SV',
+        addressCountry: 'NL',
+      },
+      openingHours: 'Mo-Fr 07:30-18:30',
+      image: 'https://www.teddykids.nl/images/locations/zml_1.jpg',
+    },
+  ];
+
   const heroContent = {
     imageSrc: '/images/heroes/locations-hero.png',
     imageAlt: 'Happy children and educators at Teddy Kids locations',
@@ -100,17 +172,30 @@ export default function LocationsPage() {
 
   // Pass all static content to the client component
   return (
-    <LocationsPageClient
-      heroContent={heroContent}
-      filterOptions={filterOptions}
-      filterTitle={filterTitle}
-      overviewTitle={overviewTitle}
-      overviewDescription={overviewDescription}
-      overviewImageSrc={overviewImageSrc}
-      tisaContent={tisaContent}
-      transportationContent={transportationContent}
-      mapContent={mapContent}
-      ctaContent={ctaContent}
-    />
+    <>
+      {/* Inject JSON-LD LocalBusiness schemas */}
+      {localBusinessSchemas.map((schema, idx) => (
+        <Script
+          key={`schema-location-${idx}`}
+          id={`schema-location-${idx}`}
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+
+      <LocationsPageClient
+        heroContent={heroContent}
+        filterOptions={filterOptions}
+        filterTitle={filterTitle}
+        overviewTitle={overviewTitle}
+        overviewDescription={overviewDescription}
+        overviewImageSrc={overviewImageSrc}
+        tisaContent={tisaContent}
+        transportationContent={transportationContent}
+        mapContent={mapContent}
+        ctaContent={ctaContent}
+      />
+    </>
   );
 }

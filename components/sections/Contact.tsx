@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from '@/lib/translations';
 import { useLanguage } from '@/lib/LanguageContext';
 import Image from 'next/image';
+import { initEmailJS, sendContactEmail } from '@/lib/emailjs';
 
 interface FormData {
   name: string;
@@ -33,6 +34,13 @@ const Contact: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  /* ─────────────────────────────────────────
+   *  Initialize EmailJS once on client mount
+   * ───────────────────────────────────────── */
+  useEffect(() => {
+    initEmailJS();
+  }, []);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -81,8 +89,8 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate form submission - replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      /* Actual submission via EmailJS */
+      await sendContactEmail({ ...formData, language });
       
       // Success
       setIsSubmitted(true);
@@ -93,8 +101,8 @@ const Contact: React.FC = () => {
         message: '',
       });
     } catch (error) {
-      console.error('Form submission error:', error);
-      // Handle error
+      console.error('EmailJS submission error:', error);
+      alert('Sorry, something went wrong while sending your message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }

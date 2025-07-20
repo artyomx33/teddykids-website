@@ -1,6 +1,14 @@
 import type { Metadata } from 'next';
 import ProgramsPageClient from './ProgramsPageClient';
 
+// ---------------------------------------------------------------------------
+// Phase-1 SSR migration
+// Convert Programs page from pure client render to a statically generated
+// server component shell.  Interactive logic stays inside ProgramsPageClient.
+// ---------------------------------------------------------------------------
+
+export const dynamic = 'force-static';
+
 // ──────────────────────────────────────────────────────────
 //  Static page metadata (SEO & social sharing)
 // ──────────────────────────────────────────────────────────

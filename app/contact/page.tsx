@@ -15,6 +15,43 @@ export const metadata: Metadata = {
 // Fully static generation (SSG)
 export const dynamic = 'force-static';
 
+// ---------------------------------------------------------------------------
+//  JSON-LD structured data (ContactPoint)
+// ---------------------------------------------------------------------------
+// We embed the script here so it is rendered on every locale and picked up
+// by search engines. Because `next/script` is a Client Component we import it
+// lazily only for this file.
+import Script from 'next/script';
+
 export default function ContactPage() {
-  return <ContactPageClient />;
+  return (
+    <>
+      {/* Structured data for Google → enhances SEO / rich results */}
+      <Script
+        id="schema-contact-point"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ChildCare',
+            name: 'Teddy Kids',
+            url: 'https://www.teddykids.nl/contact',
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                telephone: '+31 71 870 05 05',
+                email: 'info@teddykids.nl',
+                contactType: 'customer service',
+                areaServed: ['NL', 'EU'],
+                availableLanguage: ['English', 'Dutch'],
+              },
+            ],
+          }),
+        }}
+      />
+
+      <ContactPageClient />
+    </>
+  );
 }

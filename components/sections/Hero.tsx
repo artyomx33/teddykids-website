@@ -21,6 +21,11 @@ const Hero: React.FC<HeroProps> = ({
   const { language } = useLanguage();
   const { t } = useTranslation(language);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  /**
+   * `showVideo` controls when the video element is inserted into the DOM.
+   * We wait ~1.5 s after initial render to avoid competing with LCP.
+   */
+  const [showVideo, setShowVideo] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if device is mobile for responsive handling
@@ -39,6 +44,12 @@ const Hero: React.FC<HeroProps> = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Defer video loading/playing until after main content paint (~1.5 s)
+  useEffect(() => {
+    const timer = setTimeout(() => setShowVideo(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   // WhatsApp message setup
   const whatsappMessage = encodeURIComponent(
     "Hi Teddy Kids! I'd love to book a tour for my child."
@@ -52,15 +63,6 @@ const Hero: React.FC<HeroProps> = ({
     <section className="relative w-full h-screen overflow-hidden bg-brand-pink">
       {/* Preload critical assets for LCP */}
       <Head>
-        {/* Preload hero video for desktop only */}
-        {!isMobile && (
-          <link
-            rel="preload"
-            as="video"
-            href={videoSrc}
-            crossOrigin="anonymous"
-          />
-        )}
         {/* Preload hero poster / fallback image */}
         <link
           rel="preload"
@@ -71,7 +73,11 @@ const Hero: React.FC<HeroProps> = ({
       </Head>
       
       {/* Fallback Image - Always visible on mobile, or before video loads on desktop */}
-      <div className={`absolute inset-0 z-0 ${!isMobile && videoLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}>
+      <div
+        className={`absolute inset-0 z-0 ${
+          !isMobile && showVideo && videoLoaded ? 'opacity-0' : 'opacity-100'
+        } transition-opacity duration-1000`}
+      >
         <Image
           src={fallbackImageSrc}
           alt="Teddy Kids children playing"
@@ -86,13 +92,13 @@ const Hero: React.FC<HeroProps> = ({
       </div>
       
       {/* Render video only on non-mobile to save bandwidth & improve LCP */}
-      {!isMobile && (
+      {!isMobile && showVideo && (
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 opacity-0"
           onLoadedData={() => setVideoLoaded(true)}
           poster={fallbackImageSrc}

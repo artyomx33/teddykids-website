@@ -63,7 +63,7 @@ export default function HomePage() {
         />
         {/* TeddyCharacter1 – purple dino bottom-left */}
         <Image
-          src="/images/characters/teddy-character-1.png"
+          src="/images/characters/teddy-character-1.jpg"
           alt=""
           aria-hidden="true"
           width={200}

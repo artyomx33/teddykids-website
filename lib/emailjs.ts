@@ -110,7 +110,8 @@ export const sendContactEmail = async (
 
     return await emailjs.send(
       CONTACT_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID || '',
+      // Fallback to the live template ID so it works out-of-the-box
+      process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID || 'template_yddcitl',
       templateParams
     );
   } catch (error) {
@@ -156,7 +157,8 @@ export const sendApplicationEmail = async (
 
     return await emailjs.send(
       APPLY_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_APPLY_TEMPLATE_ID || '',
+      // Fallback to the live template ID so it works out-of-the-box
+      process.env.NEXT_PUBLIC_EMAILJS_APPLY_TEMPLATE_ID || 'template_wqi6hb7',
       templateParams
     );
   } catch (error) {

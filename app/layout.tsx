@@ -162,15 +162,16 @@ export default function RootLayout({
             <Button variant="primary" href="/apply" size="sm">
               Apply Now
             </Button>
-            <Button
-              variant="secondary"
+            {/* External link wrapper because Button does not accept target/rel */}
+            <a
               href="https://wa.me/31620966405?text=Hi%20Teddy%20Kids!%20I'd%20love%20to%20book%20a%20tour%20for%20my%20child."
-              size="sm"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book Tour
-            </Button>
+              <Button variant="secondary" size="sm">
+                Book Tour
+              </Button>
+            </a>
           </div>
 
           {/* Floating WhatsApp Button */}

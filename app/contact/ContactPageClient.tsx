@@ -93,6 +93,9 @@ export default function ContactPageClient() {
         </div>
       </section>
 
+      {/* AppiesGPT Section (AI assistant) – moved right after hero for higher visibility */}
+      <AppiesGPT />
+
       {/* Contact Form Section */}
       <section className="py-16 bg-white">
         {/* Wrapped for friendly Luna styling */}
@@ -101,8 +104,6 @@ export default function ContactPageClient() {
         </div>
       </section>
 
-      {/* AppiesGPT Section (AI assistant) */}
-      <AppiesGPT />
     </main>
   );
 }

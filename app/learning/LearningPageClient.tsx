@@ -38,7 +38,7 @@ const LearningMoment: React.FC<LearningMomentProps> = ({
         />
         <div className="absolute top-4 left-4">
           <span className="bg-white px-3 py-1 rounded-full text-sm font-medium text-gray-700">
-            {category}
+            {t(`learningMoments.categories.${category}`)}
           </span>
         </div>
         {type === 'video' && (

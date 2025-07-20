@@ -132,7 +132,7 @@ const Hero: React.FC<HeroProps> = ({
           <Button 
             variant="outline"
             size="lg"
-            href="/apply"
+            href="/apply#application-form"
             fullWidth={isMobile}
             className="border-white text-white hover:bg-white hover:bg-opacity-20"
           >

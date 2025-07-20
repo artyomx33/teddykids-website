@@ -106,10 +106,11 @@ const Contact: React.FC = () => {
   return (
     <div className="container mx-auto px-4">
       <div className="text-center max-w-xl mx-auto mb-10">
-        <h2 className="text-3xl font-display font-bold mb-4">Let&apos;s Connect</h2>
+        <h2 className="text-3xl font-display font-bold mb-4">
+          {t('contact.title')}
+        </h2>
         <p className="text-lg text-gray-700">
-          Got questions or just want to say hello? We&apos;re here for you&mdash;weekdays from 7:30 to 18:30. 
-          Fill in the form, call us, or WhatsApp anytime. Welcome to our Teddy family!
+          {t('contact.subtitle')}
         </p>
       </div>
       
@@ -121,7 +122,12 @@ const Contact: React.FC = () => {
           style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}
         >
           <div className="mb-5">
-            <label htmlFor="name" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Full Name</label>
+            <label
+              htmlFor="name"
+              className="block font-medium text-[0.95rem] text-gray-700 mb-2"
+            >
+              {t('contact.formName')}
+            </label>
             <input 
               type="text" 
               id="name" 
@@ -140,7 +146,12 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="mb-5">
-            <label htmlFor="email" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Email</label>
+            <label
+              htmlFor="email"
+              className="block font-medium text-[0.95rem] text-gray-700 mb-2"
+            >
+              {t('contact.formEmail')}
+            </label>
             <input 
               type="email" 
               id="email" 
@@ -159,7 +170,12 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="mb-5">
-            <label htmlFor="childAge" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Child&apos;s Age (optional)</label>
+            <label
+              htmlFor="childAge"
+              className="block font-medium text-[0.95rem] text-gray-700 mb-2"
+            >
+              {t('contact.formChildAge')}
+            </label>
             <input 
               type="text" 
               id="childAge" 
@@ -172,7 +188,12 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="mb-6">
-            <label htmlFor="message" className="block font-medium text-[0.95rem] text-gray-700 mb-2">Message</label>
+            <label
+              htmlFor="message"
+              className="block font-medium text-[0.95rem] text-gray-700 mb-2"
+            >
+              {t('contact.formMessage')}
+            </label>
             <textarea 
               id="message" 
               name="message" 
@@ -209,13 +230,13 @@ const Contact: React.FC = () => {
                 {t('contact.processing')}
               </span>
             ) : (
-              'Send Message'
+              t('contact.formSubmit')
             )}
           </button>
           
           {/* Luna's microcopy styling */}
           <p className="microcopy text-[0.85rem] text-gray-600 mt-3 text-center">
-            Expect a reply within ~2 hours (weekdays).
+            {t('contact.responseTime')}
           </p>
         </form>
         

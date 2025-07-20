@@ -8,6 +8,7 @@ import { getPageMetadata } from "@/lib/seo";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
+import Button from "@/components/Button";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -152,6 +153,25 @@ export default function RootLayout({
           {/* Main content with padding to offset fixed nav height */}
             <div className="pt-20">{children}</div>
           </ErrorBoundary>
+
+          {/* ------------------------------------------------------------ */}
+          {/* Sticky CTA Bar (Apply Now / Book Tour)                      */}
+          {/* ------------------------------------------------------------ */}
+          {/* Visible on every page – fixed bottom-right for quick action */}
+          <div className="fixed bottom-4 right-4 flex flex-col space-y-2 z-50">
+            <Button variant="primary" href="/apply" size="sm">
+              Apply Now
+            </Button>
+            <Button
+              variant="secondary"
+              href="https://wa.me/31620966405?text=Hi%20Teddy%20Kids!%20I'd%20love%20to%20book%20a%20tour%20for%20my%20child."
+              size="sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book Tour
+            </Button>
+          </div>
 
           {/* Floating WhatsApp Button */}
           <a

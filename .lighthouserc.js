@@ -12,7 +12,6 @@ module.exports = {
       numberOfRuns: 3,
       /* Mobile-optimized settings with 4G throttling */
       settings: {
-        preset: 'mobile',
         throttling: {
           cpuSlowdownMultiplier: 4,
           downloadThroughputKbps: 1600,  // Simulated 4G

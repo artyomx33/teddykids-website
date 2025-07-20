@@ -40,6 +40,8 @@ export default function LocationsPage() {
     netherlands: {
       logoSrc: '/images/logos/tisa-logo-placeholder.png',
       logoAlt: 'TISA Netherlands Logo',
+      imageSrc: '/images/tisa-leiden.png',
+      imageAlt: 'Students at TISA Netherlands campus',
       description: 'Bilingual international primary school in Leiden.',
       buttonText: 'Visit TISA Netherlands',
       buttonHref: 'https://www.tisaschool.com',
@@ -47,6 +49,8 @@ export default function LocationsPage() {
     portugal: {
       logoSrc: '/images/logos/tisa-logo-placeholder.png',
       logoAlt: 'TISA Portugal Logo',
+      imageSrc: '/images/tisa-portugal.png',
+      imageAlt: 'Students at TISA Portugal campus',
       description: 'Our sunny international campus in Lisbon.',
       buttonText: 'Visit TISA Portugal',
       buttonHref: 'https://www.tisaschool.com/portugal',

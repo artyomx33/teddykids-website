@@ -25,7 +25,8 @@ export default function TeamPage() {
 
   // 1. Hero
   const heroContent = {
-    imageSrc: '/images/heroes/team-hero.png',
+    // Updated per request – use new universal hero
+    imageSrc: '/images/heroes/team-hero-new.png',
     imageAlt: 'Teddy Kids staff smiling together in the garden',
     title: 'Meet Our Team',
     subtitle: 'Passionate caregivers, bilingual hearts, one big Teddy family.',
@@ -95,8 +96,9 @@ export default function TeamPage() {
       
   // 5. TISA Partnership block
   const tisaPartnership = {
-    teddyLogoSrc: '/images/logos/teddy-kids-logo.png',
-    tisaLogoSrc: '/images/logos/tisa-logo.png',
+    // Swap in actual production logos + new theatre banner
+    teddyLogoSrc: '/images/logos/teddykids-logo-placeholder.png',
+    tisaLogoSrc: '/images/logos/tisa-logo-placeholder.png',
     title: "TISA isn't just international education — it's international imagination.",
     paragraph1:
       'Together with Teddy Kids, we grow the next generation of confident thinkers and young entrepreneurs.',
@@ -104,7 +106,7 @@ export default function TeamPage() {
       "At TISA, kids explore SWOT analysis at five, speed math with joy, and star in theater shows that spark big ideas. It's a bold continuation of the Teddy spirit — powered by curiosity, creativity, and courage.",
     ctaText: 'Explore TISA →',
     ctaLink: 'https://www.tisaschool.com',
-    imageSrc: '/images/team/tisa-theater.jpg',
+    imageSrc: '/images/tisa-teachers-theater.png',
     imageAlt: 'TISA students performing on stage',
   };
       

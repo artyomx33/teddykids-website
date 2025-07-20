@@ -26,6 +26,9 @@ interface TISASchool {
   description: string;
   buttonText: string;
   buttonHref: string;
+  /** optional showcase image (e.g. campus photo) */
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 interface TISAContent {
@@ -217,6 +220,17 @@ export default function LocationsPageClient({
                     className="object-contain"
                   />
                 </div>
+              {/* Showcase image if provided */}
+              {tisaContent.netherlands.imageSrc && (
+                <div className="relative h-52 w-full rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src={tisaContent.netherlands.imageSrc}
+                    alt={tisaContent.netherlands.imageAlt || 'TISA Netherlands'}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              )}
                 <p className="text-gray-700 mb-6">
                   {tisaContent.netherlands.description || t('locationsPage.tisa.netherlands.description')}
                 </p>
@@ -239,6 +253,17 @@ export default function LocationsPageClient({
                     className="object-contain"
                   />
                 </div>
+              {/* Showcase image if provided */}
+              {tisaContent.portugal.imageSrc && (
+                <div className="relative h-52 w-full rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src={tisaContent.portugal.imageSrc}
+                    alt={tisaContent.portugal.imageAlt || 'TISA Portugal'}
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              )}
                 <p className="text-gray-700 mb-6">
                   {tisaContent.portugal.description || t('locationsPage.tisa.portugal.description')}
                 </p>

@@ -37,9 +37,10 @@ const Button: React.FC<ButtonProps> = ({
   
   // Size variations
   const sizeStyles = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-base',
-    lg: 'px-6 py-3 text-lg',
+    // Ensure minimum ~44 px height for accessible touch targets
+    sm: 'px-4 py-2.5 text-sm',   // ~44 px
+    md: 'px-5 py-3 text-base',   // ≥44 px
+    lg: 'px-6 py-3 text-lg',     // already sufficient
   };
   
   // Variant styles

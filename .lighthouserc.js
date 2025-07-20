@@ -1,79 +1,57 @@
-/**
- * Lighthouse CI Configuration
- * 
- * This configuration file defines:
- * - All TeddyKids website routes to audit
- * - Output settings for reports
- * - Chrome settings for headless execution
- */
-
 module.exports = {
   ci: {
     collect: {
-      // All main TeddyKids routes
+      /* Use production build for accurate metrics */
+      startServerCommand: 'npm run start',
       url: [
-        'http://localhost:3002/',
-        'http://localhost:3002/about',
-        'http://localhost:3002/about/policy',
-        'http://localhost:3002/programs',
-        'http://localhost:3002/programs/after-school',
-        'http://localhost:3002/programs/nursery',
-        'http://localhost:3002/team',
-        'http://localhost:3002/locations',
-        'http://localhost:3002/learning',
-        'http://localhost:3002/contact',
-        'http://localhost:3002/apply',
-        'http://localhost:3002/accepted',
+        'http://localhost:3000/',
+        'http://localhost:3000/programs',
+        'http://localhost:3000/locations',
+        'http://localhost:3000/apply'
       ],
-      // Performance settings
-      numberOfRuns: 1,
-      headless: true,
-      // Chrome settings
+      numberOfRuns: 3,
+      /* Mobile-optimized settings with 4G throttling */
       settings: {
-        // Run as a desktop-class device
-        preset: 'desktop',
-        onlyCategories: [
-          'performance',
-          'accessibility',
-          'best-practices',
-          'seo'
-        ],
-      },
-      // Extra Chrome flags to bypass localhost security interstitials
-      chromeFlags: [
-        '--allow-insecure-localhost',                     // treat localhost as secure
-        '--disable-web-security',                         // disable same-origin policy for testing
-        '--ignore-certificate-errors',                    // ignore TLS/SSL cert errors
-        '--unsafely-treat-insecure-origin-as-secure=http://localhost:3002', // whitelist our dev origin
-        // Additional aggressive flags to further relax security & resource constraints
-        '--disable-features=VizDisplayCompositor',
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-extensions',
-        '--disable-gpu',
-        '--no-first-run',
-        '--disable-default-apps',
-        '--disable-background-timer-throttling',
-        '--disable-backgrounding-occluded-windows',
-        '--disable-renderer-backgrounding',
-      ],
+        preset: 'mobile',
+        throttling: {
+          cpuSlowdownMultiplier: 4,
+          downloadThroughputKbps: 1600,  // Simulated 4G
+          uploadThroughputKbps: 750,     // Simulated 4G
+          rttMs: 150                     // Realistic mobile latency
+        },
+        formFactor: 'mobile',
+        screenEmulation: {
+          mobile: true,
+          width: 375,
+          height: 667,
+          deviceScaleFactor: 2,
+        }
+      }
     },
     upload: {
-      // Output settings
-      target: 'filesystem',
-      outputDir: 'lighthouse-reports',
-      reportFilenamePattern: '%%PATHNAME%%-%%DATETIME%%-report.%%EXTENSION%%',
+      /* Upload to temporary public storage for CI reports */
+      target: 'temporary-public-storage',
     },
     assert: {
-      // Minimum score thresholds
-      preset: 'lighthouse:recommended',
+      /* Minimum 90% score requirements */
       assertions: {
-        'categories:performance': ['warn', { minScore: 0.7 }],
-        'categories:accessibility': ['warn', { minScore: 0.9 }],
-        'categories:best-practices': ['warn', { minScore: 0.9 }],
-        'categories:seo': ['warn', { minScore: 0.9 }],
-      },
+        'categories:performance': ['error', { minScore: 0.9 }],
+        'categories:accessibility': ['error', { minScore: 0.9 }],
+        'first-contentful-paint': ['error', { maxNumericValue: 2500 }],
+        'largest-contentful-paint': ['error', { maxNumericValue: 3000 }],
+        'interactive': ['error', { maxNumericValue: 3500 }],
+        'cumulative-layout-shift': ['error', { maxNumericValue: 0.1 }],
+        'total-blocking-time': ['error', { maxNumericValue: 300 }],
+        'max-potential-fid': ['error', { maxNumericValue: 100 }],
+      }
+    },
+    server: {
+      /* Server control settings */
+      port: 9000,
+      chromeFlags: '--no-sandbox',
+      extraHeaders: {
+        'Cache-Control': 'no-cache',
+      }
     },
   },
 };

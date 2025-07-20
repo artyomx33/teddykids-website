@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 session-kickstart-prompt.md
+
+# Lighthouse test output
+lighthouse-*.json
+lighthouse-*.html

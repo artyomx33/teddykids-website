@@ -25,7 +25,8 @@ export default function TeamPage() {
 
   // 1. Hero
   const heroContent = {
-    imageSrc: '/images/heroes/team-hero.png',
+    // Updated per request – use new universal hero
+    imageSrc: '/images/heroes/team-hero-new.png',
     imageAlt: 'Teddy Kids staff smiling together in the garden',
     title: 'Meet Our Team',
     subtitle: 'Passionate caregivers, bilingual hearts, one big Teddy family.',
@@ -47,7 +48,7 @@ export default function TeamPage() {
   const locationTeams = [
     {
       title: 'RBW – Rijnsburgerweg 35 (KDV)',
-      teamImageSrc: '/images/team/team-rbw.jpg',
+      teamImageSrc: '/images/team/team-rbw.jpeg',
       teamImageAlt: 'RBW Team',
       locationImageSrc: '/images/locations/rbw_1.jpg',
       locationImageAlt: 'RBW Location',
@@ -56,7 +57,7 @@ export default function TeamPage() {
     },
     {
       title: 'RB3/RB5 – Rijnsburgerweg 3 & 5 (KDV + BSO)',
-      teamImageSrc: '/images/team/team-rb3rb5.jpg',
+      teamImageSrc: '/images/team/team-rb3rb5.jpeg',
       teamImageAlt: 'RB3/RB5 Team',
       locationImageSrc: '/images/locations/rb3rb5_1.jpg',
       locationImageAlt: 'RB3/RB5 Location',
@@ -65,7 +66,7 @@ export default function TeamPage() {
     },
     {
       title: 'LRZ – Lorentzkade 15a (BSO + TISA)',
-      teamImageSrc: '/images/team/team-lrz.jpg',
+      teamImageSrc: '/images/team/team-lrz.jpeg',
       teamImageAlt: 'LRZ Team',
       locationImageSrc: '/images/locations/lrz_1.jpg',
       locationImageAlt: 'LRZ Location',
@@ -74,7 +75,7 @@ export default function TeamPage() {
     },
     {
       title: 'ZML – Zeemanlaan 22a (KDV)',
-      teamImageSrc: '/images/team/team-zml.jpg',
+      teamImageSrc: '/images/team/team-zml.jpeg',
       teamImageAlt: 'ZML Team',
       locationImageSrc: '/images/locations/zml_1.jpg',
       locationImageAlt: 'ZML Location',
@@ -95,8 +96,9 @@ export default function TeamPage() {
       
   // 5. TISA Partnership block
   const tisaPartnership = {
-    teddyLogoSrc: '/images/logos/teddy-kids-logo.png',
-    tisaLogoSrc: '/images/logos/tisa-logo.png',
+    // Swap in actual production logos + new theatre banner
+    teddyLogoSrc: '/images/logos/teddykids-logo-placeholder.png',
+    tisaLogoSrc: '/images/logos/tisa-logo-placeholder.png',
     title: "TISA isn't just international education — it's international imagination.",
     paragraph1:
       'Together with Teddy Kids, we grow the next generation of confident thinkers and young entrepreneurs.',
@@ -104,7 +106,7 @@ export default function TeamPage() {
       "At TISA, kids explore SWOT analysis at five, speed math with joy, and star in theater shows that spark big ideas. It's a bold continuation of the Teddy spirit — powered by curiosity, creativity, and courage.",
     ctaText: 'Explore TISA →',
     ctaLink: 'https://www.tisaschool.com',
-    imageSrc: '/images/team/tisa-theater.jpg',
+    imageSrc: '/images/tisa-teachers-theater.png',
     imageAlt: 'TISA students performing on stage',
   };
       

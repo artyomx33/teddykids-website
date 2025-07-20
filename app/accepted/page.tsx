@@ -11,8 +11,6 @@
 // No behavioral changes - just SEO/performance benefits.
 // ---------------------------------------------------------------------------
 
-export const dynamic = 'force-static';
-
 import type { Metadata } from 'next';
 import AcceptedPageClient from './AcceptedPageClient';
 
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
   description: 'Welcome to Teddy Kids! Your child has been accepted to our program. Find all the information you need about your start date, location, and next steps.',
   keywords: 'teddy kids acceptance, childcare enrollment, daycare welcome, preschool accepted, teddy kids onboarding',
 };
+
+// Incremental Static Regeneration — rebuild page at most once per hour
+export const revalidate = 3600;
 
 export default function AcceptedPage() {
   return <AcceptedPageClient />;

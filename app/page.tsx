@@ -16,19 +16,15 @@ import SocialProof from '@/components/sections/SocialProof';
 import Programs from '@/components/sections/Programs';
 
 // Dynamic / interactive widgets – keep on client
-// TEMP: Commented out to investigate Webpack build error
-// import dynamicImport from 'next/dynamic';
-// const AppiesGPT = dynamicImport(() => import('@/components/sections/AppiesGPT'), {
-//   loading: () => (
-//     <section className="py-16 text-center">
-//       <p className="text-gray-500">Loading chat assistant…</p>
-//     </section>
-//   ),
-//   ssr: false,
-// });
-
- 
 import dynamicImport from 'next/dynamic';
+const AppiesGPT = dynamicImport(() => import('@/components/sections/AppiesGPT'), {
+  loading: () => (
+    <section className="py-16 text-center">
+      <p className="text-gray-500">Loading chat assistant…</p>
+    </section>
+  ),
+});
+
 
 const LocationsPreview = dynamicImport(
   () => import('@/components/sections/LocationsPreview'),
@@ -80,7 +76,7 @@ export default function HomePage() {
       </div>
 
       {/* AppiesGPT Section (AI assistant) */}
-      {/* <AppiesGPT /> */}
+    <AppiesGPT />
 
       {/* Core Values Pillars */}
       <Pillars />

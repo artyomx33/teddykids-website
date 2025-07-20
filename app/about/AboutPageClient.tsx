@@ -40,7 +40,7 @@ const timeline = [
     img: '/timeline/2015.jpg',
     alt: '10-year milestone & Teddy Perfume launch',
     text:
-      '10 years of Teddy Kids! We marked the milestone with our first fragrance, TEDDY PERFUME — Maelyn. “Blush With Every Breath” became a joyful tribute to our journey, inspired by the laughter and love of every child in our care.',
+      '10 years of Teddy Kids! We marked the milestone with our first fragrance, TEDDY PERFUME — Maelyn. "Blush With Every Breath" became a joyful tribute to our journey, inspired by the laughter and love of every child in our care.',
   },
   {
     year: '2016',
@@ -95,7 +95,28 @@ const timeline = [
 ];
 
 // ──────────────────────────────────────────────────────────
-// (Timeline array removed – no longer used)
+//  Mapping brand colours → Tailwind utility classes
+// ──────────────────────────────────────────────────────────
+const colorClassMap: Record<string, { border: string; text: string }> = {
+  'brand-pink': {
+    border: 'border-brand-pink',
+    text: 'text-brand-pink',
+  },
+  'brand-yellow': {
+    border: 'border-brand-yellow',
+    text: 'text-brand-yellow',
+  },
+  'brand-mint': {
+    border: 'border-brand-mint',
+    text: 'text-brand-mint',
+  },
+  'brand-purple': {
+    border: 'border-brand-purple',
+    text: 'text-brand-purple',
+  },
+};
+
+// (TimelineItem component removed – not used)
 // Team preview item component
 const TeamPreviewItem = (
   {
@@ -235,7 +256,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Timeline / History */}
-      {/* (Removed duplicate “Our Journey” timeline to prevent redundancy) */}
+      {/* (Removed duplicate "Our Journey" timeline to prevent redundancy) */}
 
       {/* ---------------------------------------------------------------- */}
       {/*  Legacy & Vision (Luna Brutal Upgrade™)                          */}
@@ -283,7 +304,26 @@ export default function AboutPageClient() {
           </div>
 
           {/* Legacy Timeline */}
-          {/* (Legacy timeline removed per specification) */}
+          <div className="max-w-4xl mx-auto mb-20 space-y-8">
+            {Array.isArray(t('about.legacy.timeline')) ? t('about.legacy.timeline').map((item: { year: string; text: string; color: string }) => (
+              <div
+                key={item.year}
+                className={`border-l-4 pl-6 ${
+                  colorClassMap[item.color]?.border ?? 'border-brand-pink'
+                }`}
+              >
+                <h3
+                  className={`text-lg font-bold ${
+                    colorClassMap[item.color]?.text ?? 'text-brand-pink'
+                  }`}
+                >
+                  {item.year}
+                </h3>
+                <p className="text-gray-700">{item.text}</p>
+              </div>
+            )) : []}
+          </div>
+
 
           {/* Future Vision */}
           <div className="max-w-4xl mx-auto text-center">
@@ -295,12 +335,12 @@ export default function AboutPageClient() {
             </p>
 
             <ul className="space-y-4 max-w-3xl mx-auto text-gray-700 text-lg text-left">
-              {t('about.vision.promises').map((promise: { icon: string; text: string }, index: number) => (
+              {Array.isArray(t('about.vision.promises')) ? t('about.vision.promises').map((promise: { icon: string; text: string }, index: number) => (
                 <li key={index} className="flex items-start">
                   <span className="text-2xl mr-3">{promise.icon}</span>
                   <span>{promise.text}</span>
                 </li>
-              ))}
+              )) : []}
             </ul>
 
             <p className="text-xl font-semibold mt-10 text-brand-pink">

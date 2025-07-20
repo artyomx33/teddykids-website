@@ -486,30 +486,6 @@ function ApplyPageContent() {
     }
   ];
 
-  // Benefits data for Why Teddy section
-  const teddyBenefits = [
-    {
-      icon: "🌍",
-      title: "Bilingual Brilliance",
-      description: "Two languages from day one, taught naturally through play and daily routines."
-    },
-    {
-      icon: "🧸",
-      title: "Play-Based Learning",
-      description: "Children learn best when they&apos;re having fun. Our curriculum is built on joy."
-    },
-    {
-      icon: "👩‍👧‍👦",
-      title: "Small Groups",
-      description: "More attention, more care, more personalized development for your child."
-    },
-    {
-      icon: "🏆",
-      title: "20 Years Experience",
-      description: "Two decades of childhood expertise and thousands of happy families."
-    }
-  ];
-  
   /* ──────────────────────────────────────────────────────────
    *  Hero video handling - FIXED to prevent flash of content
    * ────────────────────────────────────────────────────────── */
@@ -556,7 +532,9 @@ function ApplyPageContent() {
             autoPlay
             muted
             loop
+            preload="auto"
             playsInline
+            poster={fallbackImageSrc}
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src={videoSrc} type="video/mp4" />
@@ -614,28 +592,6 @@ function ApplyPageContent() {
                   Click to hear our soft morning greeting
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Why Teddy Section - NEW SECTION */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-display font-bold mb-6">Why Teddy Kids Exists</h2>
-            <p className="text-lg text-gray-700 mb-10">
-              We didn&apos;t build another daycare. We built what we wish we had as kids.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {teddyBenefits.map((benefit, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                  <div className="text-4xl mb-3">{benefit.icon}</div>
-                  <h3 className="text-xl font-display font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>

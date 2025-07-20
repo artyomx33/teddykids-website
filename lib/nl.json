@@ -235,7 +235,8 @@
   "appiesGPT": {
     "title": "Heb je een vraag?",
     "description": "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je vragen beantwoorden over programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
-    "buttonText": "Open AppiesGPT Chat"
+    "buttonText": "Open AppiesGPT Chat",
+    "note": "Opent in een nieuw tabblad op ChatGPT"
   },
   "programs": {
     "title": "Wat Wij Bieden",
@@ -481,6 +482,33 @@
       "audio": {
         "label": "Luister naar een ouder die zich net heeft aangemeld",
         "quote": "Het was eerlijk gezegd makkelijker dan ik dacht. Ze belden me de volgende dag. Het voelde menselijk."
+      },
+      "audioSection": {
+        "title": "Hoor de Teddy Magie",
+        "subtitle": "Laat Appies je kleintje verwelkomen: hoor onze zachte ochtendgroet in het Nederlands & Engels.",
+        "buttonText": "Speel Appies Welkom",
+        "buttonNote": "Klik om onze zachte ochtendgroet te horen"
+      },
+      "howItWorks": {
+        "title": "Hoe Het Werkt",
+        "step1": {
+          "title": "Boek een Rondleiding",
+          "description": "Ontmoet ons team en zie onze ruimtes persoonlijk."
+        },
+        "step2": {
+          "title": "Vul Aanmelding In",
+          "description": "Vul een kort formulier in—we begeleiden je de hele weg."
+        },
+        "step3": {
+          "title": "Start het Avontuur",
+          "description": "Word lid van de Teddy familie en begin het plezier."
+        }
+      },
+      "cta": {
+        "title": "Klaar voor de Volgende Stap?",
+        "applyButton": "Meld Nu Aan",
+        "tourButton": "Boek een Rondleiding",
+        "note": "Geen aanmeldingskosten. We leiden rond met hart."
       },
       "steps": {
         "programSelection": "Programmakeuze",

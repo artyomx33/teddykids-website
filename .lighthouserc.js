@@ -29,16 +29,40 @@ module.exports = {
       numberOfRuns: 1,
       headless: true,
       // Chrome settings
-      settings: {
-        // Run as a desktop-class device
-        preset: 'desktop',
-        onlyCategories: [
-          'performance',
-          'accessibility',
-          'best-practices',
-          'seo'
-        ],
-      },
+      // Determine config by env var (desktop | mobile)
+      /*  ------------------------------------------------------------------
+       *  Use env LIGHTHOUSE_FORM_FACTOR=desktop to switch.
+       *  Defaults to mobile to simulate real-world usage more closely.
+       *  ------------------------------------------------------------------ */
+      settings: (() => {
+        const isDesktop = process.env.LIGHTHOUSE_FORM_FACTOR === 'desktop';
+
+        if (isDesktop) {
+          // Desktop-oriented run
+          return {
+            preset: 'desktop',
+            onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
+          };
+        }
+
+        // Mobile-oriented run (default)
+        return {
+          throttling: {
+            cpuSlowdownMultiplier: 4,
+            downloadThroughputKbps: 1600, // Simulated 4G
+            uploadThroughputKbps: 750,    // Simulated 4G
+            rttMs: 150,                   // Realistic mobile latency
+          },
+          formFactor: 'mobile',
+          screenEmulation: {
+            mobile: true,
+            width: 375,
+            height: 667,
+            deviceScaleFactor: 2,
+          },
+        };
+      })(),
+
       // Extra Chrome flags to bypass localhost security interstitials
       chromeFlags: [
         '--allow-insecure-localhost',                     // treat localhost as secure

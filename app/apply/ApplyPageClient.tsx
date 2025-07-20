@@ -556,7 +556,9 @@ function ApplyPageContent() {
             autoPlay
             muted
             loop
+            preload="auto"
             playsInline
+            poster={fallbackImageSrc}
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src={videoSrc} type="video/mp4" />

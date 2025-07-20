@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   keywords: 'teddy kids apply, bilingual daycare application, teddy kids form',
 };
 
+// Ensure this page is prerendered at build-time
+export const dynamic = 'force-static';
+
 export default function ApplyPage() {
   return (
     <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   keywords: 'learning moments, teddy kids, play-based learning, early childhood development',
 };
 
+// Enable static generation for this route
+export const dynamic = 'force-static';
+
 export default function LearningPage() {
   return <LearningPageClient />;
 }

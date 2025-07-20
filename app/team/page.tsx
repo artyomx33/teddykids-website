@@ -23,25 +23,23 @@ export default function TeamPage() {
   //  Static content (would normally come from CMS)
   // ──────────────────────────────────────────────────────────
 
-  // 1. Hero
+  // 1. Hero - Using translation keys instead of hardcoded text
   const heroContent = {
     // Updated per request – use new universal hero
     imageSrc: '/images/heroes/team-hero-new.png',
     imageAlt: 'Teddy Kids staff smiling together in the garden',
-    title: 'Meet Our Team',
-    subtitle: 'Passionate caregivers, bilingual hearts, one big Teddy family.',
+    titleKey: 'teamPage.hero.title',
+    subtitleKey: 'teamPage.hero.subtitle',
   };
 
-  // 2. Philosophy
+  // 2. Philosophy - Using translation keys instead of hardcoded text
   const philosophyContent = {
-    title: 'The People Who Make Magic Happen',
+    titleKey: 'teamPage.philosophy.title',
     imageSrc: '/images/heroes/programs-hero.jpg',
     imageAlt: 'Teddy Kids Team Philosophy',
-    paragraph1:
-      "At Teddy Kids, our team is more than qualified — they're full-hearted, silly-serious, and endlessly curious. From comforting wobbly first steps to decoding deep toddler questions like “Why is the sky shy?”, our educators bring bilingual love and care to every moment.",
-    paragraph2:
-      "They come from all over the world — but share one thing: a belief that early childhood isn't just preparation for life… it is life. That's why we support our team with ongoing training, hugs, and maybe a surprise pizza now and then.",
-    highlightText: "We don't just hire teachers. We grow a family.",
+    paragraph1Key: 'teamPage.philosophy.paragraph1',
+    paragraph2Key: 'teamPage.philosophy.paragraph2',
+    highlightTextKey: 'teamPage.philosophy.highlightText',
   };
 
   // 3. Location-specific team photo sets
@@ -94,17 +92,15 @@ export default function TeamPage() {
     { emoji: '🏆', titleKey: 'teamPage.values.value6.title', descriptionKey: 'teamPage.values.value6.description' },
   ];
       
-  // 5. TISA Partnership block
+  // 5. TISA Partnership block - Using translation keys instead of hardcoded text
   const tisaPartnership = {
     // Swap in actual production logos + new theatre banner
     teddyLogoSrc: '/images/logos/teddykids-logo-placeholder.png',
     tisaLogoSrc: '/images/logos/tisa-logo-placeholder.png',
-    title: "TISA isn't just international education — it's international imagination.",
-    paragraph1:
-      'Together with Teddy Kids, we grow the next generation of confident thinkers and young entrepreneurs.',
-    paragraph2:
-      "At TISA, kids explore SWOT analysis at five, speed math with joy, and star in theater shows that spark big ideas. It's a bold continuation of the Teddy spirit — powered by curiosity, creativity, and courage.",
-    ctaText: 'Explore TISA →',
+    titleKey: 'teamPage.tisa.title',
+    paragraph1Key: 'teamPage.tisa.paragraph1',
+    paragraph2Key: 'teamPage.tisa.paragraph2',
+    ctaTextKey: 'teamPage.tisa.button',
     ctaLink: 'https://www.tisaschool.com',
     imageSrc: '/images/tisa-teachers-theater.png',
     imageAlt: 'TISA students performing on stage',

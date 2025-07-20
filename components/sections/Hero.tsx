@@ -69,22 +69,22 @@ const Hero: React.FC<HeroProps> = ({
           fetchPriority="high"
         />
       </Head>
-      {/* Video Background with Fallback */}
-      {!videoLoaded && (
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={fallbackImageSrc}
-            alt="Teddy Kids children playing"
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            className="object-cover object-center"
-            /* keep `fill` for responsive while still providing intrinsic size */
-            fill
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-30" />
-        </div>
-      )}
+      
+      {/* Fallback Image - Always visible on mobile, or before video loads on desktop */}
+      <div className={`absolute inset-0 z-0 ${!isMobile && videoLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}>
+        <Image
+          src={fallbackImageSrc}
+          alt="Teddy Kids children playing"
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover object-center"
+          /* keep `fill` for responsive while still providing intrinsic size */
+          fill
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-30" />
+      </div>
+      
       {/* Render video only on non-mobile to save bandwidth & improve LCP */}
       {!isMobile && (
         <video
@@ -92,12 +92,11 @@ const Hero: React.FC<HeroProps> = ({
           muted
           loop
           playsInline
-          preload="metadata"
-          className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
-            videoLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 opacity-0"
           onLoadedData={() => setVideoLoaded(true)}
           poster={fallbackImageSrc}
+          style={{ opacity: videoLoaded ? 1 : 0 }}
         >
           <source src={videoSrc} type="video/mp4" />
           Your browser does not support the video tag.

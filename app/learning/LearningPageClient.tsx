@@ -24,6 +24,9 @@ const LearningMoment: React.FC<LearningMomentProps> = ({
   type,
   link,
 }) => {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+  
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
       <div className="relative h-48 w-full">
@@ -57,7 +60,9 @@ const LearningMoment: React.FC<LearningMomentProps> = ({
           href={link}
           size="sm"
         >
-          {type === 'video' ? 'Watch Video' : 'Read More'}
+          {type === 'video'
+            ? t('learningMoments.watchVideo')
+            : t('learningMoments.readMore')}
         </Button>
       </div>
     </div>
@@ -75,8 +80,8 @@ export default function LearningPageClient() {
   const learningMoments = [
     {
       id: 1,
-      title: "When Two Languages Become One",
-      description: "Watch how our nursery children naturally switch between Dutch and English during playtime, building neural pathways that will benefit them for life.",
+      title: t('learningMoments.cards.item1.title'),
+      description: t('learningMoments.cards.item1.description'),
       category: "bilingual",
       image: "/images/learning/please-languages.png",
       type: "video" as const,
@@ -84,8 +89,8 @@ export default function LearningPageClient() {
     },
     {
       id: 2,
-      title: "The Science of Sharing",
-      description: "Our preschoolers demonstrate how guided conflict resolution helps develop empathy and emotional intelligence.",
+      title: t('learningMoments.cards.item2.title'),
+      description: t('learningMoments.cards.item2.description'),
       category: "empathy",
       image: "/images/learning/conflict-resolution.png",
       type: "article" as const,
@@ -93,8 +98,8 @@ export default function LearningPageClient() {
     },
     {
       id: 3,
-      title: "Building Bridges, Building Minds",
-      description: "See how simple blocks and questions lead to complex STEM thinking in our 3-year-olds.",
+      title: t('learningMoments.cards.item3.title'),
+      description: t('learningMoments.cards.item3.description'),
       category: "stem",
       image: "/images/learning/blocks-thinking.png",
       type: "video" as const,
@@ -102,8 +107,8 @@ export default function LearningPageClient() {
     },
     {
       id: 4,
-      title: "From Mess to Masterpiece",
-      description: "The developmental importance of sensory play and artistic expression in language acquisition.",
+      title: t('learningMoments.cards.item4.title'),
+      description: t('learningMoments.cards.item4.description'),
       category: "creativity",
       image: "/images/learning/finger-paint.png",
       type: "article" as const,
@@ -111,8 +116,8 @@ export default function LearningPageClient() {
     },
     {
       id: 5,
-      title: "Cultural Celebrations: Sinterklaas",
-      description: "How we incorporate Dutch traditions while making them accessible to our international families.",
+      title: t('learningMoments.cards.item5.title'),
+      description: t('learningMoments.cards.item5.description'),
       category: "bilingual",
       image: "/images/learning/music-brain.png",
       type: "video" as const,
@@ -120,8 +125,8 @@ export default function LearningPageClient() {
     },
     {
       id: 6,
-      title: "The Teddy Garden Project",
-      description: "Our preschoolers learn about sustainability, patience, and nutrition by growing their own vegetables.",
+      title: t('learningMoments.cards.item6.title'),
+      description: t('learningMoments.cards.item6.description'),
       category: "stem",
       image: "/images/learning/puddle-science.png",
       type: "article" as const,
@@ -154,17 +159,17 @@ export default function LearningPageClient() {
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-              Where brilliance hides in everyday moments
+              {t('learningPage.hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-white">
-              Peek inside to see how your child learns when they think they&apos;re just playing.
+              {t('learningPage.hero.subtitle')}
             </p>
           </div>
         </div>
       </section>
 
       {/* ----------------------------------------------------------------
-          “Learning in Action” section temporarily removed
+          "Learning in Action" section temporarily removed
 
           This block currently contains only a heading + subtitle
           with no actual content behind it, which creates empty
@@ -192,10 +197,10 @@ export default function LearningPageClient() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-2 text-center">
-              {"Learning Moments"}
+              {t('learningMoments.title')}
             </h2>
             <p className="text-center text-gray-600 mb-8">
-              {"Short bursts of insight from inside TK"}
+              {t('learningMoments.subtitle')}
             </p>
             
             {/* Category Filters */}
@@ -278,10 +283,10 @@ export default function LearningPageClient() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-display font-bold mb-4">
-              What if your child&apos;s most powerful learning moment… was happening today—and you didn&apos;t see it?
+              {t('learningMoments.ctaTitle')}
             </h2>
             <p className="text-lg text-gray-700 mb-8">
-              Let us show you how brilliance hides in snack time, sandboxes, and squishy socks.
+              {t('learningMoments.ctaSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -289,21 +294,22 @@ export default function LearningPageClient() {
                 href="/contact"
                 size="lg"
               >
-                See It Firsthand
+                {t('learningMoments.ctaPrimary')}
               </Button>
               <Button 
                 variant="outline"
                 href="/contact?tour=true"
                 size="lg"
               >
-                Book a 20-Minute Tour That Might Change Everything
+                {t('learningMoments.ctaSecondary')}
               </Button>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Newsletter Signup */}
+      {/* Newsletter Signup - Commented out as requested since it's not translated yet */}
+      {/* 
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-sm">
@@ -330,6 +336,7 @@ export default function LearningPageClient() {
           </div>
         </div>
       </section>
+      */}
     </main>
   );
 }

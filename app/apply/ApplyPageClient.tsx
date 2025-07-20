@@ -548,10 +548,10 @@ function ApplyPageContent() {
         <div className="relative z-20 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              Your journey with Teddy Kids begins here
+              {t('locationsPage.applyPage.hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-white mb-6 max-w-2xl mx-auto">
-              Start your journey with Teddy Kids – where bilingual care meets big hearts.
+              {t('locationsPage.applyPage.hero.subtitle')}
             </p>
           </div>
         </div>

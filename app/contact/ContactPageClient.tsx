@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
 
 // Dynamically import the Contact form component
 const Contact = dynamic(() => import('@/components/sections/Contact'), {
@@ -25,6 +27,12 @@ const AppiesGPT = dynamic(() => import('@/components/sections/AppiesGPT'), {
 });
 
 export default function ContactPageClient() {
+  // ──────────────────────────────────────────────────────────
+  //  i18n – determine active language & translation helper
+  // ──────────────────────────────────────────────────────────
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
+
   return (
     <main>
       {/* ──────────────────────────────────────────────────────────
@@ -75,10 +83,10 @@ export default function ContactPageClient() {
             {/* Center text block horizontally on all viewports */}
             <div className="max-w-2xl mx-auto">
               <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-                Contact Us
+                {t('contact.hero.title')}
               </h1>
               <p className="text-xl md:text-2xl text-white">
-                We&apos;re here to answer your questions and welcome you to our Teddy family
+                {t('contact.hero.subtitle')}
               </p>
             </div>
           </div>

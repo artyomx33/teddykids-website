@@ -10,17 +10,17 @@ import { useTranslation } from '@/lib/translations';
 interface HeroContent {
   imageSrc: string;
   imageAlt: string;
-  title: string;
-  subtitle: string;
+  titleKey: string;
+  subtitleKey: string;
 }
 
 interface PhilosophyContent {
-  title: string;
+  titleKey: string;
   imageSrc: string;
   imageAlt: string;
-  paragraph1: string;
-  paragraph2: string;
-  highlightText: string;
+  paragraph1Key: string;
+  paragraph2Key: string;
+  highlightTextKey: string;
 }
 
 interface LocationTeam {
@@ -36,10 +36,10 @@ interface LocationTeam {
 interface TISAPartnership {
   teddyLogoSrc: string;
   tisaLogoSrc: string;
-  title: string;
-  paragraph1: string;
-  paragraph2: string;
-  ctaText: string;
+  titleKey: string;
+  paragraph1Key: string;
+  paragraph2Key: string;
+  ctaTextKey: string;
   ctaLink: string;
   imageSrc: string;
   imageAlt: string;
@@ -104,10 +104,10 @@ export default function TeamPageClient({
         <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-              {heroContent.title}
+              {t(heroContent.titleKey)}
             </h1>
             <p className="text-xl md:text-2xl text-white">
-              {heroContent.subtitle}
+              {t(heroContent.subtitleKey)}
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function TeamPageClient({
           <div className="max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-xl shadow-sm">
               <h2 className="text-3xl font-display font-bold mb-6 text-center">
-                {philosophyContent.title}
+                {t(philosophyContent.titleKey)}
               </h2>
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="md:w-1/3">
@@ -134,13 +134,13 @@ export default function TeamPageClient({
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-lg mb-4">
-                    {philosophyContent.paragraph1}
+                    {t(philosophyContent.paragraph1Key)}
                   </p>
                   <p className="text-lg mb-4">
-                    {philosophyContent.paragraph2}
+                    {t(philosophyContent.paragraph2Key)}
                   </p>
                   <p className="text-lg font-medium text-brand-pink">
-                    {philosophyContent.highlightText}
+                    {t(philosophyContent.highlightTextKey)}
                   </p>
                 </div>
               </div>
@@ -247,13 +247,13 @@ export default function TeamPageClient({
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-yellow-900 mb-4">
-                {tisaPartnership.title}
+                {t(tisaPartnership.titleKey)}
               </h2>
               <p className="text-lg text-gray-800 mb-4">
-                {tisaPartnership.paragraph1}
+                {t(tisaPartnership.paragraph1Key)}
               </p>
               <p className="text-lg text-gray-800 mb-6">
-                {tisaPartnership.paragraph2}
+                {t(tisaPartnership.paragraph2Key)}
               </p>
 
               {/* CTA */}
@@ -265,7 +265,7 @@ export default function TeamPageClient({
                   size="lg"
                   className="bg-yellow-600 hover:bg-yellow-700 text-white"
                 >
-                  {tisaPartnership.ctaText}
+                  {t(tisaPartnership.ctaTextKey)}
                 </Button>
               </div>
             </div>

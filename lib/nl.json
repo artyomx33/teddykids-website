@@ -58,6 +58,180 @@
     },
     "trustedBy": "Vertrouwd door organisaties zoals:"
   },
+  "about": {
+    "metadata": {
+      "title": "Over Ons | Teddy Kids",
+      "description": "Ontdek de missie, geschiedenis en visie van Teddy Kids voor tweetalige kinderopvang en internationaal onderwijs sinds 2004.",
+      "keywords": "teddy kids geschiedenis, teddy kids missie, kinderopvang leiden, internationale school, tweetalig onderwijs, tisa",
+      "alt": "Over Teddy Kids – Onze Missie en Visie"
+    },
+    "hero": {
+      "title": "Waarom Teddy Kids Bestaat",
+      "subtitle": "We bouwden niet zomaar een kinderdagverblijf. We bouwden wat we zelf als kind hadden willen hebben.",
+      "imageAlt": "Kinderen die spelen bij Teddy Kids"
+    },
+    "mission": {
+      "title": "Onze Missie",
+      "paragraph1": "Bij Teddy Kids geloven we dat elk kind een omgeving verdient waar natuurlijke nieuwsgierigheid en leerplezier kunnen bloeien.",
+      "paragraph2": "We creëren ruimtes waar kinderen zelfvertrouwen ontwikkelen in meerdere talen en betekenisvolle relaties opbouwen.",
+      "paragraph3": "Met onze unieke aanpak helpen we kinderen op te groeien tot meelevende, creatieve en kritische denkers die een betere toekomst vormgeven."
+    },
+    "journey": {
+      "title": "Onze Reis",
+      "timeline": {
+        "item2004": {
+          "year": "2004",
+          "title": "Teddy Kids opent in Leiden",
+          "description": "Onze eerste locatie opent met 15 kinderen en een visie voor tweetalige zorg die het vroege onderwijs in Nederland zou veranderen."
+        },
+        "item2010": {
+          "year": "2010",
+          "title": "Uitbreiding naar 3e locatie",
+          "description": "Groeiende vraag leidt tot een derde locatie; onze aanpak van tweetalig onderwijs krijgt regionale erkenning."
+        },
+        "item2022": {
+          "year": "2022",
+          "title": "Lancering van TISA",
+          "description": "Theodore International Start-up Academy opent haar deuren en breidt onze tweetalige aanpak uit naar primair onderwijs."
+        },
+        "item2023": {
+          "year": "2023",
+          "title": "TISA Portugal",
+          "description": "Onze internationale visie groeit met de opening van onze eerste campus buiten Nederland, in Lissabon."
+        },
+        "item2024": {
+          "year": "2024",
+          "title": "20 Jaar Teddy Kids",
+          "description": "We vieren twee decennia waarin meer dan 10.000 kinderen hun educatieve reis bij ons begonnen."
+        }
+      }
+    },
+    "future": {
+      "title": "Onze Toekomst",
+      "paragraph1": "We zien een wereld voor ons waarin de kindertijd wordt beschermd, nieuwsgierigheid wordt begeleid, en elk kind opgroeit in de overtuiging dat het kan leiden.",
+      "paragraph2": "In de komende jaren blijven we onze aanpak uitbreiden naar meer gemeenschappen, waarbij we tweetalig onderwijs en ons waardengerichte curriculum naar kinderen in heel Europa en daarbuiten brengen.",
+      "paragraph3": "We zetten ons in voor:",
+      "bulletPoints": [
+        "Het behouden van de magie van de kindertijd in een steeds digitalere wereld",
+        "Het ontwikkelen van innovatieve benaderingen voor taalverwerving",
+        "Het bouwen van bruggen tussen culturen door onderwijs",
+        "Het creëren van duurzame leeromgevingen die verwondering opwekken",
+        "Het versterken van opvoeders die onze passie voor de kindertijd delen"
+      ],
+      "paragraph4": "Samen met families, opvoeders en gemeenschappen vormen we een toekomst waarin elk kind de kans heeft om zijn beste zelf te worden."
+    },
+    "legacy": {
+      "title": "Twee decennia waarin we de kindertijd behandelen als iets heiligs",
+      "subtitle": "In een wereld die kinderen steeds sneller wil maken, kozen wij ervoor om de tijd te vertragen. Teddy Kids was nooit zomaar een opvang. Het was vanaf dag één een verklaring: Dat de kindertijd heilig is. Dat zorg ook slim en doordacht kan zijn. Dat tweetaligheid geen trucje is — maar een sleutel. En dat kinderen meer verdienen dan alleen veiligheid — ze verdienen verwondering.",
+      "timeline": [
+        {
+          "year": "2004–2008",
+          "text": "Drie groepen. Eén missie. Een plek bouwen waar kinderen gezien, gehoord en gekoesterd worden. Geen schermen. Geen haast. Alleen oprechte aandacht.",
+          "color": "brand-pink"
+        },
+        {
+          "year": "2010",
+          "text": "Onze tweede locatie opende, met focus op ZML. Niet omdat het makkelijk was. Maar omdat het belangrijk was.",
+          "color": "brand-yellow"
+        },
+        {
+          "year": "2014",
+          "text": "RBW ging open… met een olifant. Letterlijk. Want magie bestaat echt als je vier jaar oud bent. (En ja — de gemeente zei: 'nooit meer.')",
+          "color": "brand-mint"
+        },
+        {
+          "year": "2018",
+          "text": "We droomden van een kindercafé. De vergunning was binnen, de ideeën leefden… Toen kwam COVID. Maar zelfs stilgezette dromen laten sporen na.",
+          "color": "brand-purple"
+        },
+        {
+          "year": "2020",
+          "text": "RB3 opende — midden in wereldwijde onzekerheid. Want de kindertijd wacht niet.",
+          "color": "brand-pink"
+        },
+        {
+          "year": "2022",
+          "text": "TISA werd geboren. Teddy groeide op — en kreeg een school die bij zijn waarden past: Theodore International Start-up Academy. Niet zomaar onderwijs. Verheffing.",
+          "color": "brand-yellow"
+        },
+        {
+          "year": "2023",
+          "text": "TISA Portugal opende. Eén stempel dichter bij het opvoeden van écht wereldburgers.",
+          "color": "brand-mint"
+        },
+        {
+          "year": "2024",
+          "text": "20 jaar Teddy. RB5 opende zijn deuren. En één waarheid klinkt luider dan ooit: Je kunt de kindertijd niet uitbesteden. Je moet haar zelf bouwen.",
+          "color": "brand-purple"
+        },
+        {
+          "year": "2025",
+          "text": "De reis gaat door. Nieuwe dromen, nieuwe locaties, dezelfde onwrikbare toewijding aan de kindertijd.",
+          "color": "brand-pink"
+        }
+      ]
+    },
+    "vision": {
+      "title": "Onze Visie",
+      "subtitle": "We zijn hier niet om middelmatigheid te schalen. We zijn hier om te beschermen wat onvervangbaar is — want de kindertijd gebeurt maar één keer.",
+      "promises": [
+        { "icon": "🕯️", "text": "We beschermen nieuwsgierigheid als een vlammetje." },
+        { "icon": "✨", "text": "We bewaren magie op plekken waar schermen het willen stelen." },
+        { "icon": "🌍", "text": "We onderwijzen taal niet als vak — maar als paspoort voor de ziel." },
+        { "icon": "🏡", "text": "We bouwen ruimtes die aanvoelen als thuis, maar denken als een school." },
+        { "icon": "🎯", "text": "We houden onze standaarden onmogelijk hoog — omdat jouw kind dat waard is." }
+      ],
+      "closing": "Jij bracht een kind in deze wereld. Wij zijn er om dat kind te laten bloeien."
+    },
+    "team": {
+      "title": "De Mensen Achter Teddy Kids",
+      "subtitle": "Ons betrokken team brengt diverse expertise en een gedeelde toewijding aan kinderopvoeding samen.",
+      "buttonText": "Ontmoet Ons Volledige Team"
+    },
+    "policyReports": {
+      "title": "Beleid & Rapporten",
+      "description": "Onze toewijding aan transparantie en verantwoordelijkheid komt tot uiting in onze uitgebreide documentatie.",
+      "buttonText": "Bekijk alle documenten"
+    },
+    "policy": {
+      "hero": {
+        "title": "Onze beleidsdocumenten & rapporten",
+        "subtitle": "Transparantie, verantwoordelijkheid en voortdurende verbetering leiden alles wat we doen.",
+        "imageAlt": "Beleidsdocumenten en rapporten"
+      },
+      "intro": {
+        "title": "Uw vertrouwen, onze verantwoordelijkheid",
+        "description": "Bij Teddy Kids begint uitstekende kinderopvang met duidelijke beleidslijnen en open communicatie. Hier vindt u al onze officiële documenten, inspectierapporten en richtlijnen die de veiligheid, ontwikkeling en het geluk van uw kind waarborgen."
+      },
+      "documents": {
+        "title": "Beleidsdocumenten",
+        "description": "Onze uitgebreide beleidsstukken die alle aspecten van zorg en educatie behandelen."
+      },
+      "ggdReports": {
+        "title": "GGD Inspectierapporten",
+        "description": "Officiële inspectierapporten van de GGD.",
+        "downloadReport": "Download GGD-rapport"
+      },
+      "quality": {
+        "title": "Kwaliteit & Veiligheid",
+        "description": "Protocollen en procedures die de hoogste kwaliteitsnormen garanderen."
+      },
+      "privacy": {
+        "title": "Privacy & AVG",
+        "description": "Hoe wij persoonsgegevens beschermen en verwerken in overeenstemming met de AVG.",
+        "comingSoon": "Privacybeleid binnenkort beschikbaar — het volledige document kan hier worden gedownload.",
+        "downloadLink": "Download Privacybeleid (NL/EN)"
+      },
+      "additional": {
+        "title": "Overige Documenten",
+        "incidentForm": "Incidentenmeldingsformulier (NL)",
+        "vogSample": "Voorbeeld VOG (NL)"
+      },
+      "helpTitle": "Hulp nodig bij het vinden van iets?",
+      "helpCta": "Kunt u niet vinden wat u zoekt? Stuur ons een bericht.",
+      "downloadReport": "Download Rapport"
+    }
+  },
   "appiesGPT": {
     "title": "Heb je een vraag?",
     "description": "Vraag het aan <strong>AppiesGPT</strong> — onze speelse AI-assistent die alles weet over Teddy Kids! 🎓<br/>Ze kan je vragen beantwoorden over programma's, leeftijdsgroepen, locaties of wat je ook maar wilt weten.",
@@ -355,7 +529,8 @@
     "philosophy": {
       "title": "Onze Team Filosofie",
       "paragraph1": "Bij Teddy Kids geloven we dat ons team onze grootste troef is. We brengen gepassioneerde pedagogen samen met diverse achtergronden die een gemeenschappelijke toewijding delen aan kinderontwikkeling en tweetalig onderwijs.",
-      "paragraph2": "We investeren in continue professionele ontwikkeling, zodat ons team voorop blijft lopen in vroegkinderlijk onderwijs. Deze toewijding aan uitmuntendheid vertaalt zich in innovatieve, responsieve zorg voor elk kind bij Teddy Kids."
+      "paragraph2": "We investeren in continue professionele ontwikkeling, zodat ons team voorop blijft lopen in vroegkinderlijk onderwijs. Deze toewijding aan uitmuntendheid vertaalt zich in innovatieve, responsieve zorg voor elk kind bij Teddy Kids.",
+      "highlightText": "We huren geen leraren aan. We laten een familie groeien."
     },
     "members": {
       "didYouKnow": "Wist Je Dat?",
@@ -404,8 +579,10 @@
       "zml": "Vrolijk, zacht en vol gelach—Zeemanlaan's jongste sterren krijgen de beste start in de meest zorgzame handen."
     },
     "tisa": {
-      "title": "Op zoek naar internationaal onderwijs?",
-      "button": "Bezoek TISA"
+      "title": "TISA is niet zomaar internationaal onderwijs — het is internationale verbeelding.",
+      "paragraph1": "Samen met Teddy Kids laten we de volgende generatie zelfverzekerde denkers en jonge ondernemers groeien.",
+      "paragraph2": "Bij TISA verkennen kinderen SWOT-analyse op hun vijfde, snelrekenen met plezier, en schitteren in theatervoorstellingen die grote ideeën aanwakkeren. Het is een gedurfde voortzetting van de Teddy-geest — aangedreven door nieuwsgierigheid, creativiteit en moed.",
+      "button": "Ontdek TISA →"
     },
     "values": {
       "title": "Onze Gedeelde Waarden",
@@ -514,6 +691,32 @@
     },
     "noResults": "Geen leermomenten gevonden met dit filter. Probeer een andere categorie!",
     "showAll": "Toon Alle Momenten",
+    "cards": {
+      "item1": {
+        "title": "Wanneer twee talen één worden",
+        "description": "Zie hoe onze babygroep-kinderen natuurlijk schakelen tussen Nederlands en Engels tijdens het spelen, waarbij ze neurale paden bouwen die hen hun hele leven zullen helpen."
+      },
+      "item2": {
+        "title": "De wetenschap van delen",
+        "description": "Onze peuters demonstreren hoe begeleide conflictoplossing helpt bij het ontwikkelen van empathie en emotionele intelligentie."
+      },
+      "item3": {
+        "title": "Bruggen bouwen, geesten bouwen",
+        "description": "Zie hoe simpele blokken en vragen leiden tot complex STEM-denken bij onze 3-jarigen."
+      },
+      "item4": {
+        "title": "Van rommel tot meesterwerk",
+        "description": "Het ontwikkelingsbelang van sensorisch spel en artistieke expressie in taalverwerving."
+      },
+      "item5": {
+        "title": "Culturele vieringen: Sinterklaas",
+        "description": "Hoe we Nederlandse tradities integreren terwijl we ze toegankelijk maken voor onze internationale families."
+      },
+      "item6": {
+        "title": "Het Teddy Tuin Project",
+        "description": "Onze peuters leren over duurzaamheid, geduld en voeding door hun eigen groenten te kweken."
+      }
+    },
     "ctaTitle": "Wat als het krachtigste leermoment van je kind... vandaag gebeurde—en je het niet zag?",
     "ctaSubtitle": "Laat ons je laten zien hoe briljantie verstopt zit in snacktijd, zandbakken en zachte sokken.",
     "ctaPrimary": "Zie Het Met Eigen Ogen",
@@ -526,6 +729,10 @@
     }
   },
   "contact": {
+    "hero": {
+      "title": "Contact",
+      "subtitle": "We zijn hier om je vragen te beantwoorden en je te verwelkomen in onze Teddy-familie"
+    },
     "title": "Jouw Reis Begint Hier",
     "subtitle": "We kijken ernaar uit je familie te ontmoeten",
     "getInTouch": "Neem Contact Op",

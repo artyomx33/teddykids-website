@@ -11,7 +11,7 @@ const AppiesGPT = () => {
   const { t } = useTranslation(language);
 
   return (
-    <section className="py-16 bg-brand-mint bg-opacity-10 relative overflow-hidden">
+    <section className="hidden md:block py-16 bg-brand-mint bg-opacity-10 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="ask-appies-intro text-center mb-8">

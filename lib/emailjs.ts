@@ -17,12 +17,14 @@
  * - NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: Your EmailJS public key
  */
 
-import emailjs from '@emailjs/browser';
+// Import only the type, not the actual module (lazy loading)
 import type { EmailJSResponseStatus } from '@emailjs/browser';
 
-// Initialize EmailJS with public key
-export const initEmailJS = () => {
+// Initialize EmailJS with public key - lazy loaded
+export const initEmailJS = async (): Promise<void> => {
   if (typeof window !== 'undefined') {
+    // Dynamically import EmailJS only when needed
+    const emailjs = await import('@emailjs/browser');
     emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '');
   }
 };
@@ -99,6 +101,12 @@ export const sendContactEmail = async (
   formData: ContactFormData,
 ): Promise<EmailJSResponseStatus> => {
   try {
+    // Lazy load EmailJS only when sending email
+    const emailjs = await import('@emailjs/browser');
+    
+    // Initialize if not already initialized
+    await initEmailJS();
+    
     // Add language to template params for localized responses
     const templateParams = {
       ...formData,
@@ -130,6 +138,12 @@ export const sendApplicationEmail = async (
   formData: ApplyFormData,
 ): Promise<EmailJSResponseStatus> => {
   try {
+    // Lazy load EmailJS only when sending email
+    const emailjs = await import('@emailjs/browser');
+    
+    // Initialize if not already initialized
+    await initEmailJS();
+    
     // Format the data for better email readability
     const programInfo = `${formData.program} at ${formData.location}`;
     const childInfo = `${formData.childFirstName} ${formData.childLastName} (DOB: ${formData.childDateOfBirth})`;
@@ -181,6 +195,12 @@ export const sendEmail = async (
   templateParams: Record<string, unknown>
 ): Promise<EmailJSResponseStatus> => {
   try {
+    // Lazy load EmailJS only when sending email
+    const emailjs = await import('@emailjs/browser');
+    
+    // Initialize if not already initialized
+    await initEmailJS();
+    
     return await emailjs.send(serviceId, templateId, templateParams);
   } catch (error) {
     console.error('Error sending email:', error);

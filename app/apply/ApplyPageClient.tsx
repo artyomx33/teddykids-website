@@ -7,7 +7,7 @@ import { useTranslation } from '@/lib/translations';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Head from 'next/head';
-import { initEmailJS, sendApplicationEmail } from '@/lib/emailjs'; // EmailJS helpers
+import { sendApplicationEmail } from '@/lib/emailjs'; // EmailJS helper
 // NOTE: react-audio-player-component was removed due to React 19 compatibility issues.
 // We fall back to a styled native <audio> element instead.
 
@@ -281,13 +281,6 @@ function ApplyPageContent() {
   // Controls fade-in of mafia confirmation content after seal video ends
   const [sealVideoEnded, setSealVideoEnded] = useState(false);
   
-  /* ──────────────────────────────────────────
-   *  Init EmailJS once (client-side only)
-   * ────────────────────────────────────────── */
-  useEffect(() => {
-    initEmailJS();
-  }, []);
-
   // Handle form input changes
   const handleChange = (
     e: React.ChangeEvent<

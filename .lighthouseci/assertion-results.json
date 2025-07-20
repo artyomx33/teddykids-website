@@ -2,200 +2,345 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.76,
+    "actual": 0,
     "values": [
-      0.72,
-      0.75,
-      0.76
+      0
     ],
     "operator": ">=",
     "passed": false,
-    "auditProperty": "performance",
-    "auditId": "categories",
+    "auditId": "bf-cache",
     "level": "error",
-    "url": "http://localhost:3000/"
+    "url": "http://localhost:3000/",
+    "auditTitle": "Page prevented back/forward cache restoration",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/bf-cache/"
   },
   {
-    "name": "maxNumericValue",
-    "expected": 3000,
-    "actual": 5343.965200000002,
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
     "values": [
-      6413.755975,
-      5343.965200000002,
-      5409.2343
+      0
     ],
-    "operator": "<=",
+    "operator": ">=",
+    "passed": false,
+    "auditId": "cls-culprits-insight",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Layout shift culprits",
+    "auditDocumentationLink": "https://web.dev/articles/optimize-cls"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "color-contrast",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Background and foreground colors do not have a sufficient contrast ratio.",
+    "auditDocumentationLink": "https://dequeuniversity.com/rules/axe/4.10/color-contrast"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.84,
+    "values": [
+      0.84
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "cumulative-layout-shift",
+    "level": "warn",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Cumulative Layout Shift",
+    "auditDocumentationLink": "https://web.dev/articles/cls"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.5,
+    "values": [
+      0.5
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "image-delivery-insight",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Improve image delivery",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/uses-optimized-images/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.08,
+    "values": [
+      0.08
+    ],
+    "operator": ">=",
     "passed": false,
     "auditId": "largest-contentful-paint",
-    "level": "error",
+    "level": "warn",
     "url": "http://localhost:3000/",
     "auditTitle": "Largest Contentful Paint",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
   },
   {
-    "name": "maxNumericValue",
-    "expected": 3500,
-    "actual": 5413.851600000002,
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.5,
     "values": [
-      6451.2635875000005,
-      5413.851600000002,
-      5469.794449999999
+      0.5
     ],
-    "operator": "<=",
+    "operator": ">=",
     "passed": false,
-    "auditId": "interactive",
+    "auditId": "legacy-javascript-insight",
     "level": "error",
     "url": "http://localhost:3000/",
-    "auditTitle": "Time to Interactive",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/interactive/"
+    "auditTitle": "Legacy JavaScript",
+    "auditDocumentationLink": "https://web.dev/articles/baseline-and-polyfills"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 2,
+    "values": [
+      2
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "legacy-javascript",
+    "level": "warn",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Avoid serving legacy JavaScript to modern browsers",
+    "auditDocumentationLink": "https://web.dev/baseline"
   },
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.87,
+    "actual": 0.78,
     "values": [
-      0.8,
-      0.84,
-      0.87
+      0.78
     ],
     "operator": ">=",
     "passed": false,
-    "auditProperty": "performance",
-    "auditId": "categories",
-    "level": "error",
-    "url": "http://localhost:3000/programs"
-  },
-  {
-    "name": "maxNumericValue",
-    "expected": 3000,
-    "actual": 3984.6540000000014,
-    "values": [
-      4636.410124999999,
-      4062.4892249999994,
-      3984.6540000000014
-    ],
-    "operator": "<=",
-    "passed": false,
-    "auditId": "largest-contentful-paint",
-    "level": "error",
-    "url": "http://localhost:3000/programs",
-    "auditTitle": "Largest Contentful Paint",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
-  },
-  {
-    "name": "maxNumericValue",
-    "expected": 3500,
-    "actual": 4052.2652400000015,
-    "values": [
-      5056.0809625,
-      4630.810907499999,
-      4052.2652400000015
-    ],
-    "operator": "<=",
-    "passed": false,
-    "auditId": "interactive",
-    "level": "error",
-    "url": "http://localhost:3000/programs",
-    "auditTitle": "Time to Interactive",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/interactive/"
+    "auditId": "max-potential-fid",
+    "level": "warn",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Max Potential First Input Delay",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/"
   },
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.76,
+    "actual": 0,
     "values": [
-      0.75,
-      0.76,
-      0.76
+      0
     ],
     "operator": ">=",
     "passed": false,
-    "auditProperty": "performance",
-    "auditId": "categories",
+    "auditId": "meta-description",
     "level": "error",
-    "url": "http://localhost:3000/locations"
+    "url": "http://localhost:3000/",
+    "auditTitle": "Document does not have a meta description",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/seo/meta-description/"
   },
   {
-    "name": "maxNumericValue",
-    "expected": 3000,
-    "actual": 4626.993524999999,
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
     "values": [
-      4626.993524999999,
-      5146.285100000001,
-      5138.5495
+      1
     ],
     "operator": "<=",
     "passed": false,
-    "auditId": "largest-contentful-paint",
-    "level": "error",
-    "url": "http://localhost:3000/locations",
-    "auditTitle": "Largest Contentful Paint",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
-  },
-  {
-    "name": "maxNumericValue",
-    "expected": 3500,
-    "actual": 4653.186882499999,
-    "values": [
-      4653.186882499999,
-      5215.713900000001,
-      5207.6929
-    ],
-    "operator": "<=",
-    "passed": false,
-    "auditId": "interactive",
-    "level": "error",
-    "url": "http://localhost:3000/locations",
-    "auditTitle": "Time to Interactive",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/interactive/"
+    "auditId": "modern-image-formats",
+    "level": "warn",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Serve images in next-gen formats",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/"
   },
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.77,
+    "actual": 0,
     "values": [
-      0.77,
-      0.76,
-      0.76
+      0
     ],
     "operator": ">=",
     "passed": false,
-    "auditProperty": "performance",
-    "auditId": "categories",
+    "auditId": "network-dependency-tree-insight",
     "level": "error",
-    "url": "http://localhost:3000/apply"
+    "url": "http://localhost:3000/",
+    "auditTitle": "Network dependency tree",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/critical-request-chains"
   },
   {
-    "name": "maxNumericValue",
-    "expected": 3000,
-    "actual": 4952.1708,
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
     "values": [
-      4952.1708,
-      5019.568300000001,
-      5060.1559
+      1
     ],
     "operator": "<=",
     "passed": false,
-    "auditId": "largest-contentful-paint",
+    "auditId": "offscreen-images",
     "level": "error",
-    "url": "http://localhost:3000/apply",
-    "auditTitle": "Largest Contentful Paint",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
+    "url": "http://localhost:3000/",
+    "auditTitle": "Defer offscreen images",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/offscreen-images/"
   },
   {
-    "name": "maxNumericValue",
-    "expected": 3500,
-    "actual": 5004.396600000001,
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
     "values": [
-      5004.396600000001,
-      5074.5571,
-      5117.473
+      1
     ],
     "operator": "<=",
+    "passed": false,
+    "auditId": "render-blocking-insight",
+    "level": "warn",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Render blocking requests",
+    "auditDocumentationLink": "https://web.dev/learn/performance/understanding-the-critical-path#render-blocking_resources"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "render-blocking-resources",
+    "level": "warn",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Eliminate render-blocking resources",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "target-size",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Touch targets do not have sufficient size or spacing.",
+    "auditDocumentationLink": "https://dequeuniversity.com/rules/axe/4.10/target-size"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "unminified-css",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Minify CSS",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/unminified-css/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 8,
+    "values": [
+      8
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "unminified-javascript",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Minify JavaScript",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/unminified-javascript/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 3,
+    "values": [
+      3
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "unused-javascript",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Reduce unused JavaScript",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 1,
+    "values": [
+      1
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "uses-long-cache-ttl",
+    "level": "warn",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Serve static assets with an efficient cache policy",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/uses-long-cache-ttl/"
+  },
+  {
+    "name": "maxLength",
+    "expected": 0,
+    "actual": 2,
+    "values": [
+      2
+    ],
+    "operator": "<=",
+    "passed": false,
+    "auditId": "uses-responsive-images",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Properly size images",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/uses-responsive-images/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0,
+    "values": [
+      0
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "valid-source-maps",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Missing source maps for large first-party JavaScript",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/devtools/javascript/source-maps/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.55,
+    "values": [
+      0.55
+    ],
+    "operator": ">=",
     "passed": false,
     "auditId": "interactive",
-    "level": "error",
-    "url": "http://localhost:3000/apply",
+    "level": "warn",
+    "url": "http://localhost:3000/",
     "auditTitle": "Time to Interactive",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/interactive/"
   }

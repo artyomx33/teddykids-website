@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from '@/lib/translations';
 import { useLanguage } from '@/lib/LanguageContext';
 import Image from 'next/image';
-import { initEmailJS, sendContactEmail } from '@/lib/emailjs';
+import { sendContactEmail } from '@/lib/emailjs';
 
 interface FormData {
   name: string;
@@ -34,13 +34,6 @@ const Contact: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  /* ─────────────────────────────────────────
-   *  Initialize EmailJS once on client mount
-   * ───────────────────────────────────────── */
-  useEffect(() => {
-    initEmailJS();
-  }, []);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};

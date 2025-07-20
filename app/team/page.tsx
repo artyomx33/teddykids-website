@@ -48,7 +48,7 @@ export default function TeamPage() {
   const locationTeams = [
     {
       title: 'RBW – Rijnsburgerweg 35 (KDV)',
-      teamImageSrc: '/images/team/team-rbw.jpg',
+      teamImageSrc: '/images/team/team-rbw.jpeg',
       teamImageAlt: 'RBW Team',
       locationImageSrc: '/images/locations/rbw_1.jpg',
       locationImageAlt: 'RBW Location',
@@ -57,7 +57,7 @@ export default function TeamPage() {
     },
     {
       title: 'RB3/RB5 – Rijnsburgerweg 3 & 5 (KDV + BSO)',
-      teamImageSrc: '/images/team/team-rb3rb5.jpg',
+      teamImageSrc: '/images/team/team-rb3rb5.jpeg',
       teamImageAlt: 'RB3/RB5 Team',
       locationImageSrc: '/images/locations/rb3rb5_1.jpg',
       locationImageAlt: 'RB3/RB5 Location',
@@ -66,7 +66,7 @@ export default function TeamPage() {
     },
     {
       title: 'LRZ – Lorentzkade 15a (BSO + TISA)',
-      teamImageSrc: '/images/team/team-lrz.jpg',
+      teamImageSrc: '/images/team/team-lrz.jpeg',
       teamImageAlt: 'LRZ Team',
       locationImageSrc: '/images/locations/lrz_1.jpg',
       locationImageAlt: 'LRZ Location',
@@ -75,7 +75,7 @@ export default function TeamPage() {
     },
     {
       title: 'ZML – Zeemanlaan 22a (KDV)',
-      teamImageSrc: '/images/team/team-zml.jpg',
+      teamImageSrc: '/images/team/team-zml.jpeg',
       teamImageAlt: 'ZML Team',
       locationImageSrc: '/images/locations/zml_1.jpg',
       locationImageAlt: 'ZML Location',

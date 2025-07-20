@@ -27,6 +27,18 @@ export const initEmailJS = () => {
   }
 };
 
+/**
+ * Service IDs
+ * --------------------------------------------------
+ * We hard-code the user-supplied service IDs so the
+ * forms work instantly in staging / production while
+ * still allowing overrides via environment variables.
+ */
+const CONTACT_SERVICE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_CONTACT_SERVICE_ID || 'service_37lypyd';
+const APPLY_SERVICE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_APPLY_SERVICE_ID || 'service_uarua1j';
+
 // Contact form data interface
 export interface ContactFormData {
   name: string;
@@ -97,7 +109,7 @@ export const sendContactEmail = async (
     };
 
     return await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+      CONTACT_SERVICE_ID,
       process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID || '',
       templateParams
     );
@@ -143,7 +155,7 @@ export const sendApplicationEmail = async (
     };
 
     return await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+      APPLY_SERVICE_ID,
       process.env.NEXT_PUBLIC_EMAILJS_APPLY_TEMPLATE_ID || '',
       templateParams
     );

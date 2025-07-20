@@ -18,6 +18,17 @@ _Review them **before** editing a single line._
 
 ---
 
+## 🤖 For Teachers & Managers
+
+Need a quick copy tweak or new photo on the site but don’t speak “Git”?  
+Use **Teddy Web FixBot** – a friendly ChatGPT assistant that gathers your change requests in warm Brutal Luna style and hands them to the devs in ready-to-implement format.
+
+👉 Chat here: <https://chatgpt.com/g/g-687ba8eb97b48191a0163468dbd97fb8-teddy-web-fixbot>
+
+How it fits the workflow: FixBot creates a ticket-style summary that lands in our backlog; a developer then follows the guides above to implement, test and deploy. No extra meetings, no jargon – just faster improvements for parents and kids. 🎈
+
+---
+
 ## 💥 Skip the rules, pay the price
 
 • ⏱️ **Slower LCP** → parents bounce  

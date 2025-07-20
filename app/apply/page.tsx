@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   keywords: 'teddy kids apply, bilingual daycare application, teddy kids form',
 };
 
-// Ensure this page is prerendered at build-time
-export const dynamic = 'force-static';
+// Incremental Static Regeneration: rebuild at most once per hour
+export const revalidate = 3600;
 
 export default function ApplyPage() {
   return (

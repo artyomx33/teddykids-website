@@ -2,7 +2,7 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCallback } from 'react';
-// eslint-disable-next-line import/extensions
+ 
 import nl from './nl.json';
 
 // Supported language codes

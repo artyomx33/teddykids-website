@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-page-custom-font */
+ 
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Baloo_2 } from "next/font/google";

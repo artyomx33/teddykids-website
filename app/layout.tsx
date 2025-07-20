@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+/* eslint-disable @next/next/no-page-custom-font */
+
 import { Geist, Geist_Mono, Baloo_2 } from "next/font/google";
 import Navigation from "@/components/Navigation"; // actual navigation component
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import { getPageMetadata } from "@/lib/seo";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
@@ -29,44 +31,14 @@ const balooDisplay = Baloo_2({
 
 const GTM_ID = "GTM-NQN5S9KF";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.teddykids.nl"),
-  title: "Teddy Kids | From Baby Steps to Global Citizens",
-  // Home-page meta description – expanded for richer SEO keywords
-  description:
-    "Teddy Kids is a bilingual daycare and international childcare provider in Leiden offering high-quality early childhood education, nursery, preschool, and after-school programs that nurture confident global citizens.",
-  openGraph: {
-    title: "Teddy Kids | From Baby Steps to Global Citizens",
-    description:
-      "Bilingual childcare & international school nurturing global citizens from their very first steps.",
-    url: "https://www.teddykids.nl",
-    siteName: "Teddy Kids",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Teddy Kids children smiling",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Teddy Kids | From Baby Steps to Global Citizens",
-    description:
-      "Bilingual childcare & international school nurturing global citizens from their very first steps.",
-    images: ["/images/og-image.jpg"],
-  },
-  // ------------------------------------------------------------------
-  //  Additional link hints (Lighthouse "Preconnect" recommendation)
-  // ------------------------------------------------------------------
-  other: {
-    "preconnect-fonts": "https://fonts.gstatic.com",
-    "preconnect-gtm": "https://www.googletagmanager.com",
-  },
-};
+// ---------------------------------------------------------------------------
+// Global <head> metadata (SEO & social)
+// Uses centralised SEO utility to inject:
+// • hreflang alternates
+// • dynamic Open Graph images
+// • JSON-LD structured data
+// ---------------------------------------------------------------------------
+export const metadata = getPageMetadata("home");
 
 export default function RootLayout({
   children,
@@ -80,6 +52,19 @@ export default function RootLayout({
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        {/* Preload critical above-the-fold font CSS to minimise FCP/LCP */}
+        {/* Geist Sans & Mono are self-hosted by next/font; we preload Baloo_2 CSS because it is fetched from Google */}
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap"
+          crossOrigin=""
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap"
           crossOrigin=""
         />
         <link

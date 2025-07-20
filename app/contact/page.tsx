@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     'teddy kids contact, book a tour, childcare enquiry, bilingual daycare leiden, international school netherlands',
 };
 
+// Enable static generation
+export const dynamic = 'force-static';
+
 export default function ContactPage() {
   return <ContactPageClient />;
 }

@@ -10,7 +10,7 @@
 import type { Metadata } from 'next';
 
 // Static sections – safe to render on the server
-import Hero from '@/components/sections/Hero';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 import Pillars from '@/components/sections/Pillars';
 import SocialProof from '@/components/sections/SocialProof';
 import Programs from '@/components/sections/Programs';
@@ -57,9 +57,11 @@ export default function HomePage() {
     <main>
       {/* Hero Section with Luna characters */}
       <div className="relative">
-        <Hero
+        <StandardHero
+          title="From Baby Steps to Global Citizens"
+          subtitle="Bilingual care that grows with your child."
+          imageSrc="/images/heroes/hero-fallback.jpg"
           videoSrc="/videos/tk-hero-loop.mp4"
-          fallbackImageSrc="/images/heroes/hero-fallback.jpg"
         />
       </div>
 

@@ -1,10 +1,12 @@
 'use client';
 
-import Hero from '@/components/sections/Hero';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 import Pillars from '@/components/sections/Pillars';
 import SocialProof from '@/components/sections/SocialProof';
 import Programs from '@/components/sections/Programs';
 import dynamic from 'next/dynamic';
+import { useLanguage } from '@/lib/LanguageContext';
+import { useTranslation } from '@/lib/translations';
 // Dynamically load below-the-fold sections to shrink initial JS bundle
 const AppiesGPT = dynamic(() => import('@/components/sections/AppiesGPT'), {
   loading: () => (
@@ -28,13 +30,17 @@ const LocationsPreview = dynamic(
 import Image from 'next/image';
 
 export default function HomePageClient() {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   return (
     <main>
       {/* Hero Section with Luna characters */}
       <div className="relative">
-        <Hero 
-          videoSrc="/videos/tk-hero-loop.mp4" 
-          fallbackImageSrc="/images/hero-fallback.jpg"
+        <StandardHero
+          title={t('home.hero.title')}
+          subtitle={t('home.hero.subtitle')}
+          imageSrc="/images/hero-fallback.jpg"
+          videoSrc="/videos/tk-hero-loop.mp4"
         />
         {/* TeddyCharacter1 – purple dino bottom-left */}
         <Image

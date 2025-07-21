@@ -3,9 +3,9 @@
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from '@/components/Button';
-import Head from 'next/head';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
 // Learning moment card component
 interface LearningMomentProps {
@@ -78,21 +78,8 @@ export default function LearningPageClient() {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   // ──────────────────────────────────────────────────────────
-  //  Hero video lazy-loading state
+  //  Hero Section now handled by reusable <Hero> component
   // ──────────────────────────────────────────────────────────
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  /* Start optimistic: assume mobile so we don't initially render the video */
-  const [isMobile, setIsMobile] = useState(true);
-
-  // Determine viewport for mobile/desktop split
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  
   // Mock learning moments data
   const learningMoments = [
     {
@@ -159,68 +146,12 @@ export default function LearningPageClient() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
-        {/* Preload critical poster image for LCP */}
-        <Head>
-          <link
-            rel="preload"
-            as="image"
-            href="/images/heroes/learning-hero.png"
-            fetchPriority="high"
-          />
-        </Head>
-
-        {/* Fallback Image – displayed until the video is ready (or always on mobile) */}
-        {(isMobile || !videoLoaded) && (
-          <div className="absolute inset-0">
-            <Image
-              src="/images/heroes/learning-hero.png"
-              alt="Teddy Kids children discovering through play in a bilingual setting"
-              fill
-              priority
-              fetchPriority="high"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-        )}
-
-        {/* Video (desktop only, after delay) */}
-        {!isMobile && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              videoLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            onLoadedData={() => setVideoLoaded(true)}
-            poster="/images/heroes/learning-hero.png"
-          >
-            <source
-              src="/images/heroes/learning-hero-video.mp4"
-              type="video/mp4"
-            />
-          </video>
-        )}
-
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
-
-        {/* Hero content */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-              {t('learningPage.hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl text-white">
-              {t('learningPage.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <StandardHero
+        title={t('learningPage.hero.title')}
+        subtitle={t('learningPage.hero.subtitle')}
+        imageSrc="/images/heroes/learning-hero.png"
+        videoSrc="/images/heroes/learning-hero-video.mp4"
+      />
 
       {/* ----------------------------------------------------------------
           "Learning in Action" section temporarily removed

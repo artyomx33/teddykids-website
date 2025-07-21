@@ -5,6 +5,7 @@ import Team from '@/components/sections/Team';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
 // Props interfaces for static data
 interface HeroContent {
@@ -85,33 +86,13 @@ export default function TeamPageClient({
   
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
-        {/* Background image */}
-        <Image
-          src={heroContent.imageSrc}
-          alt={heroContent.imageAlt}
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1280px"
-          className="object-cover object-top"
-        />
-
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
-
-        {/* Hero content */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-              {t(heroContent.titleKey)}
-            </h1>
-            <p className="text-xl md:text-2xl text-white">
-              {t(heroContent.subtitleKey)}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section — standardized */}
+      <StandardHero
+        title={t(heroContent.titleKey)}
+        subtitle={t(heroContent.subtitleKey)}
+        imageSrc={heroContent.imageSrc}
+        alt={heroContent.imageAlt}
+      />
       
       {/* Team Philosophy */}
       <section className="py-16">

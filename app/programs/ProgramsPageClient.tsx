@@ -4,95 +4,22 @@ import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import Button from '@/components/Button';
 import Image from 'next/image';
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
 export default function ProgramsPageClient() {
   const { language } = useLanguage();
   const { t } = useTranslation(language);
-  /* ---------- Hero video handling ---------- */
-  // Use JPEG version for improved compatibility & consistent asset naming
-  const fallbackImageSrc = '/images/heroes/programs-hero.jpg';
-  const videoSrc = '/images/heroes/programs-hero-video.mp4';
-
-  const [isMobile, setIsMobile] = useState(true);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
-  // Simple client-side check for mobile width
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // initial
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  /* ---------- Hero handled by shared component ---------- */
   
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden bg-brand-pink">
-        {/* Preload assets for LCP */}
-        <Head>
-          {!isMobile && (
-            <link rel="preload" as="video" href={videoSrc} crossOrigin="anonymous" />
-          )}
-          <link
-            rel="preload"
-            as="image"
-            href={fallbackImageSrc}
-            fetchPriority="high"
-          />
-        </Head>
-
-        {/* Fallback image shown until video loads or on mobile */}
-        {!videoLoaded && (
-          <div className="absolute inset-0 z-0">
-            <Image
-              src={fallbackImageSrc}
-              alt="Children engaged in various programs at Teddy Kids"
-              priority
-              fetchPriority="high"
-              sizes="100vw"
-              className="object-cover object-center"
-              fill
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-        )}
-
-        {/* Desktop video background */}
-        {!isMobile && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
-              videoLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            onLoadedData={() => setVideoLoaded(true)}
-            poster={fallbackImageSrc}
-          >
-            <source src={videoSrc} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
-
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 z-10" />
-
-        {/* Hero content */}
-        <div className="relative z-20 h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-              {t('programsPage.hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl text-white">
-              {t('programsPage.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <StandardHero
+        title={t('programsPage.hero.title')}
+        subtitle={t('programsPage.hero.subtitle')}
+        imageSrc="/images/heroes/programs-hero.jpg"
+        videoSrc="/images/heroes/programs-hero-video.mp4"
+      />
 
       {/* Programs Overview */}
       <section className="py-16">

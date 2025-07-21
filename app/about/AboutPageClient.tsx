@@ -1,8 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
@@ -152,88 +151,15 @@ export default function AboutPageClient() {
   const { t } = useTranslation(language);
 
 
-  /* ──────────────────────────────────────────────────────────
-   *  Hero video handling (desktop only)
-   * ────────────────────────────────────────────────────────── */
-  const fallbackImageSrc = '/images/heroes/about-hero.png';
-  const videoSrc = '/images/heroes/about-hero-video.mp4';
-  const [isMobile, setIsMobile] = useState(true);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // initial
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden bg-brand-pink">
-        {/* Preload assets for better LCP */}
-        <Head>
-          {!isMobile && (
-            <link rel="preload" as="video" href={videoSrc} crossOrigin="anonymous" />
-          )}
-          <link
-            rel="preload"
-            as="image"
-            href={fallbackImageSrc}
-            fetchPriority="high"
-          />
-        </Head>
-
-        {/* Fallback image (mobile or before video load) */}
-        {!videoLoaded && (
-          <div className="absolute inset-0">
-            <Image
-              src={fallbackImageSrc}
-              alt="Teddy Kids families and children - our story from baby steps to global citizens"
-              fill
-              priority
-              fetchPriority="high"
-              sizes="100vw"
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-        )}
-
-        {/* Desktop video background */}
-        {!isMobile && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={fallbackImageSrc}
-            onLoadedData={() => setVideoLoaded(true)}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              videoLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <source src={videoSrc} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
-
-        {/* Dark gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 z-10" />
-
-        {/* Hero content */}
-        <div className="relative z-20 h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-              {t('about.hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl text-white mb-6">
-              {t('about.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section – standardized component */}
+      <StandardHero
+        title={t('about.hero.title')}
+        subtitle={t('about.hero.subtitle')}
+        imageSrc="/images/heroes/about-hero.png"
+        videoSrc="/images/heroes/about-hero-video.mp4"
+      />
 
       {/* Mission Statement */}
       <section className="py-16">

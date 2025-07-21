@@ -1,12 +1,12 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from '@/components/Button';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import Head from 'next/head';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 import { sendApplicationEmail } from '@/lib/emailjs'; // EmailJS helper
 // NOTE: react-audio-player-component was removed due to React 19 compatibility issues.
 // We fall back to a styled native <audio> element instead.
@@ -493,75 +493,18 @@ function ApplyPageContent() {
   ];
 
   /* ──────────────────────────────────────────────────────────
-   *  Hero video handling - FIXED to prevent flash of content
+   *  Hero handled by shared <Hero> component (SSR-safe)
    * ────────────────────────────────────────────────────────── */
-  const fallbackImageSrc = '/images/heroes/journey-starts-here.png';
-  const videoSrc = '/images/heroes/journey-starts-here-video.mp4';
-  const [isMobile, setIsMobile] = useState(false); // Detect screen size for video
-
-  useEffect(() => {
-    // Check for mobile on client-side only
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // initial check
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
   
   return (
     <main>
-      {/* 1. Hero Section - FIXED to prevent flash of content */}
-      <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden bg-brand-pink">
-        {/* Preload critical assets */}
-        <Head>
-          <link rel="preload" as="image" href={fallbackImageSrc} />
-          {!isMobile && <link rel="preload" as="video" href={videoSrc} />}
-        </Head>
-
-        {/* Hero background - single image that's always visible */}
-        <div className="absolute inset-0">
-          <Image
-            src={fallbackImageSrc}
-            alt="Your journey with Teddy Kids begins here"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-
-        {/* Desktop video background - only loaded after initial render */}
-        {!isMobile && (
-          <video
-            autoPlay
-            muted
-            loop
-            preload="auto"
-            playsInline
-            poster={fallbackImageSrc}
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-        )}
-
-        {/* Gradient overlay for text readability - always present */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 z-10" />
-
-        {/* Hero content - always visible */}
-        <div className="relative z-20 h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              {t('applyPage.hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl text-white mb-6 max-w-2xl mx-auto">
-              {t('applyPage.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 1. Hero Section – standardized component */}
+      <StandardHero
+        title={t('applyPage.hero.title')}
+        subtitle={t('applyPage.hero.subtitle')}
+        imageSrc="/images/heroes/journey-starts-here.png"
+        videoSrc="/images/heroes/journey-starts-here-video.mp4"
+      />
 
       {/* Audio Section - first content after hero */}
       <section className="py-12 bg-white">

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
 // Dynamically import the Contact form component
 const Contact = dynamic(() => import('@/components/sections/Contact'), {
@@ -36,37 +37,17 @@ export default function ContactPageClient() {
   return (
     <main>
       {/* ──────────────────────────────────────────────────────────
-       *  Hero Section - Warmer, more welcoming
+       *  Hero Section (standardised component)
        * ────────────────────────────────────────────────────────── */}
-      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        {/* Background video with image fallback */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/heroes/journey-starts-here.png"
-        >
-          <source
-            src="/images/heroes/journey-starts-here-video.mp4"
-            type="video/mp4"
-          />
-          {/* Fallback image for very old browsers */}
-          <Image
-            src="/images/heroes/journey-starts-here.png"
-            alt="Reach out to Teddy Kids"
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover object-center"
-          />
-        </video>
+      <div className="relative">
+        <StandardHero
+          title={t('contact.hero.title')}
+          subtitle={t('contact.hero.subtitle')}
+          imageSrc="/images/heroes/journey-starts-here.png"
+          videoSrc="/images/heroes/journey-starts-here-video.mp4"
+        />
 
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
-
-        {/* Teddy character - friendly mascot */}
+        {/* Teddy dinosaur character – positioned outside Hero so it isn't clipped */}
         <div className="absolute bottom-0 right-0 md:right-[10%] z-10 hidden md:block">
           <Image
             src="/images/characters/1karakter-dino-lief.png"
@@ -74,24 +55,10 @@ export default function ContactPageClient() {
             width={220}
             height={220}
             loading="eager"
+            priority
           />
         </div>
-
-        {/* Hero content */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-          <div className="container mx-auto">
-            {/* Center text block horizontally on all viewports */}
-            <div className="max-w-2xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-                {t('contact.hero.title')}
-              </h1>
-              <p className="text-xl md:text-2xl text-white">
-                {t('contact.hero.subtitle')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
 
       {/* AppiesGPT Section (AI assistant) – moved right after hero for higher visibility */}
       <AppiesGPT />

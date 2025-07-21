@@ -5,6 +5,7 @@ import Locations from '@/components/sections/Locations';
 import Button from '@/components/Button';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
 // Props interfaces for static data
 interface HeroContent {
@@ -98,32 +99,13 @@ export default function LocationsPageClient({
   
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
-        {/* Background image */}
-        <Image
-          src={heroContent.imageSrc}
-          alt={heroContent.imageAlt || t('locationsPage.hero.alt') || 'Happy children and educators at Teddy Kids locations'}
-          fill
-          priority
-          className="object-cover"
-        />
-
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
-
-        {/* Hero content */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-              {heroContent.title || t('locationsPage.hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl text-white">
-              {heroContent.subtitle || t('locationsPage.hero.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section – standardized */}
+      <StandardHero
+        title={heroContent.title || t('locationsPage.hero.title')}
+        subtitle={heroContent.subtitle || t('locationsPage.hero.subtitle')}
+        imageSrc={heroContent.imageSrc}
+        alt={heroContent.imageAlt || t('locationsPage.hero.alt')}
+      />
       
       {/* Location Filter */}
       <section className="py-8 bg-white border-b border-gray-100">

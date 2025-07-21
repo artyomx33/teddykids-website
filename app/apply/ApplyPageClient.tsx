@@ -554,10 +554,10 @@ function ApplyPageContent() {
         <div className="relative z-20 h-full flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              {t('locationsPage.applyPage.hero.title')}
+              {t('applyPage.hero.title')}
             </h1>
             <p className="text-xl md:text-2xl text-white mb-6 max-w-2xl mx-auto">
-              {t('locationsPage.applyPage.hero.subtitle')}
+              {t('applyPage.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -691,7 +691,7 @@ function ApplyPageContent() {
               <div className="hidden md:flex justify-between items-center">
                 <ProgressStep 
                   number={1} 
-                  title={t('locationsPage.applyPage.steps.programSelection')} 
+                  title={t('applyPage.steps.programSelection')} 
                   icon="🧸"
                   description={t('locationsPage.applyPage.form.programSection.heading')}
                   isActive={currentStep === 1} 
@@ -705,7 +705,7 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={2} 
-                  title={t('locationsPage.applyPage.steps.location')} 
+                  title={t('applyPage.steps.location')} 
                   icon="📍"
                   description={t('locationsPage.applyPage.form.location')}
                   isActive={currentStep === 2} 
@@ -719,7 +719,7 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={3} 
-                  title={t('locationsPage.applyPage.steps.startDate')} 
+                  title={t('applyPage.steps.startDate')} 
                   icon="📅"
                   description={t('locationsPage.applyPage.form.startDate')}
                   isActive={currentStep === 3} 
@@ -733,7 +733,7 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={4} 
-                  title={t('locationsPage.applyPage.steps.yourDetails')} 
+                  title={t('applyPage.steps.yourDetails')} 
                   icon="👪"
                   description="Parent + Child Info"
                   isActive={currentStep === 4} 
@@ -747,7 +747,7 @@ function ApplyPageContent() {
                 </div>
                 <ProgressStep 
                   number={5} 
-                  title={t('locationsPage.applyPage.steps.confirm')} 
+                  title={t('applyPage.steps.confirm')} 
                   icon="✨"
                   description="Almost there!"
                   isActive={currentStep === 5} 
@@ -759,11 +759,11 @@ function ApplyPageContent() {
               <div className="md:hidden text-center">
                 <p className="text-lg font-medium mb-2">
                   Step {currentStep} of 5: {
-                    currentStep === 1 ? t('locationsPage.applyPage.steps.programSelection') :
-                    currentStep === 2 ? t('locationsPage.applyPage.steps.location') :
-                    currentStep === 3 ? t('locationsPage.applyPage.steps.startDate') :
-                    currentStep === 4 ? t('locationsPage.applyPage.steps.yourDetails') :
-                    currentStep === 5 ? t('locationsPage.applyPage.steps.confirm') : ''
+                    currentStep === 1 ? t('applyPage.steps.programSelection') :
+                    currentStep === 2 ? t('applyPage.steps.location') :
+                    currentStep === 3 ? t('applyPage.steps.startDate') :
+                    currentStep === 4 ? t('applyPage.steps.yourDetails') :
+                    currentStep === 5 ? t('applyPage.steps.confirm') : ''
                   }
                 </p>
                 <div className="h-2 bg-gray-200 rounded-full">
@@ -872,7 +872,7 @@ function ApplyPageContent() {
                 {currentStep === 4 && (
                   <div>
                     <h2 className="text-2xl font-display font-bold mb-6">
-                      {t('locationsPage.applyPage.steps.yourDetails')}
+                      {t('applyPage.steps.yourDetails')}
                     </h2>
                     
                     <div className="bg-brand-pink bg-opacity-5 p-4 rounded-lg mb-6">

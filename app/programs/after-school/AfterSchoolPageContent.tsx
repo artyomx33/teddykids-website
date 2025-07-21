@@ -7,6 +7,7 @@ import { getLocationsByProgram } from '@/lib/locations';
 import React from 'react';
 import { useTranslation } from '@/lib/translations';
 import { useLanguage } from '@/lib/LanguageContext';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
 // Schedule item component
 interface ScheduleItemProps {
@@ -104,57 +105,12 @@ const AfterSchoolPageContent = () => {
 
   return (
     <main>
-      {/* Hero Section */}
-      <section className="py-20 bg-brand-mint bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="md:w-1/2">
-                <div className="flex items-center mb-4">
-                  <span className="text-4xl mr-3">🎒</span>
-                  <h1 className="text-4xl md:text-5xl font-display font-bold">{t('afterSchoolPage.hero.title')}</h1>
-                </div>
-                <p className="text-xl italic text-gray-700 mb-6">
-                  &quot;{t('afterSchoolPage.hero.tagline')}&quot;
-                </p>
-                <p className="text-lg text-gray-700 mb-6">
-                  {t('afterSchoolPage.hero.description')}
-                </p>
-                <div className="bg-white p-4 rounded-lg inline-block mb-6">
-                  <span className="font-medium">{t('afterSchoolPage.hero.ages')}</span>
-                </div>
-                <div className="flex flex-wrap gap-4">
-                  <Button 
-                    variant="primary"
-                    href="/contact"
-                    size="lg"
-                  >
-                    {t('afterSchoolPage.hero.buttons.bookTour')}
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    href="/apply?program=after-school"
-                    size="lg"
-                  >
-                    {t('afterSchoolPage.hero.buttons.applyNow')}
-                  </Button>
-                </div>
-              </div>
-              <div className="md:w-1/2">
-                <div className="relative h-80 w-full rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/programs/after-school-hero.jpg"
-                    alt={t('afterSchoolPage.metadata.alt')}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section – standardized */}
+      <StandardHero
+        title={t('afterSchoolPage.hero.title')}
+        subtitle={t('afterSchoolPage.hero.tagline')}
+        imageSrc="/images/programs/after-school-hero.jpg"
+      />
 
       {/* Overview */}
       <section className="py-16">

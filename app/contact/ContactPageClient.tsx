@@ -1,11 +1,9 @@
 'use client';
-
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
+import dynamic from 'next/dynamic';
+import { useLanguage } from '@/lib/LanguageContext';
 // Dynamically import the Contact form component
 const Contact = dynamic(() => import('@/components/sections/Contact'), {
   loading: () => (
@@ -47,17 +45,6 @@ export default function ContactPageClient() {
           videoSrc="/images/heroes/journey-starts-here-video.mp4"
         />
 
-        {/* Teddy dinosaur character – positioned outside Hero so it isn't clipped */}
-        <div className="absolute bottom-0 right-0 md:right-[10%] z-10 hidden md:block">
-          <Image
-            src="/images/characters/1karakter-dino-lief.png"
-            alt="Friendly Teddy Kids dinosaur character"
-            width={220}
-            height={220}
-            loading="eager"
-            priority
-          />
-        </div>
       </div>
 
       {/* AppiesGPT Section (AI assistant) – moved right after hero for higher visibility */}

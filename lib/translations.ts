@@ -402,7 +402,7 @@ const enTranslations = {
           step3: {
             title: "Start the Adventure",
             description: "Join the Teddy family and begin the fun."
-          }
+          },
         },
         steps: {
           programSelection: "Program Selection",

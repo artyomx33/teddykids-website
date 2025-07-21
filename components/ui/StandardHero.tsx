@@ -83,6 +83,12 @@ export function Hero({
         />
       )}
 
+      {/* Semi-transparent overlay to enhance text contrast */}
+      <div
+        className="absolute inset-0 bg-black/20"
+        aria-hidden="true"
+      />
+
       {/* Hero content - centered text and optional CTA */}
       <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
         <div className="max-w-2xl mx-auto">

@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({
     : `https://wa.me/?text=${whatsappMessage}`;
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-brand-pink">
+    <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
       {/* Preload critical assets for LCP */}
       <Head>
         {/* Preload hero poster / fallback image */}
@@ -99,41 +99,43 @@ const Hero: React.FC<HeroProps> = ({
         </video>
       )}
       
-      {/* Overlay gradient for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20 z-10" />
+      {/* Overlay gradient for better text contrast (Learning hero style) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
       
       {/* Content Container */}
-      <div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4 md:px-0">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 md:mb-6 max-w-4xl animate-fade-in">
-          {t('hero.title')}
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-white mb-8 md:mb-10 max-w-2xl animate-slide-up">
-          {t('hero.subtitle')}
-        </p>
-        
-        {/* CTA Buttons */}
-        <div className={`flex ${isMobile ? 'flex-col w-full' : 'flex-row'} gap-4 mt-4`}>
-          <Button 
-            variant="primary"
-            size="lg"
-            href={whatsappLink}
-            isExternal
-            fullWidth={isMobile}
-            className="bg-white text-gray-800 hover:bg-gray-100"
-          >
-            {t('hero.cta1')}
-          </Button>
+      <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 md:mb-6 animate-fade-in">
+            {t('hero.title')}
+          </h1>
           
-          <Button 
-            variant="outline"
-            size="lg"
-            href="/apply#application-form"
-            fullWidth={isMobile}
-            className="border-white text-white hover:bg-white hover:bg-opacity-20"
-          >
-            {t('hero.cta2')}
-          </Button>
+          <p className="text-xl md:text-2xl text-white mb-8 md:mb-10 animate-slide-up">
+            {t('hero.subtitle')}
+          </p>
+          
+          {/* CTA Buttons */}
+          <div className={`flex ${isMobile ? 'flex-col w-full' : 'flex-row'} gap-4 mt-4`}>
+            <Button 
+              variant="primary"
+              size="lg"
+              href={whatsappLink}
+              isExternal
+              fullWidth={isMobile}
+              className="bg-white text-gray-800 hover:bg-gray-100"
+            >
+              {t('hero.cta1')}
+            </Button>
+            
+            <Button 
+              variant="outline"
+              size="lg"
+              href="/apply#application-form"
+              fullWidth={isMobile}
+              className="border-white text-white hover:bg-white hover:bg-opacity-20"
+            >
+              {t('hero.cta2')}
+            </Button>
+          </div>
         </div>
       </div>
       

@@ -59,7 +59,7 @@ export default function HomePage() {
       <div className="relative">
         <Hero
           videoSrc="/videos/tk-hero-loop.mp4"
-          fallbackImageSrc="/images/hero-fallback.jpg"
+          fallbackImageSrc="/images/heroes/hero-fallback.jpg"
         />
       </div>
 

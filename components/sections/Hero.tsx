@@ -15,7 +15,8 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({
   videoSrc = '/videos/tk-hero-loop.mp4',
-  fallbackImageSrc = '/images/hero-fallback.jpg',
+  // Updated path – hero fallback image now lives inside /images/heroes
+  fallbackImageSrc = '/images/heroes/hero-fallback.jpg',
   whatsappNumber,
 }) => {
   const { language } = useLanguage();

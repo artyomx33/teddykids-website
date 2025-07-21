@@ -379,6 +379,31 @@ const enTranslations = {
           label: "Hear from a parent who just applied",
           quote: "It was honestly easier than I thought. They called me the next day. It felt human."
         },
+        
+        /* ---------- AUDIO PLAYBACK SECTION (UI copy) ---------- */
+        audioSection: {
+          title: "Hear the Teddy Magic",
+          subtitle: "Let Appies welcome your little one: hear our gentle morning greeting in Dutch & English.",
+          buttonText: "Play Appies Welcome",
+          buttonNote: "Tap to hear our gentle morning greeting"
+        },
+
+        /* ---------- HOW IT WORKS (3-step teaser) ---------- */
+        howItWorks: {
+          title: "How It Works",
+          step1: {
+            title: "Book a Tour",
+            description: "Meet our team and see our spaces in person."
+          },
+          step2: {
+            title: "Fill Out Application",
+            description: "A short form—and we guide you the whole way."
+          },
+          step3: {
+            title: "Start the Adventure",
+            description: "Join the Teddy family and begin the fun."
+          }
+        },
         steps: {
           programSelection: "Program Selection",
           location: "Location",
@@ -386,6 +411,19 @@ const enTranslations = {
           yourDetails: "Your Details",
           confirm: "Confirm"
         },
+        /* ---------- BRUTAL LUNA – HIGH-CONVERSION CTA ---------- */
+        brutalLuna: {
+          title: "Let’s make this real.",
+          subtitle: "You’ve seen what we do. Now take the first step.",
+          note: "Takes 2 minutes. You can pause anytime."
+        },
+
+        /* ---------- CTA BUTTON LABELS (used inside Brutal Luna box) ---------- */
+        cta: {
+          applyButton: "Start Application",
+          tourButton: "Book a Tour"
+        },
+
         form: {
           programSection: {
             // Updated copy per latest Apply-page spec (Luna suggestion)

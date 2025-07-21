@@ -568,10 +568,10 @@ function ApplyPageContent() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl font-display font-bold mb-4">
-              {t('locationsPage.applyPage.audioSection.title')}
+              {t('applyPage.audioSection.title')}
             </h2>
             <p className="text-gray-700 mb-6">
-              {t('locationsPage.applyPage.audioSection.subtitle')}
+              {t('applyPage.audioSection.subtitle')}
             </p>
             <div className="bg-gray-50 p-6 rounded-xl inline-block">
               {/* Button-triggered audio playback (same approach as About page) */}
@@ -591,10 +591,10 @@ function ApplyPageContent() {
                   className="bg-brand-pink hover:bg-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center mx-auto"
                 >
                   <span className="mr-2">🎵</span>
-                  {t('locationsPage.applyPage.audioSection.buttonText')}
+                  {t('applyPage.audioSection.buttonText')}
                 </button>
                 <p className="text-sm text-gray-500 mt-2">
-                  {t('locationsPage.applyPage.audioSection.buttonNote')}
+                  {t('applyPage.audioSection.buttonNote')}
                 </p>
               </div>
             </div>
@@ -607,34 +607,34 @@ function ApplyPageContent() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-display font-bold mb-8">
-              {t('locationsPage.applyPage.howItWorks.title')}
+              {t('applyPage.howItWorks.title')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-4xl mb-4">📍</div>
                 <h3 className="font-medium text-xl mb-2">
-                  {t('locationsPage.applyPage.howItWorks.step1.title')}
+                  {t('applyPage.howItWorks.step1.title')}
                 </h3>
                 <p className="text-gray-600">
-                  {t('locationsPage.applyPage.howItWorks.step1.description')}
+                  {t('applyPage.howItWorks.step1.description')}
                 </p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-4xl mb-4">📝</div>
                 <h3 className="font-medium text-xl mb-2">
-                  {t('locationsPage.applyPage.howItWorks.step2.title')}
+                  {t('applyPage.howItWorks.step2.title')}
                 </h3>
                 <p className="text-gray-600">
-                  {t('locationsPage.applyPage.howItWorks.step2.description')}
+                  {t('applyPage.howItWorks.step2.description')}
                 </p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="text-4xl mb-4">🎉</div>
                 <h3 className="font-medium text-xl mb-2">
-                  {t('locationsPage.applyPage.howItWorks.step3.title')}
+                  {t('applyPage.howItWorks.step3.title')}
                 </h3>
                 <p className="text-gray-600">
-                  {t('locationsPage.applyPage.howItWorks.step3.description')}
+                  {t('applyPage.howItWorks.step3.description')}
                 </p>
               </div>
             </div>
@@ -651,10 +651,10 @@ function ApplyPageContent() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="bl-heading text-3xl font-display font-bold mb-3 text-[#1a1a1a]">
-              {t('locationsPage.applyPage.brutalLuna.title')}
+              {t('applyPage.brutalLuna.title')}
             </h2>
             <p className="bl-subtext text-lg text-gray-700 mb-6">
-              {t('locationsPage.applyPage.brutalLuna.subtitle')}
+              {t('applyPage.brutalLuna.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button 
@@ -663,18 +663,18 @@ function ApplyPageContent() {
                 href="#application-form"
                 className="apply-button transform hover:scale-105 transition-transform duration-200"
               >
-                {t('locationsPage.applyPage.cta.applyButton')}
+                {t('applyPage.cta.applyButton')}
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 href="/contact?subject=Tour Request"
               >
-                {t('locationsPage.applyPage.cta.tourButton')}
+                {t('applyPage.cta.tourButton')}
               </Button>
             </div>
             <p className="bl-note text-sm mt-4 text-gray-500">
-              ⏳ {t('locationsPage.applyPage.brutalLuna.note')}
+              ⏳ {t('applyPage.brutalLuna.note')}
             </p>
           </div>
         </div>

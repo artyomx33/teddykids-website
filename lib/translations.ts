@@ -379,7 +379,7 @@ const enTranslations = {
           label: "Hear from a parent who just applied",
           quote: "It was honestly easier than I thought. They called me the next day. It felt human."
         },
-        
+
         /* ---------- AUDIO PLAYBACK SECTION (UI copy) ---------- */
         audioSection: {
           title: "Hear the Teddy Magic",
@@ -425,6 +425,19 @@ const enTranslations = {
         },
 
         form: {
+        /* ---------- BRUTAL LUNA – HIGH-CONVERSION CTA ---------- */
+        brutalLuna: {
+          title: "Let’s make this real.",
+          subtitle: "You’ve seen what we do. Now take the first step.",
+          note: "Takes 2 minutes. You can pause anytime."
+        },
+
+        /* ---------- CTA BUTTON LABELS (used inside Brutal Luna box) ---------- */
+        cta: {
+          applyButton: "Start Application",
+          tourButton: "Book a Tour"
+        },
+
           programSection: {
             // Updated copy per latest Apply-page spec (Luna suggestion)
             heading: "Which program interests you?",

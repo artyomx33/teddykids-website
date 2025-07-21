@@ -3,8 +3,9 @@
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '@/components/Button';
+import Head from 'next/head';
 
 // Learning moment card component
 interface LearningMomentProps {
@@ -75,6 +76,27 @@ export default function LearningPageClient() {
   
   // Filter state
   const [activeFilter, setActiveFilter] = useState<string>('all');
+
+  // ──────────────────────────────────────────────────────────
+  //  Hero video lazy-loading state
+  // ──────────────────────────────────────────────────────────
+  const [showVideo, setShowVideo] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Determine viewport for mobile/desktop split
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Defer video mount to avoid LCP impact
+  useEffect(() => {
+    const timer = setTimeout(() => setShowVideo(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
   
   // Mock learning moments data
   const learningMoments = [
@@ -143,14 +165,52 @@ export default function LearningPageClient() {
     <main>
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] hero-parallax overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/images/heroes/learning-hero.png"
-          alt="Teddy Kids children discovering through play in a bilingual setting"
-          fill
-          priority
-          className="object-cover"
-        />
+        {/* Preload critical poster image for LCP */}
+        <Head>
+          <link
+            rel="preload"
+            as="image"
+            href="/images/heroes/learning-hero.png"
+            fetchPriority="high"
+          />
+        </Head>
+
+        {/* Fallback Image */}
+        <div
+          className={`absolute inset-0 ${
+            !isMobile && showVideo && videoLoaded ? 'opacity-0' : 'opacity-100'
+          } transition-opacity duration-1000`}
+        >
+          <Image
+            src="/images/heroes/learning-hero.png"
+            alt="Teddy Kids children discovering through play in a bilingual setting"
+            fill
+            priority
+            fetchPriority="high"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+
+        {/* Video (desktop only, after delay) */}
+        {!isMobile && showVideo && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{ opacity: videoLoaded ? 1 : 0 }}
+            onLoadedData={() => setVideoLoaded(true)}
+            poster="/images/heroes/learning-hero.png"
+          >
+            <source
+              src="/images/heroes/learning-hero-video.mp4"
+              type="video/mp4"
+            />
+          </video>
+        )}
 
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />

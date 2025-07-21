@@ -81,7 +81,8 @@ export default function LearningPageClient() {
   //  Hero video lazy-loading state
   // ──────────────────────────────────────────────────────────
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  /* Start optimistic: assume mobile so we don't initially render the video */
+  const [isMobile, setIsMobile] = useState(true);
 
   // Determine viewport for mobile/desktop split
   useEffect(() => {
@@ -170,7 +171,7 @@ export default function LearningPageClient() {
         </Head>
 
         {/* Fallback Image – displayed until the video is ready (or always on mobile) */}
-        {!videoLoaded && (
+        {(isMobile || !videoLoaded) && (
           <div className="absolute inset-0">
             <Image
               src="/images/heroes/learning-hero.png"

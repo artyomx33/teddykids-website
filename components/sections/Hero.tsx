@@ -23,7 +23,8 @@ const Hero: React.FC<HeroProps> = ({
   const [videoLoaded, setVideoLoaded] = useState(false);
   /**
    */
-  const [isMobile, setIsMobile] = useState(false);
+  /* start optimistic: assume mobile to avoid rendering video first */
+  const [isMobile, setIsMobile] = useState(true);
 
   // Check if device is mobile for responsive handling
   useEffect(() => {
@@ -64,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({
       </Head>
       
       {/* Fallback Image – shown until the video is ready (or always on mobile) */}
-      {!videoLoaded && (
+      {(isMobile || !videoLoaded) && (
         <div className="absolute inset-0">
           <Image
             src={fallbackImageSrc}

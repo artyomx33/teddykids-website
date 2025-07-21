@@ -106,21 +106,15 @@ export default function RootLayout({
           as="style"
           crossOrigin=""
         />
-        
-        {/* Preload font files directly (highest performance) */}
+
+        {/* Load the font stylesheets (actual usage) */}
         <link
-          rel="preload"
-          href="https://fonts.gstatic.com/s/baloo2/v16/wXK0E3kTposypRydzVT08TS3JnAmtdgazapv9w.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
+          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap"
+          rel="stylesheet"
         />
         <link
-          rel="preload"
-          href="https://fonts.gstatic.com/s/geist/v2/7Au-p_0Trw0SeNYShVRO0Lg.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
+          href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap"
+          rel="stylesheet"
         />
       </head>
       <body

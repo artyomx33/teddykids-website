@@ -22,10 +22,7 @@ const Hero: React.FC<HeroProps> = ({
   const { t } = useTranslation(language);
   const [videoLoaded, setVideoLoaded] = useState(false);
   /**
-   * `showVideo` controls when the video element is inserted into the DOM.
-   * We wait ~1.5 s after initial render to avoid competing with LCP.
    */
-  const [showVideo, setShowVideo] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if device is mobile for responsive handling
@@ -42,12 +39,6 @@ const Hero: React.FC<HeroProps> = ({
     
     // Cleanup
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Defer video loading/playing until after main content paint (~1.5 s)
-  useEffect(() => {
-    const timer = setTimeout(() => setShowVideo(true), 1500);
-    return () => clearTimeout(timer);
   }, []);
 
   // WhatsApp message setup
@@ -72,37 +63,35 @@ const Hero: React.FC<HeroProps> = ({
         />
       </Head>
       
-      {/* Fallback Image - Always visible on mobile, or before video loads on desktop */}
-      <div
-        className={`absolute inset-0 z-0 ${
-          !isMobile && showVideo && videoLoaded ? 'opacity-0' : 'opacity-100'
-        } transition-opacity duration-1000`}
-      >
-        <Image
-          src={fallbackImageSrc}
-          alt="Teddy Kids children playing"
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="object-cover object-center"
-          /* keep `fill` for responsive while still providing intrinsic size */
-          fill
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-30" />
-      </div>
-      
-      {/* Render video only on non-mobile to save bandwidth & improve LCP */}
-      {!isMobile && showVideo && (
+      {/* Fallback Image – shown until the video is ready (or always on mobile) */}
+      {!videoLoaded && (
+        <div className="absolute inset-0">
+          <Image
+            src={fallbackImageSrc}
+            alt="Teddy Kids children playing"
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+            className="object-cover object-center"
+            fill
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-30" />
+        </div>
+      )}
+
+      {/* Desktop video background – fades in once loaded */}
+      {!isMobile && (
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
-          className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 opacity-0"
+          preload="metadata"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            videoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
           onLoadedData={() => setVideoLoaded(true)}
           poster={fallbackImageSrc}
-          style={{ opacity: videoLoaded ? 1 : 0 }}
         >
           <source src={videoSrc} type="video/mp4" />
           Your browser does not support the video tag.

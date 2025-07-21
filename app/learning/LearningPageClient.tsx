@@ -80,7 +80,6 @@ export default function LearningPageClient() {
   // ──────────────────────────────────────────────────────────
   //  Hero video lazy-loading state
   // ──────────────────────────────────────────────────────────
-  const [showVideo, setShowVideo] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -92,11 +91,6 @@ export default function LearningPageClient() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Defer video mount to avoid LCP impact
-  useEffect(() => {
-    const timer = setTimeout(() => setShowVideo(true), 1500);
-    return () => clearTimeout(timer);
-  }, []);
   
   // Mock learning moments data
   const learningMoments = [
@@ -175,33 +169,32 @@ export default function LearningPageClient() {
           />
         </Head>
 
-        {/* Fallback Image */}
-        <div
-          className={`absolute inset-0 ${
-            !isMobile && showVideo && videoLoaded ? 'opacity-0' : 'opacity-100'
-          } transition-opacity duration-1000`}
-        >
-          <Image
-            src="/images/heroes/learning-hero.png"
-            alt="Teddy Kids children discovering through play in a bilingual setting"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
+        {/* Fallback Image – displayed until the video is ready (or always on mobile) */}
+        {!videoLoaded && (
+          <div className="absolute inset-0">
+            <Image
+              src="/images/heroes/learning-hero.png"
+              alt="Teddy Kids children discovering through play in a bilingual setting"
+              fill
+              priority
+              fetchPriority="high"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        )}
 
         {/* Video (desktop only, after delay) */}
-        {!isMobile && showVideo && (
+        {!isMobile && (
           <video
             autoPlay
             muted
             loop
             playsInline
-            preload="none"
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-            style={{ opacity: videoLoaded ? 1 : 0 }}
+            preload="metadata"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              videoLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
             onLoadedData={() => setVideoLoaded(true)}
             poster="/images/heroes/learning-hero.png"
           >

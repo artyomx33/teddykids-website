@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-no-useless-fragment */
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from 'next/image';
 
 type HeroProps = {
@@ -54,33 +58,45 @@ export function Hero({
   // Alt text: parent-supplied (i18n) or fallback to title
   const imageAlt = alt ?? title;
 
+  // ────────────────────────────────────────────────
+  // Show image instantly; fade-in video when ready
+  // ────────────────────────────────────────────────
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    const handleCanPlay = () => setVideoReady(true);
+    const vid = videoRef.current;
+    vid.addEventListener("canplay", handleCanPlay);
+    return () => vid.removeEventListener("canplay", handleCanPlay);
+  }, []);
+
   return (
     <section className="relative h-[675px] overflow-hidden">
       {/* Background media - either video with fallback or just image */}
-      {videoSrc ? (
+      {/* 1️⃣ Immediate image render */}
+      <Image
+        {...getImageProps(imageSrc, imageAlt, true)}
+        alt={imageAlt}
+      />
+
+      {/* 2️⃣ Video layered on top; fades in when ready */}
+      {videoSrc && (
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          ref={videoRef}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+            videoReady ? "opacity-100" : "opacity-0"
+          }`}
           autoPlay
           muted
           loop
           playsInline
           poster={imageSrc}
-          aria-hidden="true" // Video is decorative, text conveys meaning
+          aria-hidden="true"
         >
           <source src={videoSrc} type="video/mp4" />
-          {/* Fallback for browsers that don't support video */}
-          {/* This fallback image is purely decorative, so we force an empty alt */}
-          <Image
-            {...getImageProps(imageSrc, imageAlt, true)}
-            alt=""                /* explicit alt for ESLint */
-            aria-hidden="true"
-          />
         </video>
-      ) : (
-        <Image 
-          {...getImageProps(imageSrc, imageAlt, true)}
-          alt={imageAlt}          /* explicit alt for ESLint */
-        />
       )}
 
       {/* Semi-transparent overlay to enhance text contrast */}

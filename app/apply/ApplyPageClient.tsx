@@ -651,10 +651,10 @@ function ApplyPageContent() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="bl-heading text-3xl font-display font-bold mb-3 text-[#1a1a1a]">
-              {t('locationsPage.applyPage.brutalLuna.title')}
+              {t('applyPage.brutalLuna.title')}
             </h2>
             <p className="bl-subtext text-lg text-gray-700 mb-6">
-              {t('locationsPage.applyPage.brutalLuna.subtitle')}
+              {t('applyPage.brutalLuna.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button 
@@ -663,18 +663,18 @@ function ApplyPageContent() {
                 href="#application-form"
                 className="apply-button transform hover:scale-105 transition-transform duration-200"
               >
-                {t('locationsPage.applyPage.cta.applyButton')}
+                {t('applyPage.cta.applyButton')}
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 href="/contact?subject=Tour Request"
               >
-                {t('locationsPage.applyPage.cta.tourButton')}
+                {t('applyPage.cta.tourButton')}
               </Button>
             </div>
             <p className="bl-note text-sm mt-4 text-gray-500">
-              ⏳ {t('locationsPage.applyPage.brutalLuna.note')}
+              ⏳ {t('applyPage.brutalLuna.note')}
             </p>
           </div>
         </div>

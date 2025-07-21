@@ -337,7 +337,7 @@ const Contact: React.FC = () => {
             <button
               onClick={() => setIsSubmitted(false)}
               aria-label="Close"
-              className="absolute top-2 right-3 text-gray-400 hover:text-gray-200 text-xl"
+              className="absolute top-2 right-3 text-gray-700 hover:text-gray-500 text-xl min-h-[44px] min-w-[44px]"
             >
               &times;
             </button>

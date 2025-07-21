@@ -1,0 +1,30 @@
+{
+  "ci": {
+    "collect": {
+      "settings": {
+        "onlyCategories": ["performance", "accessibility", "best-practices", "seo"],
+        "skipAudits": ["uses-http2"],
+        "chromeFlags": "--no-sandbox --disable-dev-shm-usage"
+      },
+      "numberOfRuns": 3,
+      "url": [
+        "https://www.teddykids.nl/",
+        "https://www.teddykids.nl/about",
+        "https://www.teddykids.nl/programs",
+        "https://www.teddykids.nl/contact"
+      ]
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", {"minScore": 0.95, "aggregationMethod": "median-run"}],
+        "categories:accessibility": ["error", {"minScore": 1.0, "aggregationMethod": "median-run"}],
+        "categories:best-practices": ["error", {"minScore": 1.0, "aggregationMethod": "median-run"}],
+        "categories:seo": ["error", {"minScore": 1.0, "aggregationMethod": "median-run"}]
+      },
+      "preset": "lighthouse:recommended"
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

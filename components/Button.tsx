@@ -33,7 +33,11 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   // Base styles for all buttons
-  const baseStyles = 'inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles =
+    // Core button layout & focus styles
+    'inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 ' +
+    // Minimum 44 × 44 px tap area for WCAG 2.5.5 – Target Size
+    'min-h-[44px] min-w-[44px]';
   
   // Size variations
   const sizeStyles = {

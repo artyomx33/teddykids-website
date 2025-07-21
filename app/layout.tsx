@@ -13,12 +13,16 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "-apple-system", "Arial"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "-apple-system", "Courier New", "monospace"],
 });
 
 const balooDisplay = Baloo_2({
@@ -26,6 +30,8 @@ const balooDisplay = Baloo_2({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: true,
+  fallback: ["system-ui", "-apple-system", "Arial"],
 });
 
 const GTM_ID = "GTM-NQN5S9KF";
@@ -81,6 +87,17 @@ export default function RootLayout({
         {/* Ensure proper mobile scaling */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
+        {/* Critical resource hints */}
+        {/* Preconnect to Google Fonts for faster stylesheet fetch */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
+        {/* Preload hero fallback image to improve LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-fallback.jpg"
+          fetchPriority="high"
+        />
+
         {/* Preconnect to critical domains */}
         <link
           rel="preconnect"

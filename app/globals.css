@@ -181,6 +181,16 @@ html {
 }
 
 /* ------------------------------------------------------------------
+ *  Accessibility Override (2025-07-21)
+ *  Ensure sufficient contrast site-wide by mapping gray-500 → gray-700
+ * ------------------------------------------------------------------ */
+.text-gray-500 {
+  /* Override default Tailwind utility with darker gray for 4.5:1 contrast */
+  /* Tailwind's gray-700 = #374151 */
+  color: #374151 !important;
+}
+
+/* ------------------------------------------------------------------
  *  Apply Page - Luna Makeover Styles
  * ------------------------------------------------------------------ */
 /* Legacy Apply-page hero styles (.hero-apply / .hero-overlay) were deleted

@@ -49,7 +49,7 @@ A lightning-fast reference for every dev before committing changes.
 
 ## ✅ BEFORE DEPLOYING
 - [ ] `npm run check` – type, lint, test all green.
-- [ ] Lighthouse mobile ≥ 85, SEO 100, A11y ≥ 95.
+ - [ ] Lighthouse **mobile & desktop ≥ 95**, SEO 100, A11y ≥ 95.
 - [ ] Verify no **broken links** or 404s (run `npm run link-check`).
 - [ ] Review **DEV GUIDE** for structural compliance.
 - [ ] Push to branch → **Preview deploy** passes.

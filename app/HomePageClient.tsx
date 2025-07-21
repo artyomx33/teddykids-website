@@ -2,29 +2,30 @@
 
 import { Hero as StandardHero } from '@/components/ui/StandardHero';
 import Pillars from '@/components/sections/Pillars';
-import SocialProof from '@/components/sections/SocialProof';
-import Programs from '@/components/sections/Programs';
 import dynamic from 'next/dynamic';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
-// Dynamically load below-the-fold sections to shrink initial JS bundle
+// Dynamically load below-the-fold/interactive widgets to shrink initial JS bundle
 const AppiesGPT = dynamic(() => import('@/components/sections/AppiesGPT'), {
-  loading: () => (
-    <section className="py-16 text-center">
-      <p className="text-gray-500">Loading chat assistant…</p>
-    </section>
-  ),
-  ssr: false, // purely client-side interactive widget
+  ssr: false,
+  loading: () => null,
+});
+
+const SocialProof = dynamic(() => import('@/components/sections/SocialProof'), {
+  ssr: false,
+  loading: () => null,
+});
+
+const Programs = dynamic(() => import('@/components/sections/Programs'), {
+  ssr: false,
+  loading: () => null,
 });
 
 const LocationsPreview = dynamic(
   () => import('@/components/sections/LocationsPreview'),
   {
-    loading: () => (
-      <section className="py-16 text-center">
-        <p className="text-gray-500">Loading locations…</p>
-      </section>
-    ),
+    ssr: false,
+    loading: () => null,
   }
 );
 import Image from 'next/image';

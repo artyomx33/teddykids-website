@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
+    "check:contrast": "if grep -R --line-number --quiet \"text-gray-500\" app components; then echo '❌  text-gray-500 found – fails contrast ratio' && exit 1; else echo '✅  Contrast check passed'; fi",
     "lhci": "lhci autorun",
     "bundle:analyze": "ANALYZE=true npm run build",
     "prepare": "husky"
@@ -36,5 +37,11 @@
     "lint-staged": "^16.1.2",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run check:contrast",
+      "npm run lint:fix"
+    ]
   }
 }

@@ -1,7 +1,5 @@
-/* eslint-disable react/jsx-no-useless-fragment */
+ 
 "use client";
-
-import { useEffect, useRef, useState } from "react";
 import Image from 'next/image';
 
 type HeroProps = {
@@ -19,11 +17,6 @@ type HeroProps = {
    * Path to hero image (also used as video poster if videoSrc provided)
    */
   imageSrc: string;
-  
-  /**
-   * Optional path to background video
-   */
-  videoSrc?: string;
   
   /**
    * Optional call-to-action button text
@@ -50,27 +43,12 @@ export function Hero({
   title, 
   subtitle, 
   imageSrc, 
-  videoSrc, 
   ctaText, 
   ctaLink,
   alt
 }: HeroProps) {
   // Alt text: parent-supplied (i18n) or fallback to title
   const imageAlt = alt ?? title;
-
-  // ────────────────────────────────────────────────
-  // Show image instantly; fade-in video when ready
-  // ────────────────────────────────────────────────
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
-
-  useEffect(() => {
-    if (!videoRef.current) return;
-    const handleCanPlay = () => setVideoReady(true);
-    const vid = videoRef.current;
-    vid.addEventListener("canplay", handleCanPlay);
-    return () => vid.removeEventListener("canplay", handleCanPlay);
-  }, []);
 
   return (
     <section className="relative h-[675px] overflow-hidden">
@@ -81,23 +59,7 @@ export function Hero({
         alt={imageAlt}
       />
 
-      {/* 2️⃣ Video layered on top; fades in when ready */}
-      {videoSrc && (
-        <video
-          ref={videoRef}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            videoReady ? "opacity-100" : "opacity-0"
-          }`}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={imageSrc}
-          aria-hidden="true"
-        >
-          <source src={videoSrc} type="video/mp4" />
-        </video>
-      )}
+      {/* Video background code removed for performance testing */}
 
       {/* Semi-transparent overlay to enhance text contrast */}
       <div

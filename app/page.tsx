@@ -61,7 +61,6 @@ export default function HomePage() {
           title="From Baby Steps to Global Citizens"
           subtitle="Bilingual care that grows with your child."
           imageSrc="/images/heroes/hero-fallback.jpg"
-          videoSrc="/videos/tk-hero-loop.mp4"
         />
       </div>
 

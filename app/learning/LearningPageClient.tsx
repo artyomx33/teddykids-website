@@ -150,7 +150,6 @@ export default function LearningPageClient() {
         title={t('learningPage.hero.title')}
         subtitle={t('learningPage.hero.subtitle')}
         imageSrc="/images/heroes/learning-hero.png"
-        videoSrc="/images/heroes/learning-hero-video.mp4"
       />
 
       {/* ----------------------------------------------------------------

@@ -76,6 +76,7 @@ const Navigation: React.FC = () => {
                 alt="Teddy Kids"
                 fill
                 className="object-contain"
+                sizes="144px"
                 priority
               />
             </div>

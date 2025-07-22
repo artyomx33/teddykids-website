@@ -27,7 +27,6 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   // Start with English (SSR safe) and mark whether we've mounted on the client
   const [language, setLanguageState] = useState<Language>('en');
-  const [mounted, setMounted] = useState(false);
 
   // On first render, check if there's a saved language preference
   useEffect(() => {
@@ -35,8 +34,6 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     if (savedLanguage === 'en' || savedLanguage === 'nl') {
       setLanguageState(savedLanguage);
     }
-    // Mark component as mounted to safely render children
-    setMounted(true);
   }, []);
 
   // Update language and save to localStorage
@@ -50,11 +47,6 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     const newLanguage = language === 'en' ? 'nl' : 'en';
     setLanguage(newLanguage);
   };
-
-  // Prevent hydration mismatch: render nothing until we've mounted
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage }}>

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import ApplyPageClient from './ApplyPageClient';
 
 export const metadata: Metadata = {
@@ -8,13 +7,11 @@ export const metadata: Metadata = {
   keywords: 'teddy kids apply, bilingual daycare application, teddy kids form',
 };
 
-// Ensure this page is prerendered at build-time
+// Ensure this page is prerendered at build-time (same pattern as other pages)
 export const dynamic = 'force-static';
 
 export default function ApplyPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <ApplyPageClient />
-    </Suspense>
-  );
+  // Render the interactive client component; translations handled there
+  return <ApplyPageClient />;
 }
+

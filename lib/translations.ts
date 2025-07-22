@@ -1940,3 +1940,37 @@ export const useTranslation = (language: Language = 'en') => {
 
   return { t, language };
 };
+
+/* ------------------------------------------------------------------
+ *  Server-side translation helper
+ * -----------------------------------------------------------------*/
+/**
+ * getTranslations()
+ * --------------------------------------------------
+ * Use this inside **Server Components** (or any
+ * non-React context) where React hooks are not
+ * available.  Returns a translation function that
+ * behaves the same as the `t()` provided by
+ * `useTranslation`, but runs synchronously without
+ * requiring hooks.
+ *
+ * @param language Language code ('en' | 'nl')
+ * @returns Translation resolver function
+ */
+export const getTranslations = (language: Language = 'en') => {
+  return (key: string): any => {
+    const keys = key.split('.');
+    let value: any = translations[language];
+
+    for (const k of keys) {
+      if (value && typeof value === 'object' && k in value) {
+        value = value[k];
+      } else {
+        // Return the key itself if translation is missing
+        return key;
+      }
+    }
+
+    return value;
+  };
+};

@@ -510,9 +510,9 @@ function ApplyPageContent() {
         title={t('locationsPage.applyPage.hero.title')}
         subtitle={t('locationsPage.applyPage.hero.subtitle')}
         imageSrc="/images/heroes/journey-starts-here.png"
-        imageAlt="Children enjoying Teddy Kids"
-        ctaLabel={t('locationsPage.applyPage.cta.applyButton')}
-        ctaHref="#application-form"
+        alt="Children enjoying Teddy Kids"
+        ctaText={t('locationsPage.applyPage.cta.applyButton')}
+        ctaLink="#application-form"
       />
 
       {/* Audio Section - first content after hero */}

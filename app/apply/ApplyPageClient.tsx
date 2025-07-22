@@ -503,7 +503,7 @@ function ApplyPageContent() {
         title={t('applyPage.hero.title')}
         subtitle={t('applyPage.hero.subtitle')}
         imageSrc="/images/heroes/journey-starts-here.png"
-        // videoSrc="/images/heroes/journey-starts-here-video.mp4"  // Disabled for performance testing
+        videoSrc="/images/heroes/journey-starts-here-video.mp4"
       />
 
       {/* Audio Section - first content after hero */}

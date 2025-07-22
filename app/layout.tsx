@@ -8,6 +8,15 @@ import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Script from "next/script";
+import pkg from "../package.json";
+
+// ------------------------------------------------------------------
+//  Build metadata helpers
+// ------------------------------------------------------------------
+const APP_VERSION = pkg.version ?? "0.0.0";
+// Prefer CI‐injected value; fallback to current timestamp during build
+const BUILD_TIME =
+  process.env.NEXT_PUBLIC_BUILD_TIME ?? new Date().toISOString();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -86,6 +95,9 @@ export default function RootLayout({
       <head>
         {/* Ensure proper mobile scaling */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Build diagnostics */}
+        <meta name="app-version" content={APP_VERSION} />
+        <meta name="build-time" content={BUILD_TIME} />
         
         {/* Critical resource hints */}
         {/* Preconnect to Google Fonts for faster stylesheet fetch */}

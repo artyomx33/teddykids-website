@@ -18,7 +18,7 @@ export default function ProgramsPageClient() {
         title={t('programsPage.hero.title')}
         subtitle={t('programsPage.hero.subtitle')}
         imageSrc="/images/heroes/programs-hero.jpg"
-        // videoSrc="/images/heroes/programs-hero-video.mp4"  // Disabled for performance testing
+        videoSrc="/images/heroes/programs-hero-video.mp4"
       />
 
       {/* Programs Overview */}

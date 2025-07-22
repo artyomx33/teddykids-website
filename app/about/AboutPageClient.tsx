@@ -158,7 +158,7 @@ export default function AboutPageClient() {
         title={t('about.hero.title')}
         subtitle={t('about.hero.subtitle')}
         imageSrc="/images/heroes/about-hero.png"
-        // videoSrc="/images/heroes/about-hero-video.mp4"  // Disabled for performance testing
+        videoSrc="/images/heroes/about-hero-video.mp4"
       />
 
       {/* Mission Statement */}

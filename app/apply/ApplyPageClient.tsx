@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useTranslation } from '@/lib/translations';
 import Image from 'next/image';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 import { sendApplicationEmail } from '@/lib/emailjs'; // EmailJS helper
 import { Language } from '@/lib/translations';
 import { useEffect } from 'react'; // for language sync
@@ -504,6 +505,15 @@ function ApplyPageContent() {
   
   return (
     <>
+      {/* ---------- HERO SECTION ---------- */}
+      <StandardHero
+        title={t('locationsPage.applyPage.hero.title')}
+        subtitle={t('locationsPage.applyPage.hero.subtitle')}
+        imageSrc="/images/heroes/journey-starts-here.png"
+        imageAlt="Children enjoying Teddy Kids"
+        ctaLabel={t('locationsPage.applyPage.cta.applyButton')}
+        ctaHref="#application-form"
+      />
 
       {/* Audio Section - first content after hero */}
       <section className="py-12 bg-white">

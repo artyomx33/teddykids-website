@@ -19,6 +19,12 @@ type HeroProps = {
   imageSrc: string;
   
   /**
+   * Optional path to background video (muted loop).  
+   * Comment out or omit for performance testing.
+   */
+  videoSrc?: string;
+
+  /**
    * Optional call-to-action button text
    */
   ctaText?: string;
@@ -43,6 +49,7 @@ export function Hero({
   title, 
   subtitle, 
   imageSrc, 
+  videoSrc,
   ctaText, 
   ctaLink,
   alt
@@ -59,7 +66,20 @@ export function Hero({
         alt={imageAlt}
       />
 
-      {/* Video background code removed for performance testing */}
+      {/* Optional background video (renders only when `videoSrc` provided) */}
+      {videoSrc && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={imageSrc}
+          aria-hidden="true"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      )}
 
       {/* Semi-transparent overlay to enhance text contrast */}
       <div

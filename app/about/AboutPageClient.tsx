@@ -21,7 +21,8 @@ const timeline = [
   },
   {
     year: '2010',
-    img: '/timeline/2010.jpg',
+    /* Corrected image path – actual photo of Zeemanlaan opening */
+    img: '/images/timeline/opening zeemanlaan.jpg',
     alt: 'Opening of ZML',
     text:
       'Our Zeemanlaan location opened its doors after a hard-won community effort, bringing bilingual childcare to the heart of the Professorenbuurt.',

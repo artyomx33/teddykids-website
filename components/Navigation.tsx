@@ -72,7 +72,7 @@ const Navigation: React.FC = () => {
           <Link href="/" className="flex items-center">
             <div className="relative h-12 w-36">
               <Image
-                src="/images/logos/teddykids-logo-placeholder.png"
+                src="/images/logos/teddykids-logo-placeholder.PNG"
                 alt="Teddy Kids"
                 width={144}
                 height={48}

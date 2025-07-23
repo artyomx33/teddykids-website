@@ -745,6 +745,10 @@ const enTranslations = {
       },
       tisa: {
         title: "Looking for international schooling?",
+        paragraph1:
+          "Where young minds learn to think, not just follow – nurturing tomorrow's changemakers from day one.*",
+        paragraph2:
+          "TISA isn't just international education, it's entrepreneurial thinking for the next generation.*",
         button: "Visit TISA"
       },
       values: {
@@ -1704,6 +1708,10 @@ const enTranslations = {
       },
       tisa: {
         title: "Op zoek naar internationaal onderwijs?",
+        paragraph1:
+          "Where young minds learn to think, not just follow – nurturing tomorrow's changemakers from day one.*",
+        paragraph2:
+          "TISA isn't just international education, it's entrepreneurial thinking for the next generation.*",
         button: "Bezoek TISA"
       },
       values: {

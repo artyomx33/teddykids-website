@@ -74,9 +74,9 @@ const Navigation: React.FC = () => {
               <Image
                 src="/images/logos/teddykids-logo-placeholder.png"
                 alt="Teddy Kids"
-                fill
+                width={144}
+                height={48}
                 className="object-contain"
-                sizes="144px"
                 priority
               />
             </div>

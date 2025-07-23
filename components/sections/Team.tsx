@@ -258,8 +258,7 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
       name: 'Sofia',
       role: t('teamPage.members.sofia.role'),
       funFact: t('teamPage.members.sofia.funFact'),
-      /* Temporary: use Antonela's photo until Sofia's final portrait is ready */
-      imageSrc: '/images/team/antonela.jpg',
+      imageSrc: '/images/team/sofia.jpeg',
       bio: "Sofia brings creativity to everything at Teddy Kids, from classroom designs to special events that children remember forever.",
       childQuote: "Sofia's art projects are magical!"
     },

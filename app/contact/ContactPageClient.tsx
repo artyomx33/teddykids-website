@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { Hero as StandardHero } from '@/components/ui/StandardHero';
 
 // Dynamically import the Contact form component
 const Contact = dynamic(() => import('@/components/sections/Contact'), {
@@ -28,49 +28,15 @@ export default function ContactPageClient() {
   return (
     <main>
       {/* ──────────────────────────────────────────────────────────
-       *  Hero Section - Warmer, more welcoming
+       *  Hero Section - Using StandardHero for video playback
        * ────────────────────────────────────────────────────────── */}
-      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        {/* Background video with image fallback */}
-        {/* Video temporarily disabled for performance testing */}
-        <Image
-          src="/images/heroes/journey-starts-here.png"
-          alt="Reach out to Teddy Kids"
-          fill
-          sizes="100vw"
-          priority
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
-
-        {/* Teddy character - friendly mascot */}
-        <div className="absolute bottom-0 right-0 md:right-[10%] z-10 hidden md:block">
-          <Image
-            src="/images/characters/1karakter-dino-lief.png"
-            alt="Friendly Teddy Kids dinosaur character"
-            width={220}
-            height={220}
-            loading="eager"
-          />
-        </div>
-
-        {/* Hero content */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
-          <div className="container mx-auto">
-            {/* Center text block horizontally on all viewports */}
-            <div className="max-w-2xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-                Contact Us
-              </h1>
-              <p className="text-xl md:text-2xl text-white">
-                We&apos;re here to answer your questions and welcome you to our Teddy family
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StandardHero
+        title="Contact Us"
+        subtitle="We're here to answer your questions and welcome you to our Teddy family"
+        imageSrc="/images/heroes/journey-starts-here.png"
+        videoSrc="/videos/journey-starts-here-video.mp4"
+        alt="Reach out to Teddy Kids"
+      />
 
       {/* Contact Form Section */}
       <section className="py-16 bg-white">

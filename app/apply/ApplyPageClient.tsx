@@ -510,6 +510,7 @@ function ApplyPageContent() {
         title={t('locationsPage.applyPage.hero.title')}
         subtitle={t('locationsPage.applyPage.hero.subtitle')}
         imageSrc="/images/heroes/journey-starts-here.png"
+        videoSrc="/videos/journey-starts-here-video.mp4"
         alt="Children enjoying Teddy Kids"
         ctaText={t('locationsPage.applyPage.cta.applyButton')}
         ctaLink="#application-form"

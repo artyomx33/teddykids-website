@@ -183,6 +183,27 @@ export default function AboutPageClient() {
         </div>
       </section>
 
+      {/* Policy & Reports Section */}
+      <section className="py-16 bg-brand-mint bg-opacity-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-display font-bold mb-6">
+              {t('about.policyReports.title')}
+            </h2>
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+              {t('about.policyReports.description')}
+            </p>
+            <Button
+              variant="primary"
+              href="/about/policy"
+              size="lg"
+            >
+              {t('about.policyReports.buttonText')}
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Timeline / History */}
       {/* (Removed duplicate "Our Journey" timeline to prevent redundancy) */}
 
@@ -385,27 +406,6 @@ export default function AboutPageClient() {
               size="lg"
             >
               {t('about.team.buttonText')}
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Policy & Reports Section */}
-      <section className="py-16 bg-brand-mint bg-opacity-10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-display font-bold mb-6">
-              {t('about.policyReports.title')}
-            </h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              {t('about.policyReports.description')}
-            </p>
-            <Button
-              variant="primary"
-              href="/about/policy"
-              size="lg"
-            >
-              {t('about.policyReports.buttonText')}
             </Button>
           </div>
         </div>

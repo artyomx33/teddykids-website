@@ -131,7 +131,7 @@ export default function PolicyPageClient() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             
-            {/* Documents */}
+            {/* Policy Documents */}
             <Accordion 
               title={t('about.policy.documents.title')} 
               icon="📋"
@@ -140,8 +140,22 @@ export default function PolicyPageClient() {
               <p className="text-gray-700 mb-6">
                 {t('about.policy.documents.description')}
               </p>
-              <div className="bg-brand-yellow bg-opacity-10 p-4 rounded-lg">
-                <p className="text-gray-700 italic">{t('about.policy.documents.comingSoon') ?? 'Documents will be available for download soon.'}</p>
+              <div className="space-y-3">
+                <DocumentLink
+                  title="Pedagogical Approach & Curriculum Daycare (2024)"
+                  href="/docs/Pedagogical Approach & Curriculum Daycare Mei 2024.pdf"
+                  language="English"
+                />
+                <DocumentLink
+                  title="Pedagogical Policy"
+                  href="/docs/PedagogicalPolicy-TeddyKids-EN.pdf"
+                  language="English"
+                />
+                <DocumentLink
+                  title="Pedagogisch beleidsplan BSO (Mei 2025)"
+                  href="/docs/Pedagogisch beleidsplan BSO Teddy Kids Mei 2025.pdf"
+                  language="Dutch"
+                />
               </div>
             </Accordion>
 
@@ -150,20 +164,131 @@ export default function PolicyPageClient() {
               <p className="text-gray-700 mb-6">
                 {t('about.policy.ggdReports.description')}
               </p>
-              <div className="space-y-3">
-                <DocumentLink
-                  title={t('about.policy.ggdReports.downloadReport')}
-                  href="/docs/GGD-Report.pdf"
-                  language="PDF"
-                />
+              
+              {/* RBW Location */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">RBW – Rijnsburgerweg 35</h4>
+                <div className="space-y-3">
+                  <DocumentLink
+                    title="GGD Inspection Report KDV 2024"
+                    href="/docs/GGD RBW KDV 2024.pdf"
+                    language="Dutch | Most Recent"
+                  />
+                  <DocumentLink
+                    title="GGD Inspection Report KDV (Previous)"
+                    href="/docs/GGD RBW KDV.pdf"
+                    language="Dutch"
+                  />
+                </div>
+              </div>
+
+              {/* RB3 Location */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">RB3 – Rijnsburgerweg 3</h4>
+                <div className="space-y-3">
+                  <DocumentLink
+                    title="GGD Inspection Report KDV 2024"
+                    href="/docs/GGD RB3 KDV 2024.pdf"
+                    language="Dutch | Most Recent"
+                  />
+                  <DocumentLink
+                    title="GGD Inspection Report BSO 2025"
+                    href="/docs/GGD RB3 BSO 2025.pdf"
+                    language="Dutch | Most Recent"
+                  />
+                  <DocumentLink
+                    title="GGD Inspection Report KDV (Previous)"
+                    href="/docs/GGD RB3 KDV.pdf"
+                    language="Dutch"
+                  />
+                  <DocumentLink
+                    title="GGD Inspection Report BSO (Previous)"
+                    href="/docs/GGD RB3 BSO.pdf"
+                    language="Dutch"
+                  />
+                </div>
+              </div>
+
+              {/* RB5 Location */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">RB5 – Rijnsburgerweg 5</h4>
+                <div className="space-y-3">
+                  <DocumentLink
+                    title="GGD Inspection Report BSO 2024"
+                    href="/docs/GGD RB5 BSO 2024.pdf"
+                    language="Dutch | Most Recent"
+                  />
+                  <DocumentLink
+                    title="GGD Inspection Report BSO (Previous)"
+                    href="/docs/GGD RB5 BSO.pdf"
+                    language="Dutch"
+                  />
+                </div>
+              </div>
+
+              {/* LRZ Location */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">LRZ – Lorentzkade 15a</h4>
+                <div className="space-y-3">
+                  <DocumentLink
+                    title="GGD Inspection Report BSO 2025"
+                    href="/docs/GGD LRZ BSO 2025.pdf"
+                    language="Dutch | Most Recent"
+                  />
+                  <DocumentLink
+                    title="GGD Inspection Report BSO (Previous)"
+                    href="/docs/GGD LRZ BSO 2.pdf"
+                    language="Dutch"
+                  />
+                </div>
+              </div>
+
+              {/* ZML Location */}
+              <div className="mb-6">
+                <h4 className="font-semibold text-gray-900 mb-3">ZML – Zeemanlaan 22a</h4>
+                <div className="space-y-3">
+                  <DocumentLink
+                    title="GGD Inspection Report KDV 2024"
+                    href="/docs/GGD ZML KDV 2024.pdf"
+                    language="Dutch | Most Recent"
+                  />
+                  <DocumentLink
+                    title="GGD Detailed Report 2024 (ID494195)"
+                    href="/docs/GGD_Rapport_2024_KDV_Teddy_Kids_Zeemanlaan_15-5-2024_ID494195.pdf"
+                    language="Dutch | Detailed Report"
+                  />
+                </div>
               </div>
             </Accordion>
 
             {/* Privacy & GDPR */}
             <Accordion title={t('about.policy.privacy.title')} icon="🔐">
               <p className="text-gray-700 mb-6">{t('about.policy.privacy.description')}</p>
-              <div className="bg-brand-yellow bg-opacity-10 p-4 rounded-lg">
-                <p className="text-gray-700 italic">{t('about.policy.privacy.comingSoon')}</p>
+              <div className="space-y-3">
+                <DocumentLink
+                  title="Privacy Policy & GDPR Compliance"
+                  href="/docs/TeddyKids-PrivacyPolicy-GDPR.pdf"
+                  language="English"
+                />
+              </div>
+            </Accordion>
+
+            {/* Information Packages (New Section) */}
+            <Accordion title="Information Packages" icon="📚">
+              <p className="text-gray-700 mb-6">
+                Comprehensive information packages for parents and guardians about our programs, philosophy, and practical details.
+              </p>
+              <div className="space-y-3">
+                <DocumentLink
+                  title="Information Package (July 2025)"
+                  href="/docs/Teddy Kids English information package Juli 2025.pdf"
+                  language="English"
+                />
+                <DocumentLink
+                  title="Informatiepakket (Juli 2025)"
+                  href="/docs/NL Informatiepakket Juli 2025.pdf"
+                  language="Dutch"
+                />
               </div>
             </Accordion>
 

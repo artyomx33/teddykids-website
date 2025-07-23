@@ -24,7 +24,8 @@ const timeline = [
     img: '/timeline/2010.jpg',
     alt: 'Opening of ZML',
     text:
-      'We opened our second location with a focus on ZML. Not because it was easy. Because it mattered.',
+      'Our Zeemanlaan location opened its doors after a hard-won community effort, bringing bilingual childcare to the heart of the Professorenbuurt.',
+    link: 'https://sleutelstad.nl/2011/06/11/vestiging-teddy-kids-in-zeemanlaan-open/',
   },
   {
     year: '2014',

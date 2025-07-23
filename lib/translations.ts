@@ -256,6 +256,219 @@ const enTranslations = {
     },
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // AFTER-SCHOOL PROGRAM FULL PAGE
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    afterSchoolPage: {
+      /* ---------- HERO ---------- */
+      hero: {
+        title: "Exploration After Hours",
+        tagline: "Where school-day curiosity keeps on growing."
+      },
+
+      /* ---------- OVERVIEW ---------- */
+      overview: {
+        title: "Why Parents Choose Our After-School Care",
+        description:
+          "A seamless extension of the school day with language, play and lots of fresh air.",
+        items: [
+          "Homework help in two languages",
+          "Daily outdoor play & themed clubs",
+          "Healthy snacks to refuel growing minds",
+          "Holiday camps packed with adventures"
+        ],
+        button: "Apply for After-School",
+        imageAlt: "Children enjoying Teddy Kids after-school program"
+      },
+
+      /* ---------- ADVENTURE ---------- */
+      adventure: {
+        title: "Every Afternoon an Adventure",
+        description:
+          "From science experiments to theatre clubs—there’s always something new to discover."
+      },
+
+      /* ---------- SCHEDULE ---------- */
+      schedule: {
+        schoolDays: {
+          title: "Typical School Day Schedule",
+          items: [
+            { time: "15:00", activity: "Pick-up & healthy snack" },
+            { time: "15:30", activity: "Homework / Reading corner" },
+            { time: "16:00", activity: "Outdoor play" },
+            { time: "16:30", activity: "Club activity", description: "STEM • Art • Sports" },
+            { time: "17:30", activity: "Free play & pick-up window" }
+          ]
+        },
+        holidays: {
+          title: "Holiday Schedule",
+          items: [
+            { time: "08:30", activity: "Welcome & breakfast club" },
+            { time: "10:00", activity: "Morning excursion" },
+            { time: "12:30", activity: "Lunch picnic" },
+            { time: "13:30", activity: "Themed workshop" },
+            { time: "16:00", activity: "Chill-out & collection" }
+          ]
+        },
+        note: "Times may vary per location and season."
+      },
+
+      /* ---------- ACTIVITIES ---------- */
+      activities: {
+        title: "Clubs & Activities",
+        description:
+          "Children pick from rotating clubs led by passionate educators.",
+        items: [
+          { icon: "🎨", title: "Creative Arts", description: "Painting, crafting, theatre." },
+          { icon: "⚽️", title: "Sports Squad", description: "Football, yoga, dance." },
+          { icon: "🔬", title: "STEM Lab", description: "Experiments & coding fun." }
+        ]
+      },
+
+      /* ---------- THEME WEEKS ---------- */
+      themeWeeks: {
+        title: "Epic Theme Weeks",
+        description:
+          "Big projects where children deep-dive into new worlds together.",
+        items: [
+          "Around the World",
+          "Eco-Explorers",
+          "Space Odyssey",
+          "Chef Masters"
+        ]
+      },
+
+      /* ---------- FEATURES ---------- */
+      features: {
+        title: "Why Kids Love It",
+        items: [
+          { icon: "🚌", title: "School Pick-ups", description: "Safe transport from partner schools." },
+          { icon: "🌳", title: "Outdoor First", description: "Playgrounds & nature walks daily." },
+          { icon: "🗣️", title: "English & Dutch", description: "Bilingual staff every afternoon." }
+        ]
+      },
+
+      /* ---------- LOCATIONS ---------- */
+      locations: {
+        title: "Locations Offering After-School",
+        viewDetails: "View Details"
+      },
+
+      /* ---------- QUOTES ---------- */
+      quotes: {
+        title: "What Parents Say",
+        items: [
+          { text: "Our son begs to stay longer every day!", author: "Liam’s mum" },
+          { text: "The bilingual homework help is priceless.", author: "Ava & Noah’s dad" }
+        ]
+      },
+
+      /* ---------- CTA ---------- */
+      cta: {
+        title: "Ready for after-school adventures?",
+        description: "Spaces fill quickly—reserve your child’s spot today.",
+        buttons: {
+          meetTeam: "Meet the Team",
+          bookTour: "Book a Tour"
+        },
+        chatPrompt: "Prefer WhatsApp?",
+        chatLink: "Chat with us"
+      }
+    },
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // NURSERY PROGRAM FULL PAGE
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    nurseryPage: {
+      /* ---------- HERO ---------- */
+      hero: {
+        title: "Soft Beginnings, Big Dreams",
+        tagline: "Where every cuddle speaks two languages.",
+        description:
+          "Our Nursery provides a gentle, bilingual start for children 3 months to 2½ years old—wrapped in warmth, rhythm and discovery.",
+        ages: "Ages 3 m – 2½ y",
+        buttons: {
+          bookTour: "Book a Tour",
+          applyNow: "Apply Now"
+        }
+      },
+
+      /* ---------- OVERVIEW ---------- */
+      overview: {
+        title: "At-a-Glance",
+        items: {
+          ageRange:   { icon: "🎂", label: "Age Range",      value: "3 m – 2½ y" },
+          hours:      { icon: "⏰", label: "Opening Hours",  value: "07:30 – 18:30" },
+          meals:      { icon: "🥗", label: "Meals",          value: "All meals & snacks included" },
+          staffRatio: { icon: "👶", label: "Staff : Child",  value: "1 : 3" },
+          careModel:  { icon: "💤", label: "Care Model",     value: "Primary caregiver approach" },
+          availableAt:{ icon: "📍", label: "Available At",   value: "All TK locations" },
+          dailyUpdates:{icon:"📸", label: "Daily Updates",  value: "Photos & notes in app" }
+        }
+      },
+
+      /* ---------- FEATURES ---------- */
+      features: {
+        title: "Why Parents Love Our Nursery",
+        items: [
+          { icon: "🍼", title: "Formula & Feeding", description: "Personalised routines and cosy spaces." },
+          { icon: "🎶", title: "Song-Led Language", description: "English & Dutch woven into lullabies." },
+          { icon: "🌱", title: "Sensory Play",      description: "Safe exploration for growing brains." },
+          { icon: "👨‍👩‍👧", title: "Family App",  description: "Daily photos, menus and milestone notes." }
+        ]
+      },
+
+      /* ---------- GALLERY ---------- */
+      gallery: {
+        title: "Peek Inside",
+        items: [
+          { src: "/images/programs/nursery-1.jpg", caption: "Morning cuddles & circle time" },
+          { src: "/images/programs/nursery-2.jpg", caption: "Exploring textures in two languages" },
+          { src: "/images/programs/nursery-3.jpg", caption: "Outdoor nap under fresh air canopies" }
+        ]
+      },
+
+      /* ---------- SCHEDULE ---------- */
+      schedule: {
+        title: "Daily Rhythm",
+        note: "Times are a gentle guide—your child’s needs lead the way.",
+        items: [
+          { time: "07:30", activity: "Welcome & Free Play",      description: "Soft arrivals with soothing music" },
+          { time: "09:00", activity: "Snack & Circle Songs",     description: "Bilingual music & rhymes" },
+          { time: "10:00", activity: "Sensory Exploration",      description: "Water, sand & treasure baskets" },
+          { time: "11:30", activity: "Lunch & Story Time",       description: "Family-style eating" },
+          { time: "12:30", activity: "Nap",                      description: "Cosy cots & quiet lullabies" },
+          { time: "15:00", activity: "Outdoor Adventure",        description: "Fresh air & buggy walks" },
+          { time: "16:30", activity: "Snack & Parent Pick-up",   description: "Good-bye ritual in two languages" }
+        ]
+      },
+
+      /* ---------- PARENT QUOTE ---------- */
+      quote: {
+        text: "Our daughter’s first word was in English and her second in Dutch—thank you Teddy Kids!",
+        author: "Emma & James",
+        button: "Read more reviews"
+      },
+
+      /* ---------- LOCATIONS ---------- */
+      locations: {
+        title: "Nursery Locations",
+        viewDetails: "View Details"
+      },
+
+      /* ---------- CTA ---------- */
+      cta: {
+        title: "Ready for gentle beginnings?",
+        description: "Schedule a tour and see our nursery magic firsthand.",
+        buttons: {
+          meetTeam: "Meet the Team",
+          bookTour: "Book a Tour"
+        },
+        chatPrompt: "Have questions?",
+        chatLink: "Chat on WhatsApp"
+      }
+    },
+    
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     // FULL LOCATIONS PAGE
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     locationsPage: {
@@ -1962,15 +2175,64 @@ export const getTranslations = (language: Language = 'en') => {
     const keys = key.split('.');
     let value: any = translations[language];
 
+    /* --------------------------------------------------------
+     * 1. Try to resolve in requested language
+     * ------------------------------------------------------ */
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        // Return the key itself if translation is missing
-        return key;
+        value = undefined;
+        break;
       }
     }
 
-    return value;
+    if (value !== undefined) {
+      return value; // found in requested language
+    }
+
+    /* --------------------------------------------------------
+     * 2. Fallback: if Dutch ('nl') -> use English + '*'
+     * ------------------------------------------------------ */
+    if (language === 'nl') {
+      let enValue: any = translations['en'];
+      let found = true;
+
+      for (const k of keys) {
+        if (enValue && typeof enValue === 'object' && k in enValue) {
+          enValue = enValue[k];
+        } else {
+          found = false;
+          break;
+        }
+      }
+
+      if (found) {
+        // Append '*' only to simple string values
+        if (typeof enValue === 'string') {
+          return `${enValue}*`;
+        }
+
+        // Array handling: prefix '*' to each string element
+        if (Array.isArray(enValue)) {
+          return enValue.map((item) =>
+            typeof item === 'string' ? `*${item}` : item
+          );
+        }
+
+        // Fallback object or other types
+        return enValue;
+      }
+    }
+
+    /* --------------------------------------------------------
+     * 3. No translation available
+     * ------------------------------------------------------ */
+    // For Dutch, when English fallback is also absent or not an array, return empty array
+    if (language === 'nl') {
+      return [];
+    }
+
+    return '';
   };
 };

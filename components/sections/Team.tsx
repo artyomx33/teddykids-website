@@ -34,12 +34,13 @@ const TeamMember: React.FC<TeamMemberProps> = ({
    *    (opacity transition handled by Tailwind classes)
    */
   const hoverMap: Record<string, string> = {
-    '/images/team/antonela.jpg': '/images/team/antonela 2.jpeg',
+    '/images/team/antonela.webp': '/images/team/antonela2.webp',
     '/images/team/artem.jpg': '/images/team/artem 2.jpeg',
     '/images/team/els.jpg': '/images/team/els 2.jpeg',
     '/images/team/meral.jpg': '/images/team/meral 2.jpeg',
     '/images/team/svetlana.jpg': '/images/team/svetlana 2.jpeg',
     '/images/team/tess.jpg': '/images/team/tess 2.jpeg',
+    '/images/team/sofia.webp': '/images/team/sofia2.webp',
   };
 
   const hoverImage = imageSrc ? hoverMap[imageSrc] : undefined;
@@ -231,7 +232,7 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
       name: 'Antonella',
       role: t('teamPage.members.antonela.role'),
       funFact: t('teamPage.members.antonela.funFact'),
-      imageSrc: '/images/team/antonela.jpg',
+      imageSrc: '/images/team/antonela.webp',
       bio: "Antonella leads our flagship location with warmth and expertise, creating a multilingual environment where children flourish.",
       childQuote: "Antonella knows how to say everything in different languages!"
     },
@@ -258,8 +259,7 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
       name: 'Sofia',
       role: t('teamPage.members.sofia.role'),
       funFact: t('teamPage.members.sofia.funFact'),
-      /* Temporary: use Antonela's photo until Sofia's final portrait is ready */
-      imageSrc: '/images/team/antonela.jpg',
+      imageSrc: '/images/team/sofia.webp',
       bio: "Sofia brings creativity to everything at Teddy Kids, from classroom designs to special events that children remember forever.",
       childQuote: "Sofia's art projects are magical!"
     },

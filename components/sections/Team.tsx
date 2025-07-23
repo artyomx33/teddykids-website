@@ -228,12 +228,12 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
     },
     {
       id: 'antonela',
-      name: 'Antonela',
+      name: 'Antonella',
       role: t('teamPage.members.antonela.role'),
       funFact: t('teamPage.members.antonela.funFact'),
       imageSrc: '/images/team/antonela.jpg',
-      bio: "Antonela leads our flagship location with warmth and expertise, creating a multilingual environment where children flourish.",
-      childQuote: "Antonela knows how to say everything in different languages!"
+      bio: "Antonella leads our flagship location with warmth and expertise, creating a multilingual environment where children flourish.",
+      childQuote: "Antonella knows how to say everything in different languages!"
     },
     {
       id: 'pamela',
@@ -258,7 +258,8 @@ const Team: React.FC<TeamProps> = ({ className = '' }) => {
       name: 'Sofia',
       role: t('teamPage.members.sofia.role'),
       funFact: t('teamPage.members.sofia.funFact'),
-      imageSrc: '/images/team/sofia.jpeg',
+      /* Temporary: use Antonela's photo until Sofia's final portrait is ready */
+      imageSrc: '/images/team/antonela.jpg',
       bio: "Sofia brings creativity to everything at Teddy Kids, from classroom designs to special events that children remember forever.",
       childQuote: "Sofia's art projects are magical!"
     },

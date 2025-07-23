@@ -1785,7 +1785,7 @@ const enTranslations = {
           funFact: "Bakt prijswinnende koekjes"
         },
         antonela: {
-          name: "Antonela",
+          name: "Antonella",
           role: "Locatiemanager",
           funFact: "Leerde een kind 4 talen vóór zijn 5e"
         },

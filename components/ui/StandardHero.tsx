@@ -99,7 +99,7 @@ export function Hero({
           {ctaText && ctaLink && (
             <a 
               href={ctaLink} 
-              className="inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 px-6 py-3 text-base bg-brand-yellow text-gray-800 hover:bg-opacity-90 focus:ring-brand-yellow shadow-sm hover:shadow"
+              className="inline-flex items-center justify-center rounded-full font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 px-8 py-3 text-base bg-brand-pink text-white hover:bg-pink-600 focus:ring-brand-pink shadow-md hover:shadow-lg"
               aria-label={ctaText}
             >
               {ctaText}

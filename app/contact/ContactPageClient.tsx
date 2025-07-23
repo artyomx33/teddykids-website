@@ -34,7 +34,7 @@ export default function ContactPageClient() {
         title="Contact Us"
         subtitle="We're here to answer your questions and welcome you to our Teddy family"
         imageSrc="/images/heroes/journey-starts-here.png"
-        videoSrc="/videos/journey-starts-here-video.mp4"
+        videoSrc="/images/heroes/journey-starts-here-video.mp4"
         alt="Reach out to Teddy Kids"
       />
 
